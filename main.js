@@ -21,7 +21,7 @@ $(document).ready(function() {
 
   function slideRight(newIndex, prevIndex) {
     $("#last-img").attr("src", images[newIndex - 1]);
-    $(".first-slide").animate({marginLeft: "-66.66%"},1000,
+    $(".first-slide").animate({marginLeft: "-66.66%"},500,
       function(){
         $("#main-img").attr("src", images[newIndex - 1]);
         $(".first-slide").animate({marginLeft: "-33.33%"},0);
@@ -32,7 +32,7 @@ $(document).ready(function() {
 
   function slideLeft(newIndex, prevIndex) {
     $("#first-img").attr("src", images[newIndex - 1]);
-    $(".first-slide").animate({marginLeft: "0%"},1000,
+    $(".first-slide").animate({marginLeft: "0%"},500,
       function(){
         $("#main-img").attr("src", images[newIndex - 1]);
         $(".first-slide").animate({marginLeft: "-33.33%"},0);

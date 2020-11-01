@@ -2,9 +2,8 @@ html,
 body {
   padding: 0;
   margin: 0;
-  /*background-color: rgb(220, 241, 251);*/
+  /*background-color: rgb(218, 241, 251);*/
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  /*font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;*/
 }
 
 ul,
@@ -208,44 +207,6 @@ a {
 .menu-color {
   background-color: #fff;
 }
-/***Apartado del Club ***/
-.title {
-  color: white;
-  background-color: #0d52a1;
-  height: 100%;
-  margin-top: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 40px;
-  padding-right: 15px;
-  padding-left: 15px;
-  width: 100%;
-}
-
-ul.breadcrumb {
-  padding: 20px 16px;
-  padding-top: 0px;
-  padding-bottom: 10px;
-  text-align: right;
-  list-style: none;
-  background-color: #0d52a1;
-}
-ul.breadcrumb li {
-  display: inline;
-  font-size: 18px;
-}
-ul.breadcrumb li + li:before {
-  padding: 8px;
-  color: white;
-  content: "/\00a0";
-}
-ul.breadcrumb li a:hover {
-  color: white;
-  text-decoration: underline;
-}
-.clearfix {
-  clear: both;
-}
 /********** Responsive menu **********/
 @media screen and (max-width: 680px) {
   .header-logo {
@@ -366,7 +327,7 @@ ul.breadcrumb li a:hover {
 
 .slide-btn {
   background-color: transparent;
-  border: 2px solid #f1e8e6;
+  border: 2px solid #40d3dc;
   padding: 5px;
   border-radius: 10px;
   cursor: pointer;
@@ -378,7 +339,7 @@ ul.breadcrumb li a:hover {
 }
 
 #slide-btn-1 {
-  background: #f1e8e6;
+  background: #40d3dc;
 }
 
 .first-slide {
@@ -438,6 +399,39 @@ ul.breadcrumb li a:hover {
     width: 90%;
   }
 }
+
+/********** News **********/
+.news-container {
+  width: 90%;
+  display: table;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.news-container h4 {
+  margin-top: 0;
+}
+
+.news-col {
+  padding: 20px;
+}
+
+.img-wrap {
+  float: left;
+  display: block;
+}
+
+.news-image {
+  padding-right: 15px;
+  display: table-cell;
+  width: 200px;
+}
+
+.news-text {
+  display: table-cell;
+  vertical-align: top;
+}
+
 /********** Callout **********/
 .callout {
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
@@ -469,30 +463,27 @@ ul.breadcrumb li a:hover {
 }
 
 .callout-btn-section {
-  display: inline-block;
+  display: block;
   margin: auto;
   padding-top: 80px;
-  text-align: center;
 }
 
 .callout-btn1 {
   background-color: white;
-  color: black;
+  color: #111;
   font-size: 22px;
   padding: 15px;
-  border-radius: 2px;
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
+  border-radius: 4px;
+  margin: 12px;
 }
 
 .callout-btn2 {
-  background-color: #071095;
+  background-color: blue;
   color: white;
   font-size: 22px;
   padding: 15px;
-  border-radius: 2px;
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
+  border-radius: 4px;
+  margin: 12px;
 }
 
 /********** Footer **********/
@@ -554,12 +545,13 @@ ul.breadcrumb li a:hover {
   bottom: 5px;
   right: 10px;
   z-index: 99;
+  height: 45px;
+  width: 45px;
   border: none;
   outline: none;
-  background-color: turquoise;
+  background-color: blue;
   color: white;
   cursor: pointer;
-  padding: 15px;
   border-radius: 10px;
   font-size: 18px;
 }

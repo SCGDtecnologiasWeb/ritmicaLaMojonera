@@ -207,6 +207,45 @@ a {
 .menu-color {
   background-color: #fff;
 }
+/********** Section header **********/
+.title {
+  color: white;
+  background-color: #0d52a1;
+  height: 100%;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 40px;
+  padding-right: 15px;
+  padding-left: 15px;
+  width: 100%;
+}
+
+ul.breadcrumb {
+  padding: 20px 16px;
+  padding-top: 0px;
+  padding-bottom: 10px;
+  text-align: right;
+  list-style: none;
+  background-color: #0d52a1;
+}
+ul.breadcrumb li {
+  display: inline;
+  font-size: 18px;
+}
+ul.breadcrumb li + li:before {
+  padding: 8px;
+  color: white;
+  content: "/\00a0";
+}
+ul.breadcrumb li a:hover {
+  color: white;
+  text-decoration: underline;
+}
+.clearfix {
+  clear: both;
+}
+
 /********** Responsive menu **********/
 @media screen and (max-width: 680px) {
   .header-logo {

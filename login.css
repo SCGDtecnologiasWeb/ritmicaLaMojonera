@@ -1,7 +1,16 @@
 /********** Login **********/
-/* body {
-  background: url(assets/gim1.jpeg) no-repeat center center fixed;
+body {
+  background-image: url(../assets.logo_ritmica.png) no-repeat scroll 7px 7px;
+  background-repeat: no repeat;
   background-size: cover;
+  height: 100%;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 60px;
+  padding-right: 15px;
+  padding-left: 15px;
+  width: 100%;
 }
 .main-login {
   margin: 0 auto;
@@ -9,25 +18,35 @@
   padding: 0;
 }
 .modal-content {
-  background-color: aliceblue;
+  background-color: aquamarine;
   opacity: 0.95;
   padding: 0 20px;
-  box-shadow: 0px 0px 3px #848484;
+  box-shadow: 0px 0px 3px #ffffff;
 }
-.login-img {
+.user-img {
   margin-top: -50px;
   margin-top: 35px;
 }
-.login.img img {
-  width: 100px;
-  height: 10000px;
-  padding-right: 20px;
+
+.form-group input {
+  height: 42px;
+  font-size: 18px;
+  padding-left: 40px;
+  border-radius: 5px;
 }
- */
-body {
-  width: 100%;
-  height: 700px;
-  background-image: url(../assets.logo_ritmica.png);
-  background-repeat: no repeat;
-  background-size: cover;
+.form-group::before {
+  position: absolute;
+  left: 28px;
+  font-size: 22px;
+  padding-top: 4px;
+}
+.form-group#user-group::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f007";
+}
+.form-group#password-group::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f023";
 }

@@ -1,6 +1,6 @@
 html,
 body {
-  padding: 0;
+  padding: 100px;
   margin: 0;
   /*background-color: rgb(218, 241, 251);*/
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -207,7 +207,7 @@ a {
 .menu-color {
   background-color: #fff;
 }
-/********** Section header **********/
+/********** Section header Club **********/
 .title {
   color: white;
   background-color: #0d52a1;

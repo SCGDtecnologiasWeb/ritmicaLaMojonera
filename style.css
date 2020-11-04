@@ -319,6 +319,7 @@ a {
   position: relative;
   overflow: hidden;
   margin-top: 10px;
+  margin-bottom: 40px;
 }
 
 .slides {
@@ -363,65 +364,11 @@ a {
   margin-left: -33.33%;
 }
 
-/********** Covid Protocol **********/
-.covid-container {
-  background-color: white;
-}
-
-.covid-info {
-  display: flex;
-  align-items: center;
-}
-
-.covid-header-col {
-  text-align: center;
-}
-
-.covid-header-col h1 {
-  font-family: "Segoe UI";
-  color: #333;
-}
-
-.covid-text-col {
-  border: gray solid;
-  background-color: #eee;
-  padding: 30px;
-  border-radius: 5px;
-}
-
-.covid-text-col p {
-  font-family: Verdana;
-  font-size: 18px;
-}
-
-.covid-video-col {
-  padding: 30px;
-}
-
-.covid-video {
-  border-radius: 3px;
-  display: block;
-  margin: auto;
-  width: 100%;
-  max-width: 588px;
-}
-
-@media screen and (max-width: 912px) {
-  .covid-text-col,
-  .covid-video-col {
-    width: 100%;
-  }
-
-  .covid-video {
-    width: 90%;
-  }
-}
-
 /********** News **********/
 .news-container {
   width: 90%;
   display: table;
-  margin-top: 30px;
+  margin-top: 40px;
   margin-bottom: 30px;
 }
 
@@ -430,7 +377,7 @@ a {
 }
 
 .news-col {
-  padding: 20px;
+  padding: 0 20px;
 }
 
 .img-wrap {

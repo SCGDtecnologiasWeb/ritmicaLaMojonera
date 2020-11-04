@@ -378,6 +378,7 @@ a {
 
 .news-col {
   padding: 0 20px;
+  margin-top: 25px;
 }
 
 .img-wrap {
@@ -394,6 +395,66 @@ a {
 .news-text {
   display: table-cell;
   vertical-align: top;
+}
+
+.news-text h5 {
+  margin: 0;
+  color: #555;
+}
+
+.news-text p {
+  color: #666;
+}
+
+.news-text a {
+  display: inline-block;
+  font-size: 20px;
+  color: #fff;
+  background-color: #104fa7;
+  padding: 8px 12px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0.8px 0.8px 2px 1px rgba(0, 0, 0, 0.34);
+  -moz-box-shadow: 0.8px 0.8px 2px 1px rgba(0, 0, 0, 0.34);
+  box-shadow: 0.8px 0.8px 2px 1px rgba(0, 0, 0, 0.34);
+}
+
+.news-text a:hover {
+  background-color: #0080ff;
+}
+
+@media screen and (max-width: 1050px) {
+  .news-col {
+    width: 100%;
+  }
+
+  @media screen and (max-width: 600px) {
+    .news-col {
+      width: 100%;
+      margin-top: 30px;
+    }
+
+    .img-wrap {
+      width: 100%;
+    }
+
+    .news-image {
+      max-height: 350px;
+      width: auto;
+      max-width: 100%;
+    }
+
+    .news-text h5 {
+      margin-top: 10px;
+    }
+
+    .news-text h3 {
+      margin: 5px 0 10px;
+    }
+
+    .news-text p {
+      margin-top: 5px;
+    }
+  }
 }
 
 /********** Callout **********/

@@ -12,10 +12,16 @@ $(document).ready(function () {
 
   /********** Slider ***********/
   var images = [
-    "assets/slider1.jpeg",
-    "assets/slider2.jpeg",
-    "assets/slider3.jpeg"
+    'assets/slider1.jpeg',
+    'assets/slider2.jpeg',
+    'assets/slider3.jpeg'
   ];
+  var texts = [
+    'Texto de ejemplo 1',
+    'Texto de ejemplo 2',
+    'Texto de ejemplo 3'
+  ];
+
   var prevIndex = 1;
   var newIndex = 1;
 
@@ -64,10 +70,18 @@ $(document).ready(function () {
   // newIndex: indice de la nueva imagen
   // prevIndex: indice de la imagen previa
   function slideRight(newIndex, prevIndex) {
-    $("#last-img").attr("src", images[newIndex - 1]);
-    $(".first-slide").animate({ marginLeft: "-66.66%" }, 500, function(){
-      $("#main-img").attr("src", images[newIndex - 1]);
-      $(".first-slide").css("margin-left", "-33.33%");
+    $(".slide-right").css("background", "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(" + images[newIndex - 1] + ")");
+    $(".slide-right").css("background-position", "center");
+    $(".slide-right").css("background-size", "cover");
+    $(".slide-right").css("background-repeat", "no-repeat");
+    $(".slide-right").find("span").text(texts[newIndex - 1]);
+    $(".slide-left").animate({ marginLeft: "-66.66%" }, 500, function(){
+      $(".slide-main").css("background", "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(" + images[newIndex - 1] + ")");
+      $(".slide-main").css("background-position", "center");
+      $(".slide-main").css("background-size", "cover");
+      $(".slide-main").css("background-repeat", "no-repeat");
+      $(".slide-main").find("span").text(texts[newIndex - 1]);
+      $(".slide-left").css("margin-left", "-33.33%");
       canClickSlideButton = true;
       imageInterval = setInterval(changeImg, 6000);
     });
@@ -77,10 +91,18 @@ $(document).ready(function () {
   // newIndex: indice de la nueva imagen
   // prevIndex: indice de la imagen previa
   function slideLeft(newIndex, prevIndex) {
-    $("#first-img").attr("src", images[newIndex - 1]);
-    $(".first-slide").animate({ marginLeft: "0%" }, 500, function(){
-      $("#main-img").attr("src", images[newIndex - 1]);
-      $(".first-slide").css("margin-left", "-33.33%");
+    $(".slide-left").css("background", "linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(" + images[newIndex - 1] + ")");
+    $(".slide-left").css("background-position", "center");
+    $(".slide-left").css("background-size", "cover");
+    $(".slide-left").css("background-repeat", "no-repeat");
+    $(".slide-left").find("span").text(texts[newIndex - 1]);
+    $(".slide-left").animate({ marginLeft: "0%" }, 500, function(){
+      $(".slide-main").css("background", "linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(" + images[newIndex - 1] + ")");
+      $(".slide-main").css("background-position", "center");
+      $(".slide-main").css("background-size", "cover");
+      $(".slide-main").css("background-repeat", "no-repeat");
+      $(".slide-main").find("span").text(texts[newIndex - 1]);
+      $(".slide-left").css("margin-left", "-33.33%");
       canClickSlideButton = true;
       imageInterval = setInterval(changeImg, 6000);
     });
@@ -102,16 +124,6 @@ $(document).ready(function () {
 
     slideRight(newIndex, prevIndex);
   }
-
-  // Codigo para que la imagen no cambie si el raton esta encima del slider
-  // $(".slider").hover(
-  //   function () {
-  //     clearInterval(imageInterval);
-  //   },
-  //   function () {
-  //     imageInterval = setInterval(changeImg, 6000);
-  //   }
-  // );
 });
 
 /********** Go back button **********/

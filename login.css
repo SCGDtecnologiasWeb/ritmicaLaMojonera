@@ -4,13 +4,12 @@ body {
   background-repeat: no repeat;
   background-size: cover;
   height: 100%;
-  margin-top: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 60px;
-  padding-right: 15px;
-  padding-left: 15px;
+  margin: 0;
+  padding: 0;
   width: 100%;
+}
+.caja {
+  padding: 0;
 }
 .main-login {
   margin: 0 auto;
@@ -53,6 +52,7 @@ body {
   font-weight: 900;
   content: "\f023";
 }
+
 button {
   width: 30%;
   margin: 5px 0 25;

@@ -314,6 +314,78 @@ a {
   }
 }
 
+/********** Title **********/
+.title-row {
+  background-color: #003e71;
+}
+
+.title-col {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+}
+
+.title-row {
+  padding: 20px 0;
+}
+
+.title-main {
+  width: 100%;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.title-path {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.title-path * {
+  margin-right: 8px;
+}
+
+.title-col a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 850px) {
+  .title-col {
+    width: 50%;
+  }
+
+  .title-empty-col {
+    display: none;
+  }
+
+  .title-main {
+    margin-left: 20px;
+  }
+
+  .title-path {
+    margin-right: 10px;
+  }
+
+  @media screen and (max-width: 690px) {
+    .title-col {
+      width: 100%;
+    }
+
+    .title-path {
+      justify-content: start;
+    }
+
+    .title-path {
+      padding-top: 5px;
+      margin-right: 0px;
+      margin-left: 20px;
+    }
+  }
+}
+
 /********** Slider **********/
 .slider {
   width: 100%;

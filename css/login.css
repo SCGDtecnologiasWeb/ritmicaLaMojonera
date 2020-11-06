@@ -17,7 +17,6 @@ body {
   padding: 0;
 }
 .modal-content {
-  background-color: aquamarine;
   opacity: 0.95;
   padding: 0 20px;
   box-shadow: 0px 0px 3px #ffffff;
@@ -62,4 +61,10 @@ button {
 }
 .forgot i {
   font-size: 20px;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+  background-color: transparent;
 }

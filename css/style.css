@@ -407,7 +407,7 @@ a {
 
 .slide-main {
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-    url("assets/slider1.jpeg");
+    url("/assets/slider1.jpeg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -587,7 +587,7 @@ a {
 /********** Callout **********/
 .callout {
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url("assets/gim1.jpeg");
+    url("/assets/gim1.jpeg");
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;

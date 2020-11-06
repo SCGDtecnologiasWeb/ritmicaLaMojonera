@@ -12,9 +12,9 @@ $(document).ready(function () {
 
   /********** Slider ***********/
   var images = [
-    'assets/slider1.jpeg',
-    'assets/slider2.jpeg',
-    'assets/slider3.jpeg'
+    '/assets/slider1.jpeg',
+    '/assets/slider2.jpeg',
+    '/assets/slider3.jpeg'
   ];
   var texts = [
     'Texto de ejemplo 1',

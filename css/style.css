@@ -653,7 +653,7 @@ a {
 
 .footer-col a:not(.fab) {
   text-decoration: underline;
-  color: blue;
+  color: #00f;
   cursor: pointer;
 }
 

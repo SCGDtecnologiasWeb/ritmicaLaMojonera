@@ -1,33 +1,72 @@
-.page-principal {
-  margin: 0px;
-  padding: 40px 0 0;
+.content-container {
+  width: 85%;
+  margin: auto;
+  overflow: hidden;
 }
 
-.col-club {
-  position: relative;
-  min-height: 1px;
-  padding-left: 130px;
-}
-#links {
-  color: #0d52a1;
+.content-container p {
+  line-height: 25px;
+  color: #333;
 }
 
-img.align-right {
+.content-container img {
+  height: 350px;
+  float: right;
+  border-radius: 10px;
   margin-left: 30px;
-  float: right;
+  margin-top: 30px;
 }
-.aling-right {
-  margin: 0.5em 0 0.5em;
+
+.sections-container {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  margin: 30px auto;
 }
-img {
-  border: 0;
+
+.sections-container div {
+  width: 50%;
+  text-align: center;
+}
+
+.sections-container img {
+  max-height: 250px;
+  width: auto;
+  max-width: 90%;
+  border-radius: 5px;
   display: block;
-  max-width: 100%;
-  height: auto;
+  margin: auto;
 }
-.container-club img {
-  width: 300px;
-  float: right;
-  margin-left: 20px;
-  margin-bottom: 200px;
+
+hr {
+  border-top: 1px solid #bbb;
+  width: 90%;
+  border-bottom: 0px;
+}
+
+@media screen and (max-width: 1210px) {
+  .content-container img {
+    float: initial;
+    margin: auto;
+    display: block;
+    height: auto;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .sections-container {
+    display: initial;
+    width: 90%;
+  }
+
+  .sections-container div {
+    max-height: 400px;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .sections-container h2 {
+    margin: 5px auto 20px;
+  }
 }

@@ -1,1 +1,26 @@
+.content-container {
+  margin: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
 
+.img-container {
+  background-position: center;
+  background-size: cover;
+  height: 350px;
+  width: 30%;
+  margin: 20px 0;
+}
+
+@media screen and (max-width: 1200px) {
+  .img-container {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .img-container {
+    width: 90%;
+  }
+}

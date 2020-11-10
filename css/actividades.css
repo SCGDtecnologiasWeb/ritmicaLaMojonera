@@ -1,1 +1,32 @@
+.content-container {
+  width: 90%;
+  margin: 30px auto;
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+}
 
+.content-container h3 {
+  margin-top: 4px;
+}
+
+.image-container {
+  width: 25%;
+}
+
+.image-container img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+@media screen and (max-width: 700px) {
+  .content-container {
+    display: block;
+  }
+
+  .image-container {
+    width: 400px;
+    margin: auto;
+    margin-bottom: 40px;
+  }
+}

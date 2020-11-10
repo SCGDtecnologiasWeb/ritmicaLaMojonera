@@ -1,1 +1,71 @@
+.content-container {
+  width: 85%;
+  margin: auto;
+  overflow: hidden;
+}
+.content-container p {
+  line-height: 25px;
+  color: #333;
+}
 
+.content-container img {
+  height: 350px;
+  float: right;
+  border-radius: 10px;
+  margin-left: 30px;
+  margin-top: 30px;
+}
+
+.sections-container {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  margin: 30px auto;
+}
+
+.sections-container div {
+  width: 50%;
+  text-align: center;
+}
+
+.sections-container img {
+  max-height: 250px;
+  width: auto;
+  max-width: 90%;
+  border-radius: 5px;
+  display: block;
+  margin: auto;
+}
+
+hr {
+  border-top: 1px solid #bbb;
+  width: 90%;
+  border-bottom: 0px;
+}
+
+@media screen and (max-width: 1210px) {
+  .content-container img {
+    float: initial;
+    margin: auto;
+    display: block;
+    height: auto;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .sections-container {
+    display: initial;
+    width: 90%;
+  }
+
+  .sections-container div {
+    max-height: 400px;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .sections-container h2 {
+    margin: 5px auto 20px;
+  }
+}

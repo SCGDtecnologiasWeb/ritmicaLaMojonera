@@ -327,6 +327,8 @@ a {
 
 .title-row {
   padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
 }
 
 .title-main {
@@ -338,7 +340,7 @@ a {
 .title-path {
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: flex-end;
   width: 100%;
   font-size: 16px;
   font-weight: 500;
@@ -346,6 +348,7 @@ a {
 
 .title-path * {
   margin-right: 8px;
+  display: block;
 }
 
 .title-col a:hover {

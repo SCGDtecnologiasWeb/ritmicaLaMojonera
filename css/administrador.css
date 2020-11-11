@@ -1,0 +1,86 @@
+body {
+  background-color: #f8f8f8;
+}
+
+.administrator-header {
+  margin: 10px 0;
+}
+
+.administrator-header img {
+  height: 80px;
+  display: block;
+  margin: auto;
+}
+
+.title-row {
+  background-color: #222;
+  transition: 0.5s;
+}
+
+.open-btn {
+  height: 40px;
+  width: 40px;
+  background-color: #111;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  border-radius: 3px;
+  color: white;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.side-menu {
+  height: 100%;
+  width: 200px;
+  margin-left: -200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
+}
+
+.side-menu a {
+  color: #bbb;
+  display: block;
+}
+
+.menu-section {
+  padding-bottom: 10px;
+}
+
+.menu-title {
+  font-weight: 600;
+  font-size: 25px;
+  padding: 8px 8px 3px 32px;
+  cursor: default;
+}
+
+.menu-text {
+  font-size: 15px;
+  padding: 2px 8px 2px 32px;
+}
+
+.menu-text:hover {
+  color: #f1f1f1;
+}
+
+.side-menu .close-btn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+hr {
+  border-top: 1px solid #818181;
+  width: 180px;
+  border-bottom: 0px;
+}

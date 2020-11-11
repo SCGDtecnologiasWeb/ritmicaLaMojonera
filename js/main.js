@@ -124,13 +124,21 @@ $(document).ready(function () {
 
     slideRight(newIndex, prevIndex);
   }
+  /********** Side Menu **********/
+  $(".open-btn").click(function() {
+    $(".side-menu").css("margin-left", "0");
+    $(".title-row").css("margin-left", "200px");
+  });
+
+  $(".close-btn").click(function() {
+    $(".side-menu").css("margin-left", "-200px");
+    $(".title-row").css("margin-left", "0");
+  });
+
+  /********** Go back button **********/
+  // When the user clicks on the button, scroll to the top of the document
+  $("#goback-btn").click(function () {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  });
 });
-
-/********** Go back button **********/
-mybutton = document.getElementById("goback-btn");
-
-// When the user clicks on the button, scroll to the top of the document
-function goBack() {
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-}

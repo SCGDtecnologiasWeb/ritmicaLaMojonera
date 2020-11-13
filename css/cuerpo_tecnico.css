@@ -1,1 +1,48 @@
+.content-container {
+  width: 85%;
+  margin: auto;
+  overflow: hidden;
+}
 
+.content-container p {
+  line-height: 25px;
+  color: #333;
+}
+
+.content-container img {
+  height: 350px;
+  float: right;
+  border-radius: 10px;
+  margin-left: 30px;
+  margin-top: 30px;
+}
+
+.sections-container {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  margin: 30px auto;
+}
+.content-container h3 {
+  margin-top: 4px;
+}
+.image-container {
+  width: 25%;
+}
+
+.image-container img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+@media screen and (max-width: 700px) {
+  .content-container {
+    display: block;
+  }
+
+  .image-container {
+    width: 400px;
+    margin: auto;
+    margin-bottom: 40px;
+  }
+}

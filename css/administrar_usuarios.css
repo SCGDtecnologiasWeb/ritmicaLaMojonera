@@ -1,48 +1,187 @@
 .content-container {
-  width: 75%;
+  width: 80%;
   margin: auto;
-  overflow: hidden;
 }
+
+.gymnast-header {
+  margin-top: 45px;
+}
+
+.trainer-container,
+.gymnast-container {
+  position: relative;
+}
+
 .trainer {
   display: flex;
-  height: 150px;
-  background: rgb(201, 201, 201);
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 120px;
+  width: 100%;
+  background-color: #e7e7e7;
   border-radius: 10px;
-  box-shadow: green;
+  border: 1px solid black;
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
 }
 
-.name {
-  display: block;
-  margin-left: 30%;
-  margin-top: 9%;
-  font-size: 30px;
+.trainer:hover {
+  background-color: #e7e7ff;
+  border: #00f solid 1px;
 }
 
-.fotoper {
-  float: left;
+.trainer .img-container {
+  height: 90px;
+  max-width: 20%;
+  position: relative;
+  padding-left: 30px;
+  margin: 20px 0;
+}
+
+.trainer .img-container img {
+  height: 90px;
+  border: 1px solid #aaa;
+}
+
+.trainer .name-container {
+  padding-left: 50px;
+  width: 40%;
+  font-size: 28px;
+  font-weight: 600;
+  padding-right: 5px;
+  word-wrap: break-word;
+}
+
+.trainer .contact-container {
+  padding-left: 20px;
+  padding-right: 5px;
+  width: 40%;
+  word-wrap: break-word;
+}
+
+.trainer-container .edit-img {
+  position: absolute;
+  height: 40px;
+  top: 8px;
+  right: -50px;
+  cursor: pointer;
+}
+
+.trainer-container .bin-img {
+  position: absolute;
+  height: 40px;
+  top: 70px;
+  right: -50px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1000px) {
+  .trainer-container .contact-container {
+    width: 100%;
+  }
+
+  .trainer-container .name-container {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .trainer-container .edit-img {
+    position: absolute;
+    height: 30px;
+    top: 8px;
+    right: -35px;
+    cursor: pointer;
+  }
+
+  .trainer-container .bin-img {
+    position: absolute;
+    height: 30px;
+    top: 60px;
+    right: -35px;
+    cursor: pointer;
+  }
+}
+
+.gymnast {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 80px;
+  width: 100%;
+  background-color: #e7e7e7;
   border-radius: 10px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-left: 50px;
-  max-height: 130px;
+  border: 1px solid black;
+  position: relative;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  cursor: pointer;
 }
 
-.info {
-  margin-top: 25px;
+.gymnast:hover {
+  background-color: #e7e7ff;
+  border: #00f solid 1px;
 }
 
-.mas {
-  margin-right: 50px;
-  margin-top: 9%;
-  text-align: right;
+.gymnast .img-container {
+  height: 60px;
+  max-width: 20%;
+  position: relative;
+  padding-left: 30px;
+  margin: 10px 0;
 }
-.edit-container {
-  flex-grow: 1;
-  flex-basis: 0;
-  max-width: 100%;
-  width: 13%;
-  background-color: white;
+
+.gymnast .img-container img {
+  height: 60px;
+  border: 1px solid #aaa;
 }
-.edit {
-  margin-top: 10%;
+
+.gymnast .name-container {
+  padding-left: 20px;
+  width: 35%;
+  font-size: 20px;
+  font-weight: 600;
+  padding-right: 5px;
+  word-wrap: break-word;
+}
+
+.gymnast .contact-container {
+  padding-left: 20px;
+  padding-right: 5px;
+  font-size: 13px;
+  width: 45%;
+  word-wrap: break-word;
+}
+
+.gymnast-container .edit-img {
+  position: absolute;
+  height: 25px;
+  top: 2px;
+  right: -30px;
+  cursor: pointer;
+}
+
+.gymnast-container .bin-img {
+  position: absolute;
+  height: 25px;
+  top: 40px;
+  right: -30px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1000px) {
+  .gymnast-container .contact-container {
+    width: 100%;
+    padding-bottom: 10px;
+  }
+
+  .gymnast-container .name-container {
+    width: 80%;
+  }
+
+  .gymnast-container p {
+    margin: 5px auto;
+  }
 }

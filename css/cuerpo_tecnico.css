@@ -53,7 +53,7 @@
     display: block;
   }
   @media screen and (max-width: 1210px) {
-    .image-container img {
+    .image-container {
       float: initial;
       margin: auto;
       display: block;
@@ -61,7 +61,8 @@
       width: 100%;
     }
   }
-  @media screen and (min-width: 320px) and (max-width: 480px) {
+
+  @media screen and (min-width: 300px) and (max-width: 350px) and (max-width: 480px) {
     .image-container img {
       display: inline-block;
       width: 300px;
@@ -71,21 +72,9 @@
     }
   }
 
-  @media (min-width: 768px) {
+  @media screen and (min-width: 768px) {
     .image-container {
       width: 90%;
-    }
-  }
-  @media screen and (max-width: 800px) {
-    .sections-container {
-      display: initial;
-      width: 90%;
-    }
-
-    .image-container {
-      width: 400px;
-      margin: auto;
-      margin-bottom: 40px;
     }
   }
 }

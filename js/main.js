@@ -17,9 +17,9 @@ $(document).ready(function () {
     '/assets/slider3.jpeg'
   ];
   var texts = [
-    'Texto de ejemplo 1',
-    'Texto de ejemplo 2',
-    'Texto de ejemplo 3'
+    'Club La Mojonera',
+    'Desde nivel Iniciación hasta Absoluto',
+    'Más de 50 Gimnastas'
   ];
 
   var prevIndex = 1;

@@ -29,6 +29,11 @@ body {
   margin-top: 50px;
   text-align: left;
 }
+.link-button {
+  display: flex;
+  flex-wrap: wrap;
+  float: left;
+}
 .form-group input {
   height: 42px;
   font-size: 18px;

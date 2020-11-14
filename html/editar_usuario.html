@@ -35,7 +35,7 @@
         <div class="title-path">
           <span>Usuarios</span>
           <span>/</span>
-          <span>Administrar usuarios</span>
+          <span>Editar usuario</span>
         </div>
       </div>
       <div class="col title-empty-col"></div>
@@ -77,153 +77,53 @@
   <!-- Side Menu End -->
 
   <!-- Content Start -->
-  <div class="content-container">
-    <h1>Entrenadores</h1>
-    <div class="trainer-container">
-      <div class="trainer">
-        <div class="img-container">
-          <img src="/assets/Juanma - profile.jpeg">
-        </div>
-        <div class="name-container">
-          <p>Nombre completo</p>
-        </div>
-        <div class="contact-container">
-          <p>Correo eléctronico: ejemploejemploejemploejemploejemplo@gmail.com</p>
-          <p>Teléfono: 666 66 66 66</p>
-        </div>
-      </div>
-      <img src="/assets/bin-icon.PNG" class="bin-img">
-      <img src="/assets/edit-icon.PNG" class="edit-img">
-    </div>
-    <div class="trainer-container">
-      <div class="trainer">
-        <div class="img-container">
-          <img src="/assets/Juanma - profile.jpeg">
-        </div>
-        <div class="name-container">
-          <p>Nombre completo</p>
-        </div>
-        <div class="contact-container">
-          <p>Correo eléctronico: ejemploejemploejemploejemploejemplo@gmail.com</p>
-          <p>Teléfono: 666 66 66 66</p>
-        </div>
-      </div>
-      <img src="/assets/bin-icon.PNG" class="bin-img">
-      <img src="/assets/edit-icon.PNG" class="edit-img">
-    </div>
-    <div class="trainer-container">
-      <div class="trainer">
-        <div class="img-container">
-          <img src="/assets/Juanma - profile.jpeg">
-        </div>
-        <div class="name-container">
-          <p>Nombre completo</p>
-        </div>
-        <div class="contact-container">
-          <p>Correo eléctronico: ejemploejemploejemploejemploejemplo@gmail.com</p>
-          <p>Teléfono: 666 66 66 66</p>
-        </div>
-      </div>
-      <img src="/assets/bin-icon.PNG" class="bin-img">
-      <img src="/assets/edit-icon.PNG" class="edit-img">
-    </div>
+  <div class="main">
+    <div class="content-container">
+      <h1>Modificar datos de entrenador</h1>
+      <div class="form-container">
+        <form action="#" method="POST">
+          <div class="form-field">
+            <label for="name" class="field-title">Nombre completo</label><br />
+            <input type="text" id="name" name="name" autocomplete="off" /><br />
+          </div>
 
-    <h1 class="gymnast-header">Gimnastas</h1>
-    <div class="gymnast-container">
-      <div class="gymnast">
-        <div class="img-container">
-          <img src="/assets/Juanma - profile.jpeg">
-        </div>
-        <div class="name-container">
-          <p>Nombre completo</p>
-        </div>
-        <div class="contact-container">
-          <p>Correo eléctronico: ejemploejemploejemploejemploejemplo@gmail.com</p>
-          <p>Teléfono: 666 66 66 66</p>
-        </div>
+          <div class="form-field">
+            <label for="birthdate" class="field-title">Fecha de nacimiento</label><br />
+            <input type="date" id="birthdate" name="birthdate" autocomplete="off" /><br />
+          </div>
+
+          <div class="form-field">
+            <p class="field-title">Entrena:</p><br>
+            <input type="radio" id="grupo-a" name="group" autocomplete="off" />
+            <label for="grupo-a">Grupo A</label><br />
+            <input type="radio" id="grupo-b" name="group" autocomplete="off" />
+            <label for="grupo-b">Grupo B</label><br />
+            <input type="radio" id="grupo-c" name="group" autocomplete="off" />
+            <label for="grupo-c">Grupo C</label><br />
+          </div>
+
+          <div class="form-field">
+            <label for="email" class="field-title">Correo eléctronico</label><br />
+            <input type="email" id="email" name="email" autocomplete="off" /><br />
+          </div>
+
+          <div class="form-field">
+            <label for="main-phone" class="field-title">Teléfono</label><br />
+            <input type="text" id="main-phone" name="main-phone" autocomplete="off" /><br />
+          </div>
+
+          <div class="form-field">
+            <label for="secondary-phone" class="field-title">Teléfono secundario</label><br />
+            <input type="text" id="secondary-phone" name="secondary-phone" autocomplete="off" /><br />
+          </div>
+
+          <div class="form-field">
+            <label for="dni" class="field-title">D.N.I</label><br />
+            <input type="text" id="dni" name="dni" autocomplete="off" /><br />
+          </div>
+          <input type="submit" value="Enviar" />
       </div>
-      <img src="/assets/bin-icon.PNG" class="bin-img">
-      <img src="/assets/edit-icon.PNG" class="edit-img">
-    </div>
-    <div class="gymnast-container">
-      <div class="gymnast">
-        <div class="img-container">
-          <img src="/assets/Juanma - profile.jpeg">
-        </div>
-        <div class="name-container">
-          <p>Nombre completo</p>
-        </div>
-        <div class="contact-container">
-          <p>Correo eléctronico: ejemploejemploejemploejemploejemplo@gmail.com</p>
-          <p>Teléfono: 666 66 66 66</p>
-        </div>
-      </div>
-      <img src="/assets/bin-icon.PNG" class="bin-img">
-      <img src="/assets/edit-icon.PNG" class="edit-img">
-    </div>
-    <div class="gymnast-container">
-      <div class="gymnast">
-        <div class="img-container">
-          <img src="/assets/Juanma - profile.jpeg">
-        </div>
-        <div class="name-container">
-          <p>Nombre completo</p>
-        </div>
-        <div class="contact-container">
-          <p>Correo eléctronico: ejemploejemploejemploejemploejemplo@gmail.com</p>
-          <p>Teléfono: 666 66 66 66</p>
-        </div>
-      </div>
-      <img src="/assets/bin-icon.PNG" class="bin-img">
-      <img src="/assets/edit-icon.PNG" class="edit-img">
-    </div>
-    <div class="gymnast-container">
-      <div class="gymnast">
-        <div class="img-container">
-          <img src="/assets/Juanma - profile.jpeg">
-        </div>
-        <div class="name-container">
-          <p>Nombre completo</p>
-        </div>
-        <div class="contact-container">
-          <p>Correo eléctronico: ejemploejemploejemploejemploejemplo@gmail.com</p>
-          <p>Teléfono: 666 66 66 66</p>
-        </div>
-      </div>
-      <img src="/assets/bin-icon.PNG" class="bin-img">
-      <img src="/assets/edit-icon.PNG" class="edit-img">
-    </div>
-    <div class="gymnast-container">
-      <div class="gymnast">
-        <div class="img-container">
-          <img src="/assets/Juanma - profile.jpeg">
-        </div>
-        <div class="name-container">
-          <p>Nombre completo</p>
-        </div>
-        <div class="contact-container">
-          <p>Correo eléctronico: ejemploejemploejemploejemploejemplo@gmail.com</p>
-          <p>Teléfono: 666 66 66 66</p>
-        </div>
-      </div>
-      <img src="/assets/bin-icon.PNG" class="bin-img">
-      <img src="/assets/edit-icon.PNG" class="edit-img">
-    </div>
-    <div class="gymnast-container">
-      <div class="gymnast">
-        <div class="img-container">
-          <img src="/assets/Juanma - profile.jpeg">
-        </div>
-        <div class="name-container">
-          <p>Nombre completo</p>
-        </div>
-        <div class="contact-container">
-          <p>Correo eléctronico: ejemploejemploejemploejemploejemplo@gmail.com</p>
-          <p>Teléfono: 666 66 66 66</p>
-        </div>
-      </div>
-      <img src="/assets/bin-icon.PNG" class="bin-img">
-      <img src="/assets/edit-icon.PNG" class="edit-img">
+      </form>
     </div>
   </div>
   <!-- Content End -->

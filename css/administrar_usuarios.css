@@ -7,6 +7,10 @@
   margin-top: 45px;
 }
 
+.hidden {
+  display: none;
+}
+
 .trainer-container,
 .gymnast-container {
   position: relative;
@@ -33,7 +37,7 @@
 }
 
 .trainer .img-container {
-  height: 90px;
+  height: 100px;
   max-width: 20%;
   position: relative;
   padding-left: 30px;
@@ -41,15 +45,13 @@
 }
 
 .trainer .img-container img {
-  height: 90px;
+  height: 100px;
   border: 1px solid #aaa;
 }
 
 .trainer .name-container {
   padding-left: 50px;
   width: 40%;
-  font-size: 28px;
-  font-weight: 600;
   padding-right: 5px;
   word-wrap: break-word;
 }
@@ -126,7 +128,7 @@
 }
 
 .gymnast .img-container {
-  height: 60px;
+  height: 70px;
   max-width: 20%;
   position: relative;
   padding-left: 30px;
@@ -134,15 +136,14 @@
 }
 
 .gymnast .img-container img {
-  height: 60px;
+  height: 70px;
   border: 1px solid #aaa;
 }
 
 .gymnast .name-container {
-  padding-left: 20px;
+  padding-left: 30px;
   width: 35%;
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 13px;
   padding-right: 5px;
   word-wrap: break-word;
 }

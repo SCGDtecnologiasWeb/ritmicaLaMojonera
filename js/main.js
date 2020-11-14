@@ -141,4 +141,24 @@ $(document).ready(function () {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
   });
+
+  /********** Administrar usuarios, mostrar info **********/
+  $(".trainer").click(function(){
+    if ($(this).find(".hidden-content").hasClass("hidden")) {
+      $(this).find(".hidden-content").removeClass("hidden");
+    }
+    else {
+      $(this).find(".hidden-content").addClass("hidden");
+    }
+  });
+
+  $(".gymnast").click(function(){
+    if ($(this).find(".hidden-content").hasClass("hidden")) {
+      $(this).find(".hidden-content").removeClass("hidden");
+    }
+    else {
+      $(this).find(".hidden-content").addClass("hidden");
+    }
+  });
+
 });

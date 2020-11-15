@@ -1,0 +1,23 @@
+.news-col {
+  padding: 20px;
+}
+
+.news-col {
+  position: relative;
+}
+
+.news-col .edit-img {
+  position: absolute;
+  height: 30px;
+  top: 15px;
+  right: 0px;
+  cursor: pointer;
+}
+
+.news-col .bin-img {
+  position: absolute;
+  height: 30px;
+  top: 60px;
+  right: -1px;
+  cursor: pointer;
+}

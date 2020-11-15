@@ -4,14 +4,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Registrar usuarios</title>
+  <title>Registrar entrenador</title>
 
   <!-- FontAwesome CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
 
   <link rel="stylesheet" href="/css/style.css" />
   <link rel="stylesheet" href="/css/administrador.css" />
-  <link rel="stylesheet" href="/css/registrar_usuarios.css" />
+  <link rel="stylesheet" href="/css/registrar_entrenador.css" />
 </head>
 
 <body>
@@ -36,7 +36,7 @@
         <div class="title-path">
           <span>Usuarios</span>
           <span>/</span>
-          <span>Registrar usuarios</span>
+          <span>Registrar entrenador</span>
         </div>
       </div>
       <div class="col title-empty-col"></div>
@@ -79,16 +79,55 @@
   <!-- Side Menu End -->
 
   <!-- Content Start -->
-  <a href="/html/registrar_entrenador.html">
-    <div class="register-panel">
-      <p>Registrar entrenador</p>
+  <div class="main">
+    <div class="content-container">
+      <h1>Registrar nuevo entrenador</h1>
+      <div class="form-container">
+        <form action="#" method="POST">
+          <div class="form-field">
+            <label for="name" class="field-title">Nombre completo</label><br />
+            <input type="text" id="name" name="name" autocomplete="off" /><br />
+          </div>
+
+          <div class="form-field">
+            <label for="birthdate" class="field-title">Fecha de nacimiento</label><br />
+            <input type="date" id="birthdate" name="birthdate" autocomplete="off" /><br />
+          </div>
+
+          <div class="form-field">
+            <p class="field-title">Entrena:</p><br>
+            <input type="radio" id="grupo-a" name="group" autocomplete="off" />
+            <label for="grupo-a">Grupo A</label><br />
+            <input type="radio" id="grupo-b" name="group" autocomplete="off" />
+            <label for="grupo-b">Grupo B</label><br />
+            <input type="radio" id="grupo-c" name="group" autocomplete="off" />
+            <label for="grupo-c">Grupo C</label><br />
+          </div>
+
+          <div class="form-field">
+            <label for="email" class="field-title">Correo eléctronico</label><br />
+            <input type="email" id="email" name="email" autocomplete="off" /><br />
+          </div>
+
+          <div class="form-field">
+            <label for="main-phone" class="field-title">Teléfono</label><br />
+            <input type="text" id="main-phone" name="main-phone" autocomplete="off" /><br />
+          </div>
+
+          <div class="form-field">
+            <label for="secondary-phone" class="field-title">Teléfono secundario</label><br />
+            <input type="text" id="secondary-phone" name="secondary-phone" autocomplete="off" /><br />
+          </div>
+
+          <div class="form-field">
+            <label for="dni" class="field-title">D.N.I</label><br />
+            <input type="text" id="dni" name="dni" autocomplete="off" /><br />
+          </div>
+          <input type="submit" value="Enviar" />
+      </div>
+      </form>
     </div>
-  </a>
-  <a href="/html/registrar_gimnasta.html">
-    <div class="register-panel">
-      <p>Registrar gimnasta</p>
-    </div>
-  </a>
+  </div>
   <!-- Content End -->
 
 

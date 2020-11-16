@@ -4,14 +4,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Añadir trofeos</title>
+  <title>Modificar y eliminar trofeos</title>
 
   <!-- FontAwesome CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
 
   <link rel="stylesheet" href="/css/style.css" />
   <link rel="stylesheet" href="/css/administrador.css" />
-  <link rel="stylesheet" href="/css/anadir_trofeos.css" />
+  <link rel="stylesheet" href="/css/modificar_eliminar_trofeos.css" />
 </head>
 
 <body>
@@ -34,9 +34,9 @@
 
       <div class="col-5 title-col">
         <div class="title-path">
-          <span>Club</span>
+          <span>Noticias</span>
           <span>/</span>
-          <span>Añadir trofeos</span>
+          <span>Modificar y eliminar trofeos</span>
         </div>
       </div>
       <div class="col title-empty-col"></div>
@@ -78,34 +78,47 @@
   </div>
   <!-- Side Menu End -->
 
-
   <!-- Content Start -->
-  <div class="main">
-    <div class="content-container">
-      <h1>Añadir un trofeo</h1>
-      <div class="form-container">
-        <form action="#" method="POST">
+  <div class="palmares-content">
+    <div class="trophy-container">
 
-          <div class="form-field">
-            <label for="trophy-title" class="field-title">Titulo</label><br />
-            <input type="text" id="trophy-title" name="trophy-title" autocomplete="off" /><br />
+      <div class="trophy">
+        <div class="trophy-img">
+          <div class="trophy-img-wrapper">
+            <img src="/assets/51BZ72JzaTL._AC_SX466_.jpg">
+            <a href="modificar_trofeo.html">
+              <img src="/assets/edit-icon.PNG" class="edit-img">
+            </a>
+            <img src="/assets/bin-icon.PNG" class="bin-img">
           </div>
-
-          <div class="form-field">
-            <label for="trophy-image" class="field-title">Imagen</label><br />
-            <input type="file" id="trophy-image" name="trophy-image" autocomplete="off" /><br />
-          </div>
-
-          <label for="trophy-description" class="field-title">Descripción</label><br />
-          <textarea name="trophy-description" id="trophy-description" autocomplete="off"></textarea>
-
-          <input type="submit" value="Enviar" />
+        </div>
+        <div class="trophy-text">
+          <h3>Nombre del trofeo</h3>
+          <p>Descripción del trofeo del trofeo del trofeo del trofeo del trofeo del trofeo del trofeo del trofeo del
+            trofeo</p>
+        </div>
       </div>
-      </form>
+
+      <div class="trophy">
+        <div class="trophy-img">
+          <div class="trophy-img-wrapper">
+            <img src="/assets/trofeo-dorado-realista-espacio-texto_48799-1062.jpg">
+            <a href="modificar_trofeo.html">
+              <img src="/assets/edit-icon.PNG" class="edit-img">
+            </a>
+            <img src="/assets/bin-icon.PNG" class="bin-img">
+          </div>
+        </div>
+        <div class="trophy-text">
+          <h3>Nombre del trofeo</h3>
+          <p>Descripción del trofeo del trofeo del trofeo del trofeo del trofeo del trofeo del trofeo del trofeo del
+            trofeo</p>
+        </div>
+      </div>
+
     </div>
   </div>
   <!-- Content End -->
-
 
   <!-- JQuery -->
   <script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

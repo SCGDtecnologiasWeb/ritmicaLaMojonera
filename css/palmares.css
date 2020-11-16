@@ -1,1 +1,70 @@
+.palmares-content {
+  width: 90%;
+  margin: 30px auto;
+}
 
+.trophy-container {
+  display: table;
+  width: 100%;
+  margin-top: 40px;
+}
+
+.trophy {
+  display: table-cell;
+  width: 50%;
+}
+
+.trophy-img {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.trophy-img img {
+  width: 320px;
+  border-radius: 5px;
+}
+
+.trophy-text {
+  width: 320px;
+  margin: auto;
+}
+
+@media screen and (max-width: 990px) {
+  .trophy-img img {
+    width: 250px;
+  }
+
+  .trophy-text {
+    width: 250px;
+  }
+}
+
+@media screen and (max-width: 675px) {
+  .palmares-content {
+    width: 80%;
+    margin: 30px auto;
+  }
+
+  .trophy {
+    display: block;
+    margin: auto;
+    width: 100%;
+  }
+
+  .trophy-img img {
+    width: 60%;
+  }
+
+  .trophy-text {
+    width: 90%;
+  }
+
+  .trophy-text h3 {
+    margin: 7px auto;
+  }
+
+  .trophy-text p {
+    margin: 7px auto 40px;
+  }
+}

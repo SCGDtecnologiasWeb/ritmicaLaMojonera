@@ -4,14 +4,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Administrar inscripciones</title>
+  <title>Modificar e incluir imágenes</title>
 
   <!-- FontAwesome CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
 
   <link rel="stylesheet" href="/css/style.css" />
   <link rel="stylesheet" href="/css/administrador.css" />
-  <link rel="stylesheet" href="/css/administrar_inscripciones.css" />
+  <link rel="stylesheet" href="/css/modificar_imagenes.css" />
 </head>
 
 <body>
@@ -28,12 +28,15 @@
       <div class="col title-empty-col"></div>
       <div class="col-5 title-col">
         <div class="title-main">
-          <span>Administrar inscripciones</span>
+          <span>Club</span>
         </div>
       </div>
 
       <div class="col-5 title-col">
         <div class="title-path">
+          <span>Club</span>
+          <span>/</span>
+          <span>Modificar e incluir imágenes</span>
         </div>
       </div>
       <div class="col title-empty-col"></div>
@@ -84,78 +87,20 @@
 
 
   <!-- Content Start -->
-  <div class="content-container">
-    <div class="gymnast-container">
-      <div class="gymnast">
-        <div class="img-container">
-          <img src="/assets/Juanma - profile.jpeg">
-        </div>
-        <div class="name-container">
-          <h2>Nombre completo</h2>
-        </div>
-        <div class="contact-container">
-          <p>Nombre Completo</p>
-          <p>Pago realizado: Si</p>
-          <p class="hidden-content hidden">Fecha: XX / XX / XXXX</p>
-          <p class="hidden-content hidden">Telefono: 666 66 66 66</p>
-        </div>
+  <div class="main">
+    <div class="content-container">
+      <h1>Añadir una imágen</h1>
+      <div class="form-container">
+        <form action="#" method="POST">
+
+          <div class="form-field">
+            <label for="trophy-image" class="field-title">Imagen</label><br />
+            <input type="file" id="trophy-image" name="trophy-image" autocomplete="off" /><br />
+          </div>
+
+          <input type="submit" value="Enviar" />
       </div>
-      <img src="/assets/tick.webp" class="edit-img">
-      <img src="/assets/cross.jpg" class="bin-img">
-    </div>
-    <div class="gymnast-container">
-      <div class="gymnast">
-        <div class="img-container">
-          <img src="/assets/annie.jpeg">
-        </div>
-        <div class="name-container">
-          <h2>Nombre completo</h2>
-        </div>
-        <div class="contact-container">
-          <p>Nombre Completo</p>
-          <p>Pago realizado: Si</p>
-          <p class="hidden-content hidden">Fecha: XX / XX / XXXX</p>
-          <p class="hidden-content hidden">Telefono: 666 66 66 66</p>
-        </div>
-      </div>
-      <img src="/assets/tick.webp" class="edit-img">
-      <img src="/assets/cross.jpg" class="bin-img">
-    </div>
-    <div class="gymnast-container">
-      <div class="gymnast">
-        <div class="img-container">
-          <img src="/assets/sofi.png">
-        </div>
-        <div class="name-container">
-          <h2>Nombre completo</h2>
-        </div>
-        <div class="contact-container">
-          <p>Nombre Completo</p>
-          <p>Pago realizado: Si</p>
-          <p class="hidden-content hidden">Fecha: XX / XX / XXXX</p>
-          <p class="hidden-content hidden">Telefono: 666 66 66 66</p>
-        </div>
-      </div>
-      <img src="/assets/tick.webp" class="edit-img">
-      <img src="/assets/cross.jpg" class="bin-img">
-    </div>
-    <div class="gymnast-container">
-      <div class="gymnast">
-        <div class="img-container">
-          <img src="/assets/mariMar.jpeg">
-        </div>
-        <div class="name-container">
-          <h2>Nombre completo</h2>
-        </div>
-        <div class="contact-container">
-          <p>Nombre Completo</p>
-          <p>Pago realizado: Si</p>
-          <p class="hidden-content hidden">Fecha: XX / XX / XXXX</p>
-          <p class="hidden-content hidden">Telefono: 666 66 66 66</p>
-        </div>
-      </div>
-      <img src="/assets/tick.webp" class="edit-img">
-      <img src="/assets/cross.jpg" class="bin-img">
+      </form>
     </div>
   </div>
   <!-- Content End -->

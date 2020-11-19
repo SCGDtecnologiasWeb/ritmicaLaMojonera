@@ -12,7 +12,10 @@
   float: center;
   border-radius: 10px;
   display: block;
-  width: 100%;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 70%;
 }
 
 .sections-container {

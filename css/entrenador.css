@@ -14,14 +14,14 @@ body {
 }
 
 .title-row {
-  background-color: #222;
+  background-color: #1a3e7a;
   transition: 0.5s;
 }
 
 .open-btn {
   height: 40px;
   width: 40px;
-  background-color: #111;
+  background-color: #1a3e7a;
   position: fixed;
   top: 10px;
   left: 10px;
@@ -42,14 +42,14 @@ body {
   z-index: 100;
   top: 0;
   left: 0;
-  background-color: #111;
+  background-color: #0a2e6a;
   overflow-x: hidden;
   padding-top: 60px;
   transition: 0.5s;
 }
 
 .side-menu a {
-  color: #bbb;
+  color: #ddd;
   display: block;
 }
 
@@ -70,7 +70,7 @@ body {
 }
 
 .menu-text:hover {
-  color: #f1f1f1;
+  color: #fff;
 }
 
 .side-menu .close-btn {

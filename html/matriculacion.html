@@ -104,35 +104,35 @@
     <div class="content-container">
       <h1>Matriculación</h1>
       <div class="form-container">
-        <form action="#" method="POST">
+        <form action="/php/matriculacion.php" method="POST">
           <div class="form-field">
             <label for="name" class="field-title">Nombre completo</label><br />
-            <input type="text" id="name" name="name" autocomplete="off" /><br />
+            <input type="text" id="name" name="name" autocomplete="off" required/><br />
           </div>
 
           <div class="form-field">
             <label for="birthdate" class="field-title">Fecha de nacimiento</label><br />
-            <input type="date" id="birthdate" name="birthdate" autocomplete="off" /><br />
+            <input type="date" id="birthdate" name="birthdate" autocomplete="off" required/><br />
           </div>
 
           <div class="form-field">
             <label for="dni" class="field-title">D.N.I</label><br />
-            <input type="text" id="dni" name="dni" autocomplete="off" /><br />
+            <input type="text" id="dni" name="dni" autocomplete="off" required/><br />
           </div>
 
           <div class="form-field">
             <label for="parent" class="field-title">Nombre del padre, madre o tutor/a legal</label><br />
-            <input type="text" id="parent" name="parent" autocomplete="off" /><br />
+            <input type="text" id="parent" name="parent" autocomplete="off" /><br required/>
           </div>
 
           <div class="form-field">
             <label for="whatsapp" class="field-title">Teléfono (Whatsapp)</label><br />
-            <input type="text" id="whatsapp" name="whatsapp" autocomplete="off" /><br />
+            <input type="text" id="whatsapp" name="whatsapp" autocomplete="off" required/><br />
           </div>
 
           <div class="form-field">
             <p class="field-title">Nivel de la gimnasta</p><br>
-            <input type="radio" id="escuela" name="level" autocomplete="off" />
+            <input type="radio" id="escuela" name="level" autocomplete="off" required checked/>
             <label for="escuela">Escuela</label><br>
             <input type="radio" id="federada" name="level" autocomplete="off" />
             <label for="federada">Federada</label><br>
@@ -145,7 +145,7 @@
 
           <div class="form-field">
             <p class="field-title">Consentimiento a subir fotos en las redes sociales</p><br>
-            <input type="radio" id="si-consentimiento" name="consent" autocomplete="off" />
+            <input type="radio" id="si-consentimiento" name="consent" autocomplete="off" required checked/>
             <label for="si-consentimiento">Si</label><br />
             <input type="radio" id="no-consentimiento" name="consent" autocomplete="off" />
             <label for="no-consentimiento">No</label><br />

@@ -161,4 +161,10 @@ $(document).ready(function () {
     }
   });
 
+  /************** Campo requerido ****************/
+  function asteriscos(){
+    if ($(".required").find(".hidden-content").hasClass("hidden")) {
+      $(".required").find(".hidden-content").removeClass("hidden");
+    }
+  };
 });

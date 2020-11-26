@@ -105,35 +105,65 @@
       <h1>Matriculación</h1>
       <div class="form-container">
         <form action="#" method="POST">
+          <?php $errores = array(); ?>
           <div class="form-field">
             <label for="name" class="field-title">Nombre completo</label>
             <label for="name" class="field-title required hidden-content hidden"></label><br />
             <input type="text" id="name" name="name" autocomplete="off" /><br />
-            <?php $nombre = $_POST["name"]; ?>
+            <?php
+            if (empty($_POST["name"])) {
+              $errores[] = "El nombre es obligatorio";
+            }
+            if (!preg_match("/^[a-zA-Z]+/", $_POST["name"])) {
+              $errores[] = "Sólo se permiten letras como nombre <br>";
+            }
+            ?>
           </div>
 
           <div class="form-field">
             <label for="birthdate" class="field-title">Fecha de nacimiento</label><br />
             <input type="date" id="birthdate" name="birthdate" autocomplete="off" /><br />
-            <?php $fechaNac = $_POST["birthdate"]; ?>
+            <?php
+            if (empty($_POST["bithdate"])) {
+              $errores[] = "La fecha de nacimiento es obligatoria";
+            }
+            ?>
           </div>
 
           <div class="form-field">
             <label for="dni" class="field-title">D.N.I</label><br />
             <input type="text" id="dni" name="dni" autocomplete="off" /><br />
-            <?php $dni = $_POST["dni"]; ?>
+            <?php
+            if (empty($_POST["dni"])) {
+              $errores[] = "El dni es obligatorio";
+            }
+            ?>
           </div>
 
           <div class="form-field">
             <label for="parent" class="field-title">Nombre del padre, madre o tutor/a legal</label><br />
             <input type="text" id="parent" name="parent" autocomplete="off" /><br />
-            <?php $tutor = $_POST["parent"]; ?>
+            <?php
+            if (empty($_POST["parent"])) {
+              $errores[] = "El nombre del tutor es obligatorio";
+            }
+            if (!preg_match("/^[a-zA-Z]+/", $_POST["parent"])) {
+              $errores[] = "Sólo se permiten letras como nombre <br>";
+            }
+            ?>
           </div>
 
           <div class="form-field">
             <label for="whatsapp" class="field-title">Teléfono (Whatsapp)</label><br />
             <input type="text" id="whatsapp" name="whatsapp" autocomplete="off" /><br />
-            <?php $telf = $_POST["whatsapp"]; ?>
+            <?php
+            if (empty($_POST["whatsapp"])) {
+              $errores[] = "El teléfono es obligatorio";
+            }
+            if (!preg_match("/^[1-9]+/", $_POST["whatsapp"])) {
+              $errores[] = "Sólo se permiten numeros en el telefono <br>";
+            }
+            ?>
           </div>
 
           <div class="form-field">
@@ -142,13 +172,21 @@
             <label for="escuela">Escuela</label><br>
             <input type="radio" id="federada" name="level" autocomplete="off" />
             <label for="federada">Federada</label><br>
-            <?php $nivel = $_POST["level"]; ?>
+            <?php
+            if (empty($_POST["level"])) {
+              $errores[] = "El nivel es obligatorio";
+            }
+            ?>
           </div>
 
           <div class="form-field">
             <label for="allergies" class="field-title">Alergias o enfermedades (indica cuál)</label><br />
             <input type="text" id="allergies" name="allergies" autocomplete="off" /><br />
-            <?php $alergias = $_POST["allergies"]; ?>
+            <?php
+            if (!preg_match("/^[a-zA-Z]+/", $_POST["allergies"])) {
+              $errores[] = "Sólo se permiten letras en las alergias <br>";
+            }
+            ?>
           </div>
 
           <div class="form-field">
@@ -157,23 +195,37 @@
             <label for="si-consentimiento">Si</label><br />
             <input type="radio" id="no-consentimiento" name="consent" autocomplete="off" />
             <label for="no-consentimiento">No</label><br />
-            <?php $consentimiento = $_POST["consent"]; ?>
+            <?php
+            if (empty($_POST["consent"])) {
+              $errores[] = "El consentimiento es obligatorio";
+            }
+            ?>
           </div>
 
           <div class="form-field">
             <label for="payment" class="field-title">Adjuntar justificante de pago</label><br />
             <input type="file" id="payment" name="payment" autocomplete="off" /><br />
-            <?php $justificante = $_POST["payment"]; ?>
           </div>
 
           <input type="submit" value="Enviar" />
           <?php
           if (isset($_POST["submit"])) {
-            if (!empty($nombre) || !empty($fechaNac) || !empty($dni) || !empty($tutor) || !empty($telf) || !empty($nivel) || !empty($consent)) {
-              //Parsear
+            if (empty($errores)) {
+              $nombre = filtrado($_POST["name"]);
+              $fechaNac = filtrado($_POST["birthdate"]);
+              $dni = filtrado($_POST["dni"]);
+              $tutor = filtrado($_POST["parent"]);
+              $telf = filtrado($_POST["whatsapp"]);
+              $nivel = filtrado($_POST["level"]);
+              $alergias = filtrado($_POST["allergies"]);
+              $consentimiento = filtrado($_POST["consent"]);
+              $justificante = $_POST["payment"];
               $pagado = empty($justificante);
+              echo ("Correcto");
             } else {
-              //mostrar asteriscos
+              foreach ($errores as $error) {
+                echo ("<li> $error </li>");
+              }
             }
           }
           ?>

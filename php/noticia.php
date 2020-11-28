@@ -4,13 +4,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Noticias</title>
+  <title>Noticia</title>
 
   <!-- FontAwesome CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
 
   <link rel="stylesheet" href="/css/style.css" />
-  <link rel="stylesheet" href="/css/noticias.css" />
+  <link rel="stylesheet" href="/css/noticia.css" />
 </head>
 
 <body>
@@ -83,7 +83,7 @@
       <div class="col title-empty-col"></div>
       <div class="col-5 title-col">
         <div class="title-main">
-          <a href="/html/noticias.html">Noticias</a>
+          <a href="/html/escuela.html">Noticias</a>
         </div>
       </div>
 
@@ -91,7 +91,7 @@
         <div class="title-path">
           <a href="/html/index.html">Inicio</a>
           <span>/</span>
-          <a href="/html/noticias.html">Noticias</a>
+          <a href="/html/actividades.html">Noticias</a>
         </div>
       </div>
       <div class="col title-empty-col"></div>
@@ -99,43 +99,26 @@
   </div>
   <!-- Title End -->
 
-  <!-- News Start -->
-  <div class="container news-container">
-    <h1>Últimas Noticias</h1>
-    <div class="news-row">
-      <div class="news-col">
-        <div class="img-wrap">
-          <img src="/assets/noticia.jpg" class="news-image" />
-        </div>
-        <div class="news-text">
-          <h5>10 octubre 2020</h5>
-          <h3>Entrevista con el diario D-cerca</h3>
-          <p>
-            Entrevistamos a Fabiana Pereyra, del Club Gimnasia Rítmica La
-            Mojonera, quien nos cuenta cómo han vivido el confinamiento las
-            gimnastas del club...
-          </p>
-          <a href="/html/noticia.html">Leer más</a>
-        </div>
-      </div>
-      <div class="news-col">
-        <div class="img-wrap">
-          <img src="/assets/Más fotos/WhatsApp Image 2020-10-29 at 14.49.15 (1).jpeg" class="news-image" />
-        </div>
-        <div class="news-text">
-          <h5>2 agosto 2020</h5>
-          <h3>Protocolo Covid</h3>
-          <p>
-            Nuestras instalaciones son amplias y nos permiten cumplir con
-            todos los protocolos texto de ejemplo texto de ejemplo texto de
-            ejemplo texto de e...
-          </p>
-          <a href="/html/noticia.html">Leer más</a>
-        </div>
-      </div>
-    </div>
+  <!-- Content Start -->
+  <div class="individual-news-container">
+    <?php
+      include_once('config.php');
+
+      $consulta_SQL = "SELECT * FROM noticia WHERE idNoticia = {$_GET["idNoticia"]}";
+      $resultado = $link->query($consulta_SQL);
+      $fila = $resultado->fetch_array();
+
+      echo  "<img src=\"/assets/noticias/noticia{$fila["idNoticia"]}.jpg\">
+            <p class=\"individual-news-title\">{$fila["titulo"]}</p>
+            <p class=\"individual-news-description\">{$fila["descripcion"]}</p>
+            <p class=\"individual-news-body\">{$fila["cuerpo"]}</p>
+            <div class=\"individual-news-date\">{$fila["fecha"]}</div>";
+      
+      $link->close();
+    ?>
   </div>
-  <!-- News End -->
+
+  <!-- Content End -->
 
   <!-- Footer Start -->
   <div class="container footer">

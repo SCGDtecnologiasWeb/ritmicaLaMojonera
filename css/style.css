@@ -502,9 +502,15 @@ a {
   margin-top: 0;
 }
 
+.news-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .news-col {
   padding: 0 20px;
   margin-top: 25px;
+  width: 50%;
 }
 
 .img-wrap {

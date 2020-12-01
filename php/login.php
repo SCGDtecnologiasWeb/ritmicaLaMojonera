@@ -6,14 +6,14 @@ $_SESSION['usuario'] = $usuario;
 
 require_once("config.php");
 
-$consulta = "SELECT*FROM administrador WHERE correoAdmin='$usuario' AND claveAccesoAdmin='$contraseña'";
+$consulta = "SELECT*FROM Administrador WHERE correoAdmin='$usuario' AND claveAccesoAdmin='$contraseña'";
 $resultado = mysqli_query($link, $consulta);
 $filas = mysqli_num_rows($resultado);
 if ($filas) {
     header("location: noticia.php");
 } else {
     if (empty($_POST['usuario'])) {
-        $username_err = "Por favor, introduzca su usuario";
+
 
 ?>
         <?php
@@ -23,7 +23,7 @@ if ($filas) {
     <?php
     }
     if (empty($_POST['contraseña'])) {
-        $password_err = "Por favor, introduzca su contraseña";
+
     ?>
         <?php
         include("login.html");

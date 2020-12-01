@@ -1,8 +1,8 @@
 <?php
 $host = "localhost";
-$user = "root";
+$user = "u818364855_root";
 $password = "SergioCristianGonzaloDiego2020";
-$database = "ritmica";
+$database = "u818364855_ritmica";
 $link = mysqli_connect($host, $user, $password, $database);
 
 if ($link->connect_errno) {

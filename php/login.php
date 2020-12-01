@@ -1,12 +1,19 @@
 <?php
 session_start();
+
+
+
+
+
+
+
 /*Comprobamos si el usuario ya ha iniciado sesion*/
 if (isset($_SESSION["loggedin"]) && $_SESSION == true) {
     header("location: /html/administrar_usuarios.html");
     exit;
 }
 //Incluimos el archivo de config
-require_once "config.php";
+include_once('config.php');
 /*Definimos variable*/
 $username = "";
 $password = "";
@@ -14,8 +21,10 @@ $username_err = "";
 $password_err = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
     if (empty(trim($_POST["username"]))) {
         $username_err = "Por favor, introduzca su usuario";
+        echo "Ha entrado";
     } else {
         $username = trim($_POST["username"]);
     }
@@ -46,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             $_SESSION["correoAdmin"] = $username;
 
                             // nos lleva a la pag de admin
-                            header("location: administrar_usuarios.html");
+                            header("location: /html/administrar_usuarios.html");
                         } else {
                             // si la contraseña no es valida
                             $password_err = "La contraseña que has introducido no es válida.";

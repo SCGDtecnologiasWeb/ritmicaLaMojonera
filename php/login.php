@@ -15,21 +15,20 @@ if ($filas) {
     if (empty($_POST['usuario'])) {
 
 
-?>
-        <?php
+    
         include("login.html");
-        ?>
-        <h1 class="bad">Por favor, introduzca su usuario</h1>
-    <?php
+    
+        echo "Por favor, introduzca su usuario";
+    
     }
     if (empty($_POST['contraseña'])) {
 
-    ?>
-        <?php
+    
+        
         include("login.html");
-        ?>
-        <h1 class="bad">Por favor, introduzca su contraseña</h1>
-<?php
+        echo "Por favor, introduzca su contraseña";
+        
+
     }
 }
 

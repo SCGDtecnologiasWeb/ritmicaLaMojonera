@@ -26,6 +26,13 @@
 
   <body>
     <div class="modal-dialog">
+      <?php
+ 
+			if(isset($_GET["error"])) {
+				echo "<p class='error'>Usuario y / o Contrasea erroneos. Intentelo de nuevo.</p>";
+			}
+ 
+		 ?>
       <div class="main-section">
         <div class="border-0 modal-content">
           <div class="col-12 user-img text-center">

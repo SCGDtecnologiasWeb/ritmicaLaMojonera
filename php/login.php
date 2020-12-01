@@ -1,36 +1,37 @@
 <?php
+$usuario = $_POST['usuario'];
+$contraseña = $_POST['contraseña'];
+session_start();
+$_SESSION['usuario'] = $usuario;
 
-if (isset($_POST["continuar"])) {
+require_once("config.php");
 
-    require("config.php");
-
-    $loginNombre = $_POST["usuario"];
-    $loginPassword = md5($_POST["contraseña"]);
-
-    $consulta = "SELECT * FROM Administrador WHERE correoAdmin='$loginNombre' AND claveAccesoAdmin='$loginPassword'";
-
-    if ($resultado = $mysqli->query($consulta)) {
-        while ($row = $resultado->fetch_array()) {
-
-            $userok = $row["usuario"];
-            $passok = $row["contraseña"];
-        }
-        $resultado->close();
-    }
-    $mysqli->close();
-
-
-    if (isset($loginNombre) && isset($loginPassword)) {
-
-        if ($loginNombre == $userok && $loginPassword == $passok) {
-
-            session_start();
-            $_SESSION["logueado"] = TRUE;
-            header("location: /html/index.html");
-        } else {
-            header("location: /html/index.html?error=login");
-        }
-    }
+$consulta = "SELECT* FROM administrador WHERE correoAdmin='$usuario' AND claveAccesoAdmin='$contraseña'";
+$resultado = mysqli_query($link, $consulta);
+$filas = mysqli_num_rows($resultado);
+if ($filas) {
+    header("location: noticia.php");
 } else {
-    header("location: login.php");
+    if (empty($_POST['usuario'])) {
+
+
+?>
+        <?php
+        include("login.html");
+        ?>
+        <h1 class="bad">Por favor, introduzca su usuario</h1>
+    <?php
+    }
+    if (empty($_POST['contraseña'])) {
+
+    ?>
+        <?php
+        include("login.html");
+        ?>
+        <h1 class="bad">Por favor, introduzca su contraseña</h1>
+<?php
+    }
 }
+
+mysqli_free_result($resultado);
+mysqli_close($link);

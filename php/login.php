@@ -1,27 +1,37 @@
 <?php
-
-include('config.php');
+$usuario = $_POST['usuario'];
+$contraseña = $_POST['contraseña'];
 session_start();
+$_SESSION['usuario'] = $usuario;
 
-if (isset($_POST['continuar'])) {
+require_once("config.php");
 
-    $username = $_POST['usuario'];
-    $password = $_POST['contraseña'];
+$consulta = "SELECT* FROM administrador WHERE correoAdmin='$usuario' AND claveAccesoAdmin='$contraseña'";
+$resultado = mysqli_query($link, $consulta);
+$filas = mysqli_num_rows($resultado);
+if ($filas) {
+    header("location: /html/index.html");
+} else {
+    if (empty($_POST['usuario'])) {
 
-    $query = $connection->prepare("SELECT * FROM administrador WHERE correoAdmin=:usuario");
-    $query->bindParam("usuario", $username, PDO::PARAM_STR);
-    $query->execute();
 
-    $result = $query->fetch(PDO::FETCH_ASSOC);
+?>
+        <?php
+        include("login.html");
+        ?>
+        <h1 class="bad">Por favor, introduzca su usuario</h1>
+    <?php
+    }
+    if (empty($_POST['contraseña'])) {
 
-    if (!$result) {
-        echo '<p class="error">Username password combination is wrong!</p>';
-    } else {
-        if (password_verify($password, $result['contraseña'])) {
-            $_SESSION['user_id'] = $result['ID'];
-            echo '<p class="success">Congratulations, you are logged in!</p>';
-        } else {
-            echo '<p class="error">Username password combination is wrong!</p>';
-        }
+    ?>
+        <?php
+        include("login.html");
+        ?>
+        <h1 class="bad">Por favor, introduzca su contraseña</h1>
+<?php
     }
 }
+
+mysqli_free_result($resultado);
+mysqli_close($link);

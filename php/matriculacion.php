@@ -16,7 +16,7 @@ $pagado = (empty($justificante) ? "No" : "Si");
 //Conectamos a la base de datos
 require_once("config.php");
 //Creamos el código para insertar
-$sql = "REPLACE INTO Gimnasta (dni,nombreCompleto,fechaNacimiento,nombreTutor,telefono,nivel,consentimientoFotos,alergias,pago,registrado) VALUES ($dni,$nombre,$fechaNac,$tutor,$telf,$nivel,$consentimiento,$alergias,$pagado,FALSE)";
+$sql = "REPLACE INTO Gimnasta (dni,nombreCompleto,fechaNacimiento,nombreTutor,telefono,nivel,consentimientoFotos,alergias,pago,registrado) VALUES ('$dni','$nombre','$fechaNac','$tutor','$telf','$nivel','$consentimiento','$alergias','$pagado','FALSE')";
 //Ejecutamos
 if (mysqli_query($link, $sql)) {
   header("location: /html/index.html");

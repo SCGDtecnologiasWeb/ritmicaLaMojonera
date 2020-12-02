@@ -4,13 +4,13 @@ $alert = '';
 session_start();
 
 if (!empty($_POST)) {
-  if (empty(filtrado($_POST["usuario"])) || empty(filtrado($_POST["contraseña"]))) {
+  if (empty(($_POST["usuario"])) || empty(($_POST["contraseña"]))) {
     echo "Ingrese usuario y contraseña";
   } else {
 
     require_once "config.php";
-    $usuario = filtrado($_POST["usuario"]);
-    $contraseña = filtrado($_POST["contraseña"]);
+    $usuario = ($_POST["usuario"]);
+    $contraseña = ($_POST["contraseña"]);
     $queryAdmin = mysqli_query($link, "SELECT * FROM Administrador WHERE correoAdmin ='$usuario'AND claveAccesoAdmin ='$contraseña'");
     $queryEntrenador = mysqli_query($link, "SELECT * FROM Entrenador WHERE correoEntrenador ='$usuario'AND claveAcceso ='$contraseña'");
 
@@ -38,9 +38,10 @@ if (!empty($_POST)) {
       $_SESSION["idAdministrador"] = $data["idAdministrador"];
       $_SESSION["correoAdmin"] = $data["correoAdmin"];
       $_SESSION["claveAccesoAdmin"] = $data["claveAccesoAdmin"];
-      header("location: /html/palmares.html");
+
+      header("location: /html/administrar_usuarios.html");
     } else {
-      $alert = 'El usuario o la contraseña son incorrectos';
+      echo "El usuario o la contraseña son incorrectos";
       session_destroy();
     }
   }

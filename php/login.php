@@ -15,7 +15,7 @@ if (isset($_POST["continuar"])) {
   //AQUI SI ENTRA
   if (strlen($resultAdmin) > 0) {
     //AQUI NO ENTRA
-    echo "AAAAA";
+    //echo "AAAAA";
 
     while ($resultAdmin = mysqli_fetch_assoc($queryAdmin)) {
       $bdUsuarioAdmin = $resultAdmin["correoAdmin"];
@@ -24,7 +24,7 @@ if (isset($_POST["continuar"])) {
     if ($usuario == $bdUsuarioAdmin && $contraseña == $bdClaveAdmin) {
 
       $_SESSION["administrador"] = $usuario;
-      header("Location: /html/administrar_usuarios.html");
+      header("location: /html/administrar_usuarios.html");
     }
   } else  if (strlen($resultEntrenador) > 0) {
     //AQUI NO ENTRA
@@ -37,7 +37,7 @@ if (isset($_POST["continuar"])) {
     if ($usuario == $bdUsuarioEntrenador && $contraseña == $bdClaveEntrenador) {
 
       $_SESSION["entrenador"] = $usuario;
-      header("Location: /html/palmares.html");
+      header("location: /html/palmares.html");
     }
   } else {
     $mensajeaccesoincorrecto = "El usuario y la contraseña son incorrectos, por favor vuelva a introducirlos.";

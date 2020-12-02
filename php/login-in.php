@@ -5,8 +5,8 @@ $contraseña = $_POST['contraseña'];
 require_once("config.php");
 /* Realizamos una consulta por cada tabla para buscar en que tabla se encuentra 
 el usuario que está intentando acceder */
-$administrador = "SELECT * FROM Administrador WHERE correoAdmin = '$usuario' AND claveAccesoAdmin = '$contraseña'";
-$entrenador = "SELECT * FROM Entrenador WHERE correoEntrenador = '$usuario' AND claveAcceso = '$contraseña'";
+$administrador = "SELECT * FROM administrador WHERE correoAdmin = '$usuario' AND claveAccesoAdmin = '$contraseña'";
+$entrenador = "SELECT * FROM entrenador WHERE correoEntrenador = '$usuario' AND claveAcceso = '$contraseña'";
 $resultadoAdmin = mysqli_query($link, $administrador);
 $resultadoEntrenador = mysqli_query($link, $entrenador);
 $filasAdmin = mysqli_num_rows($resultadoAdmin);

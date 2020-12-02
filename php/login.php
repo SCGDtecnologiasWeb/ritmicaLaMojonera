@@ -18,12 +18,12 @@ if (isset($_POST["continuar"])) {
     echo "AAAAA";
 
     while ($resultAdmin = mysqli_fetch_assoc($queryAdmin)) {
-      $bdUsuarioAdmin = $resultAdmin['correoAdmin'];
-      $bdClaveAdmin = $resultAdmin['claveAccesoAdmin'];
+      $bdUsuarioAdmin = $resultAdmin["correoAdmin"];
+      $bdClaveAdmin = $resultAdmin["claveAccesoAdmin"];
     }
     if ($usuario == $bdUsuarioAdmin && $contraseña == $bdClaveAdmin) {
 
-      $_SESSION['administrador'] = $usuario;
+      $_SESSION["administrador"] = $usuario;
       header("Location: /html/administrar_usuarios.html");
     }
   } else  if (strlen($resultEntrenador) > 0) {
@@ -31,12 +31,12 @@ if (isset($_POST["continuar"])) {
     echo "AAAAA";
 
     while ($resultEntrenador = mysqli_fetch_assoc($queryEntrenador)) {
-      $bdUsuarioEntrenador = $resultEntrenador['correoEntrenador'];
-      $bdClaveEntrenador = $resultEntrenador['claveAcceso'];
+      $bdUsuarioEntrenador = $resultEntrenador["correoEntrenador"];
+      $bdClaveEntrenador = $resultEntrenador["claveAcceso"];
     }
     if ($usuario == $bdUsuarioEntrenador && $contraseña == $bdClaveEntrenador) {
 
-      $_SESSION['entrenador'] = $usuario;
+      $_SESSION["entrenador"] = $usuario;
       header("Location: /html/palmares.html");
     }
   } else {

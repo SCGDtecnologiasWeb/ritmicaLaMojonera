@@ -31,7 +31,7 @@ if (!empty($_SESSION['active'])) {
         $_SESSION["DNI"] = $data["DNI"];
         $_SESSION["telefono"] = $data["telefono"];
 
-        header("location: entrenador_listado.html");
+        header("location: /html/entrenador_listado.html");
       } else if (strlen($resultAdmin) > 0) {
         echo "ENTRA";
         $data = mysqli_fetch_array($queryAdmin);
@@ -40,7 +40,7 @@ if (!empty($_SESSION['active'])) {
         $_SESSION["idAdministrador"] = $data["idAdministrador"];
         $_SESSION["correoAdmin"] = $data["correoAdmin"];
         $_SESSION["claveAccesoAdmin"] = $data["claveAccesoAdmin"];
-        header("location: administrar_usuarios.html");
+        header("location: /html/palmares.html");
       } else {
         $alert = 'El usuario o la contraseña son incorrectos';
         session_destroy();

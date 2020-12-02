@@ -1,48 +1,46 @@
 <?php
 include("funciones.php");
 $alert = '';
+$usuario = $_POST["usuario"];
+$contraseña = $_POST["contraseña"];
 session_start();
+require_once("config.php");
+$queryAdmin = mysqli_query($link, "SELECT * FROM Administrador WHERE correoAdmin ='$usuario'AND claveAccesoAdmin ='$contraseña'");
+$queryEntrenador = mysqli_query($link, "SELECT * FROM Entrenador WHERE correoEntrenador ='$usuario'AND claveAcceso ='$contraseña'");
 
-if (!empty($_POST)) {
-  if (empty(($_POST["usuario"])) || empty(($_POST["contraseña"]))) {
-    echo "Ingrese usuario y contraseña";
-  } else {
+$resultAdmin = mysqli_num_rows($queryAdmin);
+$resultEntrenador = mysqli_num_rows($queryEntrenador);
 
-    require_once "config.php";
-    $usuario = ($_POST["usuario"]);
-    $contraseña = ($_POST["contraseña"]);
-    $queryAdmin = mysqli_query($link, "SELECT * FROM Administrador WHERE correoAdmin ='$usuario'AND claveAccesoAdmin ='$contraseña'");
-    $queryEntrenador = mysqli_query($link, "SELECT * FROM Entrenador WHERE correoEntrenador ='$usuario'AND claveAcceso ='$contraseña'");
+if (isset($_POST["continuar"])) {
+  //AQUI SI ENTRA
+  if (strlen($resultAdmin) > 0) {
+    //AQUI NO ENTRA
+    echo "AAAAA";
 
-    $resultAdmin = mysqli_num_rows($queryAdmin);
-    $resultEntrenador = mysqli_num_rows($queryEntrenador);
-
-    if (strlen($resultEntrenador) > 0) {
-      echo "ENTRA";
-      $data = mysqli_fetch_array($queryEntrenador);
-
-      $_SESSION["active"] = true;
-      $_SESSION["idEntrenador"] = $data["idEntrenador"];
-      $_SESSION["correoEntrenador"] = $data["correoEntrenador"];
-      $_SESSION["nombreCompleto"] = $data["nombreCompleto"];
-      $_SESSION["claveAcceso"] = $data["claveAcceso"];
-      $_SESSION["DNI"] = $data["DNI"];
-      $_SESSION["telefono"] = $data["telefono"];
-
-      header("location: /html/entrenador_listado.html");
-    } else if (strlen($resultAdmin) > 0) {
-      echo "ENTRA";
-      $data = mysqli_fetch_array($queryAdmin);
-
-      $_SESSION["active"] = true;
-      $_SESSION["idAdministrador"] = $data["idAdministrador"];
-      $_SESSION["correoAdmin"] = $data["correoAdmin"];
-      $_SESSION["claveAccesoAdmin"] = $data["claveAccesoAdmin"];
-
-      header("location: /html/administrar_usuarios.html");
-    } else {
-      echo "El usuario o la contraseña son incorrectos";
-      session_destroy();
+    while ($resultAdmin = mysqli_fetch_assoc($queryAdmin)) {
+      $bdUsuarioAdmin = $resultAdmin['correoAdmin'];
+      $bdClaveAdmin = $resultAdmin['claveAccesoAdmin'];
     }
+    if ($usuario == $bdUsuarioAdmin && $contraseña == $bdClaveAdmin) {
+
+      $_SESSION['administrador'] = $usuario;
+      header("Location: /html/administrar_usuarios.html");
+    }
+  } else  if (strlen($resultEntrenador) > 0) {
+    //AQUI NO ENTRA
+    echo "AAAAA";
+
+    while ($resultEntrenador = mysqli_fetch_assoc($queryEntrenador)) {
+      $bdUsuarioEntrenador = $resultEntrenador['correoEntrenador'];
+      $bdClaveEntrenador = $resultEntrenador['claveAcceso'];
+    }
+    if ($usuario == $bdUsuarioEntrenador && $contraseña == $bdClaveEntrenador) {
+
+      $_SESSION['entrenador'] = $usuario;
+      header("Location: /html/palmares.html");
+    }
+  } else {
+    $mensajeaccesoincorrecto = "El usuario y la contraseña son incorrectos, por favor vuelva a introducirlos.";
+    echo $mensajeaccesoincorrecto;
   }
 }

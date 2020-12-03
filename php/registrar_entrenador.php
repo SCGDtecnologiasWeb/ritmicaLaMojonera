@@ -16,14 +16,18 @@ require_once("config.php");
 //Creamos el código para insertar
 $sql1 = "REPLACE INTO `Entrenador` (`correoEntrenador`, `nombreCompleto`, `claveAcceso`, `DNI`, `telefono`) VALUES ('$correo','$nombre','$contraseña','$dni','$telf')";
 $sql2 = "SELECT `idEntrenador` FROM `Entrenador` WHERE correoEntrenador = '$correo'";
+
 //Ejecutamos
 if (mysqli_query($link, $sql1)) {
+    $resultado = mysqli_query($link, $sql2);
+    $fila =  mysqli_fetch_assoc($resultado);
+    $idE = $fila['idEntrenador'];
+    $idN = ($nivel == "Escuela" ? 1 : 2);
+    $slq3 = "REPLACE INTO `Grupo_has_Entrenador`(`idGrupo`, `Entrenador_idEntrenador`) VALUES ('$idN','$idE')";
+    mysqli_query($link, $sql3);
     if (!empty($justificante)) { //Guardamos la imagen
-        $resultado = mysqli_query($link, $sql2);
-        $fila =  mysqli_fetch_assoc($resultado);
-        $id = $fila['idEntrenador'];
         $directorio = $_SERVER['DOCUMENT_ROOT'] . "/assets/entrenadores/";
-        $nombre_archivo = "entrenador" . $id . ".jpg";
+        $nombre_archivo = "entrenador" . $idE . ".jpg";
         $ruta_archivo = $directorio . $nombre_archivo;
 
 

@@ -27,7 +27,7 @@ if (mysqli_query($link, $sql)) {
     $imagen_pago = $_FILES["payment"];
 
     //Comprobamos que sea una imagen
-    $check = getimagesize($_FILES["payment"]["tmp_name"]);
+    $check = getimagesize($imagen_pago["tmp_name"]);
     if ($check !== false) {
       echo "Es una imagen de tipo " . $check["mime"] . "<br>";
     } else {
@@ -47,16 +47,16 @@ if (mysqli_query($link, $sql)) {
         echo "La imagen " . htmlspecialchars(basename($imagen_pago["name"])) . " se ha subido correctamente" . "<br>";
       } else {
         echo "Ha habido un error al subir la imagen" . "<br>";
-        //header("location: /html/matriculacion.html");
+        header("location: /html/matriculacion.html");
       }
     } else {
       echo "No podemos subir la imagen" . "<br>";
-      //header("location: /html/matriculacion.html");
+      header("location: /html/matriculacion.html");
     }
   }
-  //header("location: /html/index.html");
+  header("location: /html/index.html");
 } else {
   echo "Error: " . $sql . "<br>" . mysqli_error($link);
-  //header("location: /html/matriculacion.html");
+  header("location: /html/matriculacion.html");
 }
 mysqli_close($link);

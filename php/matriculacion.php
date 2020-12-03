@@ -19,8 +19,52 @@ require_once("config.php");
 $sql = "REPLACE INTO Gimnasta (dni,nombreCompleto,fechaNacimiento,nombreTutor,telefono,nivel,consentimientoFotos,alergias,pago,registrado) VALUES ('$dni','$nombre','$fechaNac','$tutor','$telf','$nivel','$consentimiento','$alergias','$pagado','FALSE')";
 //Ejecutamos
 if (mysqli_query($link, $sql)) {
+  if (!empty($justificante)) { //Guardamos la imagen
+    $directorio = $_SERVER['DOCUMENT_ROOT'] . "/assets/matriculaciones/";
+    $nombre_archivo = $dni + ".jpg";
+    $ruta_archivo = $directorio . $nombre_archivo;
+
+
+    $imagen_pago = $_FILES["payment"];
+
+    //Comprobamos que sea una imagen
+    $check = getimagesize($imagen_pago["tmp_name"]);
+    if ($check !== false) {
+      echo "Es una imagen de tipo " . $check["mime"] . "<br>";
+    } else {
+      echo "No es una imagen" . "<br>";
+      $uploadOk = 0;
+    }
+
+    // Comprueba el tamaño de la imagen, limite de 500kB
+    if ($imagen_pago["size"] > 500000) {
+      echo "Tamaño de imagen demasiado grande" . "<br>";
+      $uploadOk = 0;
+    }
+
+
+    // Comprobar el tipo de archivo
+    if ($check["mime"] != "image/jpeg" && $check["mime"] != "image/png") {
+      echo "Solo archivos .jpeg, .jpg o .png" . "<br>";
+      $uploadOk = 0;
+    }
+
+    //Intentamos subir la imagen
+    if ($uploadOk == 1) {
+      if (move_uploaded_file($imagen_noticia["tmp_name"], $ruta_archivo)) {
+        echo "La imagen " . htmlspecialchars(basename($imagen_noticia["name"])) . " se ha subido correctamente" . "<br>";
+      } else {
+        echo "Ha habido un error al subir la imagen" . "<br>";
+        header("location: /html/matriculacion.html");
+      }
+    } else {
+      echo "No podemos subir la imagen" . "<br>";
+      header("location: /html/matriculacion.html");
+    }
+  }
   header("location: /html/index.html");
 } else {
   echo "Error: " . $sql . "<br>" . mysqli_error($link);
+  header("location: /html/matriculacion.html");
 }
 mysqli_close($link);

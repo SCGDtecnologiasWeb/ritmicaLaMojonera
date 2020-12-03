@@ -61,6 +61,21 @@
   outline: none;
 }
 
+#tlf-prefijo {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+}
+
+#tlf-prefijo::after {
+  content: "+34";
+  position: absolute;
+  top: 10.5px;
+  left: 12px;
+  font-size: 18px;
+  display: block;
+  font-weight: 700;
+}
 .form-container input[type="submit"]:hover {
   background-color: #0080ff;
 }

@@ -12,7 +12,7 @@ if (!empty($_SESSION['active'])) {
       require_once "config.php";
       $usuario = $_POST["usuario"];
       $contraseña = $_POST["contraseña"];
-      $queryAdmin = mysqli_query($link, "SELECT * FROM administrador WHERE correoAdmin ='$usuario'AND claveAccesoAdmin ='$contraseña'");
+      $queryAdmin = mysqli_query($link, "SELECT * FROM Administrador WHERE correoAdmin ='$usuario'AND claveAccesoAdmin ='$contraseña'");
       $resultAdmin = mysqli_num_rows($queryAdmin);
 
       if (strlen($resultAdmin) > 0) {

@@ -12,7 +12,12 @@ body {
   display: block;
   margin: auto;
 }
-
+.logout-img {
+  margin-top: 30px;
+  padding-left: 80px;
+  height: 40px;
+  cursor: pointer;
+}
 .title-row {
   background-color: #222;
   transition: 0.5s;

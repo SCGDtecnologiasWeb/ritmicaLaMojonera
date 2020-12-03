@@ -10,14 +10,8 @@
 .hidden {
   display: none;
 }
-.trainer-container .edit-img {
-  position: absolute;
-  height: 40px;
-  top: 8px;
-  right: -50px;
-  cursor: pointer;
-}
-.menu-section .logout-img {
+
+.logout-img {
   margin-top: 30px;
   padding-left: 80px;
   height: 40px;

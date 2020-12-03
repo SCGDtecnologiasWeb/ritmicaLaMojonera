@@ -1,188 +1,214 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modificar o eliminar noticias</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Modificar o eliminar noticias</title>
+    <!-- FontAwesome CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
 
-  <!-- FontAwesome CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/administrador.css" />
+    <link rel="stylesheet" href="/css/modificar_noticias.css" />
+  </head>
 
-  <link rel="stylesheet" href="/css/style.css" />
-  <link rel="stylesheet" href="/css/administrador.css" />
-  <link rel="stylesheet" href="/css/modificar_noticias.css" />
-</head>
-
-<body>
-  <!-- Header Start -->
-  <div class="administrator-header">
-    <img src="/assets/logo_ritmica2.png">
-  </div>
-  <!-- Header End -->
-
-  <!-- Title Start -->
-  <div class="container">
-    <div class="row title-row">
-
-      <div class="col title-empty-col"></div>
-      <div class="col-5 title-col">
-        <div class="title-main">
-          <span>Noticias</span>
-        </div>
-      </div>
-
-      <div class="col-5 title-col">
-        <div class="title-path">
-          <span>Noticias</span>
-          <span>/</span>
-          <span>Modificar o eliminar noticias</span>
-        </div>
-      </div>
-      <div class="col title-empty-col"></div>
-
+  <body>
+    <!-- Header Start -->
+    <div class="administrator-header">
+      <img src="/assets/logo_ritmica2.png" />
     </div>
-  </div>
-  <!-- Title End -->
+    <!-- Header End -->
 
-  <!-- Side Menu Start -->
-  <button class="open-btn">
-    <i class="fas fa-chevron-right"></i>
-  </button>
-  <div class="side-menu">
-    <a href="javascript:void(0)" class="close-btn">&times;</a>
-
-    <div class="menu-section">
-      <a href="javascript:void(0)" class="menu-title">Usuarios</a>
-      <a href="/html/administrar_inscripciones.html" class="menu-text">Inscripciones</a>
-      <a href="/html/administrar_usuarios.html" class="menu-text">Administrar usuarios</a>
-      <a href="/html/registrar_usuarios.html" class="menu-text">Registrar usuarios</a>
-    </div>
-
-    <div class="menu-section">
-      <a href="javascript:void(0)" class="menu-title">Noticias</a>
-      <a href="/html/anadir_noticias.html" class="menu-text">Añadir noticias</a>
-      <a href="/html/modificar_noticias.html" class="menu-text">Modificar o eliminar noticias</a>
-    </div>
-
-    <div class="menu-section">
-      <a href="javascript:void(0)" class="menu-title">Horarios</a>
-      <a href="/html/modificar_horarios.html" class="menu-text">Actualizar y modificar horarios</a>
-    </div>
-
-    <div class="menu-section">
-      <a href="javascript:void(0)" class="menu-title">Galería</a>
-      <a href="/html/anadir_imagenes.html" class="menu-text">Añadir nueva imagen</a>
-      <a href="/html/modificar_imagenes.html" class="menu-text">Eliminar imagenes</a>
-    </div>
-
-    <div class="menu-section">
-      <a href="javascript:void(0)" class="menu-title">Palmarés</a>
-      <a href="/html/anadir_logros.html" class="menu-text">Añadir logros del club</a>
-      <a href="/html/modificar_logros.html" class="menu-text">Modificar o eliminar logros del club</a>
-    </div>
-
-  </div>
-  <!-- Side Menu End -->
-
-  <!-- News Start -->
-  <div class="container news-container">
-    <h1>Últimas Noticias</h1>
-    <div class="row news-row">
-      <div class="col-6 news-col">
-        <div class="news-wrapper">
-          <div class="img-wrap">
-            <img src="/assets/noticia.jpg" class="news-image" />
-          </div>
-          <div class="news-text">
-            <h5>10 octubre 2020</h5>
-            <h3>Entrevista con el diario D-cerca</h3>
-            <p>
-              Entrevistamos a Fabiana Pereyra, del Club Gimnasia Rítmica La
-              Mojonera, quien nos cuenta cómo han vivido el confinamiento las
-              gimnastas del club...
-            </p>
-            <a>Leer más</a>
+    <!-- Title Start -->
+    <div class="container">
+      <div class="row title-row">
+        <div class="col title-empty-col"></div>
+        <div class="col-5 title-col">
+          <div class="title-main">
+            <span>Noticias</span>
           </div>
         </div>
-        <a href="modificar_noticia.html">
-          <img src="/assets/edit-icon.PNG" class="edit-img">
+
+        <div class="col-5 title-col">
+          <div class="title-path">
+            <span>Noticias</span>
+            <span>/</span>
+            <span>Modificar o eliminar noticias</span>
+          </div>
+        </div>
+        <div class="col title-empty-col"></div>
+      </div>
+    </div>
+    <!-- Title End -->
+
+    <!-- Side Menu Start -->
+    <button class="open-btn">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+    <div class="side-menu">
+      <a href="javascript:void(0)" class="close-btn">&times;</a>
+
+      <div class="menu-section">
+        <a href="javascript:void(0)" class="menu-title">Usuarios</a>
+        <a href="/html/administrar_inscripciones.html" class="menu-text"
+          >Inscripciones</a
+        >
+        <a href="/html/administrar_usuarios.html" class="menu-text"
+          >Administrar usuarios</a
+        >
+        <a href="/html/registrar_usuarios.html" class="menu-text"
+          >Registrar usuarios</a
+        >
+      </div>
+
+      <div class="menu-section">
+        <a href="javascript:void(0)" class="menu-title">Noticias</a>
+        <a href="/html/anadir_noticias.html" class="menu-text"
+          >Añadir noticias</a
+        >
+        <a href="/html/modificar_noticias.html" class="menu-text"
+          >Modificar o eliminar noticias</a
+        >
+      </div>
+
+      <div class="menu-section">
+        <a href="javascript:void(0)" class="menu-title">Horarios</a>
+        <a href="/html/modificar_horarios.html" class="menu-text"
+          >Actualizar y modificar horarios</a
+        >
+      </div>
+
+      <div class="menu-section">
+        <a href="javascript:void(0)" class="menu-title">Galería</a>
+        <a href="/html/anadir_imagenes.html" class="menu-text"
+          >Añadir nueva imagen</a
+        >
+        <a href="/html/modificar_imagenes.html" class="menu-text"
+          >Eliminar imagenes</a
+        >
+      </div>
+
+      <div class="menu-section">
+        <a href="javascript:void(0)" class="menu-title">Palmarés</a>
+        <a href="/html/anadir_logros.html" class="menu-text"
+          >Añadir logros del club</a
+        >
+        <a href="/html/modificar_logros.html" class="menu-text"
+          >Modificar o eliminar logros del club</a
+        >
+        <a href="/php/logout.php">
+          <img src="/assets/logout2.png" class="logout-img" />
         </a>
-        <img src="/assets/bin-icon.PNG" class="bin-img">
       </div>
-      <div class="col-6 news-col">
-        <div class="news-wrapper">
-          <div class="img-wrap">
-            <img src="/assets/Más fotos/WhatsApp Image 2020-10-29 at 14.49.15 (1).jpeg" class="news-image" />
-          </div>
-          <div class="news-text">
-            <h5>2 agosto 2020</h5>
-            <h3>Protocolo Covid</h3>
-            <p>
-              Nuestras instalaciones son amplias y nos permiten cumplir con
-              todos los protocolos texto de ejemplo texto de ejemplo texto de
-              ejemplo texto de e...
-            </p>
-            <a>Leer más</a>
-          </div>
-        </div>
-        <a href="modificar_noticia.html">
-          <img src="/assets/edit-icon.PNG" class="edit-img">
-        </a>
-        <img src="/assets/bin-icon.PNG" class="bin-img">
-      </div>
-      <div class="col-6 news-col">
-        <div class="news-wrapper">
-          <div class="img-wrap">
-            <img src="/assets/noticia.jpg" class="news-image" />
-          </div>
-          <div class="news-text">
-            <h5>10 octubre 2020</h5>
-            <h3>Entrevista con el diario D-cerca</h3>
-            <p>
-              Entrevistamos a Fabiana Pereyra, del Club Gimnasia Rítmica La
-              Mojonera, quien nos cuenta cómo han vivido el confinamiento las
-              gimnastas del club...
-            </p>
-            <a>Leer más</a>
-          </div>
-        </div>
-        <a href="modificar_noticia.html">
-          <img src="/assets/edit-icon.PNG" class="edit-img">
-        </a>
-        <img src="/assets/bin-icon.PNG" class="bin-img">
-      </div>
-      <div class="col-6 news-col">
-        <div class="news-wrapper">
-          <div class="img-wrap">
-            <img src="/assets/Más fotos/WhatsApp Image 2020-10-29 at 14.49.15 (1).jpeg" class="news-image" />
-          </div>
-          <div class="news-text">
-            <h5>2 agosto 2020</h5>
-            <h3>Protocolo Covid</h3>
-            <p>
-              Nuestras instalaciones son amplias y nos permiten cumplir con
-              todos los protocolos texto de ejemplo texto de ejemplo texto de
-              ejemplo texto de e...
-            </p>
-            <a>Leer más</a>
-          </div>
-        </div>
-        <a href="modificar_noticia.html">
-          <img src="/assets/edit-icon.PNG" class="edit-img">
-        </a>
-        <img src="/assets/bin-icon.PNG" class="bin-img">
       </div>
     </div>
-  </div>
-  <!-- News End -->
+    <!-- Side Menu End -->
 
+    <!-- News Start -->
+    <div class="container news-container">
+      <h1>Últimas Noticias</h1>
+      <div class="row news-row">
+        <div class="col-6 news-col">
+          <div class="news-wrapper">
+            <div class="img-wrap">
+              <img src="/assets/noticia.jpg" class="news-image" />
+            </div>
+            <div class="news-text">
+              <h5>10 octubre 2020</h5>
+              <h3>Entrevista con el diario D-cerca</h3>
+              <p>
+                Entrevistamos a Fabiana Pereyra, del Club Gimnasia Rítmica La
+                Mojonera, quien nos cuenta cómo han vivido el confinamiento las
+                gimnastas del club...
+              </p>
+              <a>Leer más</a>
+            </div>
+          </div>
+          <a href="modificar_noticia.html">
+            <img src="/assets/edit-icon.PNG" class="edit-img" />
+          </a>
+          <img src="/assets/bin-icon.PNG" class="bin-img" />
+        </div>
+        <div class="col-6 news-col">
+          <div class="news-wrapper">
+            <div class="img-wrap">
+              <img
+                src="/assets/Más fotos/WhatsApp Image 2020-10-29 at 14.49.15 (1).jpeg"
+                class="news-image"
+              />
+            </div>
+            <div class="news-text">
+              <h5>2 agosto 2020</h5>
+              <h3>Protocolo Covid</h3>
+              <p>
+                Nuestras instalaciones son amplias y nos permiten cumplir con
+                todos los protocolos texto de ejemplo texto de ejemplo texto de
+                ejemplo texto de e...
+              </p>
+              <a>Leer más</a>
+            </div>
+          </div>
+          <a href="modificar_noticia.html">
+            <img src="/assets/edit-icon.PNG" class="edit-img" />
+          </a>
+          <img src="/assets/bin-icon.PNG" class="bin-img" />
+        </div>
+        <div class="col-6 news-col">
+          <div class="news-wrapper">
+            <div class="img-wrap">
+              <img src="/assets/noticia.jpg" class="news-image" />
+            </div>
+            <div class="news-text">
+              <h5>10 octubre 2020</h5>
+              <h3>Entrevista con el diario D-cerca</h3>
+              <p>
+                Entrevistamos a Fabiana Pereyra, del Club Gimnasia Rítmica La
+                Mojonera, quien nos cuenta cómo han vivido el confinamiento las
+                gimnastas del club...
+              </p>
+              <a>Leer más</a>
+            </div>
+          </div>
+          <a href="modificar_noticia.html">
+            <img src="/assets/edit-icon.PNG" class="edit-img" />
+          </a>
+          <img src="/assets/bin-icon.PNG" class="bin-img" />
+        </div>
+        <div class="col-6 news-col">
+          <div class="news-wrapper">
+            <div class="img-wrap">
+              <img
+                src="/assets/Más fotos/WhatsApp Image 2020-10-29 at 14.49.15 (1).jpeg"
+                class="news-image"
+              />
+            </div>
+            <div class="news-text">
+              <h5>2 agosto 2020</h5>
+              <h3>Protocolo Covid</h3>
+              <p>
+                Nuestras instalaciones son amplias y nos permiten cumplir con
+                todos los protocolos texto de ejemplo texto de ejemplo texto de
+                ejemplo texto de e...
+              </p>
+              <a>Leer más</a>
+            </div>
+          </div>
+          <a href="modificar_noticia.html">
+            <img src="/assets/edit-icon.PNG" class="edit-img" />
+          </a>
+          <img src="/assets/bin-icon.PNG" class="bin-img" />
+        </div>
+      </div>
+    </div>
+    <!-- News End -->
 
+    <!-- JQuery -->
+    <script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-  <!-- JQuery -->
-  <script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-  <script src="/js/main.js"></script>
-</body>
-
+    <script src="/js/main.js"></script>
+  </body>
 </html>

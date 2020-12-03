@@ -23,17 +23,9 @@ if (mysqli_query($link, $sql)) {
     $directorio = $_SERVER['DOCUMENT_ROOT'] . "/assets/matriculaciones/";
     $nombre_archivo = $dni . ".jpg";
     $ruta_archivo = $directorio . $nombre_archivo;
+    $uploadOk = 1;
 
     $imagen_pago = $_FILES["payment"];
-
-    //Comprobamos que sea una imagen
-    $check = getimagesize($imagen_pago["tmp_name"]);
-    if ($check !== false) {
-      echo "Es una imagen de tipo " . $check["mime"] . "<br>";
-    } else {
-      echo "No es una imagen" . "<br>";
-      $uploadOk = 0;
-    }
 
     // Comprueba el tamaño de la imagen, limite de 500kB
     if ($imagen_pago["size"] > 500000) {

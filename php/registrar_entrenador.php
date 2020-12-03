@@ -29,7 +29,7 @@ if (mysqli_query($link, $sql1)) {
         $directorio = $_SERVER['DOCUMENT_ROOT'] . "/assets/entrenadores/";
         $nombre_archivo = "entrenador" . $idE . ".jpg";
         $ruta_archivo = $directorio . $nombre_archivo;
-
+        $uploadOk = 1;
 
         $imagen_perfil = $_FILES["perfil"];
 

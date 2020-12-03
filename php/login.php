@@ -1,8 +1,8 @@
 <?php
 include("funciones.php");
 $alert = '';
-$usuario = $_POST["usuario"];
-$contraseña = $_POST["contraseña"];
+$usuario = filtrado($_POST["usuario"]);
+$contraseña = filtrado($_POST["contraseña"]);
 session_start();
 require_once("config.php");
 $queryAdmin = mysqli_query($link, "SELECT * FROM Administrador WHERE correoAdmin ='$usuario'AND claveAccesoAdmin ='$contraseña'");
@@ -18,13 +18,13 @@ if (isset($_POST["continuar"])) {
     //echo "AAAAA";
 
     while ($resultAdmin = mysqli_fetch_assoc($queryAdmin)) {
-      $bdUsuarioAdmin = $resultAdmin["correoAdmin"];
-      $bdClaveAdmin = $resultAdmin["claveAccesoAdmin"];
+      $bdUsuarioAdmin = $resultAdmin['correoAdmin'];
+      $bdClaveAdmin = $resultAdmin['claveAccesoAdmin'];
     }
     if ($usuario == $bdUsuarioAdmin && $contraseña == $bdClaveAdmin) {
 
-      $_SESSION["administrador"] = $usuario;
-      header("location: /html/administrar_usuarios.html");
+      $_SESSION['administrador'] = $usuario;
+      header("location: administrar_usuarios.php");
     }
   } else  if (strlen($resultEntrenador) > 0) {
     //AQUI NO ENTRA

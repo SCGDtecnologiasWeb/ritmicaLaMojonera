@@ -10,6 +10,22 @@
   background-color: #e7e7e7;
 }
 
+#tlf-prefijo {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+}
+
+#tlf-prefijo::after {
+  content: "+34";
+  position: absolute;
+  top: 10.5px;
+  left: 12px;
+  font-size: 18px;
+  display: block;
+  font-weight: 700;
+}
+
 .register-panel:hover {
   background-color: #e7e7ff;
   border: #00f solid 1px;

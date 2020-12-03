@@ -51,8 +51,8 @@ if (mysqli_query($link, $sql)) {
 
     //Intentamos subir la imagen
     if ($uploadOk == 1) {
-      if (move_uploaded_file($imagen_noticia["tmp_name"], $ruta_archivo)) {
-        echo "La imagen " . htmlspecialchars(basename($imagen_noticia["name"])) . " se ha subido correctamente" . "<br>";
+      if (move_uploaded_file($imagen_pago["tmp_name"], $ruta_archivo)) {
+        echo "La imagen " . htmlspecialchars(basename($imagen_pago["name"])) . " se ha subido correctamente" . "<br>";
       } else {
         echo "Ha habido un error al subir la imagen" . "<br>";
         header("location: /html/matriculacion.html");

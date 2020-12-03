@@ -42,13 +42,6 @@ if (mysqli_query($link, $sql)) {
       $uploadOk = 0;
     }
 
-
-    // Comprobar el tipo de archivo
-    if ($check["mime"] != "image/jpeg" && $check["mime"] != "image/png") {
-      echo "Solo archivos .jpeg, .jpg o .png" . "<br>";
-      $uploadOk = 0;
-    }
-
     //Intentamos subir la imagen
     if ($uploadOk == 1) {
       if (move_uploaded_file($imagen_pago["tmp_name"], $ruta_archivo)) {

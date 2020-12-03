@@ -26,6 +26,15 @@ if (mysqli_query($link, $sql)) {
 
     $imagen_pago = $_FILES["payment"];
 
+    //Comprobamos que sea una imagen
+    $check = getimagesize($_FILES["payment"]["tmp_name"]);
+    if ($check !== false) {
+      echo "Es una imagen de tipo " . $check["mime"] . "<br>";
+    } else {
+      echo "No es una imagen" . "<br>";
+      $uploadOk = 0;
+    }
+
     // Comprueba el tamaño de la imagen, limite de 500kB
     if ($imagen_pago["size"] > 500000) {
       echo "Tamaño de imagen demasiado grande" . "<br>";
@@ -34,7 +43,7 @@ if (mysqli_query($link, $sql)) {
 
     //Intentamos subir la imagen
     if ($uploadOk == 1) {
-      if (move_uploaded_file($imagen_pago['tmp_name'], $ruta_archivo)) {
+      if (move_uploaded_file($_FILES["payment"]['tmp_name'], $ruta_archivo)) {
         echo "La imagen " . htmlspecialchars(basename($imagen_pago["name"])) . " se ha subido correctamente" . "<br>";
       } else {
         echo "Ha habido un error al subir la imagen" . "<br>";

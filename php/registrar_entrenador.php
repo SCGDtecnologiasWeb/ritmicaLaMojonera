@@ -23,7 +23,7 @@ if (mysqli_query($link, $sql1)) {
         $fila =  mysqli_fetch_assoc($resultado);
         $id = $fila['idEntrenador'];
         $directorio = $_SERVER['DOCUMENT_ROOT'] . "/assets/entrenadores/";
-        $nombre_archivo = "entrenador" + $id + ".jpg";
+        $nombre_archivo = "entrenador" . $id . ".jpg";
         $ruta_archivo = $directorio . $nombre_archivo;
 
 

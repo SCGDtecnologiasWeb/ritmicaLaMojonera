@@ -8,6 +8,6 @@ $asunto = filtrado($_POST["subject"]);
 $mensaje = filtrado($_POST["message"]);
 
 //Mandamos el correo
-$to = "cristiancasado27@gmail.com";
+$to = "cdrlamojonera@gmail.com";
 $headers = "From:" . $correo;
 mail($to, $asunto, $mensaje, $headers);

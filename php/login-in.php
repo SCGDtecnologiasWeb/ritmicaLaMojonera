@@ -15,18 +15,19 @@ if (!empty($_SESSION['active'])) {
       $queryAdmin = mysqli_query($link, "SELECT * FROM Administrador WHERE correoAdmin ='$usuario'AND claveAccesoAdmin ='$contraseña'");
       $resultAdmin = mysqli_num_rows($queryAdmin);
 
-      if (strlen($resultAdmin) > 0) {
-        echo "ENTRA";
-        $data = mysqli_fetch_array($queryAdmin);
-
-        $_SESSION["active"] = true;
-        $_SESSION["idAdministrador"] = $data["idAdministrador"];
-        $_SESSION["correoAdmin"] = $data["correoAdmin"];
-        $_SESSION["claveAccesoAdmin"] = $data["claveAccesoAdmin"];
-        header("location: administrar_usuarios.php");
+      if ($resultAdmin($queryAdmin) == 0) {
+        echo "NO ES VALIDO EL USUARIO";
       } else {
-        $alert = 'El usuario o la contraseña son incorrectos';
-        session_destroy();
+        while ($row_query = mysqli_fetch_array($queryAdmin)) {
+          if ($row_query['contraseña'] == $contraseña) {
+            $_SESSION['contraseña'] = $_POST['contraseña'];
+            header("location: administrar_usuarios.php");
+            exit;
+          } else {
+            $alert = 'El usuario o la contraseña son incorrectos';
+            session_destroy();
+          }
+        }
       }
     }
   }

@@ -11,7 +11,7 @@
         <a href="https://www.facebook.com/ritmicalamojonera" class="fab fa-facebook-square"></a>
         <a href="https://www.youtube.com/channel/UC1t4MldjalCTkdC2cYVgVfg" class="fab fa-youtube"></a>
         <a href="https://www.instagram.com/ritmicalamojonera/?hl=es" class="fab fa-instagram-square"></a>
-        <a href="/html/login.html" class="far fa-user"></a>
+        <a href="/html/login.php" class="far fa-user"></a>
       </div>
     </div>
     <div class="col"></div>

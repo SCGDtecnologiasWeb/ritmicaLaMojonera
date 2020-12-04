@@ -38,7 +38,7 @@
             Mojonera, quien nos cuenta cómo han vivido el confinamiento las
             gimnastas del club...
           </p>
-          <a href="/html/noticia.html">Leer más</a>
+          <a href="/html/noticia.php">Leer más</a>
         </div>
       </div>
       <div class="news-col">
@@ -53,7 +53,7 @@
             todos los protocolos texto de ejemplo texto de ejemplo texto de
             ejemplo texto de e...
           </p>
-          <a href="/html/noticia.html">Leer más</a>
+          <a href="/html/noticia.php">Leer más</a>
         </div>
       </div>
     </div>

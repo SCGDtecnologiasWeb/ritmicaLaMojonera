@@ -15,57 +15,14 @@
 </head>
 
 <body>
-  <!-- Header Start -->
-  <div class="administrator-header">
-    <img src="/assets/logo_ritmica2.png" />
-  </div>
-  <!-- Header End -->
+  <?php
+  include_once($_SERVER['DOCUMENT_ROOT'] . "/templates/header_entrenador.php");
 
-  <!-- Title Start -->
-  <div class="container">
-    <div class="row title-row">
-      <div class="col title-empty-col"></div>
-      <div class="col-5 title-col">
-        <div class="title-main">
-          <span>Grupo</span>
-        </div>
-      </div>
+  $crumbs = array("Grupo", "Acceso listado");
+  include_once($_SERVER['DOCUMENT_ROOT'] . "/templates/title_entrenador.php");
 
-      <div class="col-5 title-col">
-        <div class="title-path">
-          <span>Grupo</span>
-          <span>/</span>
-          <span>Acceso listado</span>
-        </div>
-      </div>
-      <div class="col title-empty-col"></div>
-    </div>
-  </div>
-  <!-- Title End -->
-
-  <!-- Side Menu Start -->
-  <button class="open-btn">
-    <i class="fas fa-chevron-right"></i>
-  </button>
-  <div class="side-menu">
-    <a href="javascript:void(0)" class="close-btn">&times;</a>
-
-    <div class="menu-section">
-      <a href="javascript:void(0)" class="menu-title">Grupo</a>
-      <a href="/html/entrenador_listado.html" class="menu-text">Acceso listado</a>
-      <a href="/html/entrenador_horario.html" class="menu-text">Acceso horarios</a>
-    </div>
-
-    <div class="menu-section">
-      <a href="javascript:void(0)" class="menu-title">Perfil</a>
-      <a href="/html/entrenador_datos.html" class="menu-text">Modificar datos personales</a>
-      <a href="/php/logout.php">
-        <img src="/assets/logout2.png" class="logout-img" />
-      </a>
-    </div>
-    </div>
-  </div>
-  <!-- Side Menu End -->
+  include_once($_SERVER['DOCUMENT_ROOT'] . "/templates/side_menu_entrenador.php");
+  ?>
 
   <!-- Content Start -->
   <div class="content-container">

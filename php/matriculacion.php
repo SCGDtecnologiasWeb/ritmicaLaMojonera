@@ -4,7 +4,7 @@ include("funciones.php");
 //Parseamos las variables
 $nombre = filtrado($_POST["name"]);
 $fechaNac = filtrado($_POST["birthdate"]);
-$dni = str_replace("-", "", str_replace(" ", "", strtoupper(filtrado($_POST["dni"]))));
+$dni = str_replace("-", "", str_replace(" ", "", strtoupper($_POST["dni"])));
 $tutor = filtrado($_POST["parent"]);
 $telf = str_replace(" ", "", filtrado($_POST["whatsapp"]));
 $nivel = filtrado($_POST["level"]);

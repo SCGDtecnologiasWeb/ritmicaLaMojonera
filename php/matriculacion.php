@@ -16,12 +16,13 @@ $pagado = (empty($justificante) ? "No" : "Si");
 //Conectamos a la base de datos
 require_once("config.php");
 //Creamos el código para insertar
+echo ('$dni');
 $sql = "REPLACE INTO Gimnasta (dni,nombreCompleto,fechaNacimiento,nombreTutor,telefono,nivel,consentimientoFotos,alergias,pago,registrado) VALUES ('$dni','$nombre','$fechaNac','$tutor','$telf','$nivel','$consentimiento','$alergias','$pagado','FALSE')";
 //Ejecutamos
 if (mysqli_query($link, $sql)) {
   if (!empty($justificante)) { //Guardamos la imagen
     $directorio = "/assets/matriculaciones/";
-    $nombre_archivo = "$dni" . ".jpg";
+    $nombre_archivo = '$dni' . ".jpg";
     $ruta_archivo = $directorio . $nombre_archivo;
     echo ("$ruta_archivo");
     $uploadOk = 1;

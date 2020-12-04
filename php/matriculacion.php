@@ -20,7 +20,7 @@ $sql = "REPLACE INTO Gimnasta (dni,nombreCompleto,fechaNacimiento,nombreTutor,te
 //Ejecutamos
 if (mysqli_query($link, $sql)) {
   if (!empty($justificante)) { //Guardamos la imagen
-    $directorio = "/assets/matriculaciones/";
+    $directorio =  $_SERVER['DOCUMENT_ROOT'] . "/assets/matriculaciones/";
     $nombre_archivo = "$dni" . ".jpg";
     $ruta_archivo = $directorio . $nombre_archivo;
     echo ("$ruta_archivo");

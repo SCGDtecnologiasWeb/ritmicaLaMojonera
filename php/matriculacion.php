@@ -36,6 +36,7 @@ if (mysqli_query($link, $sql)) {
 
     //Intentamos subir la imagen
     if ($uploadOk == 1) {
+      echo ($imagen_pago["tmp_name"]);
       if (move_uploaded_file($imagen_pago['tmp_name'], "$ruta_archivo")) {
         echo "La imagen " . htmlspecialchars(basename($imagen_pago["name"])) . " se ha subido correctamente" . "<br>";
       } else {

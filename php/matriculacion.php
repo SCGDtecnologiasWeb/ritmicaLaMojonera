@@ -16,7 +16,6 @@ $pagado = (empty($justificante) ? "No" : "Si");
 //Conectamos a la base de datos
 require_once("config.php");
 //Creamos el código para insertar
-echo ("$dni");
 $sql = "REPLACE INTO Gimnasta (dni,nombreCompleto,fechaNacimiento,nombreTutor,telefono,nivel,consentimientoFotos,alergias,pago,registrado) VALUES ('$dni','$nombre','$fechaNac','$tutor','$telf','$nivel','$consentimiento','$alergias','$pagado','FALSE')";
 //Ejecutamos
 if (mysqli_query($link, $sql)) {
@@ -37,7 +36,7 @@ if (mysqli_query($link, $sql)) {
 
     //Intentamos subir la imagen
     if ($uploadOk == 1) {
-      if (move_uploaded_file($imagen_pago['tmp_name'], $ruta_archivo)) {
+      if (move_uploaded_file($imagen_pago['tmp_name'], "$ruta_archivo")) {
         echo "La imagen " . htmlspecialchars(basename($imagen_pago["name"])) . " se ha subido correctamente" . "<br>";
       } else {
         echo "Ha habido un error al subir la imagen" . "<br>";

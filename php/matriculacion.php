@@ -23,6 +23,7 @@ if (mysqli_query($link, $sql)) {
     $directorio = "/assets/matriculaciones/";
     $nombre_archivo = $dni . ".jpg";
     $ruta_archivo = $directorio . $nombre_archivo;
+    echo ("$ruta_archivo");
     $uploadOk = 1;
 
     $imagen_pago = $_FILES["payment"];

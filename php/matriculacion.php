@@ -12,7 +12,8 @@ $alergias = (empty($_POST["allergies"]) ? filtrado($_POST["allergies"]) : NULL);
 $consentimiento = filtrado($_POST["consent"]);
 //$justificante = $_POST["payment"];
 $imagen_pago = $_FILES['payment'];
-$pagado = (empty($imagen_pago) ? "No" : "Si");
+//$pagado = (empty($imagen_pago) ? "No" : "Si");
+$pagado = (is_uploaded_file($_FILES['payment']['tmp_name']) ? "Si" : "No");
 
 //Conectamos a la base de datos
 require_once("config.php");
@@ -20,7 +21,7 @@ require_once("config.php");
 $sql = "REPLACE INTO Gimnasta (dni,nombreCompleto,fechaNacimiento,nombreTutor,telefono,nivel,consentimientoFotos,alergias,pago,registrado) VALUES ('$dni','$nombre','$fechaNac','$tutor','$telf','$nivel','$consentimiento','$alergias','$pagado','FALSE')";
 //Ejecutamos
 if (mysqli_query($link, $sql)) {
-  if (!empty($imagen_pago)) { //Guardamos la imagen
+  if (is_uploaded_file($_FILES['payment']['tmp_name'])) { //Guardamos la imagen
     $directorio =  $_SERVER['DOCUMENT_ROOT'] . "/assets/matriculaciones/";
     $nombre_archivo = "$dni" . ".jpg";
     $ruta_archivo = $directorio . $nombre_archivo;

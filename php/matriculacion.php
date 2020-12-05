@@ -28,7 +28,7 @@ if (mysqli_query($link, $sql)) {
     $uploadOk = 1;
 
     //$imagen_pago = $_FILES['payment'];
-    echo ("//imagen: " . $imagen_pago . "nombre:" . $imagen_pago['name'] . "//");
+    echo ("//imagen: " . $imagen_pago["tmp_name"] . "nombre:" . $imagen_pago['name'] . "//");
 
     // Comprueba el tamaño de la imagen, limite de 500kB
     if ($imagen_pago["size"] > 500000) {

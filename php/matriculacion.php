@@ -11,9 +11,8 @@ $nivel = filtrado($_POST["level"]);
 $alergias = (empty($_POST["allergies"]) ? filtrado($_POST["allergies"]) : NULL);
 $consentimiento = filtrado($_POST["consent"]);
 //$justificante = $_POST["payment"];
-$imagen_pago = $_FILES['payment'];
-//$pagado = (empty($imagen_pago) ? "No" : "Si");
-$pagado = (is_uploaded_file($_FILES['payment']['tmp_name']) ? "Si" : "No");
+$imagen_pago = $_POST["payment"];
+$pagado = (empty($imagen_pago) ? "No" : "Si");
 
 //Conectamos a la base de datos
 require_once("config.php");
@@ -21,7 +20,7 @@ require_once("config.php");
 $sql = "REPLACE INTO Gimnasta (dni,nombreCompleto,fechaNacimiento,nombreTutor,telefono,nivel,consentimientoFotos,alergias,pago,registrado) VALUES ('$dni','$nombre','$fechaNac','$tutor','$telf','$nivel','$consentimiento','$alergias','$pagado','FALSE')";
 //Ejecutamos
 if (mysqli_query($link, $sql)) {
-  if (is_uploaded_file($_FILES['payment']['tmp_name'])) { //Guardamos la imagen
+  if (!empty($imagen_pago)) { //Guardamos la imagen
     $directorio =  $_SERVER['DOCUMENT_ROOT'] . "/assets/matriculaciones/";
     $nombre_archivo = "$dni" . ".jpg";
     $ruta_archivo = $directorio . $nombre_archivo;
@@ -29,7 +28,7 @@ if (mysqli_query($link, $sql)) {
     $uploadOk = 1;
 
     //$imagen_pago = $_FILES['payment'];
-    echo ("//imagen: " . $_FILES['payment'] . "nombre:" . $_FILES['payment']['name'] . "//");
+    echo ("//imagen: " . $imagen_pago . "nombre:" . $imagen_pago['name'] . "//");
 
     // Comprueba el tamaño de la imagen, limite de 500kB
     if ($imagen_pago["size"] > 500000) {

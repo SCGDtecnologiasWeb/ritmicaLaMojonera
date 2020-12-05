@@ -50,6 +50,7 @@ if (mysqli_query($link, $sql)) {
       //header("location: /html/matriculacion.html");
     }
   }
+  echo ("fin !empty()");
   //header("location: /html/index.html");
 } else {
   echo "Error: " . $sql . "<br>" . mysqli_error($link);

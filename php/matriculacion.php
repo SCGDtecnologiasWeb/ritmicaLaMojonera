@@ -20,7 +20,7 @@ require_once("config.php");
 $sql = "REPLACE INTO Gimnasta (dni,nombreCompleto,fechaNacimiento,nombreTutor,telefono,nivel,consentimientoFotos,alergias,pago,registrado) VALUES ('$dni','$nombre','$fechaNac','$tutor','$telf','$nivel','$consentimiento','$alergias','$pagado','FALSE')";
 //Ejecutamos
 if (mysqli_query($link, $sql)) {
-  if (!empty($justificante)) { //Guardamos la imagen
+  if (!empty($imagen_pago)) { //Guardamos la imagen
     $directorio =  $_SERVER['DOCUMENT_ROOT'] . "/assets/matriculaciones/";
     $nombre_archivo = "$dni" . ".jpg";
     $ruta_archivo = $directorio . $nombre_archivo;

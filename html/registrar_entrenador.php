@@ -29,7 +29,7 @@
     <div class="content-container">
       <h1>Registrar nuevo entrenador</h1>
       <div class="form-container">
-        <form action="/php/registrar_entrenador.php" method="POST">
+        <form action="/php/registrar_entrenador.php" method="POST" enctype="multipart/form-data">
           <div class="form-field">
             <label for="email" class="field-title">Correo electronico *</label><br />
             <input type="email" id="email" name="email" pattern="([a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,})" required /><br />

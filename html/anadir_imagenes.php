@@ -30,7 +30,7 @@
     <div class="content-container">
       <h1>Añadir una imágen</h1>
       <div class="form-container">
-        <form action="/php/anadir_imagenes.php" method="POST">
+        <form action="/php/anadir_imagenes.php" method="POST" enctype="multipart/form-data">
 
           <div class="form-field">
             <label for="trophy-image" class="field-title">Imagen</label><br />

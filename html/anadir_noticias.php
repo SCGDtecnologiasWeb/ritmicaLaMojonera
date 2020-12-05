@@ -29,7 +29,7 @@
     <div class="content-container">
       <h1>Añadir una noticia</h1>
       <div class="form-container">
-        <form action="#" method="POST">
+        <form action="/php/anadir_noticias.php" method="POST" enctype="multipart/form-data">
 
           <div class="form-field">
             <label for="news-title" class="field-title">Titulo</label><br />

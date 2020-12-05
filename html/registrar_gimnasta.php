@@ -29,7 +29,7 @@
     <div class="content-container">
       <h1>Registrar nueva gimnasta</h1>
       <div class="form-container">
-        <form action="/php/registrar_gimnasta.php" method="POST">
+        <form action="/php/registrar_gimnasta.php" method="POST" enctype="multipart/form-data">
           <div class="form-field">
             <label for="name" class="field-title">Nombre completo</label><br />
             <input type="text" id="name" name="name" autocomplete="off" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,96}" required /><br />

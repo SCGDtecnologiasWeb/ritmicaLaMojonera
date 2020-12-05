@@ -10,8 +10,8 @@ $telf = str_replace(" ", "", filtrado($_POST["whatsapp"]));
 $nivel = filtrado($_POST["level"]);
 $alergias = (empty($_POST["allergies"]) ? filtrado($_POST["allergies"]) : NULL);
 $consentimiento = filtrado($_POST["consent"]);
-$justificante = $_POST["payment"];
-$pagado = (empty($justificante) ? "No" : "Si");
+$imagen_pago = $_FILES['payment'];
+$pagado = (is_uploaded_file($imagen_pago['tmp_name']) ? "Si" : "No");
 
 //Conectamos a la base de datos
 require_once("config.php");
@@ -19,13 +19,11 @@ require_once("config.php");
 $sql = "REPLACE INTO Gimnasta (dni,nombreCompleto,fechaNacimiento,nombreTutor,telefono,nivel,consentimientoFotos,alergias,pago,registrado) VALUES ('$dni','$nombre','$fechaNac','$tutor','$telf','$nivel','$consentimiento','$alergias','$pagado','FALSE')";
 //Ejecutamos
 if (mysqli_query($link, $sql)) {
-    if (!empty($justificante)) { //Guardamos la imagen
+    if (is_uploaded_file($imagen_pago['tmp_name'])) { //Guardamos la imagen
         $directorio = $_SERVER['DOCUMENT_ROOT'] . "/assets/matriculaciones/";
         $nombre_archivo = $dni . ".jpg";
         $ruta_archivo = $directorio . $nombre_archivo;
         $uploadOk = 1;
-
-        $imagen_pago = $_FILES["payment"];
 
         //Comprobamos que sea una imagen
         $check = getimagesize($imagen_pago["tmp_name"]);

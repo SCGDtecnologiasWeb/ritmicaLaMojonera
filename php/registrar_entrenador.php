@@ -9,7 +9,7 @@ $fechaNac = filtrado($_POST["birthdate"]);
 $dni = str_replace("-", "", str_replace(" ", "", strtoupper(filtrado($_POST["dni"]))));
 $telf = str_replace(" ", "", filtrado($_POST["whatsapp"]));
 $nivel = filtrado($_POST["level"]);
-$foto = $_POST["perfil"];
+$foto = $_FILES["perfil"];
 
 //Conectamos a la base de datos
 require_once("config.php");
@@ -25,16 +25,14 @@ if (mysqli_query($link, $sql1)) {
     $idN = ($nivel == "Escuela" ? 1 : 2);
     $slq3 = "REPLACE INTO `Grupo_has_Entrenador`(`idGrupo`, `Entrenador_idEntrenador`) VALUES ('$idN','$idE')";
     mysqli_query($link, $sql3);
-    if (!empty($justificante)) { //Guardamos la imagen
+    if (is_uploaded_file($foto['tmp_name'])) { //Guardamos la imagen
         $directorio = $_SERVER['DOCUMENT_ROOT'] . "/assets/entrenadores/";
         $nombre_archivo = "entrenador" . $idE . ".jpg";
         $ruta_archivo = $directorio . $nombre_archivo;
         $uploadOk = 1;
 
-        $imagen_perfil = $_FILES["perfil"];
-
         //Comprobamos que sea una imagen
-        $check = getimagesize($imagen_perfil["tmp_name"]);
+        $check = getimagesize($foto["tmp_name"]);
         if ($check !== false) {
             echo "Es una imagen de tipo " . $check["mime"] . "<br>";
         } else {
@@ -43,15 +41,15 @@ if (mysqli_query($link, $sql1)) {
         }
 
         // Comprueba el tamaño de la imagen, limite de 500kB
-        if ($imagen_pago["size"] > 500000) {
+        if ($foto["size"] > 500000) {
             echo "Tamaño de imagen demasiado grande" . "<br>";
             $uploadOk = 0;
         }
 
         //Intentamos subir la imagen
         if ($uploadOk == 1) {
-            if (move_uploaded_file($imagen_perfil["tmp_name"], $ruta_archivo)) {
-                echo "La imagen " . htmlspecialchars(basename($imagen_perfil["name"])) . " se ha subido correctamente" . "<br>";
+            if (move_uploaded_file($foto["tmp_name"], $ruta_archivo)) {
+                echo "La imagen " . htmlspecialchars(basename($foto["name"])) . " se ha subido correctamente" . "<br>";
             } else {
                 echo "Ha habido un error al subir la imagen" . "<br>";
                 header("location: /html/registrar_entrenador.html");

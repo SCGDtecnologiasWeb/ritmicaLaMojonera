@@ -25,19 +25,19 @@
   <!-- Content Start -->
   <div class="content-container">
     <div class="image-container">
-      <a href="/html/actividades_verano.html">
+      <a href="/html/actividades_verano.php">
         <img src="/assets/actividades_verano.jpeg" />
         <h3>Actividades de verano</h3>
       </a>
     </div>
     <div class="image-container">
-      <a href="/html/federadas.html">
+      <a href="/html/federadas.php">
         <img src="/assets/federadas.jpeg" />
         <h3>Federadas</h3>
       </a>
     </div>
     <div class="image-container">
-      <a href="/html/escuela.html">
+      <a href="/html/escuela.php">
         <img src="/assets/Escuela.jpeg" />
         <h3>Escuela</h3>
       </a>

@@ -11,3 +11,4 @@ $mensaje = filtrado($_POST["message"]);
 $to = "cdrlamojonera@gmail.com";
 $headers = "From:" . $correo;
 mail($to, $asunto, $mensaje, $headers);
+header("location: /html/index.php");

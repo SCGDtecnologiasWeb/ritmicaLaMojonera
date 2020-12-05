@@ -10,8 +10,9 @@ $telf = str_replace(" ", "", filtrado($_POST["whatsapp"]));
 $nivel = filtrado($_POST["level"]);
 $alergias = (empty($_POST["allergies"]) ? filtrado($_POST["allergies"]) : NULL);
 $consentimiento = filtrado($_POST["consent"]);
-$justificante = $_POST["payment"];
-$pagado = (empty($justificante) ? "No" : "Si");
+//$justificante = $_POST["payment"];
+$imagen_pago = $_FILES['payment'];
+$pagado = (empty($imagen_pago) ? "No" : "Si");
 
 //Conectamos a la base de datos
 require_once("config.php");
@@ -26,7 +27,7 @@ if (mysqli_query($link, $sql)) {
     echo ("$ruta_archivo");
     $uploadOk = 1;
 
-    $imagen_pago = $_FILES['payment'];
+    //$imagen_pago = $_FILES['payment'];
     echo ("//imagen: " . $_FILES['payment'] . "nombre:" . $_FILES['payment']['name'] . "//");
 
     // Comprueba el tamaño de la imagen, limite de 500kB

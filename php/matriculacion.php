@@ -39,17 +39,17 @@ if (mysqli_query($link, $sql)) {
         echo "La imagen " . htmlspecialchars(basename($imagen_pago["name"])) . " se ha subido correctamente" . "<br>";
       } else {
         echo "Ha habido un error al subir la imagen" . "<br>";
-        header("location: /html/matriculacion.html");
+        header("location: /html/matriculacion.php");
       }
     } else {
       echo "No podemos subir la imagen" . "<br>";
-      header("location: /html/matriculacion.html");
+      header("location: /html/matriculacion.php");
     }
   }
   echo ("fin !empty()");
-  header("location: /html/index.html");
+  header("location: /html/index.php");
 } else {
   echo "Error: " . $sql . "<br>" . mysqli_error($link);
-  header("location: /html/matriculacion.html");
+  header("location: /html/matriculacion.php");
 }
 mysqli_close($link);

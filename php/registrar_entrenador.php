@@ -52,16 +52,16 @@ if (mysqli_query($link, $sql1)) {
                 echo "La imagen " . htmlspecialchars(basename($foto["name"])) . " se ha subido correctamente" . "<br>";
             } else {
                 echo "Ha habido un error al subir la imagen" . "<br>";
-                header("location: /html/registrar_entrenador.html");
+                header("location: /html/registrar_entrenador.php");
             }
         } else {
             echo "No podemos subir la imagen" . "<br>";
-            header("location: /html/registrar_entrenador.html");
+            header("location: /html/registrar_entrenador.php");
         }
     }
-    header("location: /html/administrar_usuarios.html");
+    header("location: /html/administrar_usuarios.php");
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($link);
-    header("location: /html/registrar_entrenador.html");
+    header("location: /html/registrar_entrenador.php");
 }
 mysqli_close($link);

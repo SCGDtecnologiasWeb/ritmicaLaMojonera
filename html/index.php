@@ -91,8 +91,8 @@
         <h1>Si te gusta la gimnasia rítmica esta es tu oportunidad</h1>
         <p>Contacta con nosotros y únete a nuestra familia</p>
         <div class="callout-btn-section">
-          <a href="/html/contacto.html" class="callout-btn1">Contacto</a>
-          <a href="/html/matriculacion.html" class="callout-btn2">Inscríbete</a>
+          <a href="/html/contacto.php" class="callout-btn1">Contacto</a>
+          <a href="/html/matriculacion.php" class="callout-btn2">Inscríbete</a>
         </div>
       </div>
     </div>

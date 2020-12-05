@@ -47,16 +47,16 @@ if (mysqli_query($link, $sql1)) {
             echo "La imagen " . htmlspecialchars(basename($img["name"])) . " se ha subido correctamente" . "<br>";
         } else {
             echo "Ha habido un error al subir la imagen" . "<br>";
-            header("location: /html/anadir_noticias.html");
+            header("location: /html/anadir_noticias.php");
         }
     } else {
         echo "No podemos subir la imagen" . "<br>";
-        header("location: /html/anadir_noticias.html");
+        header("location: /html/anadir_noticias.php");
     }
 
-    header("location: /html/administrar_usuarios.html");
+    header("location: /html/administrar_usuarios.php");
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($link);
-    header("location: /html/anadir_noticias.html");
+    header("location: /html/anadir_noticias.php");
 }
 mysqli_close($link);

@@ -47,12 +47,12 @@ if (mysqli_query($link, $sql1)) {
         }
     } else {
         echo "No podemos subir la imagen" . "<br>";
-        header("location: /html/anadir_imagenes.html");
+        header("location: /html/anadir_imagenes.php");
     }
 
-    header("location: /html/administrar_usuarios.html");
+    header("location: /html/administrar_usuarios.php");
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($link);
-    header("location: /html/anadir_imagenes.html");
+    header("location: /html/anadir_imagenes.php");
 }
 mysqli_close($link);

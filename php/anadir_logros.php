@@ -10,7 +10,7 @@ $desc = filtrado($_POST["trophy-description"]);
 require_once("config.php");
 //Creamos el código para insertar
 $sql1 = "REPLACE INTO `Victoria`(`tituloVictoria`, `descripcion`) VALUES ('$titulo','$desc')";
-$sql2 = "SELECT TOP 1 `idVictoria` FROM `Victoria`ORDER BY idVictoria DESC";
+$sql2 = "SELECT `idVictoria` FROM `Victoria`ORDER BY idVictoria DESC LIMIT 1";
 
 //Ejecutamos
 if (mysqli_query($link, $sql1)) {

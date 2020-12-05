@@ -8,7 +8,7 @@ $img = $_FILES["trophy-image"];
 require_once("config.php");
 //Creamos el código para insertar
 $sql1 = "REPLACE INTO `FotoGaleria` (`subido`) VALUES ('TRUE')";
-$sql2 = "SELECT TOP 1 `idGaleria` FROM `FotoGaleria`ORDER BY idGaleria DESC";
+$sql2 = "SELECT `idGaleria` FROM `FotoGaleria`ORDER BY idGaleria DESC LIMIT 1";
 
 //Ejecutamos
 if (mysqli_query($link, $sql1)) {

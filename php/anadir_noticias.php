@@ -12,7 +12,7 @@ $cuerpo = filtrado($_POST["news-body"]);
 require_once("config.php");
 //Creamos el código para insertar
 $sql1 = "REPLACE INTO `Noticia` (`titulo`, `descripcion`, `cuerpo`, `fecha`) VALUES ('$titulo','$desc','$cuerpo','$fecha')";
-$sql2 = "SELECT TOP 1 `idNoticia` FROM `Noticia`ORDER BY idNoticia DESC";
+$sql2 = "SELECT idNoticia FROM `Noticia` ORDER BY idNoticia DESC LIMIT 1";
 
 //Ejecutamos
 if (mysqli_query($link, $sql1)) {

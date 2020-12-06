@@ -15,52 +15,51 @@
 
 <body>
   <?php
+  // Header y titulo
   include_once($_SERVER['DOCUMENT_ROOT'] . "/templates/menu.php");
 
   $crumbs = array("Inicio", "Noticias");
   $links = array("/html/index.php", "/html/noticias.php");
   include_once($_SERVER['DOCUMENT_ROOT'] . "/templates/title.php");
+
+
+  include_once($_SERVER['DOCUMENT_ROOT'] . '/php/config.php');
+
+  $consulta_SQL = "SELECT * FROM noticia";
+  $resultado = $link->query($consulta_SQL);
   ?>
 
-  <!-- News Start -->
-  <div class="container news-container">
-    <h1>Últimas Noticias</h1>
-    <div class="news-row">
-      <div class="news-col">
-        <div class="img-wrap">
-          <img src="/assets/noticia.jpg" class="news-image" />
-        </div>
-        <div class="news-text">
-          <h5>10 octubre 2020</h5>
-          <h3>Entrevista con el diario D-cerca</h3>
-          <p>
-            Entrevistamos a Fabiana Pereyra, del Club Gimnasia Rítmica La
-            Mojonera, quien nos cuenta cómo han vivido el confinamiento las
-            gimnastas del club...
-          </p>
-          <a href="/html/noticia.php">Leer más</a>
-        </div>
-      </div>
-      <div class="news-col">
-        <div class="img-wrap">
-          <img src="/assets/Más fotos/WhatsApp Image 2020-10-29 at 14.49.15 (1).jpeg" class="news-image" />
-        </div>
-        <div class="news-text">
-          <h5>2 agosto 2020</h5>
-          <h3>Protocolo Covid</h3>
-          <p>
-            Nuestras instalaciones son amplias y nos permiten cumplir con
-            todos los protocolos texto de ejemplo texto de ejemplo texto de
-            ejemplo texto de e...
-          </p>
-          <a href="/html/noticia.php">Leer más</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- News End -->
+  <?php
+  // Noticias
+  echo "<!-- News Start -->
+          <div class=\"container news-container\">
+            <h1>Últimas Noticias</h1>
+            <div class=\"news-row\">";
+
+  while ($fila = $resultado->fetch_array()) {
+    echo "<div class=\"news-col\">
+            <div class=\"img-wrap\">
+              <img src=\"/assets/noticias/noticia{$fila["idNoticia"]}.jpg\" class=\"news-image\" />
+            </div>
+            <div class=\"news-text\">
+              <h5>{$fila["fecha"]}</h5>
+              <h3>{$fila["titulo"]}</h3>
+              <p>
+                {$fila["descripcion"]}
+              </p>
+              <a href=\"/php/noticia.php?idNoticia={$fila["idNoticia"]}\">Leer más</a>
+            </div>
+          </div>";
+  }
+
+  echo  "</div>
+      </div>";
+
+  $link->close();
+  ?>
 
   <?php
+  // Footer
   include_once($_SERVER['DOCUMENT_ROOT'] . "/templates/footer.php");
   ?>
 

@@ -99,35 +99,41 @@
   </div>
   <!-- Title End -->
 
-  <!-- News Start -->
-  <div class="container news-container">
-    <h1>Últimas Noticias</h1>
-    <div class="news-row">
-      <?php
-        include_once('config.php');
 
-        $consulta_SQL = "SELECT * FROM noticia";
-        $resultado = $link->query($consulta_SQL);
+  <?php
+  include_once('config.php');
 
-        // Iteramos sobre el resultado, obteniendo cada una de las filas
-        while ($fila = $resultado->fetch_array()) {
-          echo  "<div class=\"news-col\">
-                  <div class=\"img-wrap\">
-                    <img src=\"/assets/noticias/noticia{$fila["idNoticia"]}.jpg\" class=\"news-image\" />
-                  </div>
-                  <div class=\"news-text\">
-                    <h5>{$fila["fecha"]}</h5>
-                    <h3>{$fila["titulo"]}</h3>
-                    <p>
-                      {$fila["descripcion"]}
-                    </p>
-                    <a href=\"/php/noticia.php?idNoticia={$fila["idNoticia"]}\">Leer más</a>
-                  </div>
-                </div>";
-        }
-        $link->close();
-      ?>
-    </div>
+  $consulta_SQL = "SELECT * FROM noticia";
+  $resultado = $link->query($consulta_SQL);
+
+  echo "<!-- News Start -->
+          <div class=\"container news-container\">
+            <h1>Últimas Noticias</h1>
+            <div class=\"news-row\">";
+
+  // Iteramos sobre el resultado, obteniendo cada una de las filas
+  while ($fila = $resultado->fetch_array()) {
+    echo "<div class=\"news-col\">
+            <div class=\"img-wrap\">
+              <img src=\"/assets/noticias/noticia{$fila["idNoticia"]}.jpg\" class=\"news-image\" />
+            </div>
+            <div class=\"news-text\">
+              <h5>{$fila["fecha"]}</h5>
+              <h3>{$fila["titulo"]}</h3>
+              <p>
+                {$fila["descripcion"]}
+              </p>
+              <a href=\"/php/noticia.php?idNoticia={$fila["idNoticia"]}\">Leer más</a>
+            </div>
+          </div>";
+  }
+
+  echo  "</div>
+      </div>";
+
+  $link->close();
+  ?>
+  </div>
   </div>
   <!-- News End -->
 

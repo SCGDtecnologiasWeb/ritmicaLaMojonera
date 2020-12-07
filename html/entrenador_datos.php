@@ -16,6 +16,15 @@
 
 <body>
   <?php
+  // Comienza la sesión
+  session_start();
+
+  if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] === true) {
+    echo "<p style='float: right'>Sesión iniciada como " . $_SESSION['correo'] . "</p>";
+  }
+  ?>
+
+  <?php
   include_once($_SERVER['DOCUMENT_ROOT'] . "/templates/header_entrenador.php");
 
   $crumbs = array("Perfil", "Modificar datos personales");

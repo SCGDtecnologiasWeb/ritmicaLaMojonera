@@ -50,7 +50,7 @@
   // Noticias
   include_once($_SERVER['DOCUMENT_ROOT'] . '/php/config.php');
 
-  $consulta_SQL = "SELECT * FROM noticia ORDER BY idNoticia DESC LIMIT 2";
+  $consulta_SQL = "SELECT * FROM Noticia ORDER BY idNoticia DESC LIMIT 2";
   $resultado = $link->query($consulta_SQL);
 
   echo "<!-- News Start -->

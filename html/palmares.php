@@ -15,6 +15,7 @@
 
 <body>
   <?php
+  // Header y titulo
   include_once($_SERVER['DOCUMENT_ROOT'] . "/templates/menu.php");
 
   $crumbs = array("Inicio", "El club", "Palmarés");
@@ -41,10 +42,20 @@
         entrenadoras:
       </p>
     </div>
+
+    <?php
+    include_once($_SERVER['DOCUMENT_ROOT'] . '/php/config.php');
+
+    $consulta_SQL = "SELECT * FROM victoria ORDER BY idVictoria DESC";
+    $resultado = $link->query($consulta_SQL);
+
+    echo mysqli_num_rows($resultado);
+
+    ?>
     <div class="trophy-container">
       <div class="trophy">
         <div class="trophy-img">
-          <img src="/assets/Palmarés/andalucia2018Cadetes.jpeg" />
+          <img src="/assets/palmares/andalucia2018Cadetes.jpeg" />
         </div>
         <div class="trophy-text">
           <h3>Cadete C campeonas de Andalucia 2018/2019</h3>
@@ -56,7 +67,7 @@
 
       <div class="trophy">
         <div class="trophy-img">
-          <img src="/assets/Palmarés/6ºAndaluciaAbsoluto.jpeg" />
+          <img src="/assets/palmares/6ºAndaluciaAbsoluto.jpeg" />
         </div>
         <div class="trophy-text">
           <h3>Sextas de Andalucía Absoluto por Equipos 2018/2019</h3>
@@ -71,7 +82,7 @@
     <div class="trophy-container">
       <div class="trophy">
         <div class="trophy-img">
-          <img src="/assets/Palmarés/3ºAlmeria, BenjaminEscuela.jpeg" />
+          <img src="/assets/palmares/3ºAlmeria, BenjaminEscuela.jpeg" />
         </div>
         <div class="trophy-text">
           <h3>Terceras de Almería, Benjamín Escuela</h3>
@@ -84,7 +95,7 @@
 
       <div class="trophy">
         <div class="trophy-img">
-          <img src="/assets/Palmarés/5ºAndaluciaCadetePrecopa.jpeg" />
+          <img src="/assets/palmares/5ºAndaluciaCadetePrecopa.jpeg" />
         </div>
         <div class="trophy-text">
           <h3>Quintas de Andalucía 2018/2019 Conjunto Cadete Precopa</h3>
@@ -99,7 +110,7 @@
     <div class="trophy-container">
       <div class="trophy">
         <div class="trophy-img">
-          <img src="/assets/Palmarés/Valentina3ºAndaluciaprebenja.jpeg" />
+          <img src="/assets/palmares/Valentina3ºAndaluciaprebenja.jpeg" />
         </div>
         <div class="trophy-text">
           <h3>Campeona de Andalucía Prebenjamín Precopa</h3>
@@ -112,7 +123,7 @@
 
       <div class="trophy">
         <div class="trophy-img">
-          <img src="/assets/Palmarés/Tina8ºAndaluciaPrebenjaminPecopa.jpeg" />
+          <img src="/assets/palmares/Tina8ºAndaluciaPrebenjaminPecopa.jpeg" />
         </div>
         <div class="trophy-text">
           <h3>Octava de Andalucía Prebenjamín Precopa 2018/2019</h3>
@@ -127,7 +138,7 @@
     <div class="trophy-container">
       <div class="trophy">
         <div class="trophy-img">
-          <img src="/assets/Palmarés/3ºPromesasConjuntoCadetaC.jpeg" />
+          <img src="/assets/palmares/3ºPromesasConjuntoCadetaC.jpeg" />
         </div>
         <div class="trophy-text">
           <h3>
@@ -143,7 +154,7 @@
 
       <div class="trophy">
         <div class="trophy-img">
-          <img src="/assets/Palmarés/Valentina3ºAndaluciaprebenja.jpeg" />
+          <img src="/assets/palmares/Valentina3ºAndaluciaprebenja.jpeg" />
         </div>
         <div class="trophy-text">
           <h3>Tercera de Andalucía Prebenjamín Copa</h3>
@@ -158,6 +169,7 @@
   <!-- Content End -->
 
   <?php
+  // Footer
   include_once($_SERVER['DOCUMENT_ROOT'] . "/templates/footer.php");
   ?>
 

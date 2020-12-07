@@ -19,7 +19,7 @@ if (mysqli_query($link, $sql1)) {
     $idV = $fila['idVictoria'];
 
     //Guardamos la imagen
-    $directorio = $_SERVER['DOCUMENT_ROOT'] . "/assets/Palmarés/";
+    $directorio = $_SERVER['DOCUMENT_ROOT'] . "/assets/palmares/";
     $nombre_archivo = "victoria" . $idV . ".jpg";
     $ruta_archivo = $directorio . $nombre_archivo;
     $uploadOk = 1;

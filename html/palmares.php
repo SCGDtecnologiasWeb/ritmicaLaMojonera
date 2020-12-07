@@ -42,129 +42,36 @@
         entrenadoras:
       </p>
     </div>
-
     <?php
     include_once($_SERVER['DOCUMENT_ROOT'] . '/php/config.php');
 
-    $consulta_SQL = "SELECT * FROM victoria ORDER BY idVictoria DESC";
+    $consulta_SQL = "SELECT idVictoria, tituloVictoria, descripcion FROM victoria ORDER BY idVictoria DESC";
     $resultado = $link->query($consulta_SQL);
 
-    echo mysqli_num_rows($resultado);
+    $num_rows = mysqli_num_rows($resultado);
+    $aux = intdiv($num_rows, 2) + ($num_rows % 2);
 
+    for ($i = 0; $i < $aux; $i++) {
+      echo "<div class=\"trophy-container\">";
+
+      $j = 0;
+      while (($fila = $resultado->fetch_array()) && $j < 2) {
+        echo "<div class=\"trophy\">
+                <div class=\"trophy-img\">
+                  <img src=\"/assets/palmares/victoria{$fila["idVictoria"]}.jpg\" />
+                </div>
+                <div class=\"trophy-text\">
+                  <h3>{$fila["tituloVictoria"]}</h3>
+                  <p>{$fila["descripcion"]}</p>
+                </div>
+              </div>";
+        $j++;
+      }
+      echo "</div>";
+    }
+
+    $link->close();
     ?>
-    <div class="trophy-container">
-      <div class="trophy">
-        <div class="trophy-img">
-          <img src="/assets/palmares/andalucia2018Cadetes.jpeg" />
-        </div>
-        <div class="trophy-text">
-          <h3>Cadete C campeonas de Andalucia 2018/2019</h3>
-          <p>
-            Nuestro conjunto Cadete C quedan primeras en el campeonato andaluz
-          </p>
-        </div>
-      </div>
-
-      <div class="trophy">
-        <div class="trophy-img">
-          <img src="/assets/palmares/6ºAndaluciaAbsoluto.jpeg" />
-        </div>
-        <div class="trophy-text">
-          <h3>Sextas de Andalucía Absoluto por Equipos 2018/2019</h3>
-          <p>
-            Milagros Casado y Lucía Gil consiguen el sexto puesto en el
-            campeonato andaluz por equipos de absoluto
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="trophy-container">
-      <div class="trophy">
-        <div class="trophy-img">
-          <img src="/assets/palmares/3ºAlmeria, BenjaminEscuela.jpeg" />
-        </div>
-        <div class="trophy-text">
-          <h3>Terceras de Almería, Benjamín Escuela</h3>
-          <p>
-            Nuestro conjunto de benjamín escuela consigue el tercer puesto a
-            nivel provincial
-          </p>
-        </div>
-      </div>
-
-      <div class="trophy">
-        <div class="trophy-img">
-          <img src="/assets/palmares/5ºAndaluciaCadetePrecopa.jpeg" />
-        </div>
-        <div class="trophy-text">
-          <h3>Quintas de Andalucía 2018/2019 Conjunto Cadete Precopa</h3>
-          <p>
-            Nuestro conjunto de cadete precopa consigue el quinto puesto a
-            nivel autonómico en su categoría
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="trophy-container">
-      <div class="trophy">
-        <div class="trophy-img">
-          <img src="/assets/palmares/Valentina3ºAndaluciaprebenja.jpeg" />
-        </div>
-        <div class="trophy-text">
-          <h3>Campeona de Andalucía Prebenjamín Precopa</h3>
-          <p>
-            Nuestra gimnasta Valentina Daunaraviciute consigue el primer
-            puesto en esta categoría
-          </p>
-        </div>
-      </div>
-
-      <div class="trophy">
-        <div class="trophy-img">
-          <img src="/assets/palmares/Tina8ºAndaluciaPrebenjaminPecopa.jpeg" />
-        </div>
-        <div class="trophy-text">
-          <h3>Octava de Andalucía Prebenjamín Precopa 2018/2019</h3>
-          <p>
-            Nuestra gimnasta Tina Zilinskaite consigue el octavo puesto en
-            esta categoría
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="trophy-container">
-      <div class="trophy">
-        <div class="trophy-img">
-          <img src="/assets/palmares/3ºPromesasConjuntoCadetaC.jpeg" />
-        </div>
-        <div class="trophy-text">
-          <h3>
-            Terceras de Andalucía 2018/2019, primera fase de promesas,
-            Conjunto Cadete C
-          </h3>
-          <p>
-            Nuestro conjunto de Cadete C consigue el tercer puesto a nivel
-            autonómico en esta categoría
-          </p>
-        </div>
-      </div>
-
-      <div class="trophy">
-        <div class="trophy-img">
-          <img src="/assets/palmares/Valentina3ºAndaluciaprebenja.jpeg" />
-        </div>
-        <div class="trophy-text">
-          <h3>Tercera de Andalucía Prebenjamín Copa</h3>
-          <p>
-            Nuestra gimnasta Valentina Daunaraviciute consigue el tercer
-            puesto en esta categoría a nivel autonómico
-          </p>
-        </div>
-      </div>
-    </div>
   </div>
   <!-- Content End -->
 

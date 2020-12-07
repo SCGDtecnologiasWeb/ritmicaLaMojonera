@@ -3,8 +3,13 @@ session_start();
 
 
 if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] === true) {
-  header("location: /html/entrenador_listado.php");
-  exit;
+  if ($_SESSION["tipo_usuario"] === "entrenador") {
+    header("location: /html/entrenador_listado.php");
+    exit;
+  } else if ($_SESSION["tipo_usuario"] === "administrador") {
+    header("location: /html/administrar_inscripciones.php");
+    exit;
+  }
 }
 
 include_once($_SERVER['DOCUMENT_ROOT'] . '/php/config.php');
@@ -14,6 +19,8 @@ $correo_err = "";
 
 $contraseña = "";
 $contraseña_err = "";
+
+$es_admin = false;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -34,8 +41,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   if (empty($correo_err) && empty($contraseña_err)) {
 
-    // Preparamos la consulta
-    $sql = "SELECT idEntrenador, correoEntrenador, claveAcceso FROM entrenador WHERE correoEntrenador = ?";
+    // Preparamos la consulta para ver si es admin
+    $sql = "SELECT idAdministrador, correoAdmin, claveAccesoAdmin FROM administrador WHERE correoAdmin = ?";
 
     if ($stmt = mysqli_prepare($link, $sql)) {
       // Linkamos las variables a la consulta como parametros
@@ -51,37 +58,86 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Comprobamos si existe el correo
         if (mysqli_stmt_num_rows($stmt) == 1) {
+          $es_admin = true;
+
           // Linkamos las variables a la salida de la consulta
-          mysqli_stmt_bind_result($stmt, $id_entrenador, $correo, $hash_contraseña);
+          mysqli_stmt_bind_result($stmt, $id_admin, $correo_admin, $hash_contraseña_admin);
 
           if (mysqli_stmt_fetch($stmt)) {
-            if (password_verify($contraseña, $hash_contraseña)) {
+            if (password_verify($contraseña, $hash_contraseña_admin)) {
               // La contraseña es correcta por lo que iniciamos una nueva sesion
               session_start();
 
               // Guardamos las variables en el array de sesion
               $_SESSION["logged_in"] = true;
-              $_SESSION["tipo_usuario"] = "entrenador";
-              $_SESSION["id"] = $id_entrenador;
-              $_SESSION["correo"] = $correo;
+              $_SESSION["tipo_usuario"] = "administrador";
+              $_SESSION["id"] = $id_admin;
+              $_SESSION["correo"] = $correo_admin;
 
               // Redirigimos el usuario a su página inicial
-              header("location: /html/entrenador_listado.php");
+              header("location: /html/administrar_inscripciones.php");
             } else {
               // Mensaje de error si la contraseña es incorrecta
               $contraseña_err = "La contraseña es incorrecta.";
             }
           }
-        } else {
-          // Mensaje de error si no existe el correo
-          $correo_err = "No hay ninguna cuenta con ese correo.";
         }
       } else {
-        echo "No se ha podido acceder al servidor.";
+        echo "No hay conexión con el servidor";
       }
 
       // Cerramos la consulta
       mysqli_stmt_close($stmt);
+    }
+
+
+    if ($es_admin === false) {
+      // Preparamos la consulta para ver si es entrenador
+      $sql = "SELECT idEntrenador, correoEntrenador, claveAcceso FROM entrenador WHERE correoEntrenador = ?";
+
+      if ($stmt = mysqli_prepare($link, $sql)) {
+        // Linkamos las variables a la consulta como parametros
+        mysqli_stmt_bind_param($stmt, "s", $param_correo);
+
+        // Establecemos los parametros
+        $param_correo = $correo;
+
+        // Intentamos ejecutar la consulta
+        if (mysqli_stmt_execute($stmt)) {
+          // Guardamos el resultado
+          mysqli_stmt_store_result($stmt);
+
+          // Comprobamos si existe el correo
+          if (mysqli_stmt_num_rows($stmt) == 1) {
+            // Linkamos las variables a la salida de la consulta
+            mysqli_stmt_bind_result($stmt, $id_entrenador, $correo_entrenador, $hash_contraseña_entrenador);
+
+            if (mysqli_stmt_fetch($stmt)) {
+              if (password_verify($contraseña, $hash_contraseña_entrenador)) {
+                // La contraseña es correcta por lo que iniciamos una nueva sesion
+                session_start();
+
+                // Guardamos las variables en el array de sesion
+                $_SESSION["logged_in"] = true;
+                $_SESSION["tipo_usuario"] = "entrenador";
+                $_SESSION["id"] = $id_entrenador;
+                $_SESSION["correo"] = $correo_entrenador;
+
+                // Redirigimos el usuario a su página inicial
+                header("location: /html/entrenador_listado.php");
+              } else {
+                // Mensaje de error si la contraseña es incorrecta
+                $contraseña_err = "La contraseña es incorrecta.";
+              }
+            }
+          } else {
+            $correo_err = "El correo que has introducido no existe";
+          }
+        }
+
+        // Cerramos la consulta
+        mysqli_stmt_close($stmt);
+      }
     }
   }
 

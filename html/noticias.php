@@ -21,16 +21,15 @@
   $crumbs = array("Inicio", "Noticias");
   $links = array("/html/index.php", "/html/noticias.php");
   include_once($_SERVER['DOCUMENT_ROOT'] . "/templates/title.php");
-
-
-  include_once($_SERVER['DOCUMENT_ROOT'] . '/php/config.php');
-
-  $consulta_SQL = "SELECT * FROM noticia";
-  $resultado = $link->query($consulta_SQL);
   ?>
 
   <?php
   // Noticias
+  include_once($_SERVER['DOCUMENT_ROOT'] . '/php/config.php');
+
+  $consulta_SQL = "SELECT * FROM noticia ORDER BY idNoticia DESC";
+  $resultado = $link->query($consulta_SQL);
+
   echo "<!-- News Start -->
           <div class=\"container news-container\">
             <h1>Últimas Noticias</h1>

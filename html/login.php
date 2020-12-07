@@ -4,10 +4,10 @@ session_start();
 
 if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] === true) {
   if ($_SESSION["tipo_usuario"] === "entrenador") {
-    header("location: https://cdrlamojonera.com/html/entrenador_listado.php");
+    header("location: /html/entrenador_listado.php");
     exit;
   } else if ($_SESSION["tipo_usuario"] === "administrador") {
-    header("location: https://cdrlamojonera.com/html/administrar_inscripciones.php");
+    header("location: /html/administrar_inscripciones.php");
     exit;
   }
 }
@@ -75,7 +75,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               $_SESSION["correo"] = $correo_admin;
 
               // Redirigimos el usuario a su página inicial
-              header("location: https://cdrlamojonera.com/html/administrar_inscripciones.php");
+              header("location: /html/administrar_inscripciones.php");
             } else {
               // Mensaje de error si la contraseña es incorrecta
               $contraseña_err = "La contraseña es incorrecta.";
@@ -124,7 +124,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION["correo"] = $correo_entrenador;
 
                 // Redirigimos el usuario a su página inicial
-                header("location: https://cdrlamojonera.com/html/entrenador_listado.php");
+                header("location: /html/entrenador_listado.php");
               } else {
                 // Mensaje de error si la contraseña es incorrecta
                 $contraseña_err = "La contraseña es incorrecta.";

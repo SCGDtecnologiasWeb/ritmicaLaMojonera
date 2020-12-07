@@ -45,7 +45,7 @@
     <?php
     include_once($_SERVER['DOCUMENT_ROOT'] . '/php/config.php');
 
-    $consulta_SQL = "SELECT idVictoria, tituloVictoria, descripcion FROM victoria ORDER BY idVictoria DESC";
+    $consulta_SQL = "SELECT idVictoria, tituloVictoria, descripcion FROM Victoria ORDER BY idVictoria DESC";
     $resultado = $link->query($consulta_SQL);
 
     $num_rows = mysqli_num_rows($resultado);

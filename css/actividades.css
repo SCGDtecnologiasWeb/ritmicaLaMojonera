@@ -1,9 +1,10 @@
 .content-container {
-  width: 90%;
-  margin: 30px auto;
+  width: 75%;
+  margin: auto;
   display: flex;
   justify-content: space-evenly;
   text-align: center;
+  overflow: hidden;
 }
 
 .content-container h3 {
@@ -16,7 +17,7 @@
 
 .image-container img {
   width: 100%;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 @media screen and (max-width: 1210px) {

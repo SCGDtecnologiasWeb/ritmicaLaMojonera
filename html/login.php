@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($correo_err) && empty($contraseña_err)) {
 
     // Preparamos la consulta para ver si es admin
-    $sql = "SELECT idAdministrador, correoAdmin, claveAccesoAdmin FROM administrador WHERE correoAdmin = ?";
+    $sql = "SELECT idAdministrador, correoAdmin, claveAccesoAdmin FROM Administrador WHERE correoAdmin = ?";
 
     if ($stmt = mysqli_prepare($link, $sql)) {
       // Linkamos las variables a la consulta como parametros
@@ -93,7 +93,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($es_admin === false) {
       // Preparamos la consulta para ver si es entrenador
-      $sql = "SELECT idEntrenador, correoEntrenador, claveAcceso FROM entrenador WHERE correoEntrenador = ?";
+      $sql = "SELECT idEntrenador, correoEntrenador, claveAcceso FROM Entrenador WHERE correoEntrenador = ?";
 
       if ($stmt = mysqli_prepare($link, $sql)) {
         // Linkamos las variables a la consulta como parametros

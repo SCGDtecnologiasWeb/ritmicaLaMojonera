@@ -1,10 +1,9 @@
 .content-container {
-  width: 75%;
-  margin: auto;
+  width: 90%;
+  margin: 30px auto;
   display: flex;
   justify-content: space-evenly;
   text-align: center;
-  overflow: hidden;
 }
 
 .content-container h3 {
@@ -17,32 +16,42 @@
 
 .image-container img {
   width: 100%;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
-@media screen and (max-width: 1210px) {
-  .content-container img {
-    float: initial;
-    margin: auto;
+@media screen and (max-width: 700px) {
+  .content-container {
     display: block;
-    height: auto;
-    width: 100%;
+    padding: 10px 25px;
   }
-}
-
-@media screen and (max-width: 800px) {
-  .sections-container {
-    display: initial;
-    width: 90%;
+  .image-container {
+    width: 400px;
+    margin: auto;
+    margin-bottom: 40px;
+  }
+  @media screen and (max-width: 1210px) {
+    .image-container {
+      float: initial;
+      margin: auto;
+      display: block;
+      height: auto;
+      width: 100%;
+    }
   }
 
-  .sections-container div {
-    max-height: 400px;
-    max-width: 100%;
-    width: 100%;
+  @media screen and (min-width: 300px) and (max-width: 350px) and (max-width: 480px) {
+    .image-container img {
+      display: inline-block;
+      width: 300px;
+    }
+    .image-container p {
+      display: block;
+    }
   }
 
-  .sections-container h2 {
-    margin: 5px auto 20px;
+  @media screen and (min-width: 768px) {
+    .image-container {
+      width: 90%;
+    }
   }
 }

@@ -25,22 +25,25 @@
   <!-- Content Start -->
   <div class="content-container">
     <h1>Grupo de Federadas de Gimnasia Rítmica La Mojonera</h1>
-    <p>
-      Los grupos de federadas se dividen en niveles, teniendo cada grupo un
-      horario específico puesto por la coordinadora técnica. A estas gimnastas
-      se le entrena con el objetivo de participar y competir en torneos a
-      nivel autonómico y nacional, dependiendo del nivel de las gimnastas.
-      Todas ellas han pasado previviamente por el nivel de escuela y sea
-      dentro de nuestro club o vengan de otro club externo.
-    </p>
-    <p>
-      Este nivel exige mucho sacrificio para las gimnastas pues es un nivel de
-      exigencia y trabajo superior y requiere mucha constancia para mejorar
-      tanto aspectos técnicos como físicos, pero sin olvidar los valores
-      importantes de cualquier deporte como son el compañerismo, el trabajo en
-      equipo, etc.
-    </p>
-    <img src="/assets/federadas.jpeg" />
+    <div class="image-container">
+      <img src="/assets/federadas.jpeg" alt="Grupo de federadas de Ritmica La Mojonera" />
+      <p>
+        Los grupos de federadas se dividen en niveles, teniendo cada grupo un
+        horario específico puesto por la coordinadora técnica. A estas gimnastas
+        se le entrena con el objetivo de participar y competir en torneos a
+        nivel autonómico y nacional, dependiendo del nivel de las gimnastas.
+        Todas ellas han pasado previviamente por el nivel de escuela y sea
+        dentro de nuestro club o vengan de otro club externo.
+      </p>
+      <p>
+        Este nivel exige mucho sacrificio para las gimnastas pues es un nivel de
+        exigencia y trabajo superior y requiere mucha constancia para mejorar
+        tanto aspectos técnicos como físicos, pero sin olvidar los valores
+        importantes de cualquier deporte como son el compañerismo, el trabajo en
+        equipo, etc.
+      </p>
+
+    </div>
   </div>
   <br />
   <!-- Content End -->

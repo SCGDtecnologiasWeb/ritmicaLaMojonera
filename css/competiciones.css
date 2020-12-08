@@ -1,5 +1,5 @@
 .content-container {
-  width: 100%;
+  width: 90%;
   margin: 30px auto;
   display: flex;
   justify-content: space-evenly;
@@ -23,10 +23,34 @@
   .content-container {
     display: block;
   }
-
   .image-container {
     width: 400px;
     margin: auto;
     margin-bottom: 40px;
+  }
+  @media screen and (max-width: 1210px) {
+    .image-container {
+      float: initial;
+      margin: auto;
+      display: block;
+      height: auto;
+      width: 100%;
+    }
+  }
+
+  @media screen and (min-width: 300px) and (max-width: 350px) and (max-width: 480px) {
+    .image-container img {
+      display: inline-block;
+      width: 300px;
+    }
+    .image-container p {
+      display: block;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .image-container {
+      width: 90%;
+    }
   }
 }

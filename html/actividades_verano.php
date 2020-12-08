@@ -27,18 +27,23 @@
   <div class="content-container">
     <h1>Actividades de verano de Gimnasia Rítmica La Mojonera</h1>
     <h2>Campus de verano</h2>
-    <p>
-      El club de Gimnasia Rítmica de La Mojonera realiza un campus deportivo
-      de verano durante el mes de Agosto en el pabellón municipal de deportes
-      de esta localidad en horario de mañana. En este campus e realizan
-      diferentes actividades como clases de automaquillaje, zumba, baile
-      moderno, preparación física, técnica corporal, técnica de aparato y
-      ballet. Es apto para todos los niveles e incluso para tener un primer
-      contacto con este deporte. (Proximamente tendremos novedades de la
-      realización del campus de este año, estén atentos a nuestras redes
-      sociales).
-    </p>
-    <img src="/assets/actividades_verano.jpeg" />
+
+    <div class="image-container">
+      <img src="/assets/actividades_verano.jpeg" alt="Actividades de verano" />
+      <p>
+        El club de Gimnasia Rítmica de La Mojonera realiza un campus deportivo
+        de verano durante el mes de Agosto en el pabellón municipal de deportes
+        de esta localidad en horario de mañana. En este campus e realizan
+        diferentes actividades como clases de automaquillaje, zumba, baile
+        moderno, preparación física, técnica corporal, técnica de aparato y
+        ballet. Es apto para todos los niveles e incluso para tener un primer
+        contacto con este deporte. (Proximamente tendremos novedades de la
+        realización del campus de este año, estén atentos a nuestras redes
+        sociales).
+      </p>
+
+    </div>
+
   </div>
   <br />
   <!-- Content End -->

@@ -25,19 +25,19 @@
   <!-- Content Start -->
   <div class="content-container">
     <div class="image-container">
-      <a href="/html/provincial.html">
+      <a href="/html/provincial.php">
         <img src="/assets/Más fotos/provincial.jpeg" />
         <h3>Provincial</h3>
       </a>
     </div>
     <div class="image-container">
-      <a href="/html/autonomica.html">
+      <a href="/html/autonomica.php">
         <img src="/assets/Más fotos/autonomica.jpeg" />
         <h3>Autonómica</h3>
       </a>
     </div>
     <div class="image-container">
-      <a href="/html/nacional.html">
+      <a href="/html/nacional.php">
         <img src="/assets/Más fotos/nacional.jpeg" />
         <h3>Nacional</h3>
       </a>

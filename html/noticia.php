@@ -27,7 +27,7 @@
   // Noticia
   include_once($_SERVER['DOCUMENT_ROOT'] . '/php/config.php');
 
-  $consulta_SQL = "SELECT * FROM noticia WHERE idNoticia = {$_GET["idNoticia"]}";
+  $consulta_SQL = "SELECT * FROM Noticia WHERE idNoticia = {$_GET["idNoticia"]}";
   $resultado = $link->query($consulta_SQL);
   $fila = $resultado->fetch_array();
 

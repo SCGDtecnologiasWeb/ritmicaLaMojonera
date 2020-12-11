@@ -161,26 +161,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   <link rel="stylesheet" href="/css/style.css" />
   <link rel="stylesheet" href="/css/login.css" />
-
-  <!-- Latest compiled and minified CSS -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-  <script type="text/javascript">
-    $(document).ready(function() {
-      $('#open').on('click', function() {
-        $('#popup').fadeIn('slow');
-        $('.popup-overlay').fadeIn('slow');
-        $('.popup-overlay').height($(window).height());
-        return false;
-      });
-
-      $('#close').on('click', function() {
-        $('#popup').fadeOut('slow');
-        $('.popup-overlay').fadeOut('slow');
-        return false;
-      });
-    });
-  </script>
 </head>
 
 <body>
@@ -199,45 +179,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="password" class="form-control" placeholder="contraseña" name="contraseña" />
           </div>
           <div class="col-12 forgot" id="forgot-icon">
-            <a href="/html/login.php"><i class="fas fa-caret-right"></i>¿Olvidó su contraseña?</a>
+            <a href="#"><i class="fas fa-caret-right"></i>¿Olvidó su contraseña?</a>
           </div>
-          <div class="container">
-            <div class="row">
-              <div id="content" class="col-lg-12">
-                <a href="/html/login.php" class="btn btn-primary" id="open">Abrir popup</a>
-              </div>
-            </div>
+          <div class="form-group form-button text-right">
+            <button type="submit" class="btn btn-primary" name="continuar">
+              <i class="fas fa-arrow-right"></i> Continuar
+            </button>
+          </div>
 
-            <div id="popup" style="display: none;">
-              <div class="content-popup">
-                <div class="close">
-                  <a href="/html/login.php" id="close"><img src="" /></a>
-                </div>
-                <div>
-                  <h2>¿Olvidó su contraseña?</h2>
-                  <p>Este es un mensaje utilizando ajax. Si olvidó su contraseña pongase en contacto con el administrador
-                    email : hola666@gmail.com</p>
-                  <div style="float:left; width:100%;">
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="popup-overlay"></div>
-            <div class="form-group form-button text-right">
-              <button type="submit" class="btn btn-primary" name="continuar">
-                <i class="fas fa-arrow-right"></i> Continuar
-              </button>
-            </div>
-
-            <!-- <div class="link-button text-left">
+          <!-- <div class="link-button text-left">
             <a class="btn btn-primary" href="index.html" role="button"><i class="fas fa-arrow-left"></i> Volver atrás</a>
           </div> -->
         </form>
       </div>
     </div>
   </div>
-
-
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>

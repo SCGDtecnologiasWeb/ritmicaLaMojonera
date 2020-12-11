@@ -78,7 +78,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               header("location: /html/administrar_inscripciones.php");
             } else {
               // Mensaje de error si la contraseña es incorrecta
-              $contraseña_err = "La contraseña es incorrecta.";
+              if (empty($contraseña_err)) {
+                $contraseña_err = "La contraseña es incorrecta.";
+              }
             }
           }
         }
@@ -127,7 +129,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 header("location: /html/entrenador_listado.php");
               } else {
                 // Mensaje de error si la contraseña es incorrecta
-                $contraseña_err = "La contraseña es incorrecta.";
+                if (empty($contraseña_err)) {
+                  $contraseña_err = "La contraseña es incorrecta.";
+                }
               }
             }
           } else {

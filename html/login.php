@@ -199,7 +199,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="password" class="form-control" placeholder="contraseña" name="contraseña" />
           </div>
           <div class="col-12 forgot" id="forgot-icon">
-            <a href="#"><i class="fas fa-caret-right"></i>¿Olvidó su contraseña?</a>
+            <a href="/html/login.php"><i class="fas fa-caret-right"></i>¿Olvidó su contraseña?</a>
           </div>
           <div class="container">
             <div class="row">

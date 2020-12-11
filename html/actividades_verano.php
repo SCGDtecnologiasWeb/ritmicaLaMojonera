@@ -36,7 +36,10 @@
         de esta localidad en horario de mañana. En este campus e realizan
         diferentes actividades como clases de automaquillaje, zumba, baile
         moderno, preparación física, técnica corporal, técnica de aparato y
-        ballet. Es apto para todos los niveles e incluso para tener un primer
+        ballet.
+      </p>
+      <p>
+        Es apto para todos los niveles e incluso para tener un primer
         contacto con este deporte. (Proximamente tendremos novedades de la
         realización del campus de este año, estén atentos a nuestras redes
         sociales).

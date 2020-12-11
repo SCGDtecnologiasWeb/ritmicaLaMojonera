@@ -69,3 +69,33 @@
     margin: 7px auto 40px;
   }
 }
+@media screen and (max-width: 700px) {
+  .content-container {
+    display: block;
+  }
+  @media screen and (max-width: 1210px) {
+    .image-container {
+      float: initial;
+      margin: auto;
+      display: block;
+      height: auto;
+      width: 100%;
+    }
+  }
+
+  @media screen and (min-width: 300px) and (max-width: 350px) and (max-width: 480px) {
+    .image-container img {
+      display: inline-block;
+      width: 300px;
+    }
+    .image-container p {
+      display: block;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .image-container {
+      width: 90%;
+    }
+  }
+}

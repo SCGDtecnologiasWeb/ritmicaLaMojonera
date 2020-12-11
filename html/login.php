@@ -15,9 +15,9 @@ if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] === true) {
 include_once($_SERVER['DOCUMENT_ROOT'] . '/php/config.php');
 
 $correo = "";
-$correo_err = "";
-
 $contraseña = "";
+
+$correo_err = "";
 $contraseña_err = "";
 
 $es_admin = false;
@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $contraseña = trim($_POST["contraseña"]);
   }
 
-  if (empty($correo_err) && empty($contraseña_err)) {
+  if (empty($correo_err)) {
 
     // Preparamos la consulta para ver si es admin
     $sql = "SELECT idAdministrador, correoAdmin, claveAccesoAdmin FROM Administrador WHERE correoAdmin = ?";
@@ -173,10 +173,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <form action="/html/login.php" method="POST" class="formulario">
           <h1>Iniciar sesión</h1>
           <div class="form-group" id="user-group">
-            <input type="text" class="form-control" placeholder="correo" name="correo" />
+            <?php
+            $value = "";
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+              $value = "value=\"{$_POST["correo"]}\"";
+            }
+
+            if (empty($correo_err)) {
+              echo "<input type=\"text\" class=\"form-control\" placeholder=\"correo\" name=\"correo\" {$value} />";
+            } else {
+              echo "<input type=\"text\" class=\"form-control is-invalid\" placeholder=\"correo\" name=\"correo\" {$value} />";
+              echo "<div class=\"invalid-feedback\">";
+              echo $correo_err;
+              echo "</div>";
+            }
+            ?>
           </div>
           <div class="form-group" id="password-group">
-            <input type="password" class="form-control" placeholder="contraseña" name="contraseña" />
+            <?php
+            if (empty($contraseña_err)) {
+              echo "<input type=\"password\" class=\"form-control\" placeholder=\"contraseña\" name=\"contraseña\" />";
+            } else {
+              echo "<input type=\"password\" class=\"form-control is-invalid\" placeholder=\"contraseña\" name=\"contraseña\" />";
+              echo "<div class=\"invalid-feedback\">";
+              echo $contraseña_err;
+              echo "</div>";
+            }
+            ?>
           </div>
           <div class="col-12 forgot" id="forgot-icon">
             <a href="#"><i class="fas fa-caret-right"></i>¿Olvidó su contraseña?</a>
@@ -186,14 +209,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               <i class="fas fa-arrow-right"></i> Continuar
             </button>
           </div>
-
-          <!-- <div class="link-button text-left">
-            <a class="btn btn-primary" href="index.html" role="button"><i class="fas fa-arrow-left"></i> Volver atrás</a>
-          </div> -->
         </form>
       </div>
     </div>
   </div>
+
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>

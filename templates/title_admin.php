@@ -1,5 +1,5 @@
 <!-- Title Start -->
-<div class="container">
+<div>
   <div class="row title-row">
     <div class="col title-empty-col"></div>
     <div class="col-5 title-col">

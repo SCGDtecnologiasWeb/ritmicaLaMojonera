@@ -41,7 +41,35 @@
   }
 }
 
-@media screen and (max-width: 900px) and (min-width: 390px) {
+@media screen and (max-width: 900px) {
+  .palmares-content {
+    width: 80%;
+    margin: 30px auto;
+  }
+
+  .trophy {
+    display: block;
+    margin: auto;
+    width: 100%;
+  }
+
+  .trophy-img img {
+    width: 60%;
+  }
+
+  .trophy-text {
+    width: 90%;
+  }
+
+  .trophy-text h3 {
+    margin: 7px auto;
+  }
+
+  .trophy-text p {
+    margin: 7px auto 40px;
+  }
+}
+@media screen and (max-width: 400px) {
   .palmares-content {
     width: 80%;
     margin: 30px auto;

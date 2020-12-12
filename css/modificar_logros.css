@@ -12,6 +12,7 @@
 .trophy {
   display: table-cell;
   width: 50%;
+  vertical-align: middle;
 }
 
 .trophy-img {

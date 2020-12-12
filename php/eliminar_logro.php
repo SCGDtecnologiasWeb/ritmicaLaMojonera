@@ -7,11 +7,11 @@ if (!isset($_SESSION["logged_in"]) || !$_SESSION["logged_in"] === true || !$_SES
 
 include_once($_SERVER['DOCUMENT_ROOT'] . '/php/config.php');
 
-$sql = "DELETE FROM Noticia WHERE idNoticia = (?)";
+$sql = "DELETE FROM Victoria WHERE idVictoria = (?)";
 $deleteCorrecto = 0;
 
 if ($stmt = mysqli_prepare($link, $sql)) {
-  mysqli_stmt_bind_param($stmt, "i", $_GET["idNoticia"]);
+  mysqli_stmt_bind_param($stmt, "i", $_GET["idVictoria"]);
   if (mysqli_stmt_execute($stmt)) {
     $deleteCorrecto = 1;
   }
@@ -20,6 +20,6 @@ if ($stmt = mysqli_prepare($link, $sql)) {
 mysqli_close($link);
 
 if ($deleteCorrecto == 1) {
-  unlink($_SERVER['DOCUMENT_ROOT'] . "/assets/noticias/noticia" . $_GET["idNoticia"] . ".jpg");
-  header("location: /html/modificar_noticias.php");
+  unlink($_SERVER['DOCUMENT_ROOT'] . "/assets/palmares/victoria" . $_GET["idVictoria"] . ".jpg");
+  header("location: /html/modificar_logros.php");
 }

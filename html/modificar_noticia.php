@@ -57,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] != "POST") {
     $uploadOk = 0;
   }
   // Comprobar el tipo de archivo
-  if ($check["mime"] != "image/jpeg" && $check["mime"] != "image/png") {
+  if ($uploadOk == 1 && $check["mime"] != "image/jpeg" && $check["mime"] != "image/png") {
     $img_err .= "Solo archivos .jpeg, .jpg o .png" . "<br>";
     $uploadOk = 0;
   }
@@ -82,6 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] != "POST") {
       if (mysqli_stmt_execute($stmt)) {
         $updateCorrecto = 1;
       }
+      mysqli_stmt_close($stmt);
 
       //Guardamos la imagen
       $directorio = $_SERVER['DOCUMENT_ROOT'] . "/assets/noticias/";

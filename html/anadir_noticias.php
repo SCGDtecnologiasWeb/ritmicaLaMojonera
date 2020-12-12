@@ -28,13 +28,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $uploadOk = 0;
   }
   // Comprobar el tipo de archivo
-  if ($check["mime"] != "image/jpeg" && $check["mime"] != "image/png") {
+  if ($uploadOk == 1 && $check["mime"] != "image/jpeg" && $check["mime"] != "image/png") {
     $img_err .= "Solo archivos .jpeg, .jpg o .png" . "<br>";
     $uploadOk = 0;
   }
   // Comprueba el tamaño de la imagen, limite de 500kB
   if ($img["size"] > 500000) {
-    $img_err .= "Tamaño de imagen demasiado grande" . "<br>";
+    $img_err .= "Tamaño de archivo demasiado grande" . "<br>";
     $uploadOk = 0;
   }
 
@@ -82,7 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 
   if ($insertCorrecto == 1 && $moveImageCorrecto == 1) {
-    header("location: /html/administrar_inscripciones.php");
+    header("location: /html/modificar_noticias.php");
   }
 }
 ?>

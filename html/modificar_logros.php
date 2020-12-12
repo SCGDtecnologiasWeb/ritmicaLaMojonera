@@ -39,45 +39,44 @@
 
   <!-- Content Start -->
   <div class="palmares-content">
-    <div class="trophy-container">
-      <div class="trophy">
-        <div class="trophy-img">
-          <div class="trophy-img-wrapper">
-            <img src="/assets/51BZ72JzaTL._AC_SX466_.jpg" />
-            <a href="modificar_logro.php">
-              <img src="/assets/edit-icon.PNG" class="edit-img" />
-            </a>
-            <img src="/assets/bin-icon.PNG" class="bin-img" />
-          </div>
-        </div>
-        <div class="trophy-text">
-          <h3>Nombre del trofeo</h3>
-          <p>
-            Descripción del trofeo del trofeo del trofeo del trofeo del trofeo
-            del trofeo del trofeo del trofeo del trofeo
-          </p>
-        </div>
-      </div>
+    <?php
+    include_once($_SERVER['DOCUMENT_ROOT'] . '/php/config.php');
 
-      <div class="trophy">
-        <div class="trophy-img">
-          <div class="trophy-img-wrapper">
-            <img src="/assets/trofeo-dorado-realista-espacio-texto_48799-1062.jpg" />
-            <a href="modificar_logro.php">
-              <img src="/assets/edit-icon.PNG" class="edit-img" />
-            </a>
-            <img src="/assets/bin-icon.PNG" class="bin-img" />
-          </div>
-        </div>
-        <div class="trophy-text">
-          <h3>Nombre del trofeo</h3>
-          <p>
-            Descripción del trofeo del trofeo del trofeo del trofeo del trofeo
-            del trofeo del trofeo del trofeo del trofeo
-          </p>
-        </div>
-      </div>
-    </div>
+    $consulta_SQL = "SELECT idVictoria, tituloVictoria, descripcion FROM Victoria ORDER BY idVictoria DESC";
+    $resultado = $link->query($consulta_SQL);
+
+    $num_rows = mysqli_num_rows($resultado);
+    $aux = intdiv($num_rows, 2) + ($num_rows % 2);
+
+    for ($i = 0; $i < $aux; $i++) {
+      echo "<div class=\"trophy-container\">";
+
+      $j = 0;
+      while (($fila = $resultado->fetch_array()) && $j < 2) {
+        echo "<div class=\"trophy\">
+                <div class=\"trophy-img\">
+                  <div class=\"trophy-img-wrapper\">
+                    <img src=\"/assets/palmares/victoria{$fila["idVictoria"]}.jpg\" />
+                    <a href=\"modificar_logro.php?idVictoria={$fila["idVictoria"]} \">
+                      <img src=\"/assets/edit-icon.PNG\" class=\"edit-img\" />
+                    </a>
+                    <a href=\"/php/eliminar_logro.php?idVictoria={$fila["idVictoria"]} \">
+                      <img src=\"/assets/bin-icon.PNG\" class=\"bin-img\" />
+                    </a>
+                  </div>
+                </div>
+                <div class=\"trophy-text\">
+                  <h3>{$fila["tituloVictoria"]}</h3>
+                  <p>{$fila["descripcion"]}</p>
+                </div>
+              </div>";
+        $j++;
+      }
+      echo "</div>";
+    }
+
+    $link->close();
+    ?>
   </div>
   <!-- Content End -->
 

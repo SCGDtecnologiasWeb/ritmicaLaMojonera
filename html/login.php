@@ -12,7 +12,7 @@ if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] === true) {
   }
 }
 
-include_once($_SERVER['DOCUMENT_ROOT'] . '/php/config.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/php/config.php');
 
 $correo = "";
 $contraseña = "";

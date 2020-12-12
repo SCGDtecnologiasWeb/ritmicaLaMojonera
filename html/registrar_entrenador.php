@@ -59,11 +59,6 @@
           </div>
 
           <div class="form-field">
-            <label for="birthdate" class="field-title">Fecha de nacimiento</label><br />
-            <input type="date" id="birthdate" name="birthdate" autocomplete="off" /><br />
-          </div>
-
-          <div class="form-field">
             <label for="dni" class="field-title">DNI/NIE</label><br />
             <input type="text" id="dni" name="dni" autocomplete="off" pattern="((([x-zX-Z])|([lmLM])|[0-9]){1}([ ]?)(([0-9]){7})([-]?)([a-zA-Z]{1}))" minlength="9" maxlength="11" /><br />
           </div>

@@ -41,7 +41,8 @@
   $idEntrenador = $_SESSION["id"];
   include_once($_SERVER['DOCUMENT_ROOT'] . '/php/config.php');
   $sql = "SELECT * FROM `Entrenador` WHERE idEntrenador= $idEntrenador";
-  $resultado = $link->query($sql);
+  $resultado = mysqli_query($link, $sql);
+  $resultado = mysqli_fetch_assoc($resultado);
   $link->close();
   ?>
 

@@ -616,12 +616,18 @@ a {
   }
 }
 @media screen and (max-width: 450px) {
-  /*  .callout p {
+  .callout p {
     display: none;
-  } */
+  }
   .callout-btn-section {
     padding-top: 0px;
     padding-bottom: 15px;
+  }
+  .callout-btn1 {
+    padding-bottom: 20px;
+  }
+  .callout-btn2 {
+    margin-bottom: 30px;
   }
 }
 

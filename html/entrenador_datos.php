@@ -39,10 +39,10 @@
 
   <?php
   $idEntrenador = $_SESSION["id"];
+  echo ("$idEntrenador");
   require_once("config.php");
   $sql = "SELECT * FROM `Entrenador` WHERE idEntrenador= $idEntrenador";
   $resultado = $link->query($sql);
-  echo ("Entra2");
   ?>
 
   <!-- Content Start -->

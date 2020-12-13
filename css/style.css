@@ -620,7 +620,7 @@ a {
     display: none;
   }
   .callout-btn-section {
-    padding-top: 10px;
+    padding-top: 0px;
     padding-bottom: 15px;
   }
 }

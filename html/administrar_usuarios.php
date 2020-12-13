@@ -43,7 +43,7 @@
     <div class="trainer-container">
       <div class="trainer">
         <div class="img-container">
-          <img src="/assets/Juanma - profile.jpeg" />
+          <img src="/assets/Juanma - profile.jpeg" alt="Entrenador" />
         </div>
         <div class="name-container">
           <h2>Nombre completo</h2>
@@ -62,14 +62,14 @@
         </div>
       </div>
       <a href="modificar_usuario.html">
-        <img src="/assets/edit-icon.PNG" class="edit-img" />
+        <img src="/assets/edit-icon.PNG" class="edit-img" alt="Editar" />
       </a>
-      <img src="/assets/bin-icon.PNG" class="bin-img" />
+      <img src="/assets/bin-icon.PNG" class="bin-img" alt="Eliminar" />
     </div>
     <div class="trainer-container">
       <div class="trainer">
         <div class="img-container">
-          <img src="/assets/Juanma - profile.jpeg" />
+          <img src="/assets/Juanma - profile.jpeg" alt="Entrenador" />
         </div>
         <div class="name-container">
           <h2>Nombre completo</h2>
@@ -88,14 +88,14 @@
         </div>
       </div>
       <a href="modificar_usuario.html">
-        <img src="/assets/edit-icon.PNG" class="edit-img" />
+        <img src="/assets/edit-icon.PNG" class="edit-img" alt="Editar" />
       </a>
-      <img src="/assets/bin-icon.PNG" class="bin-img" />
+      <img src="/assets/bin-icon.PNG" class="bin-img" alt="Eliminar" />
     </div>
     <div class="trainer-container">
       <div class="trainer">
         <div class="img-container">
-          <img src="/assets/Juanma - profile.jpeg" />
+          <img src="/assets/Juanma - profile.jpeg" alt="Entrenador" />
         </div>
         <div class="name-container">
           <h2>Nombre completo</h2>
@@ -114,16 +114,16 @@
         </div>
       </div>
       <a href="modificar_usuario.html">
-        <img src="/assets/edit-icon.PNG" class="edit-img" />
+        <img src="/assets/edit-icon.PNG" class="edit-img" alt="Editar" />
       </a>
-      <img src="/assets/bin-icon.PNG" class="bin-img" />
+      <img src="/assets/bin-icon.PNG" class="bin-img" alt="Eliminar" />
     </div>
 
     <h1 class="gymnast-header">Gimnastas</h1>
     <div class="gymnast-container">
       <div class="gymnast">
         <div class="img-container">
-          <img src="/assets/Juanma - profile.jpeg" />
+          <img src="/assets/Juanma - profile.jpeg" alt="Gimnasta" />
         </div>
         <div class="name-container">
           <h2>Nombre completo</h2>
@@ -142,14 +142,14 @@
         </div>
       </div>
       <a href="modificar_usuario.html">
-        <img src="/assets/edit-icon.PNG" class="edit-img" />
+        <img src="/assets/edit-icon.PNG" class="edit-img" alt="Editar" />
       </a>
-      <img src="/assets/bin-icon.PNG" class="bin-img" />
+      <img src="/assets/bin-icon.PNG" class="bin-img" alt="Eliminar" />
     </div>
     <div class="gymnast-container">
       <div class="gymnast">
         <div class="img-container">
-          <img src="/assets/Juanma - profile.jpeg" />
+          <img src="/assets/Juanma - profile.jpeg" alt="Gimnasta" />
         </div>
         <div class="name-container">
           <h2>Nombre completo</h2>
@@ -168,14 +168,14 @@
         </div>
       </div>
       <a href="modificar_usuario.html">
-        <img src="/assets/edit-icon.PNG" class="edit-img" />
+        <img src="/assets/edit-icon.PNG" class="edit-img" alt="Editar" />
       </a>
-      <img src="/assets/bin-icon.PNG" class="bin-img" />
+      <img src="/assets/bin-icon.PNG" class="bin-img" alt="Eliminar" />
     </div>
     <div class="gymnast-container">
       <div class="gymnast">
         <div class="img-container">
-          <img src="/assets/Juanma - profile.jpeg" />
+          <img src="/assets/Juanma - profile.jpeg" alt="Gimnasta" />
         </div>
         <div class="name-container">
           <h2>Nombre completo</h2>
@@ -194,14 +194,14 @@
         </div>
       </div>
       <a href="modificar_usuario.html">
-        <img src="/assets/edit-icon.PNG" class="edit-img" />
+        <img src="/assets/edit-icon.PNG" class="edit-img" alt="Editar" />
       </a>
-      <img src="/assets/bin-icon.PNG" class="bin-img" />
+      <img src="/assets/bin-icon.PNG" class="bin-img" alt="Eliminar" />
     </div>
     <div class="gymnast-container">
       <div class="gymnast">
         <div class="img-container">
-          <img src="/assets/Juanma - profile.jpeg" />
+          <img src="/assets/Juanma - profile.jpeg" alt="Gimnasta" />
         </div>
         <div class="name-container">
           <h2>Nombre completo</h2>
@@ -220,9 +220,9 @@
         </div>
       </div>
       <a href="modificar_usuario.html">
-        <img src="/assets/edit-icon.PNG" class="edit-img" />
+        <img src="/assets/edit-icon.PNG" class="edit-img" alt="Editar" />
       </a>
-      <img src="/assets/bin-icon.PNG" class="bin-img" />
+      <img src="/assets/bin-icon.PNG" class="bin-img" alt="Eliminar" />
     </div>
   </div>
   <!-- Content End -->

@@ -26,19 +26,19 @@
   <div class="content-container">
     <div class="image-container">
       <a href="/html/provincial.php">
-        <img src="/assets/Más fotos/provincial.jpeg" />
+        <img src="/assets/Más fotos/provincial.jpeg" alt="Competición provincial" />
         <h3>Provincial</h3>
       </a>
     </div>
     <div class="image-container">
       <a href="/html/autonomica.php">
-        <img src="/assets/Más fotos/autonomica.jpeg" />
+        <img src="/assets/Más fotos/autonomica.jpeg" alt="Competición autonómica" />
         <h3>Autonómica</h3>
       </a>
     </div>
     <div class="image-container">
       <a href="/html/nacional.php">
-        <img src="/assets/Más fotos/nacional.jpeg" />
+        <img src="/assets/Más fotos/nacional.jpeg" alt="Competición nacional" />
         <h3>Nacional</h3>
       </a>
     </div>

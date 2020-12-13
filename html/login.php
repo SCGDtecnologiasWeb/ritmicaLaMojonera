@@ -172,7 +172,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="main-section">
       <div class="border-0 modal-content">
         <div class="col-12 user-img text-center">
-          <img src="/assets/logo_ritmica.png" width="150px" height="150px" />
+          <img src="/assets/logo_ritmica.png" width="150px" height="150px" alt="Club Rítmica La Mojonera" />
         </div>
         <form action="/html/login.php" method="POST" class="formulario">
           <h1>Iniciar sesión</h1>
@@ -235,7 +235,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <div id="popup" style="display: none;">
               <div class="content-popup">
-                <div class="close"><a href="/html/login.php" id="close"><img src="/assets/close.jpeg" /></a></div>
+                <div class="close"><a href="/html/login.php" id="close"><img src="/assets/close.jpeg" alt="Cerrar" /></a></div>
                 <h2>¿Olvidó su contraseña?</h2>
                 <p>Este es un mensaje utilizando ajax. Si olvidó su contraseña pongase en contacto con el administrador
                   email : hola666@gmail.com</p>

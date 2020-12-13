@@ -42,47 +42,47 @@
     <div class="img-container" style="
           background-image: url('/assets/Más fotos/WhatsApp\ Image\ 2020-10-27\ at\ 15.39.06.jpeg');
         ">
-      <img src="/assets/cross.jpg" class="bin-img" />
+      <img src="/assets/cross.jpg" class="bin-img" alt="Eliminar" />
     </div>
     <div class="img-container" style="
           background-image: url('/assets/Más fotos/WhatsApp\ Image\ 2020-10-27\ at\ 15.39.10\ \(1\).jpeg');
         ">
-      <img src="/assets/cross.jpg" class="bin-img" />
+      <img src="/assets/cross.jpg" class="bin-img" alt="Eliminar" />
     </div>
     <div class="img-container" style="
           background-image: url('/assets/Más fotos/WhatsApp\ Image\ 2020-10-27\ at\ 15.39.12.jpeg');
         ">
-      <img src="/assets/cross.jpg" class="bin-img" />
+      <img src="/assets/cross.jpg" class="bin-img" alt="Eliminar" />
     </div>
     <div class="img-container" style="
           background-image: url('/assets/Más fotos/WhatsApp\ Image\ 2020-10-29\ at\ 14.49.13\ \(1\).jpeg');
         ">
-      <img src="/assets/cross.jpg" class="bin-img" />
+      <img src="/assets/cross.jpg" class="bin-img" alt="Eliminar" />
     </div>
     <div class="img-container" style="
           background-image: url('/assets/Más fotos/WhatsApp\ Image\ 2020-10-29\ at\ 14.49.17.jpeg');
         ">
-      <img src="/assets/cross.jpg" class="bin-img" />
+      <img src="/assets/cross.jpg" class="bin-img" alt="Eliminar" />
     </div>
     <div class="img-container" style="
           background-image: url('/assets/Más fotos/WhatsApp\ Image\ 2020-10-29\ at\ 14.49.20.jpeg');
         ">
-      <img src="/assets/cross.jpg" class="bin-img" />
+      <img src="/assets/cross.jpg" class="bin-img" alt="Eliminar" />
     </div>
     <div class="img-container" style="
           background-image: url('/assets/Más fotos/WhatsApp\ Image\ 2020-10-29\ at\ 14.49.23\ \(1\).jpeg');
         ">
-      <img src="/assets/cross.jpg" class="bin-img" />
+      <img src="/assets/cross.jpg" class="bin-img" alt="Eliminar" />
     </div>
     <div class="img-container" style="
           background-image: url('/assets/Más fotos/WhatsApp\ Image\ 2020-11-08\ at\ 11.45.21.jpeg');
         ">
-      <img src="/assets/cross.jpg" class="bin-img" />
+      <img src="/assets/cross.jpg" class="bin-img" alt="Eliminar" />
     </div>
     <div class="img-container" style="
           background-image: url('/assets/Más fotos/WhatsApp\ Image\ 2020-11-08\ at\ 11.45.21\ \(1\).jpeg');
         ">
-      <img src="/assets/cross.jpg" class="bin-img" />
+      <img src="/assets/cross.jpg" class="bin-img" alt="Eliminar" />
     </div>
   </div>
   <!-- Content End -->

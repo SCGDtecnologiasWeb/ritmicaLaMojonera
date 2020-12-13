@@ -33,7 +33,7 @@
       <div class="normative-content">
         <div class="normative-img">
           <a href="/assets/Normativas/undefined_undefined_b50791876a8b2ae86bd27b97d8f06399.pdf" target="_blank" rel="noopener noreferrer">
-            <img src="/assets/Normativas/undefined_undefined_b50791876a8b2ae86bd27b97d8f06399-1-1.jpg" />
+            <img src="/assets/Normativas/undefined_undefined_b50791876a8b2ae86bd27b97d8f06399-1-1.jpg" alt="Normativa 2021" />
           </a>
         </div>
 
@@ -76,7 +76,7 @@
       <div class="normative-content">
         <div class="normative-img">
           <a href="/assets/Normativas/Normativa2020.pdf" target="_blank" rel="noopener noreferrer">
-            <img src="/assets/Normativas/Normativa2020-1-1.jpg" />
+            <img src="/assets/Normativas/Normativa2020-1-1.jpg" alt="Normativa 2020" />
           </a>
         </div>
 

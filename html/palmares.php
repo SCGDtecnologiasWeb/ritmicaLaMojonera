@@ -58,7 +58,7 @@
       while (($fila = $resultado->fetch_array()) && $j < 2) {
         echo "<div class=\"trophy\">
                 <div class=\"trophy-img\">
-                  <img src=\"/assets/palmares/victoria{$fila["idVictoria"]}.jpg\" />
+                  <img src=\"/assets/palmares/victoria{$fila["idVictoria"]}.jpg\" alt=\"Trofeo\"/>
                 </div>
                 <div class=\"trophy-text\">
                   <h3>{$fila["tituloVictoria"]}</h3>

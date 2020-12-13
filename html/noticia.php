@@ -33,7 +33,7 @@
 
   echo "<!-- Content Start --> <div class=\"individual-news-container\">";
 
-  echo  "<img src=\"/assets/noticias/noticia{$fila["idNoticia"]}.jpg\">
+  echo  "<img src=\"/assets/noticias/noticia{$fila["idNoticia"]}.jpg\" alt=\"Noticia\">
             <p class=\"individual-news-title\">{$fila["titulo"]}</p>
             <p class=\"individual-news-description\">{$fila["descripcion"]}</p>
             <p class=\"individual-news-body\">{$fila["cuerpo"]}</p>

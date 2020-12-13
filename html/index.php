@@ -61,7 +61,7 @@
   while ($fila = $resultado->fetch_array()) {
     echo "<div class=\"news-col\">
             <div class=\"img-wrap\">
-              <img src=\"/assets/noticias/noticia{$fila["idNoticia"]}.jpg\" class=\"news-image\" />
+              <img src=\"/assets/noticias/noticia{$fila["idNoticia"]}.jpg\" class=\"news-image\" alt=\"Noticia\"/>
             </div>
             <div class=\"news-text\">
               <h5>{$fila["fecha"]}</h5>

@@ -56,12 +56,12 @@
         echo "<div class=\"trophy\">
                 <div class=\"trophy-img\">
                   <div class=\"trophy-img-wrapper\">
-                    <img src=\"/assets/palmares/victoria{$fila["idVictoria"]}.jpg\" />
+                    <img src=\"/assets/palmares/victoria{$fila["idVictoria"]}.jpg\" alt=\"Trofeo\"/>
                     <a href=\"modificar_logro.php?idVictoria={$fila["idVictoria"]} \">
-                      <img src=\"/assets/edit-icon.PNG\" class=\"edit-img\" />
+                      <img src=\"/assets/edit-icon.PNG\" class=\"edit-img\" alt=\"Editar\"/>
                     </a>
                     <a href=\"/php/eliminar_logro.php?idVictoria={$fila["idVictoria"]} \">
-                      <img src=\"/assets/bin-icon.PNG\" class=\"bin-img\" />
+                      <img src=\"/assets/bin-icon.PNG\" class=\"bin-img\"alt=\"Eliminar\" />
                     </a>
                   </div>
                 </div>

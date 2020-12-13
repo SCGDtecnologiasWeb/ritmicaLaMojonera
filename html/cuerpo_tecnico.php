@@ -45,7 +45,7 @@
     </div>
 
     <div class="image-container">
-      <img src="/assets/sofi.png" alt="Entrenador Sofía Nara Casado" />
+      <img src="/assets/sofi.png" alt="Entrenadora Sofía Nara Casado" />
       <h3>Sofía Nara Casado</h3>
       <p>
         Sofía es la coordinadora técnica del club y es entrenadora nacional y
@@ -54,7 +54,7 @@
       </p>
     </div>
     <div class="image-container">
-      <img src="/assets/mariMar.jpeg" alt="Entrenador María del Mar García Ulloa" />
+      <img src="/assets/mariMar.jpeg" alt="Entrenadora María del Mar García Ulloa" />
       <h3>María del Mar García Ulloa</h3>
       <p>
         María del Mar es entrenadora a nivel provincial y ha participado en
@@ -63,7 +63,7 @@
       </p>
     </div>
     <div class="image-container">
-      <img src="/assets/annie.jpeg" alt="Entrenador Anna Tortosa" />
+      <img src="/assets/annie.jpeg" alt="Entrenadora Anna Tortosa" />
       <h3>Anna Tortosa</h3>
       <p>
         Annie es entrenadora a nivel provincial y junto con Juanma lleva los

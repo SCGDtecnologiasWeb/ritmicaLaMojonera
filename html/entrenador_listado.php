@@ -43,7 +43,7 @@
     <div class="gymnast-container">
       <div class="gymnast">
         <div class="img-container">
-          <img src="/assets/Juanma - profile.jpeg">
+          <img src="/assets/Juanma - profile.jpeg" alt="Gimnasta">
         </div>
         <div class="name-container">
           <h2>Nombre completo</h2>
@@ -61,7 +61,7 @@
     <div class="gymnast-container">
       <div class="gymnast">
         <div class="img-container">
-          <img src="/assets/Juanma - profile.jpeg">
+          <img src="/assets/Juanma - profile.jpeg" alt="Gimnasta">
         </div>
         <div class="name-container">
           <h2>Nombre completo</h2>
@@ -79,7 +79,7 @@
     <div class="gymnast-container">
       <div class="gymnast">
         <div class="img-container">
-          <img src="/assets/Juanma - profile.jpeg">
+          <img src="/assets/Juanma - profile.jpeg" alt="Gimnasta">
         </div>
         <div class="name-container">
           <h2>Nombre completo</h2>
@@ -97,7 +97,7 @@
     <div class="gymnast-container">
       <div class="gymnast">
         <div class="img-container">
-          <img src="/assets/Juanma - profile.jpeg">
+          <img src="/assets/Juanma - profile.jpeg" alt="Gimnasta">
         </div>
         <div class="name-container">
           <h2>Nombre completo</h2>

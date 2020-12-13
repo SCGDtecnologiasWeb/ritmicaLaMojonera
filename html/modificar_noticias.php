@@ -53,7 +53,7 @@
     echo "<div class=\"news-col\">
             <div class=\"news-wrapper\">
               <div class=\"img-wrap\">
-                <img src=\"/assets/noticias/noticia{$fila["idNoticia"]}.jpg\" class=\"news-image\" />
+                <img src=\"/assets/noticias/noticia{$fila["idNoticia"]}.jpg\" class=\"news-image\" alt=\"Noticia\"/>
               </div>
               <div class=\"news-text\">
                 <h5>{$fila["fecha"]}</h5>
@@ -65,10 +65,10 @@
               </div>
             </div>
             <a href=\"modificar_noticia.php?idNoticia={$fila["idNoticia"]}\">
-              <img src=\"/assets/edit-icon.PNG\" class=\"edit-img\" />
+              <img src=\"/assets/edit-icon.PNG\" class=\"edit-img\"alt=\"Editar\" />
             </a>
             <a href=\"/php/eliminar_noticia.php?idNoticia={$fila["idNoticia"]}\">
-              <img src=\"/assets/bin-icon.PNG\" class=\"bin-img\" />
+              <img src=\"/assets/bin-icon.PNG\" class=\"bin-img\"alt=\"Eliminar\" />
             </a>
           </div>";
   }

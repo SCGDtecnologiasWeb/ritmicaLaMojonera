@@ -40,7 +40,7 @@
       formación del club.
     </p>
     <br />
-    <img src="/assets/original/gimt (1)2.jpeg" class="normal-img" />
+    <img src="/assets/original/gimt (1)2.jpeg" class="normal-img" alt="Club Rítmica La Mojonera" />
     <p>
       En la actualidad contamos con más de 50 gimnastas que, divididas entre
       las secciones de escuela y club, aprenden y evolucionan para participar

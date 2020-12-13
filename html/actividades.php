@@ -26,19 +26,19 @@
   <div class="content-container">
     <div class="image-container">
       <a href="/html/actividades_verano.php">
-        <img src="/assets/actividades_verano.jpeg" />
+        <img src="/assets/actividades_verano.jpeg" alt="Actividades de verano" />
         <h3>Actividades de verano</h3>
       </a>
     </div>
     <div class="image-container">
       <a href="/html/federadas.php">
-        <img src="/assets/federadas.jpeg" />
+        <img src="/assets/federadas.jpeg" alt="Gimnastas federadas" />
         <h3>Federadas</h3>
       </a>
     </div>
     <div class="image-container">
       <a href="/html/escuela.php">
-        <img src="/assets/Escuela.jpeg" />
+        <img src="/assets/Escuela.jpeg" alt="Escuela de Rítmica La Mojonera" />
         <h3>Escuela</h3>
       </a>
     </div>

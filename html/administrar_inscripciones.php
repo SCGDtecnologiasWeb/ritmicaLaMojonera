@@ -42,7 +42,7 @@
     <div class="gymnast-container">
       <div class="gymnast">
         <div class="img-container">
-          <img src="/assets/Juanma - profile.jpeg" />
+          <img src="/assets/Juanma - profile.jpeg" alt="Inscripción" />
         </div>
         <div class="name-container">
           <h2>Nombre completo</h2>
@@ -54,13 +54,13 @@
           <p class="hidden-content hidden">Telefono: 666 66 66 66</p>
         </div>
       </div>
-      <img src="/assets/tick.webp" class="edit-img" />
-      <img src="/assets/cross.jpg" class="bin-img" />
+      <img src="/assets/tick.webp" class="edit-img" alt="Editar" />
+      <img src="/assets/cross.jpg" class="bin-img" alt="Eliminar" />
     </div>
     <div class="gymnast-container">
       <div class="gymnast">
         <div class="img-container">
-          <img src="/assets/annie.jpeg" />
+          <img src="/assets/annie.jpeg" alt="Inscripción" />
         </div>
         <div class="name-container">
           <h2>Nombre completo</h2>
@@ -72,13 +72,13 @@
           <p class="hidden-content hidden">Telefono: 666 66 66 66</p>
         </div>
       </div>
-      <img src="/assets/tick.webp" class="edit-img" />
-      <img src="/assets/cross.jpg" class="bin-img" />
+      <img src="/assets/tick.webp" class="edit-img" alt="Editar" />
+      <img src="/assets/cross.jpg" class="bin-img" alt="Eliminar" />
     </div>
     <div class="gymnast-container">
       <div class="gymnast">
         <div class="img-container">
-          <img src="/assets/sofi.png" />
+          <img src="/assets/sofi.png" alt="Inscripción" />
         </div>
         <div class="name-container">
           <h2>Nombre completo</h2>
@@ -90,13 +90,13 @@
           <p class="hidden-content hidden">Telefono: 666 66 66 66</p>
         </div>
       </div>
-      <img src="/assets/tick.webp" class="edit-img" />
-      <img src="/assets/cross.jpg" class="bin-img" />
+      <img src="/assets/tick.webp" class="edit-img" alt="Editar" />
+      <img src="/assets/cross.jpg" class="bin-img" alt="Eliminar" />
     </div>
     <div class="gymnast-container">
       <div class="gymnast">
         <div class="img-container">
-          <img src="/assets/mariMar.jpeg" />
+          <img src="/assets/mariMar.jpeg" alt="Inscripción" />
         </div>
         <div class="name-container">
           <h2>Nombre completo</h2>
@@ -108,8 +108,8 @@
           <p class="hidden-content hidden">Telefono: 666 66 66 66</p>
         </div>
       </div>
-      <img src="/assets/tick.webp" class="edit-img" />
-      <img src="/assets/cross.jpg" class="bin-img" />
+      <img src="/assets/tick.webp" class="edit-img" alt="Editar" />
+      <img src="/assets/cross.jpg" class="bin-img" alt="Eliminar" />
     </div>
   </div>
   <!-- Content End -->

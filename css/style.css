@@ -620,8 +620,9 @@ a {
     display: none;
   }
   .callout-btn-section {
-    padding: 0;
-    margin: 0;
+    /* display: block;
+    margin: auto; */
+    padding-top: 0px;
   }
 }
 
@@ -638,7 +639,7 @@ a {
 .callout-btn-section {
   display: block;
   margin: auto;
-  padding-top: 0px;
+  padding-top: 80px;
 }
 
 .callout-btn1 {

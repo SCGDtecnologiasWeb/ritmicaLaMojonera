@@ -622,9 +622,11 @@ a {
   .callout-btn-section {
     padding-top: 0px;
     padding-bottom: 15px;
-    padding: 5px;
-    margin: 40px;
+  }
+  .callout-btn1 {
     font-size: 1px;
+    width: 100%;
+    height: 100px;
   }
 }
 

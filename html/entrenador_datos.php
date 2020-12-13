@@ -39,6 +39,7 @@
 
   <?php
   $idEntrenador = $_SESSION["id"];
+  echo ("Entra1");
   require_once("config.php");
   $sql = "SELECT * FROM `Entrenador` WHERE idEntrenador= $idEntrenador";
   $resultado = $link->query($sql);

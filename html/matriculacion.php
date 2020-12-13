@@ -65,7 +65,7 @@
           </div>
 
           <div class="form-field">
-            <label for="allergies" class="field-title">Alergias o enfermedades (indica cuál)</label><br />
+            <label for="allergies" class="field-title">Alergias o enfermedades (Opcional, indicar cuál/es)</label><br />
             <input type="text" id="allergies" name="allergies" autocomplete="off" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,1000}" /><br />
           </div>
 
@@ -78,7 +78,7 @@
           </div>
 
           <div class="form-field">
-            <label for="payment" class="field-title">Adjuntar justificante de pago (Ponerse en contacto para realizar el
+            <label for="payment" class="field-title">Adjuntar justificante de pago (Opcional: Ponerse en contacto para realizar el
               pago)</label><br />
             <input type="file" id="payment" name="payment" autocomplete="off" accept="image/*" /><br />
           </div>

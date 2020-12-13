@@ -69,7 +69,8 @@
 
           <div class="form-field">
             <label for="whatsapp" class="field-title">Teléfono (Whatsapp)</label><br />
-            <script src="/js/main.js"> </script> <label id="tlf-prefijo">
+            <script src="/js/main.js"> </script>
+            <label id="tlf-prefijo">
               <textarea type="text" id="whatsapp" name="whatsapp" class="ibacor_fi" data-prefix="" autocomplete="off" pattern="(((([6]{1})([0-9]{2}))|(([7]{1})([1-4]{1})([0-9]{1})))([ ]?)((([0-9]{2})([ ]?)([0-9]{2})([ ]?)([0-9]{2}))|(([0-9]{3})([ ]?)([0-9]{3}))))" style="padding-left: 48px;"><?php$resultado["telefono"]?></textarea><br />
             </label>
           </div>
@@ -77,9 +78,12 @@
           <div class="form-field">
             <label for="perfil" class="field-title">Foto perfil</label><br />
             <input type="file" id="perfil" name="perfil" autocomplete="off" accept="image/*" /><br />
-          </div> <input type="submit" value="Enviar" />
+          </div>
+
+          <input type="submit" value="Enviar" />
+
+        </form>
       </div>
-      </form>
     </div>
   </div>
   <!--Content End-->

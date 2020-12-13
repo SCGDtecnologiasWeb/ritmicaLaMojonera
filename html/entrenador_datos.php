@@ -43,8 +43,8 @@
   $sql = "SELECT * FROM `Entrenador` WHERE idEntrenador= $idEntrenador";
   $resultado = $link->query($sql);
 
-  echo "
-  <!-- Content Start -->
+  echo
+    "<!-- Content Start -->
   <div class=\"main\">
     <div class=\"content-container\">
       <h1>Modificar datos de entrenador</h1>
@@ -88,7 +88,7 @@
     </div>
   </div>
   <!-- Content End -->";
-  mysqli_close($link);
+  $link->close();
   ?>
 
 

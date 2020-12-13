@@ -54,7 +54,7 @@
           <div class="form-field">
             <label for="email" class="field-title">Correo electronico *</label><br />
             <input type="email" value="<?php $resultado["correoEntrenador"] ?>" id="email" name="email" pattern="([a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,})" required />
-            <input typer="text" hidden value="<?php $idEntrenador ?>" id="idEntrenador" name="idEntrenador"><br />
+            <input typer="text" hidden value="<?php echo ("$idEntrenador") ?>" id="idEntrenador" name="idEntrenador"><br />
           </div>
 
           <div class="form-field">

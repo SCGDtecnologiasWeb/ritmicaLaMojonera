@@ -53,25 +53,25 @@
         <form action="/php/entrenador_datos.php" method="POST">
           <div class="form-field">
             <label for="email" class="field-title">Correo electronico *</label><br />
-            <textarea type="email" id="email" name="email" pattern="([a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,})" required><?php$resultado["correoEntrenador"]?></textarea>
-            <input typer="text" hidden value="$idEntrenador" id="idEntrenador" name="idEntrenador"><br />
+            <textarea type="email" id="email" name="email" pattern="([a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,})" required><?php echo $resultado["correoEntrenador"] ?></textarea>
+            <input type="text" hidden <?php echo "value=\"" . $idEntrenador . "\"" ?> id="idEntrenador" name="idEntrenador"><br />
           </div>
 
           <div class="form-field">
             <label for="name" class="field-title">Nombre completo</label><br />
-            <textarea type="text" id="name" name="name" autocomplete="off" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,96}"><?php$resultado["nombreCompleto"]?></textarea><br />
+            <textarea type="text" id="name" name="name" autocomplete="off" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,96}"><?php echo $resultado["nombreCompleto"] ?></textarea><br />
           </div>
 
           <div class="form-field">
             <label for="dni" class="field-title">DNI/NIE</label><br />
-            <textarea type="text" id="dni" name="dni" autocomplete="off" pattern="((([x-zX-Z])|([lmLM])|[0-9]){1}([ ]?)(([0-9]){7})([-]?)([a-zA-Z]{1}))" minlength="9" maxlength="11"><?php$resultado["DNI"]?></textarea><br />
+            <textarea type="text" id="dni" name="dni" autocomplete="off" pattern="((([x-zX-Z])|([lmLM])|[0-9]){1}([ ]?)(([0-9]){7})([-]?)([a-zA-Z]{1}))" minlength="9" maxlength="11"><?php echo $resultado["DNI"] ?></textarea><br />
           </div>
 
           <div class="form-field">
             <label for="whatsapp" class="field-title">Teléfono (Whatsapp)</label><br />
             <script src="/js/main.js"> </script>
             <label id="tlf-prefijo">
-              <textarea type="text" id="whatsapp" name="whatsapp" class="ibacor_fi" data-prefix="" autocomplete="off" pattern="(((([6]{1})([0-9]{2}))|(([7]{1})([1-4]{1})([0-9]{1})))([ ]?)((([0-9]{2})([ ]?)([0-9]{2})([ ]?)([0-9]{2}))|(([0-9]{3})([ ]?)([0-9]{3}))))" style="padding-left: 48px;"><?php$resultado["telefono"]?></textarea><br />
+              <textarea type="text" id="whatsapp" name="whatsapp" class="ibacor_fi" data-prefix="" autocomplete="off" pattern="(((([6]{1})([0-9]{2}))|(([7]{1})([1-4]{1})([0-9]{1})))([ ]?)((([0-9]{2})([ ]?)([0-9]{2})([ ]?)([0-9]{2}))|(([0-9]{3})([ ]?)([0-9]{3}))))" style="padding-left: 48px;"><?php echo $resultado["telefono"] ?></textarea><br />
             </label>
           </div>
 

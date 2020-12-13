@@ -39,9 +39,8 @@
 
   <?php
   $idEntrenador = $_SESSION["id"];
-  require_once("config.php");
+  include_once($_SERVER['DOCUMENT_ROOT'] . '/php/config.php');
   $sql = "SELECT * FROM `Entrenador` WHERE idEntrenador= $idEntrenador";
-  echo ((mysqli_stmt_execute(mysqli_prepare($link, $sql))) ? "SI" : "NO");
   $resultado = $link->query($sql);
   mysqli_close($link);
   ?>

@@ -612,16 +612,15 @@ a {
 
 @media screen and (max-width: 680px) {
   .callout {
-    background-size: 250%;
+    background-size: 150%;
   }
 }
 @media screen and (max-width: 450px) {
   .callout p {
     display: none;
-    width: 0%;
-    height: 0px;
   }
   .callout-btn-section {
+    display: flex;
     padding-top: 0px;
     padding-bottom: 15px;
   }

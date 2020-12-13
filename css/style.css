@@ -612,7 +612,7 @@ a {
 
 @media screen and (max-width: 680px) {
   .callout {
-    background-size: 150%;
+    background-size: 250%;
   }
 }
 @media screen and (max-width: 450px) {

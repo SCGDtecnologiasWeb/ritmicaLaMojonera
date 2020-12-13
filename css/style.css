@@ -618,10 +618,9 @@ a {
 @media screen and (max-width: 450px) {
   .callout p {
     display: none;
-    padding: 0px;
   }
   .callout-btn-section {
-    padding-top: 0px;
+    padding-top: 100000px;
   }
 }
 

@@ -161,7 +161,7 @@ a {
 } */
 @media screen and (max-width: 375px) {
   .header-col img {
-    height: 0px;
+    height: 40px;
     width: 40%;
   }
 }

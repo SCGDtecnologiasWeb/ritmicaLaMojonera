@@ -42,7 +42,6 @@
   include_once($_SERVER['DOCUMENT_ROOT'] . '/php/config.php');
   $sql = "SELECT * FROM `Entrenador` WHERE idEntrenador= $idEntrenador";
   $resultado = $link->query($sql);
-  mysqli_close($link);
 
   echo "
   <!-- Content Start -->
@@ -89,6 +88,7 @@
     </div>
   </div>
   <!-- Content End -->";
+  mysqli_close($link);
   ?>
 
 

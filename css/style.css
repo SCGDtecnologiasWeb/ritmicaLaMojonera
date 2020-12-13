@@ -624,10 +624,7 @@ a {
     padding-bottom: 15px;
   }
   .callout-btn1 {
-    padding-bottom: 20px;
-  }
-  .callout-btn2 {
-    margin-bottom: 30px;
+    padding: 5px;
   }
 }
 

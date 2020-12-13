@@ -159,10 +159,28 @@ a {
     width: 75%;
   }
 } */
-@media screen and (max-width: 375px) {
+/* @media screen and (max-width: 375px) {
   .header-col img {
     height: 40px;
     width: 40%;
+  }
+} */
+@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+  .header-col img {
+    height: 70px;
+    width: 80%;
+  }
+}
+@media only screen and (device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) {
+  .header-col img {
+    height: 70px;
+    width: 80%;
+  }
+}
+@media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
+  .header-col img {
+    height: 70px;
+    width: 80%;
   }
 }
 /* Navbar */

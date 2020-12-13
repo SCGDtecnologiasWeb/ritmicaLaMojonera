@@ -622,9 +622,8 @@ a {
   .callout-btn-section {
     padding-top: 0px;
     padding-bottom: 15px;
-    margin-top: 0px;
-    margin-bottom: 50px;
-    margin: 50px;
+    width: 60%;
+    height: auto;
   }
 }
 

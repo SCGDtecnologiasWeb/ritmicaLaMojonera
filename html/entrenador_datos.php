@@ -54,7 +54,7 @@
         <form action="/php/entrenador_datos.php" method="POST">
           <div class="form-field">
             <label for="email" class="field-title">Correo electronico *</label><br />
-            <textarea type="email" id="email" name="email" pattern="([a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,})" required><?php echo $resultado["correoEntrenador"] ?></textarea>
+            <input type="email" id="email" name="email" pattern="([a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,})" required <?php echo "value=\"" . $resultado["correoEntrenador"] . "\"" ?>>
             <input type="text" hidden <?php echo "value=\"" . $idEntrenador . "\"" ?> id="idEntrenador" name="idEntrenador"><br />
           </div>
 

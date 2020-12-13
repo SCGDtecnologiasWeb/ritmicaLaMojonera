@@ -205,8 +205,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
             ?>
           </div>
+          
           <!--Ventana emergente utilizando Ajax-->
-          <script src="https://code.jquery.com/jquery-3.x-git.js"></script>
+          <!-- <script src="https://code.jquery.com/jquery-3.x-git.js"></script>
           <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
           <script type="text/javascript">
@@ -224,7 +225,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 return false;
               });
             });
-          </script>
+          </script> -->
+
+            <!-- AJAX -->
+            <div class="col-12 forgot" id="forgot-icon">
+            <a href="javascript:ejecutarAJAX();" class = "fas fa-caret-right" id="oContrasena">¿Has olvidado tu contraseña?</a>
+            <!-- <button onclick ="ejecutarAJAX()">¿Has olvidado tu contraseña?</button> -->
+            <div id="info"></div>
+            <script type ="text/javascript">
+            function ejecutarAJAX(){
+              var ajaxRequest = new XMLHttpRequest();
+
+              // if(window.XMLHttpRequest){
+              //   ajaxRequest = new XMLHttpRequest();
+              // }else{
+              //   ajaxRequest =new ActiveXObject("Microsoft.XMLHTTP");
+              // }
+
+              ajaxRequest.onreadystatechange = function(){
+                if(ajaxRequest.readyState == 4 && ajaxRequest.status == 200){
+                  //document.getElementById("info").innerHTML = ajaxRequest.responseText;
+                  alert(ajaxRequest.responseText);
+                }
+              }
+
+              ajaxRequest.open("GET", "document.txt",true);
+              ajaxRequest.send();
+            }
+            </script>
 
           <div class="container">
             <div class="row">

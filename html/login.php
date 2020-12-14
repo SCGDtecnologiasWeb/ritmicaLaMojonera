@@ -254,7 +254,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
             </script>
 
-          <div class="container">
+          <!-- <div class="container">
             <div class="row">
               <div id="content" class="col-lg-12">
                 <a href="/html/login.php" class="fas fa-caret-right" id="open">¿Olvidó su contraseña?</a>
@@ -271,8 +271,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
               </div>
             </div>
-          </div>
-          <div class="popup-overlay"></div>
+          </div> -->
+          <!-- <div class="popup-overlay"></div> -->
           <div class="form-group form-button text-right">
             <button type="submit" class="btn btn-primary" name="continuar">
               <i class="fas fa-arrow-right"></i> Continuar

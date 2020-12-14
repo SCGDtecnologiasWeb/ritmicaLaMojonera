@@ -168,8 +168,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <input type="text" class="form-control" id="dni" name="dni" autocomplete="off" pattern="((([x-zX-Z])|([lmLM])|[0-9]){1}([ ]?)(([0-9]){7})([-]?)([a-zA-Z]{1}))" minlength="9" maxlength="11" value="<?php echo $dni ?>">
           </div>
 
-          <div class="mb-3">
-            <label for="whatsapp" class="form-label">Teléfono (Whatsapp)</label>
+
+          <label for="whatsapp" class="form-label">Teléfono (Whatsapp)</label>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="prefijo-tlf">+34</span>
             <input type="text" class="form-control" id="whatsapp" name="whatsapp" autocomplete="off" pattern="(((([6]{1})([0-9]{2}))|(([7]{1})([1-4]{1})([0-9]{1})))([ ]?)((([0-9]{2})([ ]?)([0-9]{2})([ ]?)([0-9]{2}))|(([0-9]{3})([ ]?)([0-9]{3}))))" value="<?php echo $telefono ?>">
           </div>
 

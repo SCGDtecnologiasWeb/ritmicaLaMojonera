@@ -40,6 +40,43 @@
     width: 300px;
   }
 }
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) {
+  .trophy-container img {
+    height: 200px;
+    width: 200px;
+  }
+}
+
+@media only screen and (device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) {
+  .trophy-container img {
+    height: 200px;
+    width: 200px;
+  }
+}
+@media only screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) {
+  .trophy-container img {
+    height: 200px;
+    width: 200px;
+  }
+}
+@media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) {
+  .trophy-container img {
+    height: 200px;
+    width: 200px;
+  }
+}
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+  .trophy-container img {
+    height: 200px;
+    width: 200px;
+  }
+}
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
+  .trophy-container img {
+    height: 200px;
+    width: 200px;
+  }
+}
 
 @media screen and (max-width: 900px) and (max-width: 450px) {
   .palmares-content {

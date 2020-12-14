@@ -39,31 +39,34 @@
 
     <!-- Content Start -->
     <div class="main">
-        <div class="content-container">
-            <h1>Cambiar contraseña</h1>
-            <div class="form-container">
-                <form action="#" method="POST" enctype="multipart/form-data">
-                    <div class="form-field">
-                        <label for="old" class="field-title">Contraseña actual</label><br />
-                        <input type="password" id="old" name="old" autocomplete="off"><br />
-                    </div>
+    <div class="content-container">
+      <h1>Cambiar contraseña</h1>
+      <div class="form-container">
+        <form action="#" method="POST" enctype="multipart/form-data">
+          <div class="form-field">
+            <label for="old" class="field-title">Contraseña actual</label><br />
+            <input type="password" id="old" name="old" autocomplete="off" ><br />
+          </div>
 
-                    <div class="form-field">
-                        <label for="new" class="field-title">Nueva contraseña</label><br />
-                        <input type="password" id="new" name="new" autocomplete="off"><br />
-                    </div>
+          <div class="form-field">
+            <label for="new" class="field-title">Nueva contraseña</label><br />
+            <input class="newPass" type="password" id="new" name="new" autocomplete="off"><br />
+          </div>
 
-                    <div class="form-field">
-                        <label for="confirm" class="field-title">Confirmar contraseña</label><br />
-                        <input type="password" id="confirm" name="confirm" autocomplete="off"><br />
-                    </div>
+          <div class="form-field">
+            <label for="confirm" class="field-title">Confirmar contraseña</label><br />
+            <input class="newPass" type="password" id="confirm" name="confirm" autocomplete="off"><br />
+          </div>
 
-                    <input type="submit" value="Enviar" />
+          <div class="alertChangePass" style="display: none;">
+          </div>
+          
+          <input type="submit" value="Enviar" />
 
-                </form>
-            </div>
-        </div>
+        </form>
+      </div>
     </div>
+  </div>
     <!--Content End-->
 
 

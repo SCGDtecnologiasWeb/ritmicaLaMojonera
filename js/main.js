@@ -161,6 +161,44 @@ $(document).ready(function () {
     }
   });
 
+  /************ Change password *************/
+  $('.newPass').keyup(function(){
+    validPass();
+  });
   
+  // validar numeros
+  function isNumeric(n) {
+    return !isNaN(parseFloat(n)) && isFinite(n);
+}
+
+    // Funcion de validacion
+    function validPass(){
+      var passNuevo = $('#new').val();
+      var confPass = $('confirm').val();
+
+      if(passNuevo != confPass){
+        $('.alertChangePass').html('<p>Las contraseñas no son iguales</p>');
+        $('.alertChangePass').slideDown();
+        return false;
+      }
+
+      if(passNuevo.length<8){
+        $('.alertChangePass').html('<p>La nueva contraseña debe tener 8 caracteres como mínimo</p>');
+        $('.alertChangePass').slideDown();
+        return false;
+      }
+
+      // comprobamos si tiene números y caracteres
+      for(const i in passNuevo){
+        if(isNumeric(passNuevo[i])==false || isNaN(passNuevo[i])==false){
+          $('.alertChangePass').html('<p>La contraseña debe contener al menos un número y un carácter</p>');
+          $('.alertChangePass').slideDown();
+          return false;
+        }
+      }
+      
+      $('.alertChangePass').html('');
+      $('.alertChangePass').slideUp();
+    }
 
 });

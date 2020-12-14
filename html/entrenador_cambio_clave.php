@@ -28,7 +28,18 @@
   }
 
   $entrenador = $_SESSION["id"];
-  $contraseña = password_hash($_POST["password"], PASSWORD_DEFAULT);
+  // Comprobamos si el campo de contraseña esta vacio
+  if (empty(trim($_POST["contraseña"]))) {
+    $contraseña_err = "Por favor introduce tu contraseña.";
+  } else {
+    $contraseña = trim($_POST["contraseña"]);
+  }
+  if (empty(trim($_POST["new"]))) {
+    $contraseña_err = "Por favor introduce tu contraseña.";
+  } else {
+    $contraseña_nueva = password_hash(trim($_POST["new"]), PASSWORD_DEFAULT);
+  }
+  // $contraseña = password_hash($_POST["contraseña"], PASSWORD_DEFAULT);
   $contraseña_err = "";
   // preparamos consulta
   $sql = "SELECT claveAccesoEntrenador FROM Entrenador WHERE idEntrenador = $entrenador";
@@ -38,6 +49,7 @@
           mysqli_stmt_store_result($stmt);
           if (mysqli_stmt_fetch($stmt)) {
               if (password_verify($contraseña, $clave_acceso_entrenador)) {
+                $sql2 = "UPDATE Entrenador SET claveAccesoEntrenador=$contraseña_nueva WHERE claveAccesoEntrenador = $clave_acceso_entrenador";
                   mysqli_stmt_close($stmt);
               } else {
                   // Mensaje de error si la contraseña es incorrecta

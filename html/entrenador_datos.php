@@ -51,7 +51,7 @@
     <div class="content-container">
       <h1>Modificar datos de entrenador</h1>
       <div class="form-container">
-        <form action="/php/entrenador_datos.php" method="POST">
+        <form action="/php/entrenador_datos.php" method="POST" enctype="multipart/form-data">
           <div class="form-field">
             <label for="email" class="field-title">Correo electronico *</label><br />
             <input type="email" id="email" name="email" pattern="([a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,})" required <?php echo "value=\"" . $resultado["correoEntrenador"] . "\"" ?>>

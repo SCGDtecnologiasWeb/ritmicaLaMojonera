@@ -79,8 +79,8 @@ a {
     margin-right: 10px;
   }
   .form-button {
-    text-align: center;
     /* padding-left: 100px; */
     padding-right: 100px;
+    width: 40%;
   }
 }

@@ -75,7 +75,7 @@ a {
 }
 @media (max-width: 600px) {
   .btn-primary {
-    padding-right: 10px;
-    margin-right: 10px;
+    width: 40vw;
+    padding: 10px;
   }
 }

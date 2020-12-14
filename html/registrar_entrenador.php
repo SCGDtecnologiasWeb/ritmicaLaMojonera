@@ -12,8 +12,9 @@ $correo = "";
 $nombre = "";
 $dni = "";
 $telefono = "";
+$grupos = array("escuela" => 0, "federada" => 0);
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
   include($_SERVER['DOCUMENT_ROOT'] . '/php/funciones.php');
 
   //Parseamos las variables
@@ -22,6 +23,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $nombre = filtrado($_POST["name"]);
   $dni = filtrado($_POST["dni"]);
   $telefono = filtrado($_POST["whatsapp"]);
+  if (isset($_POST["escuela"])) {
+    $grupos["escuela"] = 1;
+  }
+  if (isset($_POST["federada"])) {
+    $grupos["federada"] = 1;
+  }
 
   $img_err = "";
   $email_err = "";
@@ -37,82 +44,63 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   // Comprobamos que el email no esta siendo usado por otro usuario
   $sql_check_email = "SELECT `idEntrenador` FROM `Entrenador` WHERE `correoEntrenador` = (?)";
-  if ($stmt = mysqli_prepare($link, $sql_check_email)) {
-    mysqli_stmt_bind_param($stmt, "s", $_POST["email"]);
-    mysqli_stmt_execute($stmt);
-    mysqli_stmt_store_result($stmt);
-    if (mysqli_stmt_num_rows($stmt) >= 1) {
-      $email_err = "Este correo ya existe";
-      mysqli_stmt_close($stmt);
-      mysqli_close($link);
-    } else {
-      mysqli_stmt_close($stmt);
-    }
-  } else {
-    mysqli_close($link);
-    header("location: /html/error.php");
-    exit;
+  $stmt = mysqli_prepare($link, $sql_check_email);
+  mysqli_stmt_bind_param($stmt, "s", $_POST["email"]);
+  mysqli_stmt_execute($stmt);
+  mysqli_stmt_store_result($stmt);
+  if (mysqli_stmt_num_rows($stmt) >= 1) {
+    $email_err = "Este correo ya existe";
   }
+  mysqli_stmt_close($stmt);
 
   // Si no hay errores continueamos con el registro del entrenador
   if (empty($img_err) && empty($email_err)) {
 
-    // Comenzamos una transacción
-    if (!mysqli_query($link, "START TRANSACTION")) {
-      mysqli_close($link);
-      header("location: /html/error.php");
-    }
-
     // Insertamos el entrenador
     $sql_insert = "INSERT INTO `Entrenador` (`correoEntrenador`, `nombreCompleto`, `claveAcceso`, `DNI`, `telefono`) VALUES (?, ?, ?, ?, ?)";
-    if ($stmt = mysqli_prepare($link, $sql_insert)) {
-      mysqli_stmt_bind_param($stmt, "sssss", $correo, $nombre, $contraseña, $dni, $telefono);
-      mysqli_stmt_execute($stmt);
-      mysqli_stmt_close($stmt);
-    } else {
-      mysqli_query($link, "ROLLBACK");
-      mysqli_close($link);
-      header("location: /html/error.php");
-      exit;
-    }
+    $stmt = mysqli_prepare($link, $sql_insert);
+    mysqli_stmt_bind_param($stmt, "sssss", $correo, $nombre, $contraseña, $dni, $telefono);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
 
     // Consultamos el id del entrenador
     $sql_get_id = "SELECT `idEntrenador` FROM `Entrenador` ORDER BY `idEntrenador` DESC LIMIT 1";
-    if ($stmt = mysqli_prepare($link, $sql_get_id)) {
-      mysqli_stmt_bind_result($stmt, $id_entrenador);
-      mysqli_stmt_execute($stmt);
-      mysqli_stmt_fetch($stmt);
-      mysqli_stmt_close($stmt);
-    } else {
-      mysqli_query($link, "ROLLBACK");
-      mysqli_close($link);
-      header("location: /html/error.php");
-      exit;
+    $resultado = mysqli_query($link, $sql_get_id);
+    $fila = mysqli_fetch_assoc($resultado);
+    $id_entrenador = $fila["idEntrenador"];
+
+    // Añadimos las relaciones con la tabla de grupos
+    if ($grupos["escuela"] === 1) {
+      // Consultamos el id de escuela
+      $sql_get_id = "SELECT `idGrupo` FROM `Grupo` WHERE `nombre` = 'Escuela'";
+      $resultado = mysqli_query($link, $sql_get_id);
+      $fila = mysqli_fetch_assoc($resultado);
+      $id_escuela = $fila["idGrupo"];
+
+      // Añadimos una fila a la tabla que relaciona grupos y entrenadores
+      $sql_insert = "INSERT INTO `Grupo_has_entrenador` (`idGrupo`, `Entrenador_idEntrenador`) VALUES ({$id_escuela}, {$id_entrenador})";
+      mysqli_query($link, $sql_insert);
+    }
+    if ($grupos["federada"] === 1) {
+      // Consultamos el id de federada  
+      $sql_get_id = "SELECT `idGrupo` FROM `Grupo` WHERE `nombre` = 'Federada'";
+      $resultado = mysqli_query($link, $sql_get_id);
+      $fila = mysqli_fetch_assoc($resultado);
+      $id_federada = $fila["idGrupo"];
+
+      // Añadimos una fila a la tabla que relaciona grupos y entrenadores
+      $sql_insert = "INSERT INTO `Grupo_has_entrenador` (`idGrupo`, `Entrenador_idEntrenador`) VALUES ({$id_federada}, {$id_entrenador})";
+      mysqli_query($link, $sql_insert);
     }
 
     // Guardamos la imagen
+    $img_path = $_SERVER['DOCUMENT_ROOT'] . "/assets/entrenadores/entrenador" . $id_entrenador . ".jpg";
     if (isset($img)) {
       $img_src = $img["tmp_name"];
-      $img_path = $_SERVER['DOCUMENT_ROOT'] . "/assets/entrenadores/entrenador" . $id_entrenador . ".jpg";
-      if (move_uploaded_file($img_src, $img_path)) {
-        mysqli_query($link, "COMMIT");
-      } else {
-        mysqli_query($link, "ROLLBACK");
-        mysqli_close($link);
-        header("location: /html/error.php");
-        exit;
-      }
+      move_uploaded_file($img_src, $img_path);
     } else {
-      $img_src = $_SERVER['DOCUMENT_ROOT'] . "/assets/entrenadores/entrenador_generico.png";
-      $img_path = $_SERVER['DOCUMENT_ROOT'] . "/assets/entrenadores/entrenador" . $id_entrenador . ".jpg";
-      if (copy($img_src, $img_path)) {
-        mysqli_query($link, "COMMIT");
-      } else {
-        mysqli_query($link, "ROLLBACK");
-        mysqli_close($link);
-        header("location: /html/error.php");
-        exit;
-      }
+      $img_src = $_SERVER['DOCUMENT_ROOT'] . "/assets/entrenadores/entrenador_generico.jpg";
+      copy($img_src, $img_path);
     }
 
     // Cerramos la conexion
@@ -186,6 +174,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           </div>
 
           <div class="mb-3">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="escuela" name="escuela" <?php if ($grupos["escuela"] === 1) echo "checked"; ?>>
+              <label class="form-check-label" for="escuela">Escuela</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="federada" name="federada" <?php if ($grupos["federada"] === 1) echo "checked"; ?>>
+              <label class="form-check-label" for="federada">Federada</label>
+            </div>
+          </div>
+
+          <div class="mb-3">
             <label for="perfil" class="form-label">Foto perfil</label>
             <input class="form-control <?php if (empty(!$img_err)) echo "is-invalid" ?>" type="file" id="perfil" name="perfil" autocomplete="off" accept="image/*">
             <div class="invalid-feedback">
@@ -200,7 +199,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
   </div>
   <!-- Content End -->
-
 
   <!-- JQuery -->
   <script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> </script>

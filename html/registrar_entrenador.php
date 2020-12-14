@@ -1,8 +1,7 @@
 <?php
 session_start();
 
-if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] === true && $_SESSION["tipo_usuario"] === "administrador") {
-} else {
+if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || $_SESSION["tipo_usuario"] !== "administrador") {
   header("location: /html/login.php");
   exit;
 }
@@ -94,7 +93,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Guardamos la imagen
     if (isset($img)) {
       $img_src = $img["tmp_name"];
-      $img_path = $_SERVER['DOCUMENT_ROOT'] . "/assets/entrenadores/entrenador" . $id_entrenador . "." . pathinfo($img['name'], PATHINFO_EXTENSION);
+      $img_path = $_SERVER['DOCUMENT_ROOT'] . "/assets/entrenadores/entrenador" . $id_entrenador . ".jpg";
       if (move_uploaded_file($img_src, $img_path)) {
         mysqli_query($link, "COMMIT");
       } else {
@@ -105,7 +104,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       }
     } else {
       $img_src = $_SERVER['DOCUMENT_ROOT'] . "/assets/entrenadores/entrenador_generico.png";
-      $img_path = $_SERVER['DOCUMENT_ROOT'] . "/assets/entrenadores/entrenador" . $id_entrenador . ".png";
+      $img_path = $_SERVER['DOCUMENT_ROOT'] . "/assets/entrenadores/entrenador" . $id_entrenador . ".jpg";
       if (copy($img_src, $img_path)) {
         mysqli_query($link, "COMMIT");
       } else {

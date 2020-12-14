@@ -78,4 +78,14 @@ a {
     padding-right: 10px;
     margin-right: 10px;
   }
+  .form-button {
+    text-align: center;
+  }
+  .link-button {
+    float: right;
+  }
+  button {
+    width: 40%;
+    margin: 35px 0 25;
+  }
 }

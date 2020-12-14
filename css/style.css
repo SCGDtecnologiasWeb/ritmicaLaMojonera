@@ -616,6 +616,9 @@ a {
   }
 }
 @media screen and (max-width: 450px) {
+  .callout {
+    height: 400px;
+  }
   .callout p {
     display: none;
   }

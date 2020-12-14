@@ -34,7 +34,7 @@
   position: relative;
   margin-top: 20px;
   margin-bottom: 20px;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .trainer:hover {
@@ -125,7 +125,7 @@
   position: relative;
   margin-top: 15px;
   margin-bottom: 15px;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .gymnast:hover {
@@ -175,6 +175,15 @@
   height: 25px;
   top: 40px;
   right: -30px;
+  cursor: pointer;
+}
+
+.fa-external-link-square-alt {
+  color: blue;
+}
+
+.fa-external-link-square-alt:hover {
+  text-decoration: underline;
   cursor: pointer;
 }
 

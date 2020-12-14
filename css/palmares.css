@@ -35,6 +35,10 @@
     height: 200px;
     width: 200px;
   }
+  .palmares-content {
+    width: 80%;
+    margin: 30px auto;
+  }
 }
 @media screen and (min-width: 300px) and (max-width: 350px) and (max-width: 480px) {
   .trophy-container img {

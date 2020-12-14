@@ -158,7 +158,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <form action="/html/registrar_entrenador.php" method="POST" enctype="multipart/form-data">
 
           <div class="mb-3">
-            <label for="email" class="form-label">Correo electronico</label>
+            <label for="email" class="form-label">Correo electronico *</label>
             <input type="email" class="form-control <?php if (empty(!$email_err)) echo "is-invalid" ?>" id="email" name="email" pattern="([a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,})" required value="<?php echo $correo ?>">
             <div class="invalid-feedback">
               <?php echo $email_err ?>
@@ -166,7 +166,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           </div>
 
           <div class=" mb-3">
-            <label for="password" class="form-label">Contraseña</label>
+            <label for="password" class="form-label">Contraseña *</label>
             <input type="password" class="form-control" id="password" name="password" required>
           </div>
 

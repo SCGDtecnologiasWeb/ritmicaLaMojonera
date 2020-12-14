@@ -89,12 +89,12 @@
 
           <div class="form-field">
             <label for="new" class="field-title">Nueva contraseña</label><br />
-            <input class="newPass" type="password" id="new" name="new" autocomplete="off"><br />
+            <input class="newPass" type="password" id="new" name="new" placeholder="Nueva contraseña" autocomplete="off"><br />
           </div>
 
           <div class="form-field">
             <label for="confirm" class="field-title">Confirmar contraseña</label><br />
-            <input class="newPass" type="password" id="confirm" name="confirm" autocomplete="off"><br />
+            <input class="newPass" type="password" id="confirm" name="confirm" placeholder ="Confiramr contraseña" autocomplete="off"><br />
           </div>
 
           <div class="alertChangePass" style="display: none;">

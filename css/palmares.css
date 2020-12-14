@@ -37,11 +37,11 @@
   }
 }
 @media screen and (min-width: 300px) and (max-width: 350px) and (max-width: 480px) {
-  .trophy-img img {
+  .trophy-container img {
     display: inline-block;
     width: 300px;
   }
-  .trophy-text {
+  .trophy-container p {
     display: block;
   }
 }
@@ -50,8 +50,17 @@
     width: 300px;
   }
 
-  .trophy-text {
+  .trophy-container p {
     width: 300px;
+  }
+}
+@media screen and (max-width: 1210px) {
+  .trophy-container {
+    float: initial;
+    margin: auto;
+    display: block;
+    height: auto;
+    width: 100%;
   }
 }
 

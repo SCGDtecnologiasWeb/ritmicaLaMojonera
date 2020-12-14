@@ -10,6 +10,7 @@
       <a href="/html/administrar_inscripciones.php" class="menu-text">Inscripciones</a>
       <a href="/html/administrar_usuarios.php" class="menu-text">Administrar usuarios</a>
       <a href="/html/registrar_usuarios.php" class="menu-text">Registrar usuarios</a>
+      <a href="/html/administrador_cambio_clave.php" class="menu-text">Cambiar contraseña</a>
     </div>
 
     <div class="menu-section">

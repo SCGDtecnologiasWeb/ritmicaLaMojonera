@@ -626,6 +626,10 @@ a {
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
   .callout p {
     display: none;
+    padding: 0;
+  }
+  .callout-btn-section {
+    padding: 0;
   }
 }
 

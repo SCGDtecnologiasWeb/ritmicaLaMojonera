@@ -616,20 +616,9 @@ a {
   }
 }
 @media screen and (max-width: 450px) {
-  /* .callout {
-    height: 400px;
-    background-size: 200%;
-  } */
-  .callout p {
-    display: none;
-  }
-  .callout-btn-section {
-    padding-top: 0px;
-  }
-}
-@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
   .callout {
     height: 400px;
+    background-size: 200%;
   }
   .callout p {
     display: none;

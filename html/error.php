@@ -1,0 +1,1 @@
+<p>Error estableciendo una conexión con la base de datos</p>

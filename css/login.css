@@ -75,9 +75,7 @@ a {
 }
 @media (max-width: 600px) {
   .btn-primary {
-    padding: 2px 4px;
-    font-size: 80%;
-    line-height: 1;
-    border-radius: 3px;
+    padding-right: 10px;
+    margin-right: 10px;
   }
 }

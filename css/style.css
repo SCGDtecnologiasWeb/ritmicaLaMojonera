@@ -627,7 +627,7 @@ a {
   .callout {
     height: auto;
     width: 100%;
-    background-size: 100%;
+    background-size: 50%;
   }
   .callout p {
     display: none;

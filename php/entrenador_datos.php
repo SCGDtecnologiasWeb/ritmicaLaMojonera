@@ -12,7 +12,7 @@ $idEntrenador = $_POST["idEntrenador"];
 //Conectamos a la base de datos
 require_once("config.php");
 //Creamos el código para insertar
-$sql1 = "UPDATE `Entrenador` SET correoEntrenador='$correo', nombreCompleto='$nombre', DNI='$dni', telefono='$telf' WHERE 'idEntrenador' = $idEntrenador";
+$sql1 = "UPDATE `Entrenador` SET correoEntrenador='$correo', nombreCompleto='$nombre', DNI='$dni', telefono='$telf' WHERE idEntrenador = $idEntrenador";
 
 //Ejecutamos
 if (mysqli_query($link, $sql1)) {

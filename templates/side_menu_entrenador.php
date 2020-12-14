@@ -14,6 +14,7 @@
   <div class="menu-section">
     <a href="javascript:void(0)" class="menu-title">Perfil</a>
     <a href="/html/entrenador_datos.php" class="menu-text">Modificar datos personales</a>
+    <a href="/html/entrenador_cambio_clave.php" class="menu-text">Cambiar contraseña</a>
     <a href="/php/logout.php">
       <img src="/assets/logout2.png" class="logout-img" />
     </a>

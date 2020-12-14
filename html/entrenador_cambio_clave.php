@@ -1,13 +1,3 @@
-<?php
-session_start();
-
-require_once($_SERVER['DOCUMENT_ROOT'] . '/php/config.php');
-
-$contraseña = "";
-
-$contraseña_err = "";
-
-?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -38,20 +28,32 @@ $contraseña_err = "";
   }
 
   $entrenador = $_SESSION["id"];
-  $contraseña = filtrado(password_hash($_POST["password"], PASSWORD_DEFAULT));
+  $contraseña = password_hash($_POST["password"], PASSWORD_DEFAULT);
   $contraseña_err = "";
   // preparamos consulta
   $sql = "SELECT claveAccesoEntrenador FROM Entrenador WHERE idEntrenador = $entrenador";
-  if($stmt = mysqli_query($link,$sql)){
-    mysqli_stmt_bind_result($stmt, $clave_acceso_entrenador);
-    mysqli_stmt_execute($stmt);
-    mysqli_stmt_fetch($stmt);
-    mysqli_stmt_close($stmt);
-  }else {
-    mysqli_query($link, "ROLLBACK");
-    mysqli_close($link);
-    header("location: /html/error.php");
-    exit;
+  if ($stmt = mysqli_query($link, $sql)) {
+      mysqli_stmt_bind_result($stmt, $clave_acceso_entrenador);
+      if (mysqli_stmt_execute($stmt)) {
+          mysqli_stmt_store_result($stmt);
+          if (mysqli_stmt_fetch($stmt)) {
+              if (password_verify($contraseña, $clave_acceso_entrenador)) {
+                  mysqli_stmt_close($stmt);
+              } else {
+                  // Mensaje de error si la contraseña es incorrecta
+                  if (empty($contraseña_err)) {
+                      $contraseña_err = "La contraseña es incorrecta.";
+                  }
+              }
+          }
+    
+          mysqli_close($link);
+      } else {
+          mysqli_query($link, "ROLLBACK");
+          mysqli_close($link);
+          header("location: /html/error.php");
+          exit;
+      }
   }
   ?>
 
@@ -112,5 +114,4 @@ $contraseña_err = "";
 
   <script src="/js/main.js"></script>
 </body>
-
 </html>

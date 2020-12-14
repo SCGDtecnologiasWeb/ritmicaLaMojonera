@@ -31,7 +31,7 @@
   margin: auto;
 }
 @media screen and (max-width: 450px) {
-  .trophy-img img {
+  .trophy-container img {
     height: 200px;
     width: 200px;
   }
@@ -50,7 +50,7 @@
   }
 }
 @media screen and (max-width: 1100px) {
-  .trophy-img img {
+  .trophy-container img {
     width: 300px;
   }
 

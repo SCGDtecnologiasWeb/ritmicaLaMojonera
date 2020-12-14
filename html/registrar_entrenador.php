@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   // Comprobamos que el email no esta siendo usado por otro usuario
   $sql_check_email = "SELECT `idEntrenador` FROM `Entrenador` WHERE `correoEntrenador` = (?)";
   $stmt = mysqli_prepare($link, $sql_check_email);
-  mysqli_stmt_bind_param($stmt, "s", $_POST["email"]);
+  mysqli_stmt_bind_param($stmt, "s", $correo);
   mysqli_stmt_execute($stmt);
   mysqli_stmt_store_result($stmt);
   if (mysqli_stmt_num_rows($stmt) >= 1) {
@@ -106,6 +106,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Cerramos la conexion
     mysqli_close($link);
     header("location: /html/administrar_usuarios.php");
+  } else {
+    mysqli_close($link);
   }
 }
 ?>

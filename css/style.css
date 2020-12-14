@@ -618,7 +618,7 @@ a {
 @media screen and (max-width: 450px) {
   .callout {
     height: 400px;
-    background-size: 200%;
+    /* background-size: 200%; */
   }
   .callout p {
     display: none;

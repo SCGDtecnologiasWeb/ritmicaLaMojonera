@@ -46,7 +46,7 @@
   }
 }
 
-@media screen and (max-width: 900px) and (max-width: 375px) {
+@media screen and (max-width: 900px) {
   .palmares-content {
     width: 80%;
     margin: 30px auto;

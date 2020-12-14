@@ -3,18 +3,16 @@ include("funciones.php");
 
 //Parseamos las variables
 $correo = filtrado($_POST["email"]);
-$contraseña = filtrado($_POST["password"]);
 $nombre = filtrado($_POST["name"]);
 $dni = str_replace("-", "", str_replace(" ", "", strtoupper(filtrado($_POST["dni"]))));
 $telf = str_replace(" ", "", filtrado($_POST["whatsapp"]));
-$nivel = filtrado($_POST["level"]);
 $foto = $_FILES["perfil"];
 $idEntrenador = $_POST["idEntrenador"];
 
 //Conectamos a la base de datos
 require_once("config.php");
 //Creamos el código para insertar
-$sql1 = "REPLACE INTO `Entrenador` (`correoEntrenador`, `nombreCompleto`, `claveAcceso`, `DNI`, `telefono`) VALUES ('$correo','$nombre','$contraseña','$dni','$telf') WHERE idEntrenador = $idEntrenador";
+$sql1 = "UPDATE `Entrenador` SET correoEntrenador='$correo', nombreCompleto='$nombre', DNI='$dni', telefono='$telf' WHERE idEntrenador = $idEntrenador";
 
 //Ejecutamos
 if (mysqli_query($link, $sql1)) {
@@ -50,10 +48,10 @@ if (mysqli_query($link, $sql1)) {
             }
         } else {
             echo "No podemos subir la imagen" . "<br>";
-            header("location: /html/registrar_entrenador.php");
+            header("location: /html/entrenador_datos.php");
         }
     }
-    header("location: /html/entrenador_datos.php");
+    header("location: /html/entrenador_listado.php");
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($link);
     header("location: /html/entrenador_datos.php");

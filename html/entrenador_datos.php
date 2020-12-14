@@ -51,7 +51,7 @@
     <div class="content-container">
       <h1>Modificar datos de entrenador</h1>
       <div class="form-container">
-        <form action="/php/entrenador_datos.php" method="POST">
+        <form action="/php/entrenador_datos.php" method="POST" enctype="multipart/form-data">
           <div class="form-field">
             <label for="email" class="field-title">Correo electronico *</label><br />
             <input type="email" id="email" name="email" pattern="([a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,})" required <?php echo "value=\"" . $resultado["correoEntrenador"] . "\"" ?>>
@@ -65,7 +65,7 @@
 
           <div class="form-field">
             <label for="dni" class="field-title">DNI/NIE</label><br />
-            <input type="text" id="dni" name="dni" autocomplete="off" pattern="((([x-zX-Z])|([lmLM])|[0-9]){1}([ ]?)(([0-9]){7})([-]?)([a-zA-Z]{1}))" minlength="9" maxlength="11" <?php echo "value=\"" . $resultado["nombreCompleto"] . "\"" ?>><br />
+            <input type="text" id="dni" name="dni" autocomplete="off" pattern="((([x-zX-Z])|([lmLM])|[0-9]){1}([ ]?)(([0-9]){7})([-]?)([a-zA-Z]{1}))" minlength="9" maxlength="11" <?php echo "value=\"" . $resultado["DNI"] . "\"" ?>><br />
           </div>
 
           <div class="form-field">

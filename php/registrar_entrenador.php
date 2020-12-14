@@ -3,7 +3,7 @@ include("funciones.php");
 
 //Parseamos las variables
 $correo = filtrado($_POST["email"]);
-$contraseña = filtrado($_POST["password"]);
+$contraseña = password_hash(filtrado($_POST["password"]), PASSWORD_DEFAULT);
 $nombre = filtrado($_POST["name"]);
 $dni = str_replace("-", "", str_replace(" ", "", strtoupper(filtrado($_POST["dni"]))));
 $telf = str_replace(" ", "", filtrado($_POST["whatsapp"]));

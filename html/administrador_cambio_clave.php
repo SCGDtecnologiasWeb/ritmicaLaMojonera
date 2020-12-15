@@ -86,7 +86,7 @@
         <form action="#" method="POST" enctype="multipart/form-data">
           <div class="form-field">
           <label for="contraseña" class="field-title">Contraseña actual</label><br />
-          <input class="oldPass" type="password" id="oldPass" name="oldPass" placeholder="Nueva contraseña" autocomplete="off"><br />
+          <input class="oldPass" type="password" id="oldPass" name="oldPass" placeholder="Contraseña actual" autocomplete="off"><br />
           </div>
 
           <div class="form-field">

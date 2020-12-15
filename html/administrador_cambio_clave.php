@@ -86,16 +86,7 @@
         <form action="#" method="POST" enctype="multipart/form-data">
           <div class="form-field">
           <label for="contraseña" class="field-title">Contraseña actual</label><br />
-            <?php
-            if (empty($contraseña_err)) {
-              echo "<input type=\"password\" class=\"form-control\" placeholder=\"Contraseña\" name=\"contraseña\" />";
-            } else {
-              echo "<input type=\"password\" class=\"form-control is-invalid\" placeholder=\"Contraseña\" name=\"contraseña\" />";
-              echo "<div class=\"invalid-feedback\">";
-              echo $contraseña_err;
-              echo "</div>";
-            }
-            ?>
+          <input class="oldPass" type="password" id="oldPass" name="oldPass" placeholder="Nueva contraseña" autocomplete="off"><br />
           </div>
 
           <div class="form-field">
@@ -118,7 +109,6 @@
     </div>
   </div>
     <!--Content End-->
-
 
     <!--JQuery-->
     <script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

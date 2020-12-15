@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
   // Obtenemos los datos del entrenador
   $sql_get_entrenador = "SELECT `correoEntrenador`, `nombreCompleto`, `DNI`, `telefono` FROM `Entrenador` WHERE `idEntrenador` = (?)";
   $stmt = mysqli_prepare($link, $sql_get_entrenador);
-  mysqli_stmt_bind_param($stmt, "s", $_GET["idEntrenador"]);
+  mysqli_stmt_bind_param($stmt, "i", $_GET["idEntrenador"]);
   mysqli_stmt_execute($stmt);
   mysqli_stmt_store_result($stmt);
   if (mysqli_stmt_num_rows($stmt) !== 1) {

@@ -81,7 +81,7 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || $_SESSI
 
     echo "<h1 class=\"gymnast-header\">Gimnastas</h1>";
 
-    $consulta_SQL = "SELECT `dni`, `nombreCompleto`, `fechaNacimiento`, `nombreTutor`, `telefono`, `nivel`, `consentimientoFotos`, `alergias`, `pago`, `registrado`, `Grupo_idGrupo` FROM `Gimnasta`";
+    $consulta_SQL = "SELECT `dni`, `nombreCompleto`, `fechaNacimiento`, `nombreTutor`, `telefono`, `nivel`, `consentimientoFotos`, `alergias`, `pago`, `registrado`, `Grupo_idGrupo` FROM `Gimnasta` WHERE `registrado` = 1";
     $resultado = $link->query($consulta_SQL);
     while ($fila = $resultado->fetch_array()) {
 

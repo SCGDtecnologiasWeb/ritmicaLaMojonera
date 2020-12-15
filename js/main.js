@@ -174,7 +174,7 @@ $(document).ready(function () {
     // Funcion de validacion
     function validPass(){
       var passNuevo = $('#new').val();
-      var confPass = $('confirm').val();
+      var confPass = $('#confirm').val();
 
       if(passNuevo != confPass){
         $('.alertChangePass').html('<p>Las contraseñas no son iguales</p>');

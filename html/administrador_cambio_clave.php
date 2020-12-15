@@ -26,6 +26,47 @@
     } else {
         header("location: /html/login.php");
     }
+
+    $administrador = $_SESSION["id"];
+  // Comprobamos si el campo de contraseña esta vacio
+  if (empty(trim($_POST["contraseña"]))) {
+    $contraseña_err = "Por favor introduce tu contraseña.";
+  } else {
+    $contraseña = trim($_POST["contraseña"]);
+  }
+  if (empty(trim($_POST["new"]))) {
+    $contraseña_err = "Por favor introduce tu contraseña.";
+  } else {
+    $contraseña_nueva = password_hash(trim($_POST["new"]), PASSWORD_DEFAULT);
+  }
+  // $contraseña = password_hash($_POST["contraseña"], PASSWORD_DEFAULT);
+  $contraseña_err = "";
+  // preparamos consulta
+  $sql = "SELECT claveAccesoAdministrador FROM Administrador WHERE idAdministrador = $administrador";
+  if ($stmt = mysqli_query($link, $sql)) {
+      mysqli_stmt_bind_result($stmt, $clave_acceso_administrador);
+      if (mysqli_stmt_execute($stmt)) {
+          mysqli_stmt_store_result($stmt);
+          if (mysqli_stmt_fetch($stmt)) {
+              if (password_verify($contraseña, $clave_acceso_administrador)) {
+                $sql2 = "UPDATE Administrador SET claveAccesoAdministrador=$contraseña_nueva WHERE claveAccesoAdministrador = $clave_acceso_administrador";
+                  mysqli_stmt_close($stmt);
+              } else {
+                  // Mensaje de error si la contraseña es incorrecta
+                  if (empty($contraseña_err)) {
+                      $contraseña_err = "La contraseña es incorrecta.";
+                  }
+              }
+          }
+    
+          mysqli_close($link);
+      } else {
+          mysqli_query($link, "ROLLBACK");
+          mysqli_close($link);
+          header("location: /html/error.php");
+          exit;
+      }
+  }
     ?>
 
     <?php
@@ -44,18 +85,27 @@
       <div class="form-container">
         <form action="#" method="POST" enctype="multipart/form-data">
           <div class="form-field">
-            <label for="old" class="field-title">Contraseña actual</label><br />
-            <input type="password" id="old" name="old" autocomplete="off" ><br />
+          <label for="contraseña" class="field-title">Contraseña actual</label>
+            <?php
+            if (empty($contraseña_err)) {
+              echo "<input type=\"password\" class=\"form-control\" placeholder=\"Contraseña\" name=\"contraseña\" />";
+            } else {
+              echo "<input type=\"password\" class=\"form-control is-invalid\" placeholder=\"Contraseña\" name=\"contraseña\" />";
+              echo "<div class=\"invalid-feedback\">";
+              echo $contraseña_err;
+              echo "</div>";
+            }
+            ?>
           </div>
 
           <div class="form-field">
             <label for="new" class="field-title">Nueva contraseña</label><br />
-            <input class="newPass" type="password" id="new" name="new" autocomplete="off"><br />
+            <input class="newPass" type="password" id="new" name="new" placeholder="Nueva contraseña" autocomplete="off"><br />
           </div>
 
           <div class="form-field">
             <label for="confirm" class="field-title">Confirmar contraseña</label><br />
-            <input class="newPass" type="password" id="confirm" name="confirm" autocomplete="off"><br />
+            <input class="newPass" type="password" id="confirm" name="confirm" placeholder ="Confirmar contraseña" autocomplete="off"><br />
           </div>
 
           <div class="alertChangePass" style="display: none;">

@@ -179,11 +179,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
           <div class="mb-3">
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="escuela" name="escuela" <?php if ($grupos["escuela"] === 1) echo "checked"; ?>>
+              <input class="form-check-input" type="checkbox" id="escuela" autocomplete="off" name="escuela" <?php if ($grupos["escuela"] === 1) echo "checked"; ?>>
               <label class="form-check-label" for="escuela">Escuela</label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="federada" name="federada" <?php if ($grupos["federada"] === 1) echo "checked"; ?>>
+              <input class="form-check-input" type="checkbox" id="federada" autocomplete="off" name="federada" <?php if ($grupos["federada"] === 1) echo "checked"; ?>>
               <label class="form-check-label" for="federada">Federada</label>
             </div>
           </div>

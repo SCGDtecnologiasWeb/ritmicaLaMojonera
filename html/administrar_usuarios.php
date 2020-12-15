@@ -70,10 +70,10 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || $_SESSI
       echo        "<p class=\"hidden-content hidden\">Teléfono:{$fila["telefono"]}</p>";
       echo      "</div>";
       echo    "</div>";
-      echo    "<a href=\"modificar_entrenador.php?idEntrenador={$fila["idEntrenador"]}\">";
+      echo    "<a href=\"/html/modificar_entrenador.php?idEntrenador={$fila["idEntrenador"]}\">";
       echo      "<img src=\"/assets/edit-icon.PNG\" class=\"edit-img\" alt=\"Editar entrenador\">";
       echo    "</a>";
-      echo    "<a href=\"eliminar_entrenador.php?idEntrenador={$fila["idEntrenador"]}\">";
+      echo    "<a href=\"/html/eliminar_entrenador.php?idEntrenador={$fila["idEntrenador"]}\">";
       echo      "<img src=\"/assets/bin-icon.PNG\" class=\"bin-img\" alt=\"Eliminar entrenador\">";
       echo    "</a>";
       echo  "</div>";
@@ -110,10 +110,10 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || $_SESSI
       echo        "<p class=\"hidden-content hidden\">Fecha de nacimiento: {$fila["fechaNacimiento"]}</p>";
       echo      "</div>";
       echo    "</div>";
-      echo    "<a href=\"modificar_gimnasta.html?idGimnasta={$fila["dni"]}\">";
+      echo    "<a href=\"/html/modificar_gimnasta.php?idGimnasta={$fila["dni"]}\">";
       echo      "<img src=\"/assets/edit-icon.PNG\" class=\"edit-img\" alt=\"Editar\">";
       echo    "</a>";
-      echo    "<a href=\"eliminar_gimnasta.html?idGimnasta={$fila["dni"]}\">";
+      echo    "<a href=\"/php/eliminar_gimnasta.php?idGimnasta={$fila["dni"]}\">";
       echo      "<img src=\"/assets/bin-icon.PNG\" class=\"bin-img\" alt=\"Eliminar\">";
       echo    "</a>";
       echo  "</div>";

@@ -85,7 +85,7 @@
       <div class="form-container">
         <form action="#" method="POST" enctype="multipart/form-data">
           <div class="form-field">
-          <label for="contraseña" class="field-title">Contraseña actual</label>
+          <label for="contraseña" class="field-title">Contraseña actual</label><br />
             <?php
             if (empty($contraseña_err)) {
               echo "<input type=\"password\" class=\"form-control\" placeholder=\"Contraseña\" name=\"contraseña\" />";

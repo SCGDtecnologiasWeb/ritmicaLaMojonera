@@ -87,6 +87,7 @@
       <div class="form-container">
         <form action="#" method="POST" enctype="multipart/form-data">
         <div class="form-group" id="password-group">
+          <label for="contraseña" class="field-title">Contraseña actual</label>
             <?php
             if (empty($contraseña_err)) {
               echo "<input type=\"password\" class=\"form-control\" placeholder=\"Contraseña\" name=\"contraseña\" />";

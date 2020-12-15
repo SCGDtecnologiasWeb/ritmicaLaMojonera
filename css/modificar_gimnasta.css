@@ -1,0 +1,27 @@
+.main {
+  background-color: #e8e0ee;
+  padding: 20px 0;
+}
+
+.content-container {
+  width: 760px;
+  margin: auto;
+  margin-bottom: 20px;
+  overflow: hidden;
+  background-color: #fff;
+  padding: 20px 50px;
+  border-radius: 10px;
+  border: #bbb solid 1px;
+}
+
+@media screen and (max-width: 800px) {
+  .content-container {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .content-container {
+    padding: 10px 25px;
+  }
+}

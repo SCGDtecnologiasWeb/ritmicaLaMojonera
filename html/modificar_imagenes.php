@@ -45,7 +45,7 @@
       <img src="/assets/cross.jpg" class="bin-img" alt="Eliminar" />
     </div>
     <div class="img-container" style="
-          background-image: url('/assets/Más fotos/WhatsApp\ Image\ 2020-10-27\ at\ 15.39.10\ \(1\).jpeg');
+          background-image: url('assets\Más fotos\WhatsApp Image 2020-10-27 at 15.39.08 (2).jpeg');
         ">
       <img src="/assets/cross.jpg" class="bin-img" alt="Eliminar" />
     </div>
@@ -75,7 +75,7 @@
       <img src="/assets/cross.jpg" class="bin-img" alt="Eliminar" />
     </div>
     <div class="img-container" style="
-          background-image: url('/assets/Más fotos/WhatsApp\ Image\ 2020-11-08\ at\ 11.45.21.jpeg');
+          background-image: url('assets\Más fotos\WhatsApp Image 2020-10-29 at 14.49.15.jpeg');
         ">
       <img src="/assets/cross.jpg" class="bin-img" alt="Eliminar" />
     </div>

@@ -69,7 +69,7 @@
               <p>
                 {$fila["descripcion"]}
               </p>
-              <a href=\"/php/noticia.php?idNoticia={$fila["idNoticia"]}\">Leer más</a>
+              <a href=\"/html/noticia.php?idNoticia={$fila["idNoticia"]}\">Leer más</a>
             </div>
           </div>";
   }

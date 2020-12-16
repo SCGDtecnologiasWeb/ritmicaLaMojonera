@@ -5,7 +5,7 @@
 
 .individual-news-container img {
   width: 100%;
-  height: auto;
+  transform: scaleY(0.5);
   display: block;
   margin:auto
 }

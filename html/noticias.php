@@ -32,7 +32,7 @@
 
   echo "<!-- News Start -->
           <div class=\"container news-container\">
-            <h1>Manente Actualizado</h1>
+            <h1>Mantente Actualizado</h1>
             <div class=\"news-row\">";
 
   while ($fila = $resultado->fetch_array()) {

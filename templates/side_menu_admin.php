@@ -9,7 +9,8 @@
       <a href="javascript:void(0)" class="menu-title">Usuarios</a>
       <a href="/html/administrar_inscripciones.php" class="menu-text">Inscripciones</a>
       <a href="/html/administrar_usuarios.php" class="menu-text">Administrar usuarios</a>
-      <a href="/html/registrar_usuarios.php" class="menu-text">Registrar usuarios</a>
+      <a href="/html/registrar_gimnasta.php" class="menu-text">Registrar gimnasta</a>
+      <a href="/html/registrar_entrenador.php" class="menu-text">Registrar entrenador</a>
       <a href="/html/administrador_cambio_clave.php" class="menu-text">Cambiar contraseña</a>
     </div>
 

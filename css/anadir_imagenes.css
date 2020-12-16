@@ -1,7 +1,7 @@
 .main {
   background-color: #e8e0ee;
   padding: 20px 0;
-  height: max-content;
+  height: fit-content;
 }
 html,body{height: 100%;}
 .content-container {

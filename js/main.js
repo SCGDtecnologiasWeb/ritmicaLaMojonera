@@ -164,6 +164,11 @@ $(document).ready(function () {
     }
   });
 
+  /********** Confirmación antes de borrar **********/
+  $(".bin-img").on("click", function () {
+    return confirm("¿Seguro que quieres realizar esta acción?");
+  });
+
   /************ Change password *************/
   $('.newPass').keyup(function(){
     validPass();
@@ -172,36 +177,36 @@ $(document).ready(function () {
   // validar numeros
   function isNumeric(n) {
     return !isNaN(parseFloat(n)) && isFinite(n);
-}
+  }
 
-    // Funcion de validacion
-    function validPass(){
-      var passNuevo = $('#new').val();
-      var confPass = $('#confirm').val();
+  // Funcion de validacion
+  function validPass(){
+    var passNuevo = $('#new').val();
+    var confPass = $('#confirm').val();
 
-      if(passNuevo != confPass){
-        $('.alertChangePass').html('<p>Las contraseñas no son iguales</p>');
-        $('.alertChangePass').slideDown();
-        return false;
-      }
-
-      if(passNuevo.length<8){
-        $('.alertChangePass').html('<p>La nueva contraseña debe tener 8 caracteres como mínimo</p>');
-        $('.alertChangePass').slideDown();
-        return false;
-      }
-
-      // comprobamos si tiene números y caracteres
-      for(const i in passNuevo){
-        if(isNaN(passNuevo[i]) && !isNaN(passNuevo[i+1])) break;
-        if(!isNaN(passNuevo[i]) && isNaN(passNuevo[i+1])) {
-          break;
-        }else{
-          $('.alertChangePass').html('<p>La contraseña debe contener al menos un número y un carácter</p>');
-          $('.alertChangePass').slideDown();
-        }
-      }
-      $('.alertChangePass').html('');
-      $('.alertChangePass').slideUp();
+    if(passNuevo != confPass){
+      $('.alertChangePass').html('<p>Las contraseñas no son iguales</p>');
+      $('.alertChangePass').slideDown();
+      return false;
     }
+
+    if(passNuevo.length<8){
+      $('.alertChangePass').html('<p>La nueva contraseña debe tener 8 caracteres como mínimo</p>');
+      $('.alertChangePass').slideDown();
+      return false;
+    }
+
+    // comprobamos si tiene números y caracteres
+    for(const i in passNuevo){
+      if(isNaN(passNuevo[i]) && !isNaN(passNuevo[i+1])) break;
+      if(!isNaN(passNuevo[i]) && isNaN(passNuevo[i+1])) {
+        break;
+      }else{
+        $('.alertChangePass').html('<p>La contraseña debe contener al menos un número y un carácter</p>');
+        $('.alertChangePass').slideDown();
+      }
+    }
+    $('.alertChangePass').html('');
+    $('.alertChangePass').slideUp();
+  }
 });

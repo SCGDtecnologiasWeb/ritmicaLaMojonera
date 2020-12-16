@@ -15,4 +15,4 @@ mysqli_stmt_execute($stmt);
 mysqli_stmt_close($stmt);
 mysqli_close($link);
 
-header("location: /html/modificar_noticias.php");
+header("location: /html/administrar_inscripciones.php");

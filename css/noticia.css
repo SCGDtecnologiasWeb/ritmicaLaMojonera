@@ -4,8 +4,7 @@
 }
 
 .individual-news-container img {
-  width: 100%;
-  transform: scaleY(0.5);
+  width: 80%;
   display: block;
   margin:auto
 }

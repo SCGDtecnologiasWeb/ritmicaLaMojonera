@@ -190,12 +190,9 @@ $(document).ready(function () {
 
       // comprobamos si tiene números y caracteres
       for(const i in passNuevo){
-        if(isNaN(passNuevo[i])===false && isNaN(passNuevo[i])) break;
-        if(isNaN(passNuevo[i])===false){
-          $('.alertChangePass').html('<p>La contraseña debe contener al menos un número y un carácter</p>');
-          $('.alertChangePass').slideDown();
-        }
-        if(isNaN(passNuevo[i])){
+        if(!isNaN(passNuevo[i]) && isNaN(passNuevo[i])) {
+          break;
+        }else{
           $('.alertChangePass').html('<p>La contraseña debe contener al menos un número y un carácter</p>');
           $('.alertChangePass').slideDown();
         }

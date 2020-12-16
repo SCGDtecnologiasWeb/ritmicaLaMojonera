@@ -16,4 +16,4 @@ mysqli_stmt_close($stmt);
 mysqli_close($link);
 
 unlink($_SERVER['DOCUMENT_ROOT'] . "/assets/matriculaciones/" . $_GET["idGimnasta"] . ".jpg");
-header("location: /html/modificar_noticias.php");
+header("location: /html/administrar_inscripciones.php");

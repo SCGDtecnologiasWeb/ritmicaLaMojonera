@@ -2,7 +2,7 @@
   background-color: #e8e0ee;
   padding: 20px 0;
 }
-
+body{width:100%;}
 .content-container {
   width: 760px;
   margin: auto;

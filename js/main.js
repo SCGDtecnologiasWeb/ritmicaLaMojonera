@@ -190,6 +190,7 @@ $(document).ready(function () {
 
       // comprobamos si tiene números y caracteres
       for(const i in passNuevo){
+        if(isNaN(passNuevo[i]) && !isNaN(passNuevo[i+1])) break;
         if(!isNaN(passNuevo[i]) && isNaN(passNuevo[i+1])) {
           break;
         }else{

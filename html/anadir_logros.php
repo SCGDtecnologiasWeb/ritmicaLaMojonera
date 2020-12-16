@@ -1,4 +1,13 @@
 <?php
+session_start();
+
+if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || $_SESSION["tipo_usuario"] !== "administrador") {
+  header("location: /html/login.php");
+  exit;
+}
+?>
+
+<?php
 $titulo = "";
 $desc = "";
 
@@ -102,19 +111,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-  <?php
-  // Comienza la sesión
-  session_start();
-
-  if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] === true && $_SESSION["tipo_usuario"] === "administrador") {
-    echo "<p style='float: right'>";
-    print_r($_SESSION);
-    echo "</p>";
-  } else {
-    header("location: /html/login.php");
-  }
-  ?>
-
   <?php
   include_once($_SERVER['DOCUMENT_ROOT'] . "/templates/header_admin.php");
 

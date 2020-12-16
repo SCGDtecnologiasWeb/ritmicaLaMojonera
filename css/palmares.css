@@ -17,7 +17,7 @@
 
 .trophy-img {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   width: 100%;
 }
 
@@ -31,7 +31,33 @@
   margin: auto;
 }
 
-@media screen and (max-width: 1100px) {
+.trophy-img-wrapper {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+}
+
+@media screen and (max-width: 1200px) {
+  .palmares-content {
+    width: 85%;
+  }
+
+  .trophy-img img {
+    width: 330px;
+  }
+
+  .trophy-text {
+    width: 330px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .palmares-content {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 850px) {
   .trophy-img img {
     width: 300px;
   }
@@ -40,62 +66,46 @@
     width: 300px;
   }
 }
-@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) {
-  .trophy-container img {
-    height: 200px;
-    width: 200px;
-  }
-}
 
-@media only screen and (device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) {
-  .trophy-container img {
-    height: 200px;
-    width: 200px;
-  }
-}
-@media only screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) {
-  .trophy-container img {
-    height: 200px;
-    width: 200px;
-  }
-}
-@media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) {
-  .trophy-container img {
-    height: 200px;
-    width: 200px;
-  }
-}
-@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
-  .trophy-container img {
-    height: 200px;
-    width: 200px;
-  }
-}
-@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
-  .trophy-container img {
-    height: 200px;
-    width: 200px;
-  }
-}
-
-@media screen and (max-width: 900px) and (max-width: 450px) {
+@media screen and (max-width: 800px) {
   .palmares-content {
-    width: 80%;
-    margin: 30px auto;
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .trophy-img img {
+    width: 270px;
   }
 
+  .trophy-text {
+    width: 270px;
+  }
+}
+
+@media screen and (max-width: 675px) {
   .trophy {
     display: block;
     margin: auto;
     width: 100%;
   }
 
+  .trophy-img,
+  .trophy-img-wrapper {
+    justify-content: center;
+  }
+
   .trophy-img img {
-    width: 60%;
+    width: 80%;
   }
 
   .trophy-text {
-    width: 90%;
+    width: 85%;
+  }
+
+  .trophy-text p {
+    text-align: justify;
+    text-justify: inter-word;
   }
 
   .trophy-text h3 {

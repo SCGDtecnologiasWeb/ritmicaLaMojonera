@@ -2,7 +2,7 @@
   background-color: #e8e0ee;
   padding: 20px 0;
   min-height:100%;
-  position:relative
+  position: absolute;
 }
 html,body{height: 100%;}
 .content-container {

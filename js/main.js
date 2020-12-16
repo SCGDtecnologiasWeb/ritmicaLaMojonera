@@ -152,7 +152,10 @@ $(document).ready(function () {
     }
   });
 
-  $(".gymnast").click(function(){
+  $(".gymnast").click(function(e){
+    if (e.target.id == "payment") {
+      return;
+    }
     if ($(this).find(".hidden-content").hasClass("hidden")) {
       $(this).find(".hidden-content").removeClass("hidden");
     }

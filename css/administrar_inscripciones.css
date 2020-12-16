@@ -76,6 +76,15 @@
   cursor: pointer;
 }
 
+.fa-external-link-square-alt {
+  color: blue;
+}
+
+.fa-external-link-square-alt:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 1000px) {
   .gymnast-container .contact-container {
     width: 100%;

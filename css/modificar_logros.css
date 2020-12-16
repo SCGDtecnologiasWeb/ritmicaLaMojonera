@@ -1,5 +1,5 @@
 .palmares-content {
-  width: 90%;
+  width: 75%;
   margin: 30px auto;
 }
 
@@ -17,23 +17,23 @@
 
 .trophy-img {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   width: 100%;
 }
 
 .trophy-img img {
-  width: 320px;
-  border-radius: 5px;
+  width: 360px;
+  border-radius: 10px;
 }
 
 .trophy-text {
-  width: 320px;
+  width: 360px;
   margin: auto;
 }
 
 .trophy-img-wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   position: relative;
 }
 
@@ -55,34 +55,75 @@
   cursor: pointer;
 }
 
-@media screen and (max-width: 990px) {
+@media screen and (max-width: 1200px) {
+  .palmares-content {
+    width: 85%;
+  }
+
   .trophy-img img {
-    width: 250px;
+    width: 330px;
   }
 
   .trophy-text {
-    width: 250px;
+    width: 330px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .palmares-content {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .trophy-img img {
+    width: 300px;
+  }
+
+  .trophy-text {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .palmares-content {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .trophy-img img {
+    width: 270px;
+  }
+
+  .trophy-text {
+    width: 270px;
   }
 }
 
 @media screen and (max-width: 675px) {
-  .palmares-content {
-    width: 80%;
-    margin: 30px auto;
-  }
-
   .trophy {
     display: block;
     margin: auto;
     width: 100%;
   }
 
+  .trophy-img,
+  .trophy-img-wrapper {
+    justify-content: center;
+  }
+
   .trophy-img img {
-    width: 60%;
+    width: 80%;
   }
 
   .trophy-text {
-    width: 90%;
+    width: 85%;
+  }
+
+  .trophy-text p {
+    text-align: justify;
+    text-justify: inter-word;
   }
 
   .trophy-text h3 {
@@ -95,11 +136,11 @@
 
   .trophy-img-wrapper .edit-img {
     top: 0;
-    right: 10%;
+    right: 0%;
   }
 
   .trophy-img-wrapper .bin-img {
     top: 45px;
-    right: 10%;
+    right: 0%;
   }
 }

@@ -73,7 +73,7 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || $_SESSI
       echo    "<a href=\"/html/modificar_entrenador.php?idEntrenador={$fila["idEntrenador"]}\">";
       echo      "<img src=\"/assets/edit-icon.PNG\" class=\"edit-img\" alt=\"Editar entrenador\">";
       echo    "</a>";
-      echo    "<a href=\"/html/eliminar_entrenador.php?idEntrenador={$fila["idEntrenador"]}\">";
+      echo    "<a href=\"/php/eliminar_entrenador.php?idEntrenador={$fila["idEntrenador"]}\">";
       echo      "<img src=\"/assets/bin-icon.PNG\" class=\"bin-img\" alt=\"Eliminar entrenador\">";
       echo    "</a>";
       echo  "</div>";

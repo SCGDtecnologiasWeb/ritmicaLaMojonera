@@ -7,19 +7,13 @@ if (!isset($_SESSION["logged_in"]) || !$_SESSION["logged_in"] === true || !$_SES
 
 include_once($_SERVER['DOCUMENT_ROOT'] . '/php/config.php');
 
-$sql = "DELETE FROM Noticia WHERE idNoticia = (?)";
-$deleteCorrecto = 0;
+$sql = "DELETE FROM `Noticia` WHERE `idNoticia` = (?)";
 
-if ($stmt = mysqli_prepare($link, $sql)) {
-  mysqli_stmt_bind_param($stmt, "i", $_GET["idNoticia"]);
-  if (mysqli_stmt_execute($stmt)) {
-    $deleteCorrecto = 1;
-  }
-  mysqli_stmt_close($stmt);
-}
+$stmt = mysqli_prepare($link, $sql);
+mysqli_stmt_bind_param($stmt, "i", $_GET["idNoticia"]);
+mysqli_stmt_execute($stmt);
+mysqli_stmt_close($stmt);
 mysqli_close($link);
 
-if ($deleteCorrecto == 1) {
-  unlink($_SERVER['DOCUMENT_ROOT'] . "/assets/noticias/noticia" . $_GET["idNoticia"] . ".jpg");
-  header("location: /html/modificar_noticias.php");
-}
+unlink($_SERVER['DOCUMENT_ROOT'] . "/assets/noticias/noticia" . $_GET["idNoticia"] . ".jpg");
+header("location: /html/modificar_noticias.php");

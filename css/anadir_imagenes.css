@@ -1,8 +1,9 @@
 .main {
   background-color: #e8e0ee;
   padding: 20px 0;
+  height: max-content;
 }
-html,body,body.main{height: 100%;}
+html,body{height: 100%;}
 .content-container {
   width: 760px;
   margin: auto;

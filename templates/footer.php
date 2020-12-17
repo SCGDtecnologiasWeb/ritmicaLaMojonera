@@ -37,7 +37,7 @@
     </div>
   </div>
   <nav>
-    <button id="goback-btn">
+    <button id="goback-btn" onclick="">
       <i class="fas fa-arrow-up"></i>
     </button>
   </nav>

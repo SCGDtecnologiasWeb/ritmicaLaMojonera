@@ -39,8 +39,10 @@
       </p>
     </div>
   </div>
-  <button id="goback-btn">
-    <i class="fas fa-arrow-up"></i>
-  </button>
+  <nav>
+    <button id="goback-btn">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+  </nav>
 </div>
 <!-- Footer End -->

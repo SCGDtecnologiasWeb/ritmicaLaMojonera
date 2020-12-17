@@ -82,7 +82,7 @@
     <div class="col"></div>
     <div class="col-10 header-col">
       <a href="/html/index.php">
-        <img src="/assets/logo_ritmica2.png" />
+        <img src="/assets/logo_ritmica2.png" alt="Logo Club" />
       </a>
       <div class="header-icon-wrapper">
         <a href="https://www.facebook.com/ritmicalamojonera" class="fab fa-facebook-square"></a>

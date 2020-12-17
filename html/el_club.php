@@ -83,13 +83,13 @@
   <div class="sections-container">
     <div>
       <a href="/html/cuerpo_tecnico.php">
-        <img src="/assets/cuerpoTecnico.jpeg" />
+        <img src="/assets/cuerpoTecnico.jpeg" alt="Cuerpo Técnico" />
         <h2>Cuerpo técnico</h2>
       </a>
     </div>
     <div>
       <a href="/html/palmares.php">
-        <img src="/assets/Más fotos/WhatsApp Image 2020-11-08 at 11.45.21 (1).jpeg" />
+        <img src="/assets/Más fotos/WhatsApp Image 2020-11-08 at 11.45.21 (1).jpeg" alt="Palmarés" />
         <h2>Palmarés</h2>
       </a>
     </div>

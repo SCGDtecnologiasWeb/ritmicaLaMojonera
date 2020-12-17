@@ -41,14 +41,14 @@
               <img src=\"/assets/noticias/noticia{$fila["idNoticia"]}.jpg\" class=\"news-image\" alt=\"Noticia\"/>
             </div>
             <div class=\"news-text\">
-              <h5>{$fila["fecha"]}</h5>
-              <h3>{$fila["titulo"]}</h3>
-              <p>
-                {$fila["descripcion"]}
-              </p>
-              <a href=\"/html/noticia.php?idNoticia={$fila["idNoticia"]}\">Leer más</a>
+            <h3>{$fila["titulo"]}</h3>
+            <p>
+            {$fila["descripcion"]}
+            </p>
+            <a href=\"/html/noticia.php?idNoticia={$fila["idNoticia"]}\">Leer más</a>
             </div>
-          </div>";
+            </div>";
+    // <h5>{$fila["fecha"]}</h5>
   }
 
   echo  "</div>

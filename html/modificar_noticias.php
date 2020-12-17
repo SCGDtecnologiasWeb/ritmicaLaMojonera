@@ -41,7 +41,7 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || $_SESSI
 
   echo "<!-- News Start -->
           <div class=\"container news-container\">
-            <h1>Últimas Noticias</h1>
+            <h1>Mantente Actualizado</h1>
             <div class=\"news-row\">";
 
   while ($fila = $resultado->fetch_array()) {

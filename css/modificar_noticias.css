@@ -2,6 +2,10 @@
   padding: 20px;
 }
 
+.news-container h1 {
+  text-align: left;
+}
+
 .news-col {
   position: relative;
 }

@@ -36,7 +36,7 @@
       <a href="/html/anadir_logros.php" class="menu-text">Añadir logros del club</a>
       <a href="/html/modificar_logros.php" class="menu-text">Modificar o eliminar logros del club</a>
       <a href="/php/logout.php">
-        <img src="/assets/logout2.png" class="logout-img" />
+        <img src="/assets/logout2.png" class="logout-img" alt="Salir" />
       </a>
     </div>
   </div>

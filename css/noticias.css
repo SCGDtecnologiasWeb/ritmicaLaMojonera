@@ -41,10 +41,20 @@
 
 .news-text h5 {
   color: #555;
+  display: inline;
+  color: #fff;
+  background-color: #aaa;
+  padding: 3px 5px;
+  -webkit-box-shadow: 0.8px 0.8px 2px 1px rgba(0, 0, 0, 0.34);
+  -moz-box-shadow: 0.8px 0.8px 2px 1px rgba(0, 0, 0, 0.34);
+  box-shadow: 0.8px 0.8px 2px 1px rgba(0, 0, 0, 0.34);
+  font-size: 12px;
 }
 
 .news-text h3 {
   margin-top: 0;
+  display: inline;
+  padding-right: 10px;
 }
 
 .news-text p {
@@ -64,6 +74,8 @@
   box-shadow: 0.8px 0.8px 2px 1px rgba(0, 0, 0, 0.34);
   cursor: pointer;
   float: right;
+  position: relative;
+  right: 20px;
 }
 
 .news-text a:hover {
@@ -88,6 +100,7 @@
   }
   .news-text a {
     float: left;
+    right: 0;
   }
   .news-text p {
     margin-bottom: 16px;

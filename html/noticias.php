@@ -31,8 +31,10 @@
   $resultado = $link->query($consulta_SQL);
 
   echo "<!-- News Start -->
-          <div class=\"container news-container\">
+          <div class=\"header-container\">
             <h1>Mantente Actualizado</h1>
+          </div>
+          <div class=\"container news-container\">
             <div class=\"news-row\">";
 
   while ($fila = $resultado->fetch_array()) {

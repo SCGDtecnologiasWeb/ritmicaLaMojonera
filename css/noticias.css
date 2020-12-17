@@ -78,6 +78,9 @@
 }
 
 @media screen and (max-width: 1250px) {
+  .news-container {
+    width: 80%;
+  }
   .news-col {
     width: 100%;
   }
@@ -89,6 +92,18 @@
   }
   .news-text p {
     margin-bottom: 16px;
+  }
+}
+
+@media screen and (max-width: 1115px) {
+  .news-container {
+    width: 85%;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .news-container {
+    width: 90%;
   }
 }
 

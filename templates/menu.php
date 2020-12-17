@@ -98,6 +98,7 @@
       <a class="nav-btn" href="/html/contacto.php">Contacto</a>
       <a class="dropdown-icon" href="javascript:void(0)">
         <span class="fas fa-bars"></span>
+        &nbsp;
       </a>
     </div>
     <div class="col"></div>

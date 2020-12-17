@@ -40,8 +40,10 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || $_SESSI
   $resultado = $link->query($consulta_SQL);
 
   echo "<!-- News Start -->
-          <div class=\"container news-container\">
+          <div class=\"header-container\">
             <h1>Mantente Actualizado</h1>
+          </div>
+          <div class=\"container news-container\">
             <div class=\"news-row\">";
 
   while ($fila = $resultado->fetch_array()) {

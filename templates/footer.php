@@ -5,10 +5,7 @@
       <h1>Ven a visitarnos</h1>
       <p>Concreta una cita y disfruta de nuestros entrenamientos</p>
       <p>
-        <a>
-          C/ Av. Europa, 143 (Carpa de usos multiples), La Mojonera-04745,
-          Almería
-        </a>
+        <b style="color: blue;"><u>C/ Av. Europa, 143 (Carpa de usos multiples), La Mojonera-04745, Almería</u></b>
       </p>
     </div>
     <div class="col-4 footer-col">
@@ -18,9 +15,9 @@
         encantado de atenderte
       </p>
       <p>
-        Correo: <a>cdrlamojonera@gmail.com</a><br />
-        Telefono: <a>621 013 265</a><br />
-        Whatsapp: <a>+34 621 013 265</a><br />
+        Correo: <b style="color: blue;"><u>cdrlamojonera@gmail.com</u></b><br />
+        Telefono: <b style="color: blue;"><u>621 013 265</u></b><br />
+        Whatsapp: <b style="color: blue;"><u>+34 621 013 265</u></b><br />
       </p>
     </div>
     <div class="col-4 footer-col">

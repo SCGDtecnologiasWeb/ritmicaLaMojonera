@@ -1,7 +1,9 @@
 .main {
   background-color: #e8e0ee;
   padding: 20px 0;
+  height:80%;
 }
+html,body{height: 100%;}
 
 .content-container {
   width: 760px;

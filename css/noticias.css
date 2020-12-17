@@ -6,7 +6,6 @@
 
 .news-container h1 {
   text-align: left;
-  /* margin-bottom: -30px; */
 }
 
 .news-container h4 {
@@ -54,7 +53,7 @@
 }
 
 .news-text a {
-  display: inline-block;
+  /* display: inline-block; */
   font-size: 20px;
   color: #fff;
   background-color: #104fa7;

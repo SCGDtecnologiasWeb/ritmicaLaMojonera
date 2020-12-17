@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
 
   <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/noticias.css" />
 </head>
 
 <body>
@@ -64,14 +65,14 @@
               <img src=\"/assets/noticias/noticia{$fila["idNoticia"]}.jpg\" class=\"news-image\" alt=\"Noticia\"/>
             </div>
             <div class=\"news-text\">
-              <h5>{$fila["fecha"]}</h5>
-              <h3>{$fila["titulo"]}</h3>
-              <p>
-                {$fila["descripcion"]}
-              </p>
-              <a href=\"/html/noticia.php?idNoticia={$fila["idNoticia"]}\">Leer más</a>
+            <h3>{$fila["titulo"]}</h3>
+            <p>
+            {$fila["descripcion"]}
+            </p>
+            <a href=\"/html/noticia.php?idNoticia={$fila["idNoticia"]}\">Leer más</a>
             </div>
-          </div>";
+            </div>";
+    // <h5>{$fila["fecha"]}</h5>
   }
 
   echo  "</div>

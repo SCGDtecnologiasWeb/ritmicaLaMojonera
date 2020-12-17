@@ -51,25 +51,25 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || $_SESSI
                 <img src=\"/assets/noticias/noticia{$fila["idNoticia"]}.jpg\" class=\"news-image\" alt=\"Noticia\"/>
               </div>
               <div class=\"news-text\">
-                <h5>{$fila["fecha"]}</h5>
-                <h3>{$fila["titulo"]}</h3>
-                <p>
-                  {$fila["descripcion"]}
-                </p>
-                <a href=\"/html/noticia.php?idNoticia={$fila["idNoticia"]}\">Leer más</a>
+              <h3>{$fila["titulo"]}</h3>
+              <p>
+              {$fila["descripcion"]}
+              </p>
+              <a href=\"/html/noticia.php?idNoticia={$fila["idNoticia"]}\">Leer más</a>
               </div>
-            </div>
-            <a href=\"modificar_noticia.php?idNoticia={$fila["idNoticia"]}\">
+              </div>
+              <a href=\"modificar_noticia.php?idNoticia={$fila["idNoticia"]}\">
               <img src=\"/assets/edit-icon.PNG\" class=\"edit-img\"alt=\"Editar\" />
-            </a>
-            <a href=\"/php/eliminar_noticia.php?idNoticia={$fila["idNoticia"]}\">
+              </a>
+              <a href=\"/php/eliminar_noticia.php?idNoticia={$fila["idNoticia"]}\">
               <img src=\"/assets/bin-icon.PNG\" class=\"bin-img\"alt=\"Eliminar\" />
-            </a>
-          </div>";
+              </a>
+              </div>";
+    // <h5>{$fila["fecha"]}</h5>
   }
 
   echo  "</div>
-      </div>";
+       </div>";
 
   $link->close();
   ?>

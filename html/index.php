@@ -56,7 +56,7 @@
 
   echo "<!-- News Start -->
           <div class=\"container news-container\">
-            <h1>Últimas Noticias</h1>
+            <h1 style=\"text-align:center;\">Últimas Noticias</h1>
             <div class=\"news-row\">";
 
   while ($fila = $resultado->fetch_array()) {

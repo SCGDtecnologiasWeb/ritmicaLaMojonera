@@ -21,6 +21,8 @@ body {
 .title-row {
   background-color: #222;
   transition: 0.5s;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .open-btn {

@@ -2,6 +2,12 @@
   padding: 20px;
 }
 
+.news-container {
+  width: 75%;
+  display: table;
+  margin-bottom: 30px;
+}
+
 .news-container h1 {
   text-align: left;
 }

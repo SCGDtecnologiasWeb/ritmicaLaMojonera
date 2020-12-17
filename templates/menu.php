@@ -1,8 +1,8 @@
 <!-- Prueba cookies -->
-<div id="#barracookies">
+<div id="barracookies">
   Usamos cookies propias y de terceros que entre otras cosas recogen datos sobre sus hábitos de navegación para realizar análisis de uso de nuestro sitio.
   <br />
-  Si continúa navegando consideramos que acepta su uso. <a href="javascript:void(0);" onclick="var expiration = new Date(); expiration.setTime(expiration.getTime() + (60000*60*24*365)); setCookie('avisocookies','1',expiration,'/');document.getElementById('#barracookies').style.display='none';"><b>OK</b></a> <a href="http://www.google.com/intl/es-419/policies/technologies/types/" target="_blank">Más información</a> | <a href="http://www.agpd.es/portalwebAGPD/canaldocumentacion/publicaciones/common/Guias/Guia_Cookies.pdf" target="_blank">Y más</a>
+  Si continúa navegando consideramos que acepta su uso. <a href="javascript:void(0);" onclick="var expiration = new Date(); expiration.setTime(expiration.getTime() + (60000*60*24*365)); setCookie('avisocookies','1',expiration,'/');document.getElementById('barracookies').style.display='none';"><b>OK</b></a> <a href="http://www.google.com/intl/es-419/policies/technologies/types/" target="_blank">Más información</a> | <a href="http://www.agpd.es/portalwebAGPD/canaldocumentacion/publicaciones/common/Guias/Guia_Cookies.pdf" target="_blank">Y más</a>
 </div>
 
 <!-- Gestión de cookies-->

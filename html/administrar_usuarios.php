@@ -37,6 +37,7 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || $_SESSI
   <div class="content-container">
     <?php
     echo "<h1>Entrenadores</h1>";
+    echo "<a href=\"/php/crear_xlsx.php\" class=\"link-listado\">Generar listado de usuarios</a>";
 
     require_once($_SERVER['DOCUMENT_ROOT'] . '/php/config.php');
     $consulta_SQL = "SELECT `idEntrenador`, `correoEntrenador`, `nombreCompleto`, `DNI`, `telefono` FROM `Entrenador`";

@@ -187,6 +187,14 @@
   cursor: pointer;
 }
 
+.link-listado {
+  color: blue;
+}
+
+.link-listado:hover {
+  text-decoration: underline;
+}
+
 @media screen and (max-width: 1000px) {
   .gymnast-container .contact-container {
     width: 100%;

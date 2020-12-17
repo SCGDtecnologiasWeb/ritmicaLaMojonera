@@ -4,39 +4,7 @@
   <br />
   Si continúa navegando consideramos que acepta su uso. <a href="javascript:void(0);" onclick="var expiration = new Date(); expiration.setTime(expiration.getTime() + (60000*60*24*365)); setCookie('avisocookies','1',expiration,'/');document.getElementById('barracookies').style.display='none';"><b>OK</b></a> <a href="http://www.google.com/intl/es-419/policies/technologies/types/" target="_blank">Más información</a> | <a href="http://www.agpd.es/portalwebAGPD/canaldocumentacion/publicaciones/common/Guias/Guia_Cookies.pdf" target="_blank">Y más</a>
 </div>
-<!-- Estilo barra CSS -->
-<style>
-  #barracookies {
-    display: none;
-    z-index: 99999;
-    position: fixed;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    width: 100%;
-    min-height: 40px;
-    padding: 5px;
-    background: #333333;
-    color: #d7c712;
-    line-height: 20px;
-    font-family: verdana;
-    font-size: 12px;
-    text-align: center;
-    box-sizing: border-box;
-  }
 
-  #barracookies a:nth-child(2) {
-    padding: 4px;
-    background: #4682B4;
-    border-radius: 5px;
-    text-decoration: none;
-  }
-
-  #barracookies a {
-    color: #fff;
-    text-decoration: none;
-  }
-</style>
 <!-- Gestión de cookies-->
 <script type='text/javascript'>
   function setCookie(name, value, expires, path, domain, secure) {

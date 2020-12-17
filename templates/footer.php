@@ -23,9 +23,9 @@
     <div class="col-4 footer-col">
       <h1>Siguenos en redes sociales</h1>
       <p>Entérate de todo al instante</p>
-      <a href="https://www.facebook.com/ritmicalamojonera" class="fab fa-facebook-square"></a>
-      <a href="https://www.youtube.com/channel/UC1t4MldjalCTkdC2cYVgVfg" class="fab fa-youtube"></a>
-      <a href="https://www.instagram.com/ritmicalamojonera/?hl=es" class="fab fa-instagram-square"></a>
+      <a href="https://www.facebook.com/ritmicalamojonera" class="fab fa-facebook-square">a</a>
+      <a href="https://www.youtube.com/channel/UC1t4MldjalCTkdC2cYVgVfg" class="fab fa-youtube">a</a>
+      <a href="https://www.instagram.com/ritmicalamojonera/?hl=es" class="fab fa-instagram-square">a</a>
     </div>
   </div>
   <div class="row">

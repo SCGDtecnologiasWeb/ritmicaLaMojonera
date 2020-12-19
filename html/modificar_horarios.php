@@ -36,8 +36,10 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || $_SESSI
   <script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
   <script src="/js/main.js"></script>
-  <div class="schedule">
-    <img src="/assets/horarios.png" class="schedule-img" alt="Horarios Club Rítmica La Mojonera" />
+  <div class="main">
+    <div class="schedule">
+      <img src="/assets/horarios.png" class="schedule-img" alt="Horarios Club Rítmica La Mojonera" />
+    </div>
   </div>
 </body>
 

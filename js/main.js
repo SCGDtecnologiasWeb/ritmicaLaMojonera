@@ -188,9 +188,9 @@ $(document).ready(function () {
           'Último mes': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]  
         };  
       $('#config-demo').daterangepicker(options, function(start, end, label) {   
-      var startDate = start.format('YYYY-MM-DD'); var endDate = end.format('YYYY-MM-DD');  
-      passDate(startDate,endDate);      
-       });  
+        var startDate = start.format('YYYY-MM-DD'); var endDate = end.format('YYYY-MM-DD');  
+        passDate(startDate,endDate);      
+      });  
         
     }  
 

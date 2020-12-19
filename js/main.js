@@ -170,31 +170,29 @@ $(document).ready(function () {
   });
 
   /*********** Filtro ******************/
-  $(document).ready(function() {  
-    $('.demo i').click(function() {  
-      $(this).parent().find('input').click();  
-    });  
-    updateConfig();  
-
-    function updateConfig() {  
-      var options = {};  
-      options.opens = "center";  
-      options.ranges = {  
-          'Hoy': [moment(), moment()],  
-          'Ayer': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],  
-          'Últimos 7 Días': [moment().subtract(6, 'days'), moment()],  
-          'Últimos 30 Días': [moment().subtract(29, 'days'), moment()],  
-          'Este mes': [moment().startOf('month'), moment().endOf('month')],  
-          'Último mes': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]  
-        };  
-      $('#config-demo').daterangepicker(options, function(start, end, label) {   
-        var startDate = start.format('YYYY-MM-DD'); var endDate = end.format('YYYY-MM-DD');  
-        passDate(startDate,endDate);      
-      });  
-        
-    }  
-
+  $('.demo i').click(function() {  
+    $(this).parent().find('input').click();  
   });  
+  updateConfig();  
+
+  function updateConfig() {  
+    var options = {};  
+    options.opens = "center";  
+    options.ranges = {  
+      'Hoy': [moment(), moment()],  
+      'Ayer': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],  
+      'Últimos 7 Días': [moment().subtract(6, 'days'), moment()],  
+      'Últimos 30 Días': [moment().subtract(29, 'days'), moment()],  
+      'Este mes': [moment().startOf('month'), moment().endOf('month')],  
+      'Último mes': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]  
+    };  
+    $('#config-demo').daterangepicker(options, function(start, end, label) {   
+      var startDate = start.format('YYYY-MM-DD'); var endDate = end.format('YYYY-MM-DD');  
+      passDate(startDate,endDate);      
+    });  
+        
+  }  
+
 
   function passDate(startDate,endDate) {  
     $('.loader').show();  

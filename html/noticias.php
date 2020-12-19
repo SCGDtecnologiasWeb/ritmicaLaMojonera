@@ -38,8 +38,7 @@
             <h1>Mantente Actualizado</h1>
           </div>
           <div class=\"container news-container\">
-          <div class=\"col-md-4 col-md-offset-4 demo\">  
-              <h4 style=\"text-align:center;\">Indica el periodo temporal de las noticias que busca</h4>  
+          <div class=\"col-md-4 col-md-offset-4 demo\"> 
               <input type=\"text\" id=\"config-demo\" class=\"form-control\">  
               <i class=\"glyphicon glyphicon-calendar fa fa-calendar\"></i>  
             </div>  

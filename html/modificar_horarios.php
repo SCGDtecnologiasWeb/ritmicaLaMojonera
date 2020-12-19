@@ -12,7 +12,7 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || $_SESSI
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Actualizar y modificar horarios</title>
+  <title>Visualizar horarios de entrenamiento</title>
 
   <!-- FontAwesome CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />

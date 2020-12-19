@@ -22,7 +22,7 @@
 
     <div class="menu-section">
       <a href="javascript:void(0)" class="menu-title">Horarios</a>
-      <a href="/html/modificar_horarios.php" class="menu-text">Actualizar y modificar horarios</a>
+      <a href="/html/modificar_horarios.php" class="menu-text">Visualizar horarios de entrenamiento</a>
     </div>
 
     <div class="menu-section">

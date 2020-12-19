@@ -34,6 +34,9 @@ body {
   flex-wrap: wrap;
   float: left;
 }
+.fa-caret-right {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
 /* #oContrasena{
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 } */

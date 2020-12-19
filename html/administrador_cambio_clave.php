@@ -136,8 +136,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             </div>
           </div>
 
-          <div class="alertChangePass" style="display: none;"></div>
-
           <button type="submit" class="btn btn-primary float-end" id="submit">Enviar</button>
 
         </form>

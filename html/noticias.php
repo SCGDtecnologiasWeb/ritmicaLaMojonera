@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Noticias</title>
 
+  <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+  <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
   <!-- FontAwesome CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
 
@@ -36,7 +39,7 @@
           </div>
           <div class=\"container news-container\">
           <div class=\"col-md-4 col-md-offset-4 demo\">  
-              <h4>Select the date to filter records</h4>  
+              <h4>Indica el periodo temporal de las noticias que busca</h4>  
               <input type=\"text\" id=\"config-demo\" class=\"form-control\">  
               <i class=\"glyphicon glyphicon-calendar fa fa-calendar\"></i>  
             </div>  

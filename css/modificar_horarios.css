@@ -1,7 +1,13 @@
-.main {
+body {
+  background-size: cover;
   background-color: white;
+  height: 100%;
 }
+
 .schedule img {
-  height: 50px;
+  height: 100%;
   width: 100%;
+  margin: 0;
+  padding: 0;
+  max-height: 100%;
 }

@@ -209,7 +209,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <!--Ventana emergente utilizando Ajax-->
           <!-- AJAX -->
           <div class="col-12 forgot" id="forgot-icon">
-            <a href="javascript:ejecutarAJAX();" class="" id="oContrasena"> <i class="fas fa-caret-right"></i>¿Has olvidado tu contraseña?</a>
+            <a href="javascript:ejecutarAJAX();" class="link" id="oContrasena"> <i class="fas fa-caret-right"></i>¿Has olvidado tu contraseña?</a>
             <!-- <button onclick ="ejecutarAJAX()">¿Has olvidado tu contraseña?</button> -->
             <div id="info"></div>
             <script type="text/javascript">
@@ -228,7 +228,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </script>
             <div class="form-group form-button text-right">
               <button type="submit" class="btn btn-primary" name="continuar">
-                <i class="fas fa-arrow-right"></i> Continuar
+                <i class="fas fa-arrow-right" style="font-size: 1.09em;"></i> Continuar
               </button>
             </div>
         </form>

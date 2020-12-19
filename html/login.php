@@ -205,79 +205,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
             ?>
           </div>
-          
+
           <!--Ventana emergente utilizando Ajax-->
-          <!-- <script src="https://code.jquery.com/jquery-3.x-git.js"></script>
-          <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
-          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
-          <script type="text/javascript">
-            $(document).ready(function() {
-              $('#open').on('click', function() {
-                $('#popup').fadeIn('slow');
-                $('.popup-overlay').fadeIn('slow');
-                $('.popup-overlay').height($(window).height());
-                return false;
-              });
-
-              $('#close').on('click', function() {
-                $('#popup').fadeOut('slow');
-                $('.popup-overlay').fadeOut('slow');
-                return false;
-              });
-            });
-          </script> -->
-
-            <!-- AJAX -->
-            <div class="col-12 forgot" id="forgot-icon">
-            <a href="javascript:ejecutarAJAX();" class = "fas fa-caret-right" id="oContrasena">¿Has olvidado tu contraseña?</a>
+          <!-- AJAX -->
+          <div class="col-12 forgot" id="forgot-icon">
+            <a href="javascript:ejecutarAJAX();" class="link" id="oContrasena"> <i class="fas fa-caret-right"></i>¿Has olvidado tu contraseña?</a>
             <!-- <button onclick ="ejecutarAJAX()">¿Has olvidado tu contraseña?</button> -->
             <div id="info"></div>
-            <script type ="text/javascript">
-            function ejecutarAJAX(){
-              var ajaxRequest = new XMLHttpRequest();
-
-              // if(window.XMLHttpRequest){
-              //   ajaxRequest = new XMLHttpRequest();
-              // }else{
-              //   ajaxRequest =new ActiveXObject("Microsoft.XMLHTTP");
-              // }
-
-              ajaxRequest.onreadystatechange = function(){
-                if(ajaxRequest.readyState == 4 && ajaxRequest.status == 200){
-                  //document.getElementById("info").innerHTML = ajaxRequest.responseText;
-                  alert(ajaxRequest.responseText);
+            <script type="text/javascript">
+              function ejecutarAJAX() {
+                var ajaxRequest = new XMLHttpRequest();
+                ajaxRequest.onreadystatechange = function() {
+                  if (ajaxRequest.readyState == 4 && ajaxRequest.status == 200) {
+                    //document.getElementById("info").innerHTML = ajaxRequest.responseText;
+                    alert(ajaxRequest.responseText);
+                  }
                 }
+
+                ajaxRequest.open("GET", "document.txt", true);
+                ajaxRequest.send();
               }
-
-              ajaxRequest.open("GET", "document.txt",true);
-              ajaxRequest.send();
-            }
             </script>
-
-          <!-- <div class="container">
-            <div class="row">
-              <div id="content" class="col-lg-12">
-                <a href="/html/login.php" class="fas fa-caret-right" id="open">¿Olvidó su contraseña?</a>
-              </div>
+            <div class="form-group form-button text-right">
+              <button type="submit" class="btn btn-primary" name="continuar">
+                <i class="fas fa-arrow-right" style="font-size: 1.09em;"></i> Continuar
+              </button>
             </div>
-
-            <div id="popup" style="display: none;">
-              <div class="content-popup">
-                <div class="close"><a href="/html/login.php" id="close"><img src="/assets/close.jpeg" alt="Cerrar" /></a></div>
-                <h2>¿Olvidó su contraseña?</h2>
-                <p>Este es un mensaje utilizando ajax. Si olvidó su contraseña pongase en contacto con el administrador
-                  email : hola666@gmail.com</p>
-                <div style="float:left; width:100%;">
-                </div>
-              </div>
-            </div>
-          </div> -->
-          <!-- <div class="popup-overlay"></div> -->
-          <div class="form-group form-button text-right">
-            <button type="submit" class="btn btn-primary" name="continuar">
-              <i class="fas fa-arrow-right"></i> Continuar
-            </button>
-          </div>
         </form>
       </div>
     </div>

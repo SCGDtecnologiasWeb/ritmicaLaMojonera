@@ -15,6 +15,6 @@ body {
 @media screen and (max-width: 800px) {
   .schedule img {
     height: auto;
-    width: 100%;
+    width: 80%;
   }
 }

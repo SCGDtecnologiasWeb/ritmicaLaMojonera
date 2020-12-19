@@ -33,7 +33,7 @@
   echo "<!-- News Start -->
           <div class=\"header-container\">
             <h1>Mantente Actualizado</h1>
-            <div> 
+            <div class=\"demo\"> 
               <input type=\"text\" id=\"config-demo\" class=\"form-control\">  
               <i class=\"glyphicon glyphicon-calendar fa fa-calendar\"></i>  
             </div>  

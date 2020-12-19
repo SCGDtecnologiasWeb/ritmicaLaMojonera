@@ -34,12 +34,6 @@ body {
   flex-wrap: wrap;
   float: left;
 }
-.fa-caret-right {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-/* #oContrasena{
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-} */
 .form-group input {
   height: 42px;
   font-size: 18px;
@@ -66,6 +60,9 @@ body {
 button {
   width: 30%;
   margin: 5px 0 25;
+}
+.forgot {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 .help i {
   font-size: 20px;

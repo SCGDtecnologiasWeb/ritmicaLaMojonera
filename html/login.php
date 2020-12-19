@@ -246,11 +246,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 ajaxRequest.send();
               }
             </script>
-            <div class="form-group form-button text-right">
-              <button type="submit" class="btn btn-primary" name="continuar">
-                <i class="fas fa-arrow-right"></i> Continuar
-              </button>
-            </div>
+          </div>
+          <div class="form-group form-button text-right">
+            <button type="submit" class="btn btn-primary" name="continuar">
+              <i class="fas fa-arrow-right"></i> Continuar
+            </button>
+          </div>
         </form>
       </div>
     </div>

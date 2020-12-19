@@ -108,7 +108,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
           <div class="mb-3">
             <label for="contraseña" class="form-label">Contraseña actual</label>
-            <input class="form-control <?php if (!empty($oldPass_err)) echo "is-invalid"; ?>" type="password" id="oldPass" name="oldPass" required>
+            <input class="form-control <?php if (!empty($oldPass_err)) echo "is-invalid" ?>" type="password" id="oldPass" name="oldPass" required>
             <div class="invalid-feedback">
               <?php
               echo $oldPass_err;
@@ -118,7 +118,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
           <div class="mb-3">
             <label for="newPass" class="form-label">Nueva contraseña</label>
-            <input class="form-control <?php if (!empty($newPass_err)) echo "is-invalid"; ?>" type="password" id="newPass" name="newPass" required>
+            <input class="form-control <?php if (!empty($newPass_err)) echo "is-invalid" ?>" type="password" id="newPass" name="newPass" required>
             <div class="invalid-feedback">
               <?php
               echo $newPass_err;
@@ -128,7 +128,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
           <div class="mb-3">
             <label for="confirmPass" class="form-label">Confirmar contraseña</label>
-            <input class="form-control <?php if (!empty($confirmPass_err)) echo "is-invalid"; ?>" type="password" id="confirmPass" name="confirmPass" required>
+            <input class="form-control <?php if (!empty($confirmPass_err)) echo "is-invalid" ?>" type="password" id="confirmPass" name="confirmPass" required>
             <div class="invalid-feedback">
               <?php
               echo $confirmPass_err;
@@ -138,7 +138,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
           <div class="alertChangePass" style="display: none;"></div>
 
-          <button type="submit" class="btn btn-primary float-end" id="submitPass">Enviar</button>
+          <button type="submit" class="btn btn-primary float-end" id="submit">Enviar</button>
 
         </form>
       </div>
@@ -243,9 +243,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
       function validate() {
         if (oldPassValid && newPassValid && confirmPassValid) {
-          $("#submitPass").prop("disabled", false);
+          $("#submit").prop("disabled", false);
         } else {
-          $("#submitPass").prop("disabled", true);
+          $("#submit").prop("disabled", true);
         }
       }
 

@@ -22,7 +22,7 @@ function validar_imagen($img)
     }
     // Compruebamos el tamaño de la imagen
     if ($img["size"] > 500000) {
-        $img_err .= "El archivo supera el limite de 500kB" . "<br>";
+        $img_err .= "El archivo superaba el limite de 500kB" . "<br>";
     }
     return $img_err;
 }

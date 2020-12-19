@@ -26,7 +26,7 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || $_SESSI
   <?php
   include_once($_SERVER['DOCUMENT_ROOT'] . "/templates/header_admin.php");
 
-  $crumbs = array("Horarios", "Actualizar y modificar horarios");
+  $crumbs = array("Horarios", "Visualizar horarios de entrenamiento");
   include_once($_SERVER['DOCUMENT_ROOT'] . "/templates/title_admin.php");
 
   include_once($_SERVER['DOCUMENT_ROOT'] . "/templates/side_menu_admin.php");

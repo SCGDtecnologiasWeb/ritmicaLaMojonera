@@ -34,6 +34,9 @@ body {
   flex-wrap: wrap;
   float: left;
 }
+#oContrasena {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
 .form-group input {
   height: 42px;
   font-size: 18px;

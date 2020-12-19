@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
   }
   mysqli_stmt_close($stmt);
 
-  // Cerrramos la conexion
+  // Cerramos la conexion
   mysqli_close($link);
 } else {
   include($_SERVER['DOCUMENT_ROOT'] . '/php/funciones.php');
@@ -221,7 +221,6 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
             <label for="dni" class="form-label">DNI/NIE</label>
             <input type="text" class="form-control" id="dni" name="dni" autocomplete="off" pattern="((([x-zX-Z])|([lmLM])|[0-9]){1}([ ]?)(([0-9]){7})([-]?)([a-zA-Z]{1}))" minlength="9" maxlength="11" value="<?php echo $dni ?>">
           </div>
-
 
           <label for="whatsapp" class="form-label">Teléfono (Whatsapp)</label>
           <div class="input-group mb-3">

@@ -46,6 +46,7 @@
 
 .news-text h3 {
   /* display: inline; */
+  margin-top: 0;
   margin-bottom: 3px;
   /* padding-right: 10px; */
 }

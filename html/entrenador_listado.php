@@ -50,6 +50,7 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || $_SESSI
     $grupos .= ")";
 
     $consulta_SQL = "SELECT `dni`, `nombreCompleto`, `fechaNacimiento`, `nombreTutor`, `telefono`, `nivel`, `consentimientoFotos`, `alergias`, `Grupo_idGrupo` FROM `Gimnasta` WHERE `registrado` = 1 AND `Grupo_idGrupo` IN {$grupos}";
+    echo $consulta_SQL;
     $resultado = $link->query($consulta_SQL);
     while ($fila = $resultado->fetch_array()) {
       echo  "<div class=\"gymnast-container\">";

@@ -20,7 +20,7 @@ while ($fila = mysqli_fetch_assoc($resultado)) {
   // Obtenemos los grupos a los que entrena
   $grupos = "";
   $sql_get_grupos = "SELECT `g`.`nombre`
-                     FROM `grupo_has_entrenador` `ghe` JOIN `grupo` `g` ON `ghe`.`idGrupo` = `g`.`idGrupo`
+                     FROM `Grupo_has_Entrenador` `ghe` JOIN `grupo` `g` ON `ghe`.`idGrupo` = `g`.`idGrupo`
                      WHERE `ghe`.`Entrenador_idEntrenador` = {$fila["idEntrenador"]}";
   $resultado_grupos = mysqli_query($link, $sql_get_grupos);
   while ($fila_grupos = mysqli_fetch_assoc($resultado_grupos)) {

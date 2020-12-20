@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
 
   // Obtenemos los grupos del entrenador
   $sql_get_grupos = "SELECT `g`.`nombre`
-                     FROM `grupo_has_entrenador` `ghe` JOIN `grupo` `g` ON `ghe`.`idGrupo` = `g`.`idGrupo`
+                     FROM `Grupo_has_Entrenador` `ghe` JOIN `grupo` `g` ON `ghe`.`idGrupo` = `g`.`idGrupo`
                      WHERE `ghe`.`Entrenador_idEntrenador` = {$_SESSION["id"]}";
   $resultado = mysqli_query($link, $sql_get_grupos);
   while ($fila = mysqli_fetch_assoc($resultado)) {
@@ -106,7 +106,7 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
   if (strlen($telefono) === 0) {
     $phone_err .= "No has introducido tu telefono<br>";
   }
-  if (!preg_match('/(6|7)([0-9]){2}[ -]?(([0-9]){2}[ -]?([0-9]){2}[ -]?([0-9]){2}|([0-9]){3}[ -]?([0-9]){3})/', $telefono)) {
+  if (!preg_match('/^(6|7)([0-9]){2}[ -]?(([0-9]){2}[ -]?([0-9]){2}[ -]?([0-9]){2}|([0-9]){3}[ -]?([0-9]){3})$/', $telefono)) {
     $phone_err .= "Introduce un número de whatsapp valido en España<br>";
   }
 
@@ -250,7 +250,7 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
 
           <div class="mb-3">
             <label for="perfil" class="form-label">Foto perfil</label>
-            <input class="form-control <?php if (!empty($img_err)) echo "is-invalid" ?>" autocomplete="off" type="file" id="perfil" name="perfil" accept="image/*">
+            <input class="form-control <?php if (!empty($img_err)) echo "is-invalid" ?>" autocomplete="off" type="file" id="perfil" name="perfil" accept="image/png, image/jpeg">
             <div class="invalid-feedback">
               <?php echo $img_err ?>
             </div>
@@ -379,7 +379,7 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
           $("#whatsapp").removeClass("is-invalid");
           whatsappValid = false;
           return;
-        } else if (!/(6|7)([0-9]){2}[ -]?(([0-9]){2}[ -]?([0-9]){2}[ -]?([0-9]){2}|([0-9]){3}[ -]?([0-9]){3})/.test($("#whatsapp").val())) {
+        } else if (!/^(6|7)([0-9]){2}[ -]?(([0-9]){2}[ -]?([0-9]){2}[ -]?([0-9]){2}|([0-9]){3}[ -]?([0-9]){3})$/.test($("#whatsapp").val())) {
           $("#whatsapp").addClass("is-invalid");
           $("#whatsapp").next().html("Introduce un número de whatsapp valido en España");
           whatsappValid = false;

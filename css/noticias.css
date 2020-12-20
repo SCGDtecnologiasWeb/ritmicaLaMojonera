@@ -165,9 +165,8 @@
 }
 
 .filter-container{
-  display: inline-block;
-  vertical-align: middle;
-  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .filter-container div{

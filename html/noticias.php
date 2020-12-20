@@ -49,8 +49,10 @@
                   <label for=\"fechaFin\" class=\"form-label\">Fecha de fin:</label>
                   <input type=\"date\" id=\"fechaFin\" name=\"fechaFin\" class=\"form-control\" value=\"$fechaFinal\">
                 </div>
-                <button type=\"submit\" class=\"btn btn-primary float-end\">Buscar</button>
-                <button class=\"btn btn-primary float-end\"><a href=\"/html/noticias.php\">Cancelar</a></button>
+                <div class=\"\">
+                  <button type=\"submit\" class=\"btn btn-primary float-end\">Buscar</button>
+                  <button class=\"btn btn-primary float-end\"><a href=\"/html/noticias.php\">Cancelar</a></button>
+                </div>
               </form>
             </div>  
           </div>

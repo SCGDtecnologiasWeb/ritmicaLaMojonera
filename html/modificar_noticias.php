@@ -50,7 +50,9 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || $_SESSI
     echo "<div class=\"news-col\">
             <div class=\"news-wrapper\">
               <div class=\"img-wrap\">
-                <img src=\"/assets/noticias/noticia{$fila["idNoticia"]}.jpg\" class=\"news-image\" alt=\"Noticia\"/>
+                <a href=\"/html/noticia.php?idNoticia={$fila["idNoticia"]}\">
+                  <img src=\"/assets/noticias/noticia{$fila["idNoticia"]}.jpg\" class=\"news-image\" alt=\"Noticia\"/>
+                </a>
               </div>
               <div class=\"news-text\">
               <h3>{$fila["titulo"]}</h3>

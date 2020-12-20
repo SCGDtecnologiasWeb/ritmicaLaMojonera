@@ -62,7 +62,9 @@
   while ($fila = $resultado->fetch_array()) {
     echo "<div class=\"news-col\">
             <div class=\"img-wrap\">
-              <img src=\"/assets/noticias/noticia{$fila["idNoticia"]}.jpg\" class=\"news-image\" alt=\"Noticia\"/>
+              <a href=\"/html/noticia.php?idNoticia={$fila["idNoticia"]}\">
+                <img src=\"/assets/noticias/noticia{$fila["idNoticia"]}.jpg\" class=\"news-image\" alt=\"Noticia\"/>
+              </a>
             </div>
             <div class=\"news-text\">
             <h3>{$fila["titulo"]}</h3>

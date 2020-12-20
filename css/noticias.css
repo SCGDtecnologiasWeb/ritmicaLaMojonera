@@ -163,3 +163,12 @@
     float: right;
   }
 }
+
+.filter-container{
+  display: flex;
+  justify-content: center;
+}
+
+.filter-container div{
+  float:left;
+}

@@ -27,28 +27,32 @@
   // Noticias
   include_once($_SERVER['DOCUMENT_ROOT'] . '/php/config.php');
 
-  if ($_SERVER["REQUEST_METHOD"] != "POST") {
+  $fechaInicial = $_POST['fechaInicio'];
+  $fechaFinal = $_POST['fechaFin'];
+  if ($_SERVER["REQUEST_METHOD"] != "POST" || empty($fechaInicial) || empty($fechaFinal)) {
     $consulta_SQL = "SELECT * FROM Noticia ORDER BY idNoticia DESC";
   } else {
-    $fechaInicial = $_POST['fechaInicio'];
-    echo $fechaInicial . " ";
-    $fechaFinal = $_POST['fechaFin'];
-    echo $fechaFinal . " ";
     $consulta_SQL = "SELECT * FROM Noticia WHERE fecha >= '$fechaInicial' AND fecha<= '$fechaFinal' ORDER BY idNoticia DESC";
-    echo $consulta_SQL;
   }
   $resultado = $link->query($consulta_SQL);
 
   echo "<!-- News Start -->
           <div class=\"header-container\">
             <h1>Mantente Actualizado</h1>
-            <div class=\"\">
+            <div class=\"filter-container\">
               <form action=\"/html/noticias.php\" method=\"POST\">
-                <label for=\"fechaInicio\" class=\"form-label\">Fecha de inicio:</label>
-                <input type=\"date\" id=\"fechaInicio\" name=\"fechaInicio\" class=\"form-control\">
-                <label for=\"fechaFin\" class=\"form-label\">Fecha de fin:</label>
-                <input type=\"date\" id=\"fechaFin\" name=\"fechaFin\" class=\"form-control\">
-                <button type=\"submit\" class=\"btn btn-primary float-end\">Buscar</button>
+                <div class=\"\">
+                  <label for=\"fechaInicio\" class=\"form-label\">Fecha inicial:</label>
+                  <input type=\"date\" id=\"fechaInicio\" name=\"fechaInicio\" class=\"form-control\" value=\"$fechaInicial\">&nbsp
+                </div>
+                <div class=\"\">
+                  <label for=\"fechaFin\" class=\"form-label\">Fecha final:</label>
+                  <input type=\"date\" id=\"fechaFin\" name=\"fechaFin\" class=\"form-control\" value=\"$fechaFinal\">&nbsp
+                </div>
+                <div class=\"\">
+                  <button type=\"submit\" class=\"btn btn-primary float-end\">Buscar</button>
+                  <button class=\"btn btn-primary float-end\"><a href=\"/html/noticias.php\">Cancelar</a></button>
+                </div>
               </form>
             </div>  
           </div>

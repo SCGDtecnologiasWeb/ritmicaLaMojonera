@@ -41,10 +41,14 @@
             <h1>Mantente Actualizado</h1>
             <div class=\"\">
               <form action=\"/html/noticias.php\" method=\"POST\">
-                <label for=\"fechaInicio\" class=\"form-label\">Fecha de inicio:</label>
-                <input type=\"date\" id=\"fechaInicio\" name=\"fechaInicio\" class=\"form-control\" value=\"$fechaInicial\">
-                <label for=\"fechaFin\" class=\"form-label\">Fecha de fin:</label>
-                <input type=\"date\" id=\"fechaFin\" name=\"fechaFin\" class=\"form-control\" value=\"$fechaFinal\">
+                <div class=\"\">
+                  <label for=\"fechaInicio\" class=\"form-label\">Fecha de inicio:</label>
+                  <input type=\"date\" id=\"fechaInicio\" name=\"fechaInicio\" class=\"form-control\" value=\"$fechaInicial\">
+                </div>
+                <div class=\"\">
+                  <label for=\"fechaFin\" class=\"form-label\">Fecha de fin:</label>
+                  <input type=\"date\" id=\"fechaFin\" name=\"fechaFin\" class=\"form-control\" value=\"$fechaFinal\">
+                </div>
                 <button type=\"submit\" class=\"btn btn-primary float-end\">Buscar</button>
                 <button class=\"btn btn-primary float-end\"><a href=\"/html/noticias.php\">Cancelar</a></button>
               </form>

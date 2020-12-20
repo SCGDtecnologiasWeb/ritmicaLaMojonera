@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || $_SESSION["tipo_usuario"] !== "entrenador") {
+  header("location: /html/login.php");
+  exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -15,19 +23,6 @@
 </head>
 
 <body>
-  <?php
-  // Comienza la sesión
-  session_start();
-
-  if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] === true && $_SESSION["tipo_usuario"] === "entrenador") {
-    echo "<p style='float: right'>";
-    print_r($_SESSION);
-    echo "</p>";
-  } else {
-    header("location: /html/login.php");
-  }
-  ?>
-
   <?php
   include_once($_SERVER['DOCUMENT_ROOT'] . "/templates/header_entrenador.php");
 

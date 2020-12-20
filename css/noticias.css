@@ -163,3 +163,13 @@
     float: right;
   }
 }
+
+.filter-container{
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.filter-container div{
+  float:left;
+}

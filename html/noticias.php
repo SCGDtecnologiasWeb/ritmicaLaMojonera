@@ -39,7 +39,7 @@
   echo "<!-- News Start -->
           <div class=\"header-container\">
             <h1>Mantente Actualizado</h1>
-            <div class=\"\">
+            <div class=\"filter-container\">
               <form action=\"/html/noticias.php\" method=\"POST\">
                 <div class=\"\">
                   <label for=\"fechaInicio\" class=\"form-label\">Fecha de inicio:</label>

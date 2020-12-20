@@ -610,38 +610,37 @@ a {
   width: 100%;
 }
 
-@media screen and (max-width: 680px) {
-  .callout {
-    background-size: 150%;
-  }
+.callout-row {
+  height: 100%;
 }
-@media screen and (max-width: 450px) {
-  .callout {
-    height: 400px;
-    background-size: 200%;
-  }
-  .callout p {
-    display: none;
-  }
-  .callout-btn-section {
-    padding-top: 0px;
-  }
+
+.callout-col {
+  position: relative;
+  height: 100%;
+}
+
+.callout-text {
+  width: 95%;
+  margin: auto;
 }
 
 .callout h1 {
-  color: #fff;
-  text-align: center;
+  margin-bottom: 15px;
 }
 
+.callout h1,
 .callout p {
   color: #fff;
   text-align: center;
 }
 
 .callout-btn-section {
-  display: block;
+  position: absolute;
+  width: 100%;
+  bottom: 25%;
+  left: 50%;
+  transform: translateX(-50%);
   margin: auto;
-  padding-top: 80px;
 }
 
 .callout-btn1 {
@@ -662,6 +661,20 @@ a {
   padding: 15px;
   border-radius: 4px;
   margin: 12px;
+}
+
+@media screen and (max-width: 680px) {
+  .callout {
+    background-size: 150%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .callout {
+    background-size: 200%;
+  }
+  .callout p {
+    display: none;
+  }
 }
 
 /********** Footer **********/
@@ -753,7 +766,7 @@ a {
 
 #barracookies a:nth-child(2) {
   padding: 4px;
-  background: #4682B4;
+  background: #4682b4;
   border-radius: 5px;
   text-decoration: none;
 }

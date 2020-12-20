@@ -31,10 +31,11 @@
     $consulta_SQL = "SELECT * FROM Noticia ORDER BY idNoticia DESC";
   } else {
     $fechaInicial = $_POST['fechaInicio'];
-    echo $fechaInicial;
+    echo $fechaInicial . " ";
     $fechaFinal = $_POST['fechaFin'];
-    echo $fechaFinal;
-    $consulta_SQL = "SELECT * FROM Noticia WHERE fecha >= $fechaInicial AND fecha<= $fechaFinal ORDER BY idNoticia DESC";
+    echo $fechaFinal . " ";
+    $consulta_SQL = "SELECT * FROM Noticia WHERE fecha >= '$fechaInicial' AND fecha<= '$fechaFinal' ORDER BY idNoticia DESC";
+    echo $consulta_SQL;
   }
   $resultado = $link->query($consulta_SQL);
 

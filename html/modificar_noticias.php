@@ -54,6 +54,7 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || $_SESSI
               </div>
               <div class=\"news-text\">
               <h3>{$fila["titulo"]}</h3>
+              <h5>{$fila["fecha"]}</h5>
               <p>
               {$fila["descripcion"]}
               </p>

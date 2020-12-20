@@ -44,16 +44,24 @@
   vertical-align: top;
 }
 
-.news-text h5 {
-  color: #555;
-}
-
 .news-text h3 {
   margin-top: 0;
+  margin-bottom: 3px;
+}
+
+.news-text h5 {
+  vertical-align: middle;
+  display: inline;
+  color: #fff;
+  background-color: #ccc;
+  padding: 3px 5px 3.2px;
+  border-radius: 3px;
+  font-size: 11.5px;
 }
 
 .news-text p {
   color: #666;
+  margin-top: 5px;
   margin-bottom: 6px;
 }
 
@@ -69,6 +77,8 @@
   box-shadow: 0.8px 0.8px 2px 1px rgba(0, 0, 0, 0.34);
   cursor: pointer;
   float: right;
+  position: relative;
+  right: 20px;
 }
 
 .news-text a:hover {

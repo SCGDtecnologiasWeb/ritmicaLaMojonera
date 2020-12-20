@@ -45,26 +45,22 @@
 }
 
 .news-text h3 {
-  /* display: inline; */
   margin-top: 0;
   margin-bottom: 3px;
-  /* padding-right: 10px; */
 }
 
 .news-text h5 {
   display: inline;
   color: #fff;
-  background-color: #aaa;
+  background-color: #ccc;
   padding: 3px 5px;
-  -webkit-box-shadow: 0.8px 0.8px 2px 1px rgba(0, 0, 0, 0.34);
-  -moz-box-shadow: 0.8px 0.8px 2px 1px rgba(0, 0, 0, 0.34);
-  box-shadow: 0.8px 0.8px 2px 1px rgba(0, 0, 0, 0.34);
-  font-size: 12px;
+  border-radius: 3px;
+  font-size: 11.5px;
 }
 
 .news-text p {
   color: #666;
-  margin-top: 7px;
+  margin-top: 5px;
   margin-bottom: 6px;
 }
 

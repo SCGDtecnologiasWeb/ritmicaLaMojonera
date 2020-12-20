@@ -155,7 +155,7 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
 
           <div class="mb-3">
             <label for="news-image" class="form-label">Imagen</label>
-            <input class="form-control <?php if (!empty($img_err)) echo "is-invalid" ?>" type="file" id="news-image" name="news-image" value="<?php echo $fecha ?>" required accept="image/png, image/jpeg">
+            <input class="form-control <?php if (!empty($img_err)) echo "is-invalid" ?>" type="file" id="news-image" name="news-image" required accept="image/png, image/jpeg">
             <div class="invalid-feedback">
               <?php echo $img_err ?>
             </div>

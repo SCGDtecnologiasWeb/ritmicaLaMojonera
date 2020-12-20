@@ -10,32 +10,24 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || $_SESSI
 <?php
 $titulo = "";
 $desc = "";
+
+$title_err = "";
+$desc_err = "";
 $img_err = "";
 
 $getLogroCorrecto = 0;
 
-if ($_SERVER["REQUEST_METHOD"] != "POST") {
+if ($_SERVER["REQUEST_METHOD"] !== "POST") {
   require_once($_SERVER['DOCUMENT_ROOT'] . '/php/config.php');
 
-  $sql_get_logro = "SELECT `tituloVictoria`, `descripcion` FROM `Victoria` WHERE (idVictoria = ?)";
-  if ($stmt = mysqli_prepare($link, $sql_get_logro)) {
-    // Linkamos las variables a la consulta como parametros
-    mysqli_stmt_bind_param($stmt, "s", $_GET["idVictoria"]);
-
-    // Intentamos ejecutar la consulta
-    if (mysqli_stmt_execute($stmt)) {
-      // Guardamos el resultado
-      mysqli_stmt_store_result($stmt);
-
-      // Comprobamos si esta la idVictoria
-      if (mysqli_stmt_num_rows($stmt) == 1) {
-        // Linkamos las variables a la salida de la consulta
-        mysqli_stmt_bind_result($stmt, $titulo, $desc);
-        if (mysqli_stmt_fetch($stmt)) {
-          $getLogroCorrecto = 1;
-        }
-      }
-    }
+  $sql_get_logro = "SELECT `tituloVictoria`, `descripcion` FROM `Victoria` WHERE `idVictoria` = (?)";
+  $stmt = mysqli_prepare($link, $sql_get_logro);
+  mysqli_stmt_bind_param($stmt, "s", $_GET["idVictoria"]);
+  mysqli_stmt_execute($stmt);
+  mysqli_stmt_store_result($stmt);
+  if (mysqli_stmt_num_rows($stmt) == 1) {
+    mysqli_stmt_bind_result($stmt, $titulo, $desc);
+    mysqli_stmt_fetch($stmt);
     mysqli_stmt_close($stmt);
   }
   mysqli_close($link);
@@ -44,72 +36,52 @@ if ($_SERVER["REQUEST_METHOD"] != "POST") {
 
   //Parseamos las variables
   $titulo = filtrado($_POST["trophy-title"]);
-  $img = $_FILES["trophy-image"];
   $desc = filtrado($_POST["trophy-description"]);
 
-  $img_err = "";
-  $uploadOk = 1;
-  $updateCorrecto = 0;
-  $moveImageCorrecto = 0;
-
-  //Comprobamos que sea una imagen
-  $check = getimagesize($img["tmp_name"]);
-  if ($check !== false) {
-    echo "Es una imagen de tipo " . $check["mime"] . "<br>";
-  } else {
-    $img_err .= "No es una imagen" . "<br>";
-    $uploadOk = 0;
+  // Errores en el titulo
+  if (strlen($titulo) === 0) {
+    $title_err .= "No has introducido un titulo<br>";
   }
-  // Comprobar el tipo de archivo
-  if ($uploadOk == 1 && $check["mime"] != "image/jpeg" && $check["mime"] != "image/png") {
-    $img_err .= "Solo archivos .jpeg, .jpg o .png" . "<br>";
-    $uploadOk = 0;
-  }
-  // Comprueba el tamaño de la imagen, limite de 500kB
-  if ($img["size"] > 500000) {
-    $img_err .= "Tamaño de archivo demasiado grande" . "<br>";
-    $uploadOk = 0;
+  if (strlen($titulo) > 125) {
+    $title_err .= "Titulo demasiado largo<br>";
   }
 
-  if ($uploadOk == 1) {
-    //Conectamos a la base de datos
+  // Errores en la descripcion
+  if (strlen($desc) === 0) {
+    $desc_err .= "No has introducido una descripción<br>";
+  }
+  if (strlen($desc) > 250) {
+    $desc_err .= "Descripción demasiado larga<br>";
+  }
+
+  // Comprobamos que la imagen es valida
+  if (file_exists($_FILES["trophy-image"]["tmp_name"])) {
+    $img = $_FILES["trophy-image"];
+    $img_err = validar_imagen($img);
+  }
+
+  if (empty($title_err) && empty($desc_err) && empty($img_err)) {
+    // Conectamos a la base de datos
     require_once($_SERVER['DOCUMENT_ROOT'] . '/php/config.php');
 
-    //Creamos el código para insertar
+    // Actualizamos el logro
     $sql_update = "UPDATE `Victoria` SET `tituloVictoria` = (?), `descripcion` = (?) WHERE idVictoria = (?)";
+    $stmt = mysqli_prepare($link, $sql_update);
+    mysqli_stmt_bind_param($stmt, "ssi", $titulo, $desc, $_GET["idVictoria"]);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
 
-
-    // Preparamos la consulta
-    if ($stmt = mysqli_prepare($link, $sql_update)) {
-      mysqli_stmt_bind_param($stmt, "ssi", $titulo, $desc, $_GET["idVictoria"]);
-
-      // Actualizamos el logro
-      if (mysqli_stmt_execute($stmt)) {
-        $updateCorrecto = 1;
-      }
-      mysqli_stmt_close($stmt);
-
-      //Guardamos la imagen
-      $directorio = $_SERVER['DOCUMENT_ROOT'] . "/assets/palmares/";
-      $nombre_archivo = "victoria" . $_GET["idVictoria"] . ".jpg";
-      $ruta_archivo = $directorio . $nombre_archivo;
-
-      if (move_uploaded_file($img["tmp_name"], $ruta_archivo)) {
-        $moveImageCorrecto = 1;
-        echo "La imagen " . htmlspecialchars(basename($img["name"])) . " se ha subido correctamente" . "<br>";
-      } else {
-        echo "Ha habido un error al subir la imagen" . "<br>";
-      }
-    } else {
-      echo "Error: " . $sql . "<br>" . mysqli_error($link);
+    // Guardamos la imagen
+    if (isset($img)) {
+      $img_path = $_SERVER['DOCUMENT_ROOT'] . "/assets/palmares/victoria" . $_GET["idVictoria"] . ".jpg";
+      $img_src = $img["tmp_name"];
+      move_uploaded_file($img_src, $img_path);
     }
 
     // Cerramos la conexion
     mysqli_close($link);
-  }
-
-  if ($updateCorrecto == 1 && $moveImageCorrecto == 1) {
     header("location: /html/modificar_logros.php");
+    exit;
   }
 }
 ?>
@@ -151,29 +123,31 @@ if ($_SERVER["REQUEST_METHOD"] != "POST") {
 
           <div class="mb-3">
             <label for="trophy-title" class="form-label">Titulo</label>
-            <input type="text" class="form-control" id="trophy-title" name="trophy-title" autocomplete="off" required <?php echo "value=\"" . $titulo . "\"" ?>>
+            <input class="form-control <?php if (!empty($title_err)) echo "is-invalid" ?>" type="text" id="trophy-title" name="trophy-title" required value="<?php echo $titulo ?>" required>
+            <div class="invalid-feedback">
+              <?php echo $title_err ?>
+            </div>
           </div>
+
 
           <div class="mb-3">
             <label for="trophy-image" class="form-label">Imagen</label>
-            <?php
-            if (empty($img_err)) {
-              echo "<input class=\"form-control\" type=\"file\" id=\"trophy-image\" name=\"trophy-image\" autocomplete=\"off\" required>";
-            } else {
-              echo "<input class=\"form-control is-invalid\" type=\"file\" id=\"trophy-image\" name=\"trophy-image\" autocomplete=\"off\" required>";
-              echo "<div class=\"invalid-feedback\">";
-              echo $img_err;
-              echo "</div>";
-            }
-            ?>
+            <input class="form-control <?php if (!empty($img_err)) echo "is-invalid" ?>" type="file" id="trophy-image" name="trophy-image" accept="image/png, image/jpeg">
+            <div class="invalid-feedback">
+              <?php echo $img_err ?>
+            </div>
           </div>
 
           <div class="mb-3">
             <label for="trophy-description" class="form-label">Descripción</label>
-            <textarea class="form-control" name="trophy-description" id="trophy-description" autocomplete="off" required><?php echo $desc ?></textarea>
+            <textarea class="form-control <?php if (!empty($desc_err)) echo "is-invalid" ?>" id="trophy-description" name="trophy-description" required style="height: 90px;"><?php echo $desc ?></textarea>
+            <div class="invalid-feedback">
+              <?php echo $desc_err ?>
+            </div>
           </div>
 
-          <button type="submit" class="btn btn-primary">Enviar</button>
+          <button type="submit" class="btn btn-primary float-end" id="submit">Enviar</button>
+
         </form>
       </div>
     </div>
@@ -183,8 +157,99 @@ if ($_SERVER["REQUEST_METHOD"] != "POST") {
 
   <!-- JQuery -->
   <script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
   <script src="/js/main.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      // Setup
+      if ($("#trophy-title").hasClass("is-invalid")) {
+        titleValid = false;
+      } else {
+        validateTitle();
+      }
+      if ($("#trophy-description").hasClass("is-invalid")) {
+        descriptionValid = false;
+      } else {
+        validateDescription();
+      }
+      imageValid = true;
+      validate();
+
+      // Comprobamos cuando se apriete una tecla
+      $("#trophy-title").keyup(function() {
+        validateTitle();
+        validate();
+      });
+      $("#trophy-description").keyup(function() {
+        validateDescription();
+        validate();
+      });
+      $("#trophy-image").change(function() {
+        validateImage();
+        validate();
+      });
+
+      function validateTitle() {
+        if ($("#trophy-title").val().length == 0) {
+          $("#trophy-title").removeClass("is-invalid");
+          titleValid = false;
+          return;
+        } else if ($("#trophy-title").val().length > 125) {
+          $("#trophy-title").addClass("is-invalid");
+          $("#trophy-title").next().html("Titulo demasiado largo");
+          titleValid = false;
+          return;
+        }
+        $("#trophy-title").removeClass("is-invalid");
+        titleValid = true;
+      }
+
+      function validateDescription() {
+        if ($("#trophy-description").val().length == 0) {
+          $("#trophy-description").removeClass("is-invalid");
+          descriptionValid = false;
+          return;
+        } else if ($("#trophy-description").val().length > 250) {
+          $("#trophy-description").addClass("is-invalid");
+          $("#trophy-description").next().html("Descripción demasiado larga");
+          descriptionValid = false;
+          return;
+        }
+        $("#trophy-description").removeClass("is-invalid");
+        descriptionValid = true;
+      }
+
+      function validateImage() {
+        file = $("#trophy-image")[0].files[0];
+        if (!/^.*\.(JPG|JPEG|PNG)$/i.test(file.name)) {
+          $("#trophy-image").addClass("is-invalid");
+          $("#trophy-image").next().html("Solo archivos .jpeg, .jpg o .png");
+          imageValid = false;
+          return;
+        } else if (file.type != "image/jpeg" && file.type != "image/png") {
+          $("#trophy-image").addClass("is-invalid");
+          $("#trophy-image").next().html("No es una imagen");
+          imageValid = false;
+          return;
+        } else if (file.size > 500000) {
+          $("#trophy-image").addClass("is-invalid");
+          $("#trophy-image").next().html("Supera el limite de 500kB");
+          imageValid = false;
+          return;
+        }
+        $("#trophy-image").removeClass("is-invalid");
+        imageValid = true;
+      }
+
+      function validate() {
+        if (titleValid && descriptionValid && imageValid) {
+          $("#submit").prop("disabled", false);
+        } else {
+          $("#submit").prop("disabled", true);
+        }
+      }
+    });
+  </script>
 </body>
 
 </html>

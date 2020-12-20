@@ -113,7 +113,7 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     }
 
     // Borramos las relaciones en la tabla de grupos
-    $sql_reset_grupos = "DELETE FROM `Grupo_has_entrenador` WHERE Entrenador_idEntrenador = (?)";
+    $sql_reset_grupos = "DELETE FROM `Grupo_has_Entrenador` WHERE Entrenador_idEntrenador = (?)";
     $stmt = mysqli_prepare($link, $sql_reset_grupos);
     mysqli_stmt_bind_param($stmt, "i", $_GET["idEntrenador"]);
     mysqli_stmt_execute($stmt);
@@ -127,7 +127,7 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
       $id_escuela = $fila["idGrupo"];
 
       // Añadimos una fila a la tabla que relaciona grupos y entrenadores
-      $sql_insert = "INSERT INTO `Grupo_has_entrenador` (`idGrupo`, `Entrenador_idEntrenador`) VALUES (?, ?)";
+      $sql_insert = "INSERT INTO `Grupo_has_Entrenador` (`idGrupo`, `Entrenador_idEntrenador`) VALUES (?, ?)";
       $stmt = mysqli_prepare($link, $sql_insert);
       mysqli_stmt_bind_param($stmt, "ii", $id_escuela, $_GET["idEntrenador"]);
       mysqli_stmt_execute($stmt);
@@ -141,7 +141,7 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
       $id_federada = $fila["idGrupo"];
 
       // Añadimos una fila a la tabla que relaciona grupos y entrenadores
-      $sql_insert = "INSERT INTO `Grupo_has_entrenador` (`idGrupo`, `Entrenador_idEntrenador`) VALUES (?, ?)";
+      $sql_insert = "INSERT INTO `Grupo_has_Entrenador` (`idGrupo`, `Entrenador_idEntrenador`) VALUES (?, ?)";
       $stmt = mysqli_prepare($link, $sql_insert);
       mysqli_stmt_bind_param($stmt, "ii", $id_federada, $_GET["idEntrenador"]);
       mysqli_stmt_execute($stmt);

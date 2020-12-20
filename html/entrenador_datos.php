@@ -127,7 +127,7 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     mysqli_stmt_close($stmt);
 
     // Borramos las relaciones en la tabla de grupos
-    $sql_reset_grupos = "DELETE FROM `Grupo_has_entrenador` WHERE Entrenador_idEntrenador = {$_SESSION["id"]}";
+    $sql_reset_grupos = "DELETE FROM `Grupo_has_Entrenador` WHERE Entrenador_idEntrenador = {$_SESSION["id"]}";
     mysqli_query($link, $sql_reset_grupos);
 
     if ($grupos["escuela"] === 1) {
@@ -138,7 +138,7 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
       $id_escuela = $fila["idGrupo"];
 
       // Añadimos una fila a la tabla que relaciona grupos y entrenadores
-      $sql_insert = "INSERT INTO `Grupo_has_entrenador` (`idGrupo`, `Entrenador_idEntrenador`) VALUES ({$id_escuela}, {$_SESSION["id"]})";
+      $sql_insert = "INSERT INTO `Grupo_has_Entrenador` (`idGrupo`, `Entrenador_idEntrenador`) VALUES ({$id_escuela}, {$_SESSION["id"]})";
       mysqli_query($link, $sql_insert);
     }
     if ($grupos["federada"] === 1) {
@@ -149,7 +149,7 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
       $id_federada = $fila["idGrupo"];
 
       // Añadimos una fila a la tabla que relaciona grupos y entrenadores
-      $sql_insert = "INSERT INTO `Grupo_has_entrenador` (`idGrupo`, `Entrenador_idEntrenador`) VALUES ({$id_federada}, {$_SESSION["id"]})";
+      $sql_insert = "INSERT INTO `Grupo_has_Entrenador` (`idGrupo`, `Entrenador_idEntrenador`) VALUES ({$id_federada}, {$_SESSION["id"]})";
       mysqli_query($link, $sql_insert);
     }
 

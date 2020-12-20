@@ -45,8 +45,8 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || $_SESSI
 
     while ($fila = $resultado->fetch_array()) {
       $sql_get_grupos = "SELECT `Grupo`.`nombre`
-                         FROM   `Grupo` JOIN `Grupo_has_entrenador` ON `Grupo`.`idGrupo`=`Grupo_has_entrenador`.`idGrupo`
-                                        JOIN `Entrenador` ON `Grupo_has_entrenador`.`Entrenador_idEntrenador`=`Entrenador`.`idEntrenador`
+                         FROM   `Grupo` JOIN `Grupo_has_Entrenador` ON `Grupo`.`idGrupo`=`Grupo_has_Entrenador`.`idGrupo`
+                                        JOIN `Entrenador` ON `Grupo_has_Entrenador`.`Entrenador_idEntrenador`=`Entrenador`.`idEntrenador`
                          WHERE  `Entrenador`.`idEntrenador` = {$fila["idEntrenador"]}";
 
       $grupos = "";

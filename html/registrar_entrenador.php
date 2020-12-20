@@ -78,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       $id_escuela = $fila["idGrupo"];
 
       // Añadimos una fila a la tabla que relaciona grupos y entrenadores
-      $sql_insert = "INSERT INTO `Grupo_has_entrenador` (`idGrupo`, `Entrenador_idEntrenador`) VALUES ({$id_escuela}, {$id_entrenador})";
+      $sql_insert = "INSERT INTO `Grupo_has_Entrenador` (`idGrupo`, `Entrenador_idEntrenador`) VALUES ({$id_escuela}, {$id_entrenador})";
       mysqli_query($link, $sql_insert);
     }
     if ($grupos["federada"] === 1) {
@@ -89,7 +89,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       $id_federada = $fila["idGrupo"];
 
       // Añadimos una fila a la tabla que relaciona grupos y entrenadores
-      $sql_insert = "INSERT INTO `Grupo_has_entrenador` (`idGrupo`, `Entrenador_idEntrenador`) VALUES ({$id_federada}, {$id_entrenador})";
+      $sql_insert = "INSERT INTO `Grupo_has_Entrenador` (`idGrupo`, `Entrenador_idEntrenador`) VALUES ({$id_federada}, {$id_entrenador})";
       mysqli_query($link, $sql_insert);
     }
 

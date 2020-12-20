@@ -30,8 +30,10 @@
   if ($_SERVER["REQUEST_METHOD"] != "POST") {
     $consulta_SQL = "SELECT * FROM Noticia ORDER BY idNoticia DESC";
   } else {
-    $fechaInicial = $_POST['fecha-inicio'];
-    $fechaFinal = $_POST['fecha-fin'];
+    $fechaInicial = $_POST['fechaInicio'];
+    echo $fechaInicial;
+    $fechaFinal = $_POST['fechaFin'];
+    echo $fechaFinal;
     $consulta_SQL = "SELECT * FROM Noticia WHERE fecha >= $fechaInicial AND fecha<= $fechaFinal ORDER BY idNoticia DESC";
   }
   $resultado = $link->query($consulta_SQL);
@@ -41,10 +43,10 @@
             <h1>Mantente Actualizado</h1>
             <div class=\"\">
               <form action=\"/html/noticias.php\" method=\"POST\">
-                <label for=\"fecha-inicio\" class=\"form-label\">Fecha de inicio:</label>
-                <input type=\"date\" id=\"fecha-inicio\" name=\"fecha-inicio\" class=\"form-control\">
-                <label for=\"fecha-fin\" class=\"form-label\">Fecha de fin:</label>
-                <input type=\"date\" id=\"fecha-fin\" name=\"fecha-fin\" class=\"form-control\">
+                <label for=\"fechaInicio\" class=\"form-label\">Fecha de inicio:</label>
+                <input type=\"date\" id=\"fechaInicio\" name=\"fechaInicio\" class=\"form-control\">
+                <label for=\"fechaFin\" class=\"form-label\">Fecha de fin:</label>
+                <input type=\"date\" id=\"fechaFin\" name=\"fechaFin\" class=\"form-control\">
                 <button type=\"submit\" class=\"btn btn-primary float-end\">Buscar</button>
               </form>
             </div>  

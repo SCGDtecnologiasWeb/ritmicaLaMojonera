@@ -27,7 +27,13 @@
   // Noticias
   include_once($_SERVER['DOCUMENT_ROOT'] . '/php/config.php');
 
-  $consulta_SQL = "SELECT * FROM Noticia ORDER BY idNoticia DESC";
+  if ($_SERVER["REQUEST_METHOD"] != "POST") {
+    $consulta_SQL = "SELECT * FROM Noticia ORDER BY idNoticia DESC";
+  } else {
+    $fechaInicial = $_POST['fecha-inicio'];
+    $fechaFinal = $_POST['fecha-fin'];
+    $consulta_SQL = "SELECT * FROM Noticia WHERE fecha >= $fechaInicial AND fecha<= $fechaFinal ORDER BY idNoticia DESC";
+  }
   $resultado = $link->query($consulta_SQL);
 
   echo "<!-- News Start -->

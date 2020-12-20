@@ -117,7 +117,7 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
   <!-- Content Start -->
   <div class="main">
     <div class="content-container">
-      <h1>Añadir un trofeo</h1>
+      <h1>Modificar trofeo</h1>
       <div class="form-container">
         <form action="/html/modificar_logro.php?idVictoria=<?php echo $_GET["idVictoria"]; ?>" method="POST" enctype="multipart/form-data">
 

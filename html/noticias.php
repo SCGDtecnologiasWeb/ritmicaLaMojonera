@@ -39,12 +39,14 @@
   echo "<!-- News Start -->
           <div class=\"header-container\">
             <h1>Mantente Actualizado</h1>
-            <div class=\"\"> 
-              <label for=\"fecha-inicio\" class=\"form-label\">Fecha de inicio:</label>
-              <input type=\"date\" id=\"fecha-inicio\" name=\"fecha-inicio\" class=\"form-control\">
-              <label for=\"fecha-fin\" class=\"form-label\">Fecha de fin:</label>
-              <input type=\"date\" id=\"fecha-fin\" name=\"fecha-fin\" class=\"form-control\">
-              <button type=\"submit\" class=\"btn btn-primary float-end\">Buscar</button>
+            <div class=\"\">
+              <form action=\"/html/noticias.php\" method=\"POST\">
+                <label for=\"fecha-inicio\" class=\"form-label\">Fecha de inicio:</label>
+                <input type=\"date\" id=\"fecha-inicio\" name=\"fecha-inicio\" class=\"form-control\">
+                <label for=\"fecha-fin\" class=\"form-label\">Fecha de fin:</label>
+                <input type=\"date\" id=\"fecha-fin\" name=\"fecha-fin\" class=\"form-control\">
+                <button type=\"submit\" class=\"btn btn-primary float-end\">Buscar</button>
+              </form>
             </div>  
           </div>
           <div class=\"container news-container\">

@@ -46,6 +46,7 @@
                 <label for=\"fechaFin\" class=\"form-label\">Fecha de fin:</label>
                 <input type=\"date\" id=\"fechaFin\" name=\"fechaFin\" class=\"form-control\" value=\"$fechaFinal\">
                 <button type=\"submit\" class=\"btn btn-primary float-end\">Buscar</button>
+                <button type=\"reset\" class=\"btn btn-primary float-end\">Limpiar</button>
               </form>
             </div>  
           </div>

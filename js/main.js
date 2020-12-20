@@ -169,44 +169,44 @@ $(document).ready(function () {
     return confirm("¿Seguro que quieres realizar esta acción?");
   });
 
-  /*********** Filtro ******************/
-  $('.demo i').click(function() {  
-    $(this).parent().find('input').click();  
-  });  
-  updateConfig();  
+  // /*********** Filtro ******************/
+  // $('.demo i').click(function() {  
+  //   $(this).parent().find('input').click();  
+  // });  
+  // updateConfig();  
 
-  function updateConfig() {  
-    var options = {};  
-    options.opens = "center";  
-    options.ranges = {  
-      'Hoy': [moment(), moment()],  
-      'Ayer': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],  
-      'Últimos 7 Días': [moment().subtract(6, 'days'), moment()],  
-      'Últimos 30 Días': [moment().subtract(29, 'days'), moment()],  
-      'Este mes': [moment().startOf('month'), moment().endOf('month')],  
-      'Último mes': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]  
-    };  
-    $('#config-demo').daterangepicker(options, function(start, end, label) {   
-      var startDate = start.format('YYYY-MM-DD'); var endDate = end.format('YYYY-MM-DD');  
-      passDate(startDate,endDate);      
-    });  
+  // function updateConfig() {  
+  //   var options = {};  
+  //   options.opens = "center";  
+  //   options.ranges = {  
+  //     'Hoy': [moment(), moment()],  
+  //     'Ayer': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],  
+  //     'Últimos 7 Días': [moment().subtract(6, 'days'), moment()],  
+  //     'Últimos 30 Días': [moment().subtract(29, 'days'), moment()],  
+  //     'Este mes': [moment().startOf('month'), moment().endOf('month')],  
+  //     'Último mes': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]  
+  //   };  
+  //   $('#config-demo').daterangepicker(options, function(start, end, label) {   
+  //     var startDate = start.format('YYYY-MM-DD'); var endDate = end.format('YYYY-MM-DD');  
+  //     passDate(startDate,endDate);      
+  //   });  
         
-  }  
+  // }  
 
 
-  function passDate(startDate,endDate) {  
-    $('.loader').show();  
-    $.ajax({  
-      type: 'POST', // define the type of HTTP verb we want to use (POST for our form)  
-      url: 'date-filteration.php', // the url where we want to POST  
-      data: 'startDate='+startDate+'&endDate='+endDate, // our data object  
-    })  
-    // using the done promise callback  
-    .done(function(data) {  
-      $('.loader').hide();  
-      // log data to the console so we can see  
-      $('.response').html(data);  
-      // here we will handle errors and validation messages  
-    });  
-  }  
+  // function passDate(startDate,endDate) {  
+  //   $('.loader').show();  
+  //   $.ajax({  
+  //     type: 'POST', // define the type of HTTP verb we want to use (POST for our form)  
+  //     url: 'date-filteration.php', // the url where we want to POST  
+  //     data: 'startDate='+startDate+'&endDate='+endDate, // our data object  
+  //   })  
+  //   // using the done promise callback  
+  //   .done(function(data) {  
+  //     $('.loader').hide();  
+  //     // log data to the console so we can see  
+  //     $('.response').html(data);  
+  //     // here we will handle errors and validation messages  
+  //   });  
+  // }  
 });

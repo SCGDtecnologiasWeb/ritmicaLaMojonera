@@ -36,11 +36,13 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || $_SESSI
   <div class="content-container">
     <h1>Gimnastas</h1>
     <?php
+    echo "1";
     require($_SERVER['DOCUMENT_ROOT'] . '/php/config.php');
     $sql_get_grupos = "SELECT `ghe`.`idGrupo`
                        FROM `Grupo_has_entrenador` `ghe` JOIN `Entrenador` `e` ON `ghe`.`Entrenador_idEntrenador` = `e`.`idEntrenador`
                        WHERE `e`.`idEntrenador` = {$_SESSION["id"]}";
 
+    echo "2";
     $resultado_grupos = mysqli_query($link, $sql_get_grupos);
     if (mysqli_num_rows($resultado_grupos) !== 0) {
       $grupos = "(";
@@ -74,10 +76,13 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || $_SESSI
         echo  "</div>";
       }
     }
+    echo "6";
     mysqli_close($link);
+    echo "7";
     ?>
   </div>
   <!-- Content End -->
+
 
   <!-- JQuery -->
   <script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

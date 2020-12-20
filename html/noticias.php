@@ -34,7 +34,7 @@
     echo $fechaInicial;
     $fechaFinal = $_POST['fechaFin'];
     echo $fechaFinal;
-    $consulta_SQL = "SELECT * FROM Noticia WHERE fecha >= $fechaInicial AND fecha<= $fechaFinal ORDER BY idNoticia DESC";
+    $consulta_SQL = "SELECT * FROM Noticia WHERE fecha >= '$fechaInicial' AND fecha<= '$fechaFinal' ORDER BY idNoticia DESC";
   }
   $resultado = $link->query($consulta_SQL);
 

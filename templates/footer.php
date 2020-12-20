@@ -35,6 +35,9 @@
         reservados
       </p>
     </div>
+    <div class="footer-copyright-empty">
+
+    </div>
   </div>
   <nav>
     <button id="goback-btn">

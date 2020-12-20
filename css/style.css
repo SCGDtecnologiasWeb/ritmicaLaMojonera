@@ -714,6 +714,12 @@ a {
 .footer-copyright-col p {
   color: #888;
   text-align: start;
+  padding-left: 10px;
+}
+
+.footer-copyright-empty {
+  width: 65px;
+  float: right;
 }
 
 #goback-btn {

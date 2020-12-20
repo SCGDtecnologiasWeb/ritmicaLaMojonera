@@ -44,8 +44,13 @@
   vertical-align: top;
 }
 
+.news-text h3 {
+  /* display: inline; */
+  margin-bottom: 3px;
+  /* padding-right: 10px; */
+}
+
 .news-text h5 {
-  color: #555;
   display: inline;
   color: #fff;
   background-color: #aaa;
@@ -56,14 +61,9 @@
   font-size: 12px;
 }
 
-.news-text h3 {
-  margin-top: 0;
-  display: inline;
-  padding-right: 10px;
-}
-
 .news-text p {
   color: #666;
+  margin-top: 7px;
   margin-bottom: 6px;
 }
 
@@ -164,11 +164,11 @@
   }
 }
 
-.filter-container{
+.filter-container {
   display: flex;
   justify-content: center;
 }
 
-.filter-container div{
-  float:left;
+.filter-container div {
+  float: left;
 }

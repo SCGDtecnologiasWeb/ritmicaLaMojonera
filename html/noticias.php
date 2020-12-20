@@ -23,44 +23,45 @@
   include_once($_SERVER['DOCUMENT_ROOT'] . "/templates/title.php");
   ?>
 
-  <?php
-  // Noticias
-  include_once($_SERVER['DOCUMENT_ROOT'] . '/php/config.php');
+  <!-- News Start -->
+  <div class="header-container">
+    <h1>Mantente Actualizado</h1>
+    <div class="filter-container">
+      <form action="/html/noticias.php" method="POST">
+        <div class="">
+          <label for="fechaInicio" class="form-label">Fecha inicial:</label>
+          <input type="date" id="fechaInicio" name="fechaInicio" class="form-control" value="$fechaInicial">&nbsp
+        </div>
+        <div class="">
+          <label for="fechaFin" class="form-label\">Fecha final:</label>
+          <input type="date" id="fechaFin" name="fechaFin" class="form-control" value="$fechaFinal">&nbsp
+        </div>
+        <div class="">
+          <button type="submit" class="btn btn-primary float-end">Buscar</button>
+          <button class="btn btn-primary float-end"><a href="/html/noticias.php">Cancelar</a></button>
+        </div>
+      </form>
+    </div>
+  </div>
 
-  $fechaInicial = $_POST['fechaInicio'];
-  $fechaFinal = $_POST['fechaFin'];
-  if ($_SERVER["REQUEST_METHOD"] != "POST" || empty($fechaInicial) || empty($fechaFinal)) {
-    $consulta_SQL = "SELECT * FROM Noticia ORDER BY idNoticia DESC";
-  } else {
-    $consulta_SQL = "SELECT * FROM Noticia WHERE fecha >= '$fechaInicial' AND fecha<= '$fechaFinal' ORDER BY idNoticia DESC";
-  }
-  $resultado = $link->query($consulta_SQL);
+  <div class="container news-container">
+    <div class="news-row">
+      <?php
+      // Noticias
+      include_once($_SERVER['DOCUMENT_ROOT'] . '/php/config.php');
 
-  echo "<!-- News Start -->
-          <div class=\"header-container\">
-            <h1>Mantente Actualizado</h1>
-            <div class=\"filter-container\">
-              <form action=\"/html/noticias.php\" method=\"POST\">
-                <div class=\"\">
-                  <label for=\"fechaInicio\" class=\"form-label\">Fecha inicial:</label>
-                  <input type=\"date\" id=\"fechaInicio\" name=\"fechaInicio\" class=\"form-control\" value=\"$fechaInicial\">&nbsp
-                </div>
-                <div class=\"\">
-                  <label for=\"fechaFin\" class=\"form-label\">Fecha final:</label>
-                  <input type=\"date\" id=\"fechaFin\" name=\"fechaFin\" class=\"form-control\" value=\"$fechaFinal\">&nbsp
-                </div>
-                <div class=\"\">
-                  <button type=\"submit\" class=\"btn btn-primary float-end\">Buscar</button>
-                  <button class=\"btn btn-primary float-end\"><a href=\"/html/noticias.php\">Cancelar</a></button>
-                </div>
-              </form>
-            </div>  
-          </div>
-          <div class=\"container news-container\">
-            <div class=\"news-row\">";
+      if ($_SERVER["REQUEST_METHOD"] !== "POST") {
+        $consulta_SQL = "SELECT * FROM Noticia ORDER BY idNoticia DESC";
+      } else {
+        $fechaInicial = $_POST['fechaInicio'];
+        $fechaFinal = $_POST['fechaFin'];
+        $consulta_SQL = "SELECT * FROM Noticia WHERE fecha >= '$fechaInicial' AND fecha <= '$fechaFinal' ORDER BY idNoticia DESC";
+      }
+      $resultado = $link->query($consulta_SQL);
 
-  while ($fila = $resultado->fetch_array()) {
-    echo "<div class=\"news-col\">
+
+      while ($fila = $resultado->fetch_array()) {
+        echo "<div class=\"news-col\">
             <div class=\"img-wrap\">
               <img src=\"/assets/noticias/noticia{$fila["idNoticia"]}.jpg\" class=\"news-image\" alt=\"Noticia\"/>
             </div>
@@ -73,13 +74,13 @@
             <a href=\"/html/noticia.php?idNoticia={$fila["idNoticia"]}\">Leer más</a>
             </div>
             </div>";
-  }
+      }
 
-  echo  "</div>
-      </div>";
 
-  $link->close();
-  ?>
+      $link->close();
+      ?>
+    </div>
+  </div>
 
   <?php
   // Footer

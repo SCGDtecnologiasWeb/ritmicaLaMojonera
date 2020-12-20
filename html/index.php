@@ -66,13 +66,13 @@
             </div>
             <div class=\"news-text\">
             <h3>{$fila["titulo"]}</h3>
+            <h5>{$fila["fecha"]}</h5>
             <p>
             {$fila["descripcion"]}
             </p>
             <a href=\"/html/noticia.php?idNoticia={$fila["idNoticia"]}\">Leer más</a>
             </div>
             </div>";
-    // <h5>{$fila["fecha"]}</h5>
   }
 
   echo  "</div>

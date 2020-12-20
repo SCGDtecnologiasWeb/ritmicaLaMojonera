@@ -68,7 +68,6 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || $_SESSI
               <img src=\"/assets/bin-icon.PNG\" class=\"bin-img\"alt=\"Eliminar\" />
               </a>
               </div>";
-    // <h5>{$fila["fecha"]}</h5>
   }
 
   echo  "</div>

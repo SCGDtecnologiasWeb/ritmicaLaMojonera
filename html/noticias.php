@@ -33,9 +33,11 @@
   echo "<!-- News Start -->
           <div class=\"header-container\">
             <h1>Mantente Actualizado</h1>
-            <div class=\"demo\"> 
-              <input type=\"text\" id=\"config-demo\" class=\"form-control\">  
-              <i class=\"glyphicon glyphicon-calendar fa fa-calendar\"></i>  
+            <div class=\"\"> 
+              <label for=\"fecha-inicio\" class=\"form-label\">Fecha de inicio:</label>
+              <input type=\"date\" id=\"fecha-inicio\" name=\"fecha-inicio\" class=\"form-control\">
+              <label for=\"fecha-fin\" class=\"form-label\">Fecha de fin:</label>
+              <input type=\"date\" id=\"fecha-fin\" name=\"fecha-fin\" class=\"form-control\">
             </div>  
           </div>
           <div class=\"container news-container\">

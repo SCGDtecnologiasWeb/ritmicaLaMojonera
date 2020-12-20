@@ -85,6 +85,7 @@
   top: 15px;
   right: -10px;
   cursor: pointer;
+  z-index: 10;
 }
 
 .news-col .bin-img {
@@ -93,6 +94,7 @@
   top: 60px;
   right: -10px;
   cursor: pointer;
+  z-index: 10;
 }
 
 @media screen and (max-width: 1325px) {

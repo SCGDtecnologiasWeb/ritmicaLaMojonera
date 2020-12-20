@@ -22,7 +22,7 @@ $img_err = "";
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
   include($_SERVER['DOCUMENT_ROOT'] . '/php/funciones.php');
 
-  //Parseamos las variables
+  // Parseamos las variables
   $titulo = filtrado($_POST["news-title"]);
   $fecha = filtrado($_POST["news-date"]);
   $desc = filtrado($_POST["news-description"]);
@@ -67,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   }
 
   if (empty($title_err) && empty($date_err) && empty($desc_err) && empty($body_err) && empty($img_err)) {
-    //Conectamos a la base de datos
+    // Conectamos a la base de datos
     require_once($_SERVER['DOCUMENT_ROOT'] . '/php/config.php');
 
     // Insertamos la noticia en la base de datos
@@ -83,7 +83,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $fila =  mysqli_fetch_assoc($resultado);
     $idNoticia = $fila['idNoticia'];
 
-    //Guardamos la imagen
+    // Guardamos la imagen
     $img_path = $_SERVER['DOCUMENT_ROOT'] . "/assets/noticias/noticia" . $idNoticia . ".jpg";
     $img_src = $img["tmp_name"];
     move_uploaded_file($img_src, $img_path);
@@ -143,7 +143,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
           <div class="mb-3">
             <label for="news-image" class="form-label">Imagen</label>
-            <input class="form-control <?php if (!empty($img_err)) echo "is-invalid" ?>" type="file" id="news-image" name="news-image" value="<?php echo $fecha ?>" required>
+            <input class="form-control <?php if (!empty($img_err)) echo "is-invalid" ?>" type="file" id="news-image" name="news-image" value="<?php echo $fecha ?>" required accept="image/png, image/jpeg">
             <div class="invalid-feedback">
               <?php echo $img_err ?>
             </div>

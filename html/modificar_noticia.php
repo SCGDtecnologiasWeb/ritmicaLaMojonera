@@ -96,9 +96,11 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     mysqli_stmt_close($stmt);
 
     // Guardamos la imagen
-    $img_path = $_SERVER['DOCUMENT_ROOT'] . "/assets/noticias/noticia" . $_GET["idNoticia"] . ".jpg";
-    $img_src = $img["tmp_name"];
-    move_uploaded_file($img_src, $img_path);
+    if (isset($img)) {
+      $img_path = $_SERVER['DOCUMENT_ROOT'] . "/assets/noticias/noticia" . $_GET["idNoticia"] . ".jpg";
+      $img_src = $img["tmp_name"];
+      move_uploaded_file($img_src, $img_path);
+    }
 
     // Cerramos la conexion y terminamos el proceso
     mysqli_close($link);
@@ -222,7 +224,7 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
       } else {
         validateBody();
       }
-      imageValid = false;
+      imageValid = true;
       validate();
 
       // Comprobamos cuando se apriete una tecla

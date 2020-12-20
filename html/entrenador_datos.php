@@ -205,7 +205,7 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
 
           <div class="mb-3">
             <label for="email" class="form-label">Correo electronico</label>
-            <input class="form-control<?php if (empty(!$email_err)) echo " is-invalid" ?>" type="email" id="email" name="email" value="<?php echo $correo ?>" required>
+            <input class="form-control <?php if (!empty($email_err)) echo "is-invalid" ?>" type="email" id="email" name="email" value="<?php echo $correo ?>" required>
             <div class="invalid-feedback">
               <?php echo $email_err ?>
             </div>
@@ -213,7 +213,7 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
 
           <div class="mb-3">
             <label for="name" class="form-label">Nombre completo</label>
-            <input class="form-control<?php if (empty(!$name_err)) echo " is-invalid" ?>" type="text" id="name" name="name" value="<?php echo $nombre ?>" required>
+            <input class="form-control <?php if (!empty($name_err)) echo "is-invalid" ?>" type="text" id="name" name="name" value="<?php echo $nombre ?>" required>
             <div class="invalid-feedback">
               <?php echo $name_err ?>
             </div>
@@ -221,7 +221,7 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
 
           <div class="mb-3">
             <label for="dni" class="form-label">DNI/NIE</label>
-            <input class="form-control<?php if (empty(!$dni_err)) echo " is-invalid" ?>" type="text" id="dni" name="dni" minlength="9" maxlength="9" value="<?php echo $dni ?>" required>
+            <input class="form-control <?php if (!empty($dni_err)) echo "is-invalid" ?>" type="text" id="dni" name="dni" minlength="9" maxlength="9" value="<?php echo $dni ?>" required>
             <div class="invalid-feedback">
               <?php echo $dni_err ?>
             </div>
@@ -230,7 +230,7 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
           <label for="whatsapp" class="form-label">Teléfono (Whatsapp)</label>
           <div class="input-group mb-3">
             <span class="input-group-text" id="prefijo-tlf">+34</span>
-            <input class="form-control<?php if (empty(!$phone_err)) echo " is-invalid" ?>" type="text" id="whatsapp" name="whatsapp" minlength="9" maxlength="12" value="<?php echo $telefono ?>" required>
+            <input class="form-control <?php if (!empty($phone_err)) echo "is-invalid" ?>" type="text" id="whatsapp" name="whatsapp" minlength="9" maxlength="12" value="<?php echo $telefono ?>" required>
             <div class="invalid-feedback">
               <?php echo $phone_err ?>
             </div>
@@ -250,7 +250,7 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
 
           <div class="mb-3">
             <label for="perfil" class="form-label">Foto perfil</label>
-            <input class="form-control <?php if (empty(!$img_err)) echo "is-invalid" ?>" autocomplete="off" type="file" id="perfil" name="perfil" accept="image/*">
+            <input class="form-control <?php if (!empty($img_err)) echo "is-invalid" ?>" autocomplete="off" type="file" id="perfil" name="perfil" accept="image/*">
             <div class="invalid-feedback">
               <?php echo $img_err ?>
             </div>
@@ -415,7 +415,7 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
         if (emailValid && nameValid && dniValid && whatsappValid && perfilValid) {
           $("#submit").prop("disabled", false);
         } else {
-          // $("#submit").prop("disabled", true);
+          $("#submit").prop("disabled", true);
         }
       }
 

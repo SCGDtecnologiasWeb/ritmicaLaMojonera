@@ -74,8 +74,6 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || $_SESSI
     }
     mysqli_close($link);
     ?>
-
-
   </div>
   <!-- Content End -->
 

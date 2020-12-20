@@ -36,17 +36,13 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || $_SESSI
   <div class="content-container">
     <h1>Gimnastas</h1>
     <?php
-    echo "1";
     require($_SERVER['DOCUMENT_ROOT'] . '/php/config.php');
     $sql_get_grupos = "SELECT `ghe`.`idGrupo`
-                       FROM `Grupo_has_entrenador` `ghe` JOIN `Entrenador` `e` ON `ghe`.`Entrenador_idEntrenador` = `e`.`idEntrenador`
+                       FROM `Grupo_has_Entrenador` `ghe` JOIN `Entrenador` `e` ON `ghe`.`Entrenador_idEntrenador` = `e`.`idEntrenador`
                        WHERE `e`.`idEntrenador` = {$_SESSION["id"]}";
 
-    echo "2";
     $resultado_grupos = mysqli_query($link, $sql_get_grupos);
-    echo "n = " . mysqli_num_rows($resultado_grupos) . " ";
     if (mysqli_num_rows($resultado_grupos) !== 0) {
-      echo "3";
       $grupos = "(";
       while ($fila_grupos = mysqli_fetch_assoc($resultado_grupos)) {
         $grupos .= $fila_grupos["idGrupo"] . ", ";
@@ -54,7 +50,6 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || $_SESSI
       $grupos = substr($grupos, 0, -2);
       $grupos .= ")";
 
-      echo "4";
       $consulta_SQL = "SELECT `dni`, `nombreCompleto`, `fechaNacimiento`, `nombreTutor`, `telefono`, `nivel`, `consentimientoFotos`, `alergias`, `Grupo_idGrupo` FROM `Gimnasta` WHERE `registrado` = 1 AND `Grupo_idGrupo` IN {$grupos}";
       $resultado = $link->query($consulta_SQL);
       while ($fila = $resultado->fetch_array()) {
@@ -78,11 +73,8 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || $_SESSI
         echo    "</div>";
         echo  "</div>";
       }
-      echo "5";
     }
-    echo "6";
     mysqli_close($link);
-    echo "7";
     ?>
   </div>
   <!-- Content End -->

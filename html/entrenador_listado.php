@@ -39,7 +39,7 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || $_SESSI
     echo "1<br>";
     require($_SERVER['DOCUMENT_ROOT'] . '/php/config.php');
     $sql_get_grupos = "SELECT `ghe`.`idGrupo`
-                       FROM `Grupo_has_entrenador` `ghe` JOIN `Entrenador` `e` ON `ghe`.`Entrenador_idEntrenador` = `e`.`idEntrenador`
+                       FROM `Grupo_has_Entrenador` `ghe` JOIN `Entrenador` `e` ON `ghe`.`Entrenador_idEntrenador` = `e`.`idEntrenador`
                        WHERE `e`.`idEntrenador` = {$_SESSION["id"]}";
 
     echo $sql_get_grupos . "<br>";

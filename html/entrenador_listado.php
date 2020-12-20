@@ -44,7 +44,9 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || $_SESSI
 
     echo "2";
     $resultado_grupos = mysqli_query($link, $sql_get_grupos);
+    echo "n = " . mysqli_num_rows($resultado_grupos) . " ";
     if (mysqli_num_rows($resultado_grupos) !== 0) {
+      echo "3";
       $grupos = "(";
       while ($fila_grupos = mysqli_fetch_assoc($resultado_grupos)) {
         $grupos .= $fila_grupos["idGrupo"] . ", ";
@@ -52,6 +54,7 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || $_SESSI
       $grupos = substr($grupos, 0, -2);
       $grupos .= ")";
 
+      echo "4";
       $consulta_SQL = "SELECT `dni`, `nombreCompleto`, `fechaNacimiento`, `nombreTutor`, `telefono`, `nivel`, `consentimientoFotos`, `alergias`, `Grupo_idGrupo` FROM `Gimnasta` WHERE `registrado` = 1 AND `Grupo_idGrupo` IN {$grupos}";
       $resultado = $link->query($consulta_SQL);
       while ($fila = $resultado->fetch_array()) {
@@ -75,6 +78,7 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || $_SESSI
         echo    "</div>";
         echo  "</div>";
       }
+      echo "5";
     }
     echo "6";
     mysqli_close($link);

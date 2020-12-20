@@ -42,11 +42,11 @@
             <div class=\"filter-container\">
               <form action=\"/html/noticias.php\" method=\"POST\">
                 <div class=\"\">
-                  <label for=\"fechaInicio\" class=\"form-label\">Fecha de inicio:</label>
+                  <label for=\"fechaInicio\" class=\"form-label\">Fecha inicial:</label>
                   <input type=\"date\" id=\"fechaInicio\" name=\"fechaInicio\" class=\"form-control\" value=\"$fechaInicial\">
                 </div>
                 <div class=\"\">
-                  <label for=\"fechaFin\" class=\"form-label\">Fecha de fin:</label>
+                  <label for=\"fechaFin\" class=\"form-label\">Fecha final:</label>
                   <input type=\"date\" id=\"fechaFin\" name=\"fechaFin\" class=\"form-control\" value=\"$fechaFinal\">
                 </div>
                 <div class=\"\">

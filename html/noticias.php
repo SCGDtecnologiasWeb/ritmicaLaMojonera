@@ -34,8 +34,10 @@
           <div class=\"header-container\">
             <h1>Mantente Actualizado</h1>
             <div class=\"\"> 
+              <label for=\"fecha-inicio\" class=\"form-label\">Fecha de inicio:</label>
               <input type=\"date\" id=\"fecha-inicio\" name=\"fecha-inicio\" class=\"form-control\">  
               <i class=\"glyphicon glyphicon-calendar fa fa-calendar\"></i>
+              <label for=\"fecha-fin\" class=\"form-label\">Fecha de fin:</label>
               <input type=\"date\" id=\"fecha-fin\" name=\"fecha-fin\" class=\"form-control\">  
               <i class=\"glyphicon glyphicon-calendar fa fa-calendar\"></i>
             </div>  

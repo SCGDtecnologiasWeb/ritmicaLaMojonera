@@ -195,8 +195,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       <div class="form-container">
         <form action="/html/matriculacion.php" method="POST" enctype="multipart/form-data">
 
+          <div class="form-text">Los campos marcados con un asterico (*) son obligatorios</div>
+
           <div class="mb-3">
-            <label for="name" class="form-label">Nombre completo *</label>
+            <label for="name" class="form-label">Nombre completo <span class="required">*</span></label>
             <input class="form-control <?php if (!empty($name_err)) echo "is-invalid" ?>" type="text" id="name" name="name" required>
             <div class="invalid-feedback">
               <?php echo $name_err ?>
@@ -204,7 +206,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
           </div>
 
           <div class="mb-3">
-            <label for="birthdate" class="form-label">Fecha de nacimiento *</label>
+            <label for="birthdate" class="form-label">Fecha de nacimiento <span class="required">*</span></label>
             <input class="form-control <?php if (!empty($birthdate_err)) echo "is-invalid" ?>" type="date" id="birthdate" name="birthdate" required>
             <div class="invalid-feedback">
               <?php echo $birthdate_err ?>
@@ -212,32 +214,32 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
           </div>
 
           <div class="mb-3">
-            <label for="dni" class="form-label">DNI/NIE *</label>
-            <input class="form-control <?php if (!empty($dni_err)) echo "is-invalid" ?>" type="text" id="dni" name="dni" minlength="9" maxlength="9" required>
+            <label for="dni" class="form-label">DNI/NIE <span class="required">*</span></label>
+            <input class="form-control <?php if (!empty($dni_err)) echo "is-invalid" ?>" placeholder="Ejemplo: 94918977R" type="text" id="dni" name="dni" minlength="9" maxlength="9" required>
             <div class="invalid-feedback">
               <?php echo $dni_err ?>
             </div>
           </div>
 
           <div class="mb-3">
-            <label for="parent" class="form-label">Nombre del padre, madre o tutor/a legal *</label>
+            <label for="parent" class="form-label">Nombre del padre, madre o tutor/a legal <span class="required">*</span></label>
             <input class="form-control <?php if (!empty($parent_err)) echo "is-invalid" ?>" type="text" id="parent" name="parent" required>
             <div class="invalid-feedback">
               <?php echo $parent_err ?>
             </div>
           </div>
 
-          <label for="whatsapp" class="form-label">Teléfono (Whatsapp) *</label>
+          <label for="whatsapp" class="form-label">Teléfono de contacto (Whatsapp) <span class="required">*</span></label>
           <div class="input-group mb-3">
             <span class="input-group-text" id="prefijo-tlf">+34</span>
-            <input class="form-control <?php if (!empty($phone_err)) echo "is-invalid" ?>" type="text" id="whatsapp" name="whatsapp" minlength="9" maxlength="12" required>
+            <input class="form-control <?php if (!empty($phone_err)) echo "is-invalid" ?>" placeholder="Ejemplo: 766-562-399" type="text" id="whatsapp" name="whatsapp" minlength="9" maxlength="12" required>
             <div class="invalid-feedback">
               <?php echo $phone_err ?>
             </div>
           </div>
 
           <div class="mb-3">
-            <label for="level" class="form-label">Nivel de la gimnasta *</label>
+            <label for="level" class="form-label">Nivel de la gimnasta <span class="required">*</span></label>
             <div class="form-check">
               <input class="form-check-input" type="radio" name="level" id="escuela" value="Escuela" required>
               <label class="form-check-label" for="escuela">Escuela</label>
@@ -249,15 +251,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
           </div>
 
           <div class="mb-3">
-            <label for="allergies" class="form-label">Alergias o enfermedades (Opcional, indicar cuál/es)</label>
-            <input class="form-control <?php if (!empty($allergies_err)) echo "is-invalid" ?>" type="text" id="allergies" name="allergies">
-            <div class="invalid-feedback">
-              <?php echo $allergies_err ?>
-            </div>
-          </div>
-
-          <div class="mb-3">
-            <label for="consent" class="form-label">Consentimiento a subir fotos en las redes sociales *</label>
+            <label for="consent" class="form-label">¿Da su consentimiento a subir fotos en las redes sociales? <span class="required">*</span></label>
             <div class="form-check">
               <input class="form-check-input" type="radio" id="si-consentimiento" name="consent" value="Si" required>
               <label class="form-check-label" for="si-consentimiento">Si</label>
@@ -265,6 +259,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <div class="form-check">
               <input class="form-check-input" type="radio" id="no-consentimiento" name="consent" value="No">
               <label class="form-check-label" for="no-consentimiento">No</label>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="allergies" class="form-label">¿Alergias o enfermedades? En caso afirmativo, indicar cuál/es</label>
+            <input class="form-control <?php if (!empty($allergies_err)) echo "is-invalid" ?>" type="text" id="allergies" name="allergies">
+            <div class="invalid-feedback">
+              <?php echo $allergies_err ?>
             </div>
           </div>
 

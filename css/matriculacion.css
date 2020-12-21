@@ -47,3 +47,11 @@
     padding: 10px 25px;
   }
 }
+
+.required {
+  color: red;
+}
+
+.form-text {
+  margin-bottom: 20px;
+}

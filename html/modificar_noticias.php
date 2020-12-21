@@ -36,7 +36,7 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || $_SESSI
   // Noticias
   include_once($_SERVER['DOCUMENT_ROOT'] . '/php/config.php');
 
-  $consulta_SQL = "SELECT * FROM Noticia ORDER BY idNoticia DESC";
+  $consulta_SQL = "SELECT * FROM Noticia ORDER BY fecha DESC";
   $resultado = $link->query($consulta_SQL);
 
   echo "<!-- News Start -->

@@ -263,7 +263,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
           </div>
 
           <div class="mb-3">
-            <label for="allergies" class="form-labelform-label">Alergias o enfermedades (indica cuál)</label>
+            <label for="allergies" class="form-label">Alergias o enfermedades (indica cuál)</label>
             <input class="form-control <?php if (!empty($allergies_err)) echo "is-invalid" ?>" type="text" id="allergies" name="allergies" value="<?php echo $alergias ?>">
             <div class="invalid-feedback">
               <?php echo $allergies_err ?>

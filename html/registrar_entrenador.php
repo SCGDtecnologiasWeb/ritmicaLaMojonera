@@ -31,6 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   }
   $nombre = filtrado($_POST["name"]);
   $dni = filtrado($_POST["dni"]);
+  $dni = strtoupper($dni);
   $telefono = filtrado($_POST["whatsapp"]);
   if (isset($_POST["escuela"])) {
     $grupos["escuela"] = 1;
@@ -103,6 +104,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
   // Si no hay errores continueamos con el registro del entrenador
   if (empty($email_err) && empty($password_err) && empty($name_err) && empty($dni_err) && empty($phone_err) && empty($img_err)) {
+
+    $telefono = str_replace(' ', '', $telefono);
+    $telefono = str_replace('-', '', $telefono);
 
     // Insertamos el entrenador
     $hash = password_hash($contraseña, PASSWORD_DEFAULT);

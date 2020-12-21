@@ -35,7 +35,7 @@
         </div>
 
         <div class="">
-          <label for="fechaFin" class="form-label\">Fecha final:</label>
+          <label for="fechaFin" class="form-label">Fecha final:</label>
           <input type="date" id="fechaFin" name="fechaFin" class="form-control" value="$fechaFinal">&nbsp
         </div>
 

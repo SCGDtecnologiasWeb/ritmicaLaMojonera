@@ -158,8 +158,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Iniciar sesión</title>
 
-  <!--Bootstrap-->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
   <!-- FontAwesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
 
@@ -174,44 +174,39 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="col-12 user-img text-center">
           <img src="/assets/logo_ritmica.png" width="150px" height="150px" alt="Club Rítmica La Mojonera" />
         </div>
-        <form action="/html/login.php" method="POST" class="formulario">
-          <h1>Iniciar sesión</h1>
-          <div class="form-group" id="user-group">
-            <?php
-            $value = "";
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-              $value = "value=\"{$_POST["correo"]}\"";
-            }
 
-            if (empty($correo_err)) {
-              echo "<input type=\"text\" class=\"form-control\" placeholder=\"correo\" name=\"correo\" {$value} />";
-            } else {
-              echo "<input type=\"text\" class=\"form-control is-invalid\" placeholder=\"correo\" name=\"correo\" {$value} />";
-              echo "<div class=\"invalid-feedback\">";
-              echo $correo_err;
-              echo "</div>";
-            }
-            ?>
+        <h1>Iniciar sesión</h1>
+
+        <form action="/html/login.php" method="POST" class="formulario" id="formulario">
+
+          <div class="form-group" id="user-group">
+            <input class="form-control <?php if (!empty($correo_err)) echo "is-invalid" ?>" id="correo" type="text" placeholder="correo" name="correo" value="<?php if (isset($_POST["correo"])) echo $_POST["correo"] ?>">
+            <div class="invalid-feedback">
+              <?php echo $correo_err ?>
+            </div>
           </div>
+
+
           <div class="form-group" id="password-group">
-            <?php
-            if (empty($contraseña_err)) {
-              echo "<input type=\"password\" class=\"form-control\" placeholder=\"contraseña\" name=\"contraseña\" />";
-            } else {
-              echo "<input type=\"password\" class=\"form-control is-invalid\" placeholder=\"contraseña\" name=\"contraseña\" />";
-              echo "<div class=\"invalid-feedback\">";
-              echo $contraseña_err;
-              echo "</div>";
-            }
-            ?>
+            <input class="form-control <?php if (!empty($correo_err)) echo "is-invalid" ?>" type="password" placeholder="contraseña" name="contraseña">
+            <div class="invalid-feedback">
+              <?php echo $contraseña_err ?>
+            </div>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="recordar">
+            <label class="form-check-label" for="recordar">
+              Recordar mi correo
+            </label>
           </div>
 
           <!--Ventana emergente utilizando Ajax-->
           <!-- AJAX -->
           <div class="col-12 forgot" id="forgot-icon">
             <a href="javascript:ejecutarAJAX();" class="link" id="oContrasena"> <i class="fas fa-caret-right"></i>¿Has olvidado tu contraseña?</a>
-            <!-- <button onclick ="ejecutarAJAX()">¿Has olvidado tu contraseña?</button> -->
-            <div id="info"></div>
+            <!-- <div id="info"></div> -->
+
             <script type="text/javascript">
               function ejecutarAJAX() {
                 var ajaxRequest = new XMLHttpRequest();
@@ -226,19 +221,48 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 ajaxRequest.send();
               }
             </script>
-            <div class="form-group form-button text-right">
-              <button type="submit" class="btn btn-primary" name="continuar">
-                <i class="fas fa-arrow-right" style="font-size: 1.09em;"></i> Continuar
-              </button>
-            </div>
+          </div>
+
+          <a href="/html/index.php">
+            <button type="button" class="btn back-btn float-start">
+              <i class="fas fa-undo"></i> Volver
+            </button>
+          </a>
+
+          <button type="submit" class="btn btn-primary float-end" name="continuar">
+            <i class="fas fa-arrow-right" style="font-size: 1.09em;"></i> Continuar
+          </button>
+
         </form>
       </div>
     </div>
   </div>
 
-  <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> -->
+  <!-- JQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/cookies.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+
+      $("#formulario").submit(function(event) {
+        if ($("#recordar").prop("checked")) {
+          if ($("#correo").val().length != 0) {
+            var expiration = new Date();
+            expiration.setTime(expiration.getTime() + (60000 * 60 * 24 * 30));
+            setCookie("recordar-correo", $("#correo").val(), expiration);
+          }
+        }
+      });
+
+      var cookie = getCookie("recordar-correo");
+      if (cookie != null) {
+        $("#correo").val(cookie);
+      }
+
+    });
+  </script>
 </body>
 
 </html>

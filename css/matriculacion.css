@@ -19,10 +19,27 @@
   margin-right: 0;
 }
 
+.title-row a:hover {
+  color: white;
+}
+
 .col,
 .nav-col,
 .header-col {
   padding: 0;
+}
+
+.header-col {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.header-col img {
+  margin-left: 20px;
+}
+
+.header-icon-wrapper {
+  margin-right: 20px;
 }
 
 .content-container {

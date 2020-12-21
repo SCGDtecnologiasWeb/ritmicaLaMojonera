@@ -30,6 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
   $correo = $fila["correoEntrenador"];
   $nombre = $fila["nombreCompleto"];
   $dni = $fila["DNI"];
+  $dni = strtoupper($dni);
   $telefono = $fila["telefono"];
 
   // Obtenemos los grupos del entrenador
@@ -55,12 +56,6 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
   $dni = filtrado($_POST["dni"]);
   $telefono = filtrado($_POST["whatsapp"]);
   $telefono = str_replace(' ', '', $telefono);
-  if (isset($_POST["escuela"])) {
-    $grupos["escuela"] = 1;
-  }
-  if (isset($_POST["federada"])) {
-    $grupos["federada"] = 1;
-  }
 
   // Errores en el correo
   if (strlen($correo) === 0) {
@@ -119,39 +114,15 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
   // Si no hay errores continueamos con el registro del entrenador
   if (empty($email_err) && empty($name_err) && empty($dni_err) && empty($phone_err) && empty($img_err)) {
 
+    $telefono = str_replace(' ', '', $telefono);
+    $telefono = str_replace('-', '', $telefono);
+
     // Actualizamos el entrenador
     $sql_update = "UPDATE `Entrenador` SET `correoEntrenador` = (?), `nombreCompleto` = (?), `DNI` = (?), `telefono` = (?) WHERE `idEntrenador` = {$_SESSION["id"]}";
     $stmt = mysqli_prepare($link, $sql_update);
     mysqli_stmt_bind_param($stmt, "ssss", $correo, $nombre, $dni, $telefono);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
-
-    // Borramos las relaciones en la tabla de grupos
-    $sql_reset_grupos = "DELETE FROM `Grupo_has_Entrenador` WHERE Entrenador_idEntrenador = {$_SESSION["id"]}";
-    mysqli_query($link, $sql_reset_grupos);
-
-    if ($grupos["escuela"] === 1) {
-      // Consultamos el id de escuela
-      $sql_get_id = "SELECT `idGrupo` FROM `Grupo` WHERE `nombre` = 'Escuela'";
-      $resultado = mysqli_query($link, $sql_get_id);
-      $fila = mysqli_fetch_assoc($resultado);
-      $id_escuela = $fila["idGrupo"];
-
-      // Añadimos una fila a la tabla que relaciona grupos y entrenadores
-      $sql_insert = "INSERT INTO `Grupo_has_Entrenador` (`idGrupo`, `Entrenador_idEntrenador`) VALUES ({$id_escuela}, {$_SESSION["id"]})";
-      mysqli_query($link, $sql_insert);
-    }
-    if ($grupos["federada"] === 1) {
-      // Consultamos el id de federada  
-      $sql_get_id = "SELECT `idGrupo` FROM `Grupo` WHERE `nombre` = 'Federada'";
-      $resultado = mysqli_query($link, $sql_get_id);
-      $fila = mysqli_fetch_assoc($resultado);
-      $id_federada = $fila["idGrupo"];
-
-      // Añadimos una fila a la tabla que relaciona grupos y entrenadores
-      $sql_insert = "INSERT INTO `Grupo_has_Entrenador` (`idGrupo`, `Entrenador_idEntrenador`) VALUES ({$id_federada}, {$_SESSION["id"]})";
-      mysqli_query($link, $sql_insert);
-    }
 
     // Guardamos la imagen
     $img_path = $_SERVER['DOCUMENT_ROOT'] . "/assets/entrenadores/entrenador" . $_SESSION["id"] . ".jpg";
@@ -233,18 +204,6 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
             <input class="form-control <?php if (!empty($phone_err)) echo "is-invalid" ?>" type="text" id="whatsapp" name="whatsapp" minlength="9" maxlength="12" value="<?php echo $telefono ?>" required>
             <div class="invalid-feedback">
               <?php echo $phone_err ?>
-            </div>
-          </div>
-
-          <div class="mb-3">
-            <label class="form-label">Grupos</label>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="escuela" name="escuela" <?php if ($grupos["escuela"] === 1) echo "checked" ?>>
-              <label class="form-check-label" for="escuela">Escuela</label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="federada" name="federada" <?php if ($grupos["federada"] === 1) echo "checked" ?>>
-              <label class="form-check-label" for="federada">Federada</label>
             </div>
           </div>
 

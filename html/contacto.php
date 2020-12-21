@@ -38,7 +38,7 @@
     </div>
     <h1>Mandanos un mensaje</h1>
     <div class="form-container">
-      <form action="/php/contacto.php" method="POST">
+      <form action="/php/contacto.php" method="POST" id="formulario">
         <label for="name">Nombre</label>
         <input type="text" id="name" name="name" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,96}" required /><br />
         <label for="email">Correo electrónico</label>
@@ -47,6 +47,7 @@
         <input type="text" id="subject" name="subject" required /><br />
         <label for="message">Mensaje</label>
         <textarea id="message" name="message" required></textarea><br />
+        <span id="test"></span>
         <input type="submit" value="Enviar" />
       </form>
     </div>
@@ -59,8 +60,49 @@
 
   <!-- JQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
   <script src="/js/main.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+
+      $("#formulario").submit(function(event) {
+        event.preventDefault();
+
+        $.ajax({
+          type: 'POST',
+          url: '/php/contacto.php',
+          data: {
+            name: $("#name").val(),
+            email: $("#email").val(),
+            subject: $("#subject").val(),
+            message: $("#message").val(),
+          },
+          success: function(response) {
+            if (response === "Tu mensaje ha sido enviado con éxito") {
+              $("#test").css("color", "green");
+            } else if (response === "Ha habido un problema, tu mensaje no ha podido ser enviado") {
+              $("#test").css("color", "red");
+            }
+            $("#test").html(response);
+          }
+        });
+
+        console.log(getFormData($(this)));
+      });
+
+    });
+
+    function getFormData($form) {
+      var unindexed_array = $form.serializeArray();
+      var indexed_array = {};
+
+      $.map(unindexed_array, function(n, i) {
+        indexed_array[n['name']] = n['value'];
+      });
+
+      return indexed_array;
+    }
+  </script>
 </body>
 
 </html>

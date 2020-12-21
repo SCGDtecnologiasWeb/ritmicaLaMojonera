@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
   mysqli_stmt_close($stmt);
 
   // Obtenemos los grupos del entrenador
-  $sql_get_grupos = "SELECT *
+  $sql_get_grupos = "SELECT `g`.`nombre`
                      FROM `Grupo_has_Entrenador` `ghe` JOIN `Grupo` `g` ON `ghe`.`idGrupo` = `g`.`idGrupo`
                      WHERE `ghe`.`Entrenador_idEntrenador` = (?)";
   $stmt = mysqli_prepare($link, $sql_get_grupos);

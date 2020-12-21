@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
   $telefono = $fila["telefono"];
 
   // Obtenemos los grupos del entrenador
-  $sql_get_grupos = "SELECT *
+  $sql_get_grupos = "SELECT `g`.`nombre`
                      FROM `Grupo_has_Entrenador` `ghe` JOIN `Grupo` `g` ON `ghe`.`idGrupo` = `g`.`idGrupo`
                      WHERE `ghe`.`Entrenador_idEntrenador` = {$_SESSION["id"]}";
   $resultado = mysqli_query($link, $sql_get_grupos);

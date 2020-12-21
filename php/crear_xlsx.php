@@ -19,7 +19,7 @@ $resultado = mysqli_query($link, $sql);
 while ($fila = mysqli_fetch_assoc($resultado)) {
   // Obtenemos los grupos a los que entrena
   $grupos = "";
-  $sql_get_grupos = "SELECT *
+  $sql_get_grupos = "SELECT `g`.`nombre`
                      FROM `Grupo_has_Entrenador` `ghe` JOIN `Grupo` `g` ON `ghe`.`idGrupo` = `g`.`idGrupo`
                      WHERE `ghe`.`Entrenador_idEntrenador` = {$fila["idEntrenador"]}";
   $resultado_grupos = mysqli_query($link, $sql_get_grupos);

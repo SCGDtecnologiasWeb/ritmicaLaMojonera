@@ -51,11 +51,11 @@
       include_once($_SERVER['DOCUMENT_ROOT'] . '/php/config.php');
 
       if ($_SERVER["REQUEST_METHOD"] !== "POST") {
-        $consulta_SQL = "SELECT * FROM Noticia ORDER BY idNoticia DESC";
+        $consulta_SQL = "SELECT * FROM Noticia ORDER BY fecha DESC";
       } else {
         $fechaInicial = $_POST['fechaInicio'];
         $fechaFinal = $_POST['fechaFin'];
-        $consulta_SQL = "SELECT * FROM Noticia WHERE fecha >= '$fechaInicial' AND fecha <= '$fechaFinal' ORDER BY idNoticia DESC";
+        $consulta_SQL = "SELECT * FROM Noticia WHERE fecha >= '$fechaInicial' AND fecha <= '$fechaFinal' ORDER BY fecha DESC";
       }
       $resultado = $link->query($consulta_SQL);
 

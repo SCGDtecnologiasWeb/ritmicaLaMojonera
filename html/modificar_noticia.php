@@ -143,7 +143,7 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
   <!-- Content Start -->
   <div class="main">
     <div class="content-container">
-      <h1>Añadir una noticia</h1>
+      <h1>Modificar noticia</h1>
       <div class="form-container">
         <form action="/html/modificar_noticia.php?idNoticia=<?php echo $_GET["idNoticia"]; ?>" method="POST" enctype="multipart/form-data">
 

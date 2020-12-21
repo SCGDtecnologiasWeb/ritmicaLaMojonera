@@ -41,8 +41,8 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
   mysqli_stmt_close($stmt);
 
   // Obtenemos los grupos del entrenador
-  $sql_get_grupos = "SELECT `g`.`nombre`
-                     FROM `Grupo_has_Entrenador` `ghe` JOIN `grupo` `g` ON `ghe`.`idGrupo` = `g`.`idGrupo`
+  $sql_get_grupos = "SELECT *
+                     FROM `Grupo_has_Entrenador` `ghe` JOIN `Grupo` `g` ON `ghe`.`idGrupo` = `g`.`idGrupo`
                      WHERE `ghe`.`Entrenador_idEntrenador` = (?)";
   $stmt = mysqli_prepare($link, $sql_get_grupos);
   mysqli_stmt_bind_param($stmt, "s", $_GET["idEntrenador"]);
@@ -69,6 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
   }
   $nombre = filtrado($_POST["name"]);
   $dni = filtrado($_POST["dni"]);
+  $dni = strtoupper($dni);
   $telefono = filtrado($_POST["whatsapp"]);
   if (isset($_POST["escuela"])) {
     $grupos["escuela"] = 1;

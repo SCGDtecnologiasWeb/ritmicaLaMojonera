@@ -28,18 +28,22 @@
     <h1>Mantente Actualizado</h1>
     <div class="filter-container">
       <form action="/html/noticias.php" method="POST">
+
         <div class="">
           <label for="fechaInicio" class="form-label">Fecha inicial:</label>
           <input type="date" id="fechaInicio" name="fechaInicio" class="form-control" value="$fechaInicial">&nbsp
         </div>
+
         <div class="">
           <label for="fechaFin" class="form-label\">Fecha final:</label>
           <input type="date" id="fechaFin" name="fechaFin" class="form-control" value="$fechaFinal">&nbsp
         </div>
+
         <div class="">
           <button type="submit" class="btn btn-primary float-end">Buscar</button>
           <button class="btn btn-primary float-end"><a href="/html/noticias.php">Cancelar</a></button>
         </div>
+
       </form>
     </div>
   </div>
@@ -53,9 +57,21 @@
       if ($_SERVER["REQUEST_METHOD"] !== "POST") {
         $consulta_SQL = "SELECT * FROM Noticia ORDER BY fecha DESC";
       } else {
-        $fechaInicial = $_POST['fechaInicio'];
-        $fechaFinal = $_POST['fechaFin'];
-        $consulta_SQL = "SELECT * FROM Noticia WHERE fecha >= '$fechaInicial' AND fecha <= '$fechaFinal' ORDER BY fecha DESC";
+        if (!empty($_POST['fechaInicio'])) {
+          $fechaInicial = $_POST['fechaInicio'];
+        }
+        if (!empty($_POST['fechaFin'])) {
+          $fechaFinal = $_POST['fechaFin'];
+        }
+        if (isset($fechaInicial) && isset($fechaFinal)) {
+          $consulta_SQL = "SELECT * FROM Noticia WHERE fecha >= '$fechaInicial' AND fecha <= '$fechaFinal' ORDER BY fecha DESC";
+        } else if (isset($fechaInicial) && !isset($fechaFinal)) {
+          $consulta_SQL = "SELECT * FROM Noticia WHERE fecha >= '$fechaInicial' ORDER BY fecha DESC";
+        } else if (!isset($fechaInicial) && isset($fechaFinal)) {
+          $consulta_SQL = "SELECT * FROM Noticia WHERE fecha <= '$fechaFinal' ORDER BY fecha DESC";
+        } else {
+          $consulta_SQL = "SELECT * FROM Noticia ORDER BY fecha DESC";
+        }
       }
       $resultado = $link->query($consulta_SQL);
 

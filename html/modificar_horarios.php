@@ -32,6 +32,15 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || $_SESSI
   include_once($_SERVER['DOCUMENT_ROOT'] . "/templates/side_menu_admin.php");
   ?>
 
+  <?php
+  include_once($_SERVER['DOCUMENT_ROOT'] . "/templates/header_entrenador.php");
+
+  $crumbs = array("Horarios", "Visualizar horarios");
+  include_once($_SERVER['DOCUMENT_ROOT'] . "/templates/title_entrenador.php");
+
+  include_once($_SERVER['DOCUMENT_ROOT'] . "/templates/side_menu_entrenador.php");
+  ?>
+
   <!-- JQuery -->
   <script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 

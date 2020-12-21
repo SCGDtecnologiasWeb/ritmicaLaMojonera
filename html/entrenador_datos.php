@@ -30,7 +30,6 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
   $correo = $fila["correoEntrenador"];
   $nombre = $fila["nombreCompleto"];
   $dni = $fila["DNI"];
-  $dni = strtoupper($dni);
   $telefono = $fila["telefono"];
 
   // Obtenemos los grupos del entrenador
@@ -54,8 +53,8 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
   $correo = filtrado($_POST["email"]);
   $nombre = filtrado($_POST["name"]);
   $dni = filtrado($_POST["dni"]);
+  $dni = strtoupper($dni);
   $telefono = filtrado($_POST["whatsapp"]);
-  $telefono = str_replace(' ', '', $telefono);
 
   // Errores en el correo
   if (strlen($correo) === 0) {

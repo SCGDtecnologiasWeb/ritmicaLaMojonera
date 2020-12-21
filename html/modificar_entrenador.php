@@ -304,7 +304,7 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
           <div class="mb-3">
             <label class="form-label">Grupos</label>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="escuela" name="escuela" <?php if ($grupos["escuela"] === 1) echo "checked" ?> required>
+              <input class="form-check-input" type="checkbox" id="escuela" name="escuela" <?php if ($grupos["escuela"] === 1) echo "checked" ?>>
               <label class="form-check-label" for="escuela">Escuela</label>
             </div>
             <div class="form-check">

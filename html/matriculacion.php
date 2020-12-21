@@ -25,6 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   $nombre = filtrado($_POST["name"]);
   $fechaNac = filtrado($_POST["birthdate"]);
   $dni = filtrado($_POST["dni"]);
+  $dni = strtoupper($dni);
   $tutor = filtrado($_POST["parent"]);
   $telefono = filtrado($_POST["whatsapp"]);
   $nivel = filtrado($_POST["level"]);
@@ -57,6 +58,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   if (!preg_match('/^[0-9XYZ][0-9]{7}[TRWAGMYFPDXBNJZSQVHLCKE]$/i', $dni)) {
     $dni_err .= "No es un DNI valido<br>";
   }
+  require_once($_SERVER['DOCUMENT_ROOT'] . '/php/config.php');
+  $sql_check_dni = "SELECT `dni` FROM `Gimnasta` WHERE `dni` = (?)";
+  $stmt = mysqli_prepare($link, $sql_check_dni);
+  mysqli_stmt_bind_param($stmt, "s", $dni);
+  mysqli_stmt_execute($stmt);
+  mysqli_stmt_store_result($stmt);
+  if (mysqli_stmt_num_rows($stmt) >= 1) {
+    $dni_err = "Este DNI ya esta en uso";
+  }
+  mysqli_stmt_close($stmt);
 
   // Errores en el nombre del tutor
   if (strlen($tutor) === 0) {
@@ -112,11 +123,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   }
 
   if (empty($name_err) && empty($birthdate_err) && empty($dni_err) && empty($parent_err) && empty($phone_err) && empty($level_err) && empty($allergies_err) && empty($consent_err) && empty($img_err)) {
-    include_once($_SERVER['DOCUMENT_ROOT'] . '/php/config.php');
 
     $telefono = str_replace(' ', '', $telefono);
     $telefono = str_replace('-', '', $telefono);
-    $dni = strtoupper($dni);
 
     // Obtenemos el ID del grupo de la gimnasta
     $sql_get_id_grupo = "SELECT `idGrupo` FROM `Grupo` WHERE `nombre` = (?)";
@@ -127,6 +136,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     mysqli_stmt_fetch($stmt);
     mysqli_stmt_close($stmt);
 
+    // Insertamos la gimnasta
     $sql_insert_gimnasta = "INSERT INTO `Gimnasta` (`dni`, `nombreCompleto`, `fechaNacimiento`, `nombreTutor`, `telefono`, `nivel`, `consentimientoFotos`, `alergias`, `pago`, `registrado`, `Grupo_idGrupo`)
                             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 0, {$idGrupo})";
     $stmt = mysqli_prepare($link, $sql_insert_gimnasta);
@@ -229,11 +239,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
           <div class="mb-3">
             <label for="level" class="form-label">Nivel de la gimnasta *</label>
             <div class="form-check">
-              <input class="form-check-input" type="radio" id="escuela" name="level" value="Escuela" required>
+              <input class="form-check-input" type="radio" name="level" id="escuela" value="Escuela" required>
               <label class="form-check-label" for="escuela">Escuela</label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" id="federada" name="level" value="Federada">
+              <input class="form-check-input" type="radio" name="level" id="federada" value="Federada">
               <label class="form-check-label" for="federada">Federada</label>
             </div>
           </div>

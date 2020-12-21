@@ -41,8 +41,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   $alergias = filtrado($_POST["allergies"]);
   $consentimiento = filtrado($_POST["consent"]);
 
-  $stmt = mysqli_prepare($link, $sql_insert_gimnasta);
-
   // Errores en el nombre
   if (strlen($nombre) === 0) {
     $name_err .= "No has introducido un nombre<br>";

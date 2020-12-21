@@ -98,7 +98,7 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || $_SESSI
       echo        "<p class=\"hidden-content hidden\">Pago realizado: {$fila["pago"]} ";
       if ($fila["pago"] === "Si") {
         echo          "<a href=\"/assets/matriculaciones/{$fila["dni"]}.jpg\">";
-        echo            "<i class=\"fas fa-external-link-square-alt\"></i>";
+        echo            "<i class=\"fas fa-external-link-square-alt id=\"payment\" \"></i>";
         echo          "</a>";
       }
       echo        "</p>";

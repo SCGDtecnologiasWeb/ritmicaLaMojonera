@@ -40,8 +40,7 @@
         </div>
 
         <div class="">
-          <button type="submit" class="btn btn-primary float-end">Buscar</button>
-          <button class="btn btn-primary float-end"><a href="/html/noticias.php">Cancelar</a></button>
+          <input type="submit" class="btn btn-primary float-end" value="Buscar"></input>
         </div>
 
       </form>

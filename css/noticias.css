@@ -169,3 +169,32 @@
 .filter-container div {
   float: left;
 }
+
+.filter-container input[type="date"] {
+  padding: 5px;
+  border-radius: 3px;
+  border: 1px solid black;
+}
+
+.filter-container .form-label {
+  vertical-align: middle;
+}
+
+.filter-container #fechaInicio {
+  margin-right: 10px;
+  border-radius: 3px;
+  border: 1px solid black;
+}
+
+.filter-container input[type="submit"] {
+  padding: 5px 8px;
+  margin-left: 10px;
+  background-color: #248dfc;
+  border-radius: 3px;
+  color: white;
+  border: 1px solid black;
+}
+
+.filter-container input[type="submit"]:hover {
+  background-color: #4896eb;
+}

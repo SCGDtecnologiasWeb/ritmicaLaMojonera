@@ -150,6 +150,9 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
   // Si no hay errores continueamos con el registro del entrenador
   if (empty($email_err) && empty($password_err) && empty($name_err) && empty($dni_err) && empty($phone_err) && empty($img_err)) {
 
+    $telefono = str_replace(' ', '', $telefono);
+    $telefono = str_replace('-', '', $telefono);
+
     // Actualizamos el entrenador
     $sql_update = "UPDATE `Entrenador` SET `correoEntrenador` = (?), `nombreCompleto` = (?), `DNI` = (?), `telefono` = (?) WHERE `idEntrenador` = (?)";
     $stmt = mysqli_prepare($link, $sql_update);
@@ -211,8 +214,8 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     }
     // Cerramos la conexion
     mysqli_close($link);
-    // header("location: /html/administrar_usuarios.php");
-    // exit;
+    header("location: /html/administrar_usuarios.php");
+    exit;
   } else {
     mysqli_close($link);
   }
@@ -300,7 +303,7 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
           <div class="mb-3">
             <label class="form-label">Grupos</label>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="escuela" name="escuela" <?php if ($grupos["escuela"] === 1) echo "checked" ?>>
+              <input class="form-check-input" type="checkbox" id="escuela" name="escuela" <?php if ($grupos["escuela"] === 1) echo "checked" ?> required>
               <label class="form-check-label" for="escuela">Escuela</label>
             </div>
             <div class="form-check">
